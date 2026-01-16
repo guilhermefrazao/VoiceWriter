@@ -4,8 +4,7 @@ class Containers():
     def __init__(self):
         self.self = self
 
-    def hover_color_change(self, e):
-        print(e.data)
+    def _hover_color_change(self, e):
         if e.data == True:
             e.control.bgcolor = "#333333"
         else:
@@ -13,23 +12,31 @@ class Containers():
 
         e.control.update()
 
+
     def generic_text_container_with_right_context_menu(self, text_1, text_2):
         text = ft.Column(
             spacing=2,
             controls=[
-                    ft.Text(text_1, size=16, weight="bold", color="white"),
+                    ft.Text(text_1, size=16, color="white"),
                     ft.Text(text_2, size=14, color="grey"),
                     ]
         )
 
-        control_menu = ft.Button(
-            content="Create",
-            color="#028268",
-            height=40,
-            style=ft.ButtonStyle(
-                shape=ft.RoundedRectangleBorder(radius=8)
-            ),
-            on_click=lambda e: print("Botão funcionando")
+        control_menu = ft.PopupMenuButton(
+            icon=ft.icons.Icons.MORE_VERT,
+            icon_color="white",
+            tooltip="Options",
+            items=[
+                ft.PopupMenuItem(
+                    content="Editar", 
+                    on_click=lambda e: print(f"Editar {text_1}") 
+                ),
+                ft.PopupMenuItem(
+                    content="Deletar", 
+                    on_click=lambda e: print(f"Deletar {text_1}")
+                ),
+                ft.PopupMenuItem(content="Cancelar")
+            ]
         )
 
         container = ft.Container(
@@ -42,22 +49,22 @@ class Containers():
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 vertical_alignment=ft.CrossAxisAlignment.CENTER
             ),
-            on_hover=lambda e: self.hover_color_change(e)
+            on_hover=lambda e: self._hover_color_change(e)
         )
 
         return container
     
 
-    def generic_text_container_with_right_button(self, text_1, text_2, on_click_event):
+    def generic_text_container_with_right_button(self, text_1, text_2, text_button, on_click_event):
         text = ft.Column(
             spacing=2,
             controls=[
-                    ft.Text(text_1, size=16, weight="bold", color="white"),
+                    ft.Text(text_1, size=16, color="white"),
                     ft.Text(text_2, size=12, color="grey"),]
             )
     
         button = ft.Button(
-            content="Create",
+            content=text_button,
             color="#028268",
             height=40,
             style=ft.ButtonStyle(
@@ -67,10 +74,10 @@ class Containers():
         )
 
         container = ft.Container(
-            bgcolor="#0C5F49",
+            bgcolor="#032C21",
             padding=20,
             border_radius=10,
-            width=400,
+            width=600,
             alignment=ft.Alignment.CENTER,
             content=ft.Row(
                 controls=[text, button],
@@ -80,3 +87,38 @@ class Containers():
         )
 
         return container
+    
+
+    def generic_text_container_with_right_text_field(self, text_1, text_2, text_3):
+        text = ft.Column(
+            spacing=2,
+            controls=[
+                    ft.Text(text_1, size=16, color="white"),
+                    ft.Text(text_2, size=12, color="grey"),]
+            )
+    
+        text_field = ft.TextField(
+            label= text_3,
+            border=ft.InputBorder.NONE,
+            cursor_color="white",
+            color="white",
+            filled=True,
+            text_size=16,
+            multiline=False,
+            autofocus=True
+        )
+
+        container = ft.Container(
+            bgcolor="#032C21",
+            padding=20,
+            border_radius=10,
+            width=600,
+            alignment=ft.Alignment.CENTER,
+            content=ft.Row(
+                controls=[text, text_field],
+                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                vertical_alignment=ft.CrossAxisAlignment.CENTER
+            )
+        )
+
+        return container, text_field.label

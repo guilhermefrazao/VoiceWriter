@@ -1,12 +1,6 @@
 import flet as ft
 import os
-import subprocess
 
-Vault_path = "C:/Users/guilh/Documents/VoiceWriter/test_interface"
-
-
-if not os.path.exists(Vault_path):
-    os.makedirs(Vault_path)
 
 
 def get_directory_tree(path):
@@ -45,14 +39,12 @@ def get_directory_tree(path):
     return controls
 
 
-def refresh_sidebar(sidebar):
-    sidebar.controls = get_directory_tree(Vault_path)
+def refresh_sidebar(sidebar, path):
+    sidebar.controls = get_directory_tree(path)
     sidebar.update()
 
 
-async def writer(page: ft.Page):
-    page.clean()
-
+def writer(page: ft.Page, path: str):
     page.padding = 0
     page.title = "Editor - Voice Writter"
     page.theme_mode = ft.ThemeMode.DARK
@@ -64,7 +56,8 @@ async def writer(page: ft.Page):
         multiline=True,
         text_size=16,
         autocorrect=True,
-        expand=True
+        expand=True,
+        autofocus=True
     )
 
     topbar = ft.Container(
@@ -132,5 +125,3 @@ async def writer(page: ft.Page):
     page.add(
         home_layout
     )
-
-    await new_message.focus()
