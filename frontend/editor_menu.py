@@ -1,23 +1,25 @@
 import flet as ft
 import os
 import asyncio
-import threading
+import logging
 
 from frontend.widgets.context_menu import ContextMenu
 from frontend.widgets.tiles_generic import Tiles
+from frontend.utils.file_handler import DirectoryUtils
 
 class EditorMenu():
     def __init__(self):
-        self.home_layout = ""
+        self.home_layout = None
         self.main_area = None
-        self.file_tree_column = None
         self.dir_name = None
-        self.save_timer = None
+        self.new_message = None
+        self.file_tree_column = None
         self.sidebar = None
         self.last_selected_file = None
         self.current_file_path = str
         self.context_menu_right_click = ContextMenu()
-        self.generic_tile = Tiles()
+        self.handler = DirectoryUtils()
+        self.generic_tile = Tiles(self.load_file_to_editor)
 
 
     def get_directory_tree(self, path):
@@ -62,7 +64,7 @@ class EditorMenu():
                         
         
         except Exception as e:
-            print(f"Exception occured {e} with {path}")
+            logging.error(f"Exception occured {e} with {path}")
 
         return controls
 
@@ -72,59 +74,26 @@ class EditorMenu():
         self.file_tree_column.controls = new_directory_controls
         self.sidebar.content.controls[1] = self.file_tree_column 
         self.sidebar.update()
-        
 
-    def name_counter(self, created_type="File"):
-        counter = 0
-        counting = True
 
-        while counting:   
-            if counter > 0:
-                new_name = f"Untitled {counter}"
-            else:
-                new_name = "Untitled"
-            
-            final_path = os.path.join(self.current_file_path, new_name)
-            
-            if not os.path.exists(final_path):
-                if created_type.lower() == "file":
-                    with open(final_path + ".md", "w", encoding="utf-8") as file:
-                        file.write(new_name)
-
-                if created_type.lower() == "dir":
-                    os.makedirs(final_path)
-
-                counting = False
-
-            counter += 1
+    def load_file_to_editor(self, item_name : str, full_path: str):
+        self.handler.display_markdown_information(
+            item=item_name,
+            path=full_path,
+            dir_widget=self.dir_name,
+            message_widget=self.new_message,
+            main_area=self.main_area
+        )
 
 
     def create_new_markdown(self):
-        self.name_counter(created_type="File")     
+        self.handler.name_counter(self.current_file_path, created_type="File")     
         self.refresh_sidebar(self.current_file_path)
             
 
     def create_new_dir(self):
-        self.name_counter(created_type="Dir")
+        self.handler.name_counter(self.current_file_path, created_type="Dir")
         self.refresh_sidebar(self.current_file_path)
-
-
-    def save_changed_text(self):
-        if self.save_timer:
-            self.save_timer.cancel()
-
-        self.save_timer = threading.Timer(1.0, self.save_to_disk)
-        self.save_timer.start()
-
-
-    def save_to_disk(self):
-        if self.current_file_path:
-            try:
-                with open(self.current_file_path, "w", encoding="utf-8") as f:
-                    f.write(self.new_message.value)
-
-            except Exception as e:
-                print(f"Erro ao salvar: {e}")
 
 
     def page(self, page: ft.Page, path: str = "C:/Users/guilh/Documents/Obsidian Vault/Ideias_Pessoais/Games"):
@@ -146,7 +115,7 @@ class EditorMenu():
             ),
         )
 
-        sidebar_buttons = ft.Row(
+        sidebar_icons = ft.Row(
             align=ft.Alignment.CENTER,
             controls=[
                 ft.IconButton(icon=ft.Icons.PASTE, icon_color="grey", highlight_color="white", on_click=self.create_new_markdown),
@@ -167,7 +136,7 @@ class EditorMenu():
             padding=10,
             content=ft.Column(
                 controls=[
-                    sidebar_buttons,
+                    sidebar_icons,
                     self.file_tree_column,
                     ft.Column(spacing=2, horizontal_alignment=ft.CrossAxisAlignment.START, controls=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="white", on_click=lambda e: asyncio.create_task(page.push_route("/"))), ft.Text("Back", size=16, color="grey")])
                 ]
@@ -185,7 +154,7 @@ class EditorMenu():
             autocorrect=True,
             expand=True,
             autofocus=True,
-            on_change=self.save_changed_text
+            on_change=lambda e: self.handler.save_changed_text(e)
         )
 
 

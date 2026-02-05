@@ -1,11 +1,9 @@
 import flet as ft
 
-from frontend.utils.dir import DirectoryUtils
-
 class Tiles():
-    def __init__(self):
+    def __init__(self, on_file_open):
         self.selected_tile = None
-        self.dir = DirectoryUtils()
+        self.on_file_open = on_file_open
         pass
 
     def _handle_tile_change(self, e: ft.Event[ft.ExpansionTile]):
@@ -22,7 +20,6 @@ class Tiles():
         if isinstance(e.control, ft.ExpansionTile):
             return 
 
-        
         if self.selected_tile == e.control:
             e.control.shape = ft.RoundedRectangleBorder(side=ft.BorderSide(width=1,  color="white"), radius=5)
             e.control.update()
@@ -33,13 +30,17 @@ class Tiles():
             self.selected_tile.bgcolor = ft.Colors.TRANSPARENT
             self.selected_tile.shape = None
             self.selected_tile.update()
-            self.dir.display_markdown_information()
             
         e.control.bgcolor = "#37373d"
         e.control.shape = None
         e.control.update()
 
         self.selected_tile = e.control
+
+        if self.on_file_open:
+            item_name = e.control.title.value
+            full_path = e.control.data
+            self.on_file_open(item_name, full_path)
 
 
     def generic_expand_tile(self, item: str, full_path: str, recursive_func) -> ft.ExpansionTile:

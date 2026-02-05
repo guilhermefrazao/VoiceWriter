@@ -39,6 +39,10 @@ class ContextMenu():
 
         old_path = tile.data 
         parent_dir = os.path.dirname(old_path)
+
+        if old_name.endswith(".md"):
+            new_name = new_name + ".md"
+
         new_path = os.path.join(parent_dir, new_name)
 
         try:

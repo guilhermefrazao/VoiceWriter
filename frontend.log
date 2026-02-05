@@ -62,3 +62,78 @@ Traceback (most recent call last):
     self.on_file_click(e)
     ^^^^^^^^^^^^^^^^^^
 AttributeError: 'EditorMenu' object has no attribute 'on_file_click'
+2026-02-04 22:29:11,531 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 22:29:11,533 | INFO | Starting up TCP server on localhost:24012
+2026-02-04 22:29:11,540 | INFO | Flet app has started...
+2026-02-04 22:29:11,547 | INFO | App URL: tcp://localhost:24012
+2026-02-04 22:29:11,547 | INFO | Starting Flet View app...
+2026-02-04 22:29:11,548 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:29:11,549 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:29:12,058 | INFO | App session started
+2026-02-04 22:29:15,583 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 75, in <lambda>
+    on_click=lambda e: self._on_file_click(e)
+                       ~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 43, in _on_file_click
+    self.on_file_open(item_name, full_path)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 80, in load_file_to_editor
+    self.handler.display_markdown_information(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        item=item_name,
+        ^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        main_area=self.main_area
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 12, in display_markdown_information
+    with open(path, "r", encoding="uft-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+LookupError: unknown encoding: uft-8
+2026-02-04 22:29:38,922 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 22:29:38,924 | INFO | Starting up TCP server on localhost:21721
+2026-02-04 22:29:38,932 | INFO | Flet app has started...
+2026-02-04 22:29:38,939 | INFO | App URL: tcp://localhost:21721
+2026-02-04 22:29:38,939 | INFO | Starting Flet View app...
+2026-02-04 22:29:38,941 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:29:38,941 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:29:39,738 | INFO | App session started
+2026-02-04 22:44:44,507 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 22:44:44,511 | INFO | Starting up TCP server on localhost:33554
+2026-02-04 22:44:44,522 | INFO | Flet app has started...
+2026-02-04 22:44:44,535 | INFO | App URL: tcp://localhost:33554
+2026-02-04 22:44:44,535 | INFO | Starting Flet View app...
+2026-02-04 22:44:44,538 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:44:44,539 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:44:45,168 | INFO | App session started
+2026-02-04 22:49:24,531 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 22:49:24,535 | INFO | Starting up TCP server on localhost:36852
+2026-02-04 22:49:24,545 | INFO | Flet app has started...
+2026-02-04 22:49:24,556 | INFO | App URL: tcp://localhost:36852
+2026-02-04 22:49:24,556 | INFO | Starting Flet View app...
+2026-02-04 22:49:24,558 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:49:24,558 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:49:25,082 | INFO | App session started
+2026-02-04 22:53:55,351 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 22:53:55,356 | INFO | Starting up TCP server on localhost:43577
+2026-02-04 22:53:55,366 | INFO | Flet app has started...
+2026-02-04 22:53:55,376 | INFO | App URL: tcp://localhost:43577
+2026-02-04 22:53:55,377 | INFO | Starting Flet View app...
+2026-02-04 22:53:55,379 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:53:55,379 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 22:53:55,902 | INFO | App session started
+2026-02-04 23:03:50,088 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 23:03:50,093 | INFO | Starting up TCP server on localhost:30520
+2026-02-04 23:03:50,103 | INFO | Flet app has started...
+2026-02-04 23:03:50,116 | INFO | App URL: tcp://localhost:30520
+2026-02-04 23:03:50,116 | INFO | Starting Flet View app...
+2026-02-04 23:03:50,119 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 23:03:50,119 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 23:03:50,653 | INFO | App session started

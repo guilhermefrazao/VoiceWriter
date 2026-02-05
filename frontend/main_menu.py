@@ -6,7 +6,7 @@ import logging
 from frontend.widgets.containers_generic import Containers
 from frontend.editor_menu import EditorMenu
 from frontend.utils.animation import AnimationUtils
-from frontend.utils.dir import DirectoryUtils
+from frontend.utils.file_handler import DirectoryUtils
 
 class MainEditorMenu():
     def __init__(self):

@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Depurador: Iniciar do Root (Recomendado)",
+      "type": "debugpy",
+      "request": "launch",
+      // 1. Aponta para o seu arquivo principal, não importa qual arquivo esteja aberto
+      "program": "${workspaceFolder}/frontend/main_menu.py", 
+      "console": "integratedTerminal",
+      
+      // 2. Define a pasta raiz do projeto como o local de execução
+      "cwd": "${workspaceFolder}",
+
+      // 3. Adiciona a raiz do projeto ao caminho de busca do Python
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Depurador: Arquivo Atual (Com Contexto)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      
+      // Garante que, mesmo rodando um arquivo solto, a base seja a raiz
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    }
+  ]
+}
