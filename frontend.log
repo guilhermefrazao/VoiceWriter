@@ -1,0 +1,64 @@
+2026-02-04 21:25:39,480 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 21:25:39,481 | INFO | Starting up TCP server on localhost:2110
+2026-02-04 21:25:39,488 | INFO | Flet app has started...
+2026-02-04 21:25:39,494 | INFO | App URL: tcp://localhost:2110
+2026-02-04 21:25:39,494 | INFO | Starting Flet View app...
+2026-02-04 21:25:39,495 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 21:25:39,495 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 21:25:39,959 | INFO | App session started
+2026-02-04 21:26:02,799 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main_menu.py", line 132, in <lambda>
+    ft.Button(content="Create", color="#028268", height=40,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)), on_click=lambda e: self.create_and_open_new_vault(page, e))
+                                                                                                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main_menu.py", line 66, in create_and_open_new_vault
+    os.makedirs(path, exist_ok=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 227, in makedirs
+OSError: [WinError 123] A sintaxe do nome do arquivo, do nome do diretório ou do rótulo do volume está incorreta: 'C:\\Users\\guilh\\Documents\\Obsidian Vault\\Ideias_Pessoais\\Games\\Unreal - Reinforcement Learning\\format="%(asctime)s | %(levelname)s | %(message)s"'
+2026-02-04 21:38:34,995 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 21:38:34,997 | INFO | Starting up TCP server on localhost:35882
+2026-02-04 21:38:35,004 | INFO | Flet app has started...
+2026-02-04 21:38:35,010 | INFO | App URL: tcp://localhost:35882
+2026-02-04 21:38:35,010 | INFO | Starting Flet View app...
+2026-02-04 21:38:35,012 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 21:38:35,012 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 21:38:35,507 | INFO | App session started
+2026-02-04 21:38:41,458 | ERROR | Unhandled error in 'on_change' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 8, in _handle_tile_change
+    self.on_file_click(e)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tiles' object has no attribute 'on_file_click'
+2026-02-04 21:47:43,680 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-04 21:47:43,682 | INFO | Starting up TCP server on localhost:51222
+2026-02-04 21:47:43,689 | INFO | Flet app has started...
+2026-02-04 21:47:43,696 | INFO | App URL: tcp://localhost:51222
+2026-02-04 21:47:43,696 | INFO | Starting Flet View app...
+2026-02-04 21:47:43,697 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 21:47:43,697 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-04 21:47:44,284 | INFO | App session started
+2026-02-04 21:47:47,247 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 78, in <lambda>
+    on_click=lambda e, p=full_path: self.display_markdown_information(item, p, e)
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 174, in display_markdown_information
+    self.on_file_click(e)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'EditorMenu' object has no attribute 'on_file_click'

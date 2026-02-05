@@ -1,0 +1,51 @@
+INFO:flet:Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+INFO:flet:Starting up TCP server on localhost:29965
+INFO:flet:Flet app has started...
+INFO:flet:App URL: tcp://localhost:29965
+INFO:flet_desktop:Starting Flet View app...
+INFO:flet_desktop:Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet_desktop:Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet:App session started
+INFO:flet:Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+INFO:flet:Starting up TCP server on localhost:17410
+INFO:flet:Flet app has started...
+INFO:flet:App URL: tcp://localhost:17410
+INFO:flet_desktop:Starting Flet View app...
+INFO:flet_desktop:Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet_desktop:Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet:App session started
+INFO:flet:Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+INFO:flet:Starting up TCP server on localhost:34704
+INFO:flet:Flet app has started...
+INFO:flet:App URL: tcp://localhost:34704
+INFO:flet_desktop:Starting Flet View app...
+INFO:flet_desktop:Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet_desktop:Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet:App session started
+ERROR:flet:Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 320, in _trigger_event
+    await event_handler(e)
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main_menu.py", line 77, in open_editor
+    path_editor = await self.explorer.open_explorer()
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: DirectoryUtils.open_explorer() takes 0 positional arguments but 1 was given
+INFO:flet:Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+INFO:flet:Starting up TCP server on localhost:49993
+INFO:flet:Flet app has started...
+INFO:flet:App URL: tcp://localhost:49993
+INFO:flet_desktop:Starting Flet View app...
+INFO:flet_desktop:Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet_desktop:Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet:App session started
+INFO:flet:Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+INFO:flet:Starting up TCP server on localhost:13374
+INFO:flet:Flet app has started...
+INFO:flet:App URL: tcp://localhost:13374
+INFO:flet_desktop:Starting Flet View app...
+INFO:flet_desktop:Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet_desktop:Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+INFO:flet:App session started
+INFO:root:New Vault path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Vault

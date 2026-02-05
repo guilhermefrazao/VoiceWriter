@@ -1,17 +1,11 @@
 import flet as ft
 
+from frontend.utils.color import hover_color_change
+
+
 class Containers():
     def __init__(self):
-        self.self = self
-
-    def _hover_color_change(self, e):
-        if e.data == True:
-            e.control.bgcolor = "#333333"
-        else:
-            e.control.bgcolor = ft.Colors.TRANSPARENT
-
-        e.control.update()
-
+        pass
 
     def generic_text_container_with_right_context_menu(self, text_1, text_2):
         text = ft.Column(
@@ -49,7 +43,7 @@ class Containers():
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 vertical_alignment=ft.CrossAxisAlignment.CENTER
             ),
-            on_hover=lambda e: self._hover_color_change(e)
+            on_hover=lambda e: hover_color_change(e)
         )
 
         return container
