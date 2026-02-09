@@ -7,56 +7,23 @@ from frontend.widgets.containers_generic import Containers
 from frontend.editor_menu import EditorMenu
 from frontend.utils.animation import AnimationUtils
 from frontend.utils.file_handler import DirectoryUtils
+from frontend.utils.recent_manager import RecentManager
 
 class MainEditorMenu():
-    def __init__(self):
-        self.page = ""
+    def __init__(self, page: ft.Page):
+        self.page = page
         self.tf1 = ""
         self.tf2 = ""
         self.home_menu = ""
-        self.editor_path = ""
-        self.editor_menu = EditorMenu()
+        self.folder_path = ""
+        self.directory_container = ""
+        self.editor_menu = EditorMenu(page)
         self.animation = AnimationUtils()
         self.explorer = DirectoryUtils()
-
-
-    def route_change(self, e=None):
-        self.page.views.clear()
-        self.page.views.append(
-            ft.View(
-                route="/",
-                padding=0, 
-                spacing=0,
-                controls=[
-                    self.home_menu
-                ],
-            )
-        )
-        
-        if self.page.route == "/editor":
-            layout_editor = self.editor_menu.page(self.page, self.editor_path)
-            self.page.views.append(
-                ft.View(
-                    route="/editor",
-                    padding=0,
-                    spacing=0,
-                    controls=[
-                        layout_editor
-                    ],
-                )
-            )
-        
-        self.page.update()
-
-    async def view_pop(self, e):
-        if e.view is not None:
-            print("View pop:", e.view)
-            self.page.views.remove(e.view)
-            top_view = self.page.views[-1]
-            await self.page.push_route(top_view.route)
+        self.recent_folder = RecentManager()
 
    
-    def create_and_open_new_vault(self, page: ft.Page, e: ft.Event[ft.Button]):
+    def create_and_open_new_vault(self, e: ft.Event[ft.Button]):
         new_dir = self.tf1.content.controls[-1].value
         
         original_path = self.tf2.content.controls[0].controls[-1].value
@@ -67,20 +34,21 @@ class MainEditorMenu():
 
         logging.info(f"New Vault path: {path}")
 
-        self.editor_path = path
+        self.folder_path = path
 
-        asyncio.create_task(page.push_route("/editor"))
+        self.route_to_editor(path, self.recent_folder, self.page)        
 
 
     async def open_editor(self, e: ft.Event[ft.Button]):
         path_editor = await self.explorer.open_explorer()
         
-        self.editor_path = path_editor
+        self.folder_path = path_editor
         
         if not isinstance(path_editor, str):
             pass
         else:
-            asyncio.create_task(self.page.push_route("/editor"))
+            self.route_to_editor(path_editor, self.recent_folder, self.page)
+            
 
 
     async def select_editor_path(self, e: ft.Event[ft.Button]):
@@ -90,28 +58,43 @@ class MainEditorMenu():
         self.tf2.update()
 
 
-    def main(self, page: ft.Page):  
-        self.page = page 
-        page.padding = 0
-        page.title = "Voice Writter"
-        page.theme_mode = ft.ThemeMode.DARK
+    def route_to_editor(self, folder_path : str, recent_folder: RecentManager, page: ft.Page) -> None:
+        recent_folder.add_path(folder_path)
+        page.current_project_path = folder_path
+        asyncio.create_task(page.push_route("/editor"))
 
 
+    def build_directory_container(self):
+        paths = self.recent_folder.get_recents()
         directory_container = ft.Container(
-            bgcolor="#202020",
-            padding=10,
-            border=ft.Border.only(right=ft.border.BorderSide(1, "#0C5F49"), top=ft.border.BorderSide(1, "#0C5F49")),
-            content=ft.Column(
-                spacing=5,
-                controls=[
-                        Containers().generic_text_container_with_right_context_menu("Folder_name_1", "Folder_path_1"),
-                        Containers().generic_text_container_with_right_context_menu("Folder_name_2", "Folder_path_2"),
-                        Containers().generic_text_container_with_right_context_menu("Folder_name_3", "Folder_path_3"),
-                        Containers().generic_text_container_with_right_context_menu("Folder_name_4", "Folder_path_4"),
-                        ]
-            ),
-            expand=True
-        )
+                bgcolor="#181818",
+                padding=10,
+                border=ft.Border.only(right=ft.border.BorderSide(1, "#0C5F49"), top=ft.border.BorderSide(1, "#0C5F49")),
+                content=ft.Column(
+                    spacing=5,
+                    controls=[
+                            
+                            ]
+                ),
+                expand=True
+            )
+
+        if not paths:
+            directory_container.content.controls.append(ft.Text("Nenhuma pasta recente.", size=24, color="grey", text_align=ft.TextAlign.CENTER))
+
+        
+        else:
+            for path in paths:
+                folder_name = os.path.basename(path)
+                directory_container.content.controls.append(Containers().generic_text_container_with_right_context_menu(folder_name, path, color_2="#0C5F49", route_change=lambda e, p=path: self.route_to_editor(p, self.recent_folder, self.page)))
+                
+        return directory_container
+
+
+    def build_ui(self):   
+        self.page.padding = 0
+        self.page.title = "Voice Writter"
+        self.page.theme_mode = ft.ThemeMode.DARK
 
 
         options_container_1 = ft.Column(
@@ -129,7 +112,7 @@ class MainEditorMenu():
                 ft.Column(spacing=2, horizontal_alignment=ft.CrossAxisAlignment.START, controls=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="white", on_click=lambda e: self.animation.fade(animation_switcher, options_container_1, options_container_2)), ft.Text("Back", size=16, color="grey")]),
                 tf1 := Containers().generic_text_container_with_right_text_field("Vault name", "Pick a name to gain Aura.", "Aura name"),
                 tf2 := Containers().generic_text_container_with_right_button("Location", "Pick a place to create the Aura + Ego", "Browse", self.select_editor_path, False),
-                ft.Button(content="Create", color="#028268", height=40,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)), on_click=lambda e: self.create_and_open_new_vault(page, e))
+                ft.Button(content="Create", color="#028268", height=40,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)), on_click=lambda e: self.create_and_open_new_vault(e))
                 ]
             )
 
@@ -148,7 +131,7 @@ class MainEditorMenu():
 
 
         main_container = ft.Container(
-            bgcolor="#11111",
+            bgcolor="#1111",
             padding=20,
             border=ft.Border.only(top=ft.border.BorderSide(1, "#0C5F49")),
             content=ft.Column(
@@ -162,10 +145,11 @@ class MainEditorMenu():
             expand=True
         )
 
+        self.directory_container = self.build_directory_container()
 
         self.home_menu = ft.Row(
             controls=[
-                directory_container,
+                self.directory_container,
                 main_container
             ],
             expand=True,
@@ -173,16 +157,7 @@ class MainEditorMenu():
             vertical_alignment=ft.CrossAxisAlignment.STRETCH
         )
 
-
-        page.on_route_change = self.route_change
-        page.on_view_pop = self.view_pop
+        return self.home_menu
 
 
-        self.route_change()
-
-
-if __name__ == "__main__":
-    logging.basicConfig(filename="frontend.log", format="%(asctime)s | %(levelname)s | %(message)s", level=logging.INFO, encoding="utf-8")
-    main = MainEditorMenu()
-    ft.run(main.main)
 

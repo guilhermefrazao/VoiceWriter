@@ -21,7 +21,7 @@ class Tiles():
             return 
 
         if self.selected_tile == e.control:
-            e.control.shape = ft.RoundedRectangleBorder(side=ft.BorderSide(width=1,  color="white"), radius=5)
+            e.control.shape = ft.RoundedRectangleBorder(side=ft.BorderSide(width=1,  color="#D4D4D4"), radius=5)
             e.control.update()
             return 
 
@@ -46,7 +46,7 @@ class Tiles():
     def generic_expand_tile(self, item: str, full_path: str, recursive_func) -> ft.ExpansionTile:
         return ft.ExpansionTile(
                             title = ft.Text(item, size=14, color="#A4A5A5", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
-                            leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=12, color="grey"),
+                            leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=12, color="#858585"),
                             animation_style=ft.AnimationStyle(duration=20, reverse_duration=20),
                             affinity=ft.TileAffinity.LEADING,
                             collapsed_shape=ft.RoundedRectangleBorder(),
@@ -66,7 +66,7 @@ class Tiles():
     
     def generic_list_tile(self, item: str, full_path: str) -> ft.ListTile:
         return ft.ListTile(
-                            title=ft.Text(item, size=14, color="grey", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
+                            title=ft.Text(item, size=14, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
                             height=50,
                             content_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
                             hover_color="black",

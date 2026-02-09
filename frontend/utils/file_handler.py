@@ -1,6 +1,7 @@
 import flet as ft
 import os
 import threading
+import logging
 
 class DirectoryUtils():
     def __init__(self):
@@ -15,14 +16,17 @@ class DirectoryUtils():
         with open(path, "r", encoding="utf-8") as f:
             content = f.read()
 
-        dir_widget.value = item
+        dir_widget.controls = [ft.Text(item, size=30, weight="bold", color="#D4D4D4")]
         message_widget.value = content
         message_widget.data = path
+        message_widget.disabled = False
+
+        main_area.padding = 20
         
         main_area.update()
 
 
-    def name_counter(self, current_path, created_type="File"):
+    def name_counter(self, current_path: str, created_type: str ="File") -> tuple[str, str]:
         counter = 0
         counting = True
 
@@ -33,18 +37,22 @@ class DirectoryUtils():
                 new_name = "Untitled"
             
             final_path = os.path.join(current_path, new_name)
-            
-            if not os.path.exists(final_path):
-                if created_type.lower() == "file":
+
+
+            if created_type.lower() == "file":
+                if not os.path.exists(final_path + ".md"):
                     with open(final_path + ".md", "w", encoding="utf-8") as file:
                         file.write(new_name)
-
-                if created_type.lower() == "dir":
-                    os.makedirs(final_path)
-
-                counting = False
+                        counting = False
+            
+            if created_type.lower() == "dir":
+                if not os.path.exists(final_path):
+                        os.makedirs(final_path)
+                        counting = False
 
             counter += 1
+
+        return final_path, new_name
 
     def save_changed_text(self, e):
         if self.save_timer:

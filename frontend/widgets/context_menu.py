@@ -1,6 +1,8 @@
 import flet as ft
 import os
-import shutil
+import logging
+
+from send2trash import send2trash
 
 class ContextMenu():
     def __init__(self):
@@ -8,11 +10,11 @@ class ContextMenu():
         self.directory_column = None
 
 
-    async def show_context_menu(self, e: ft.TapEvent[ft.GestureDetector], menu: ft.ContextMenu):
+    async def show_context_menu(self, e: ft.TapEvent[ft.GestureDetector]):
         self.current_selected_item = e.control.content
         self.directory_column = e.control.parent
         
-        await menu.open(
+        await self.directory_column.open(
             local_position=e.local_position,
             global_position=e.global_position
         )
@@ -84,12 +86,13 @@ class ContextMenu():
             return
         try:
             if os.path.isdir(path_to_delete):
-                shutil.rmtree(path_to_delete)
+                send2trash(path_to_delete)
             else:
-                os.remove(path_to_delete)   
+                send2trash(path_to_delete)   
 
             main_container = self.directory_column.parent 
             if main_container and  self.directory_column in main_container.controls:
+                logging.info(main_container)
                 main_container.controls.remove(self.directory_column)
                 main_container.update()
                 

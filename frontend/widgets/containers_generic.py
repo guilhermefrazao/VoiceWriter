@@ -7,18 +7,19 @@ class Containers():
     def __init__(self):
         pass
 
-    def generic_text_container_with_right_context_menu(self, text_1, text_2):
+    def generic_text_container_with_right_context_menu(self, text_1="text_1", text_2="text_2", color_1="#D4D4D4", color_2="#858585", route_change=None):
         text = ft.Column(
             spacing=2,
+            expand=True,
             controls=[
-                    ft.Text(text_1, size=16, color="white"),
-                    ft.Text(text_2, size=14, color="grey"),
+                    ft.Text(text_1, size=16, color=color_1, overflow=ft.TextOverflow.ELLIPSIS, no_wrap=True),
+                    ft.Text(text_2, size=14, color=color_2, overflow=ft.TextOverflow.ELLIPSIS, no_wrap=True),
                     ]
         )
 
         control_menu = ft.PopupMenuButton(
             icon=ft.icons.Icons.MORE_VERT,
-            icon_color="white",
+            icon_color="#D4D4D4",
             tooltip="Options",
             items=[
                 ft.PopupMenuItem(
@@ -43,7 +44,8 @@ class Containers():
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 vertical_alignment=ft.CrossAxisAlignment.CENTER
             ),
-            on_hover=lambda e: hover_color_change(e)
+            on_hover=lambda e: hover_color_change(e),
+            on_click=route_change
         )
 
         return container
@@ -53,8 +55,8 @@ class Containers():
         text = ft.Column(
             spacing=2,
             controls=[
-                    ft.Text(text_1, size=16, color="white"),
-                    ft.Text(text_2, size=12, color="grey"),]
+                    ft.Text(text_1, size=16, color="#D4D4D4"),
+                    ft.Text(text_2, size=12, color="#858585"),]
             )
     
         button = ft.Button(
@@ -88,15 +90,15 @@ class Containers():
         text = ft.Column(
             spacing=2,
             controls=[
-                    ft.Text(text_right_up, size=16, color="white"),
-                    ft.Text(text_right_down, size=12, color="grey"),]
+                    ft.Text(text_right_up, size=16, color="#D4D4D4"),
+                    ft.Text(text_right_down, size=12, color="#858585"),]
             )
     
         text_field = ft.TextField(
             label= text_field,
             border=ft.InputBorder.NONE,
-            cursor_color="white",
-            color="white",
+            cursor_color="#D4D4D4",
+            color="#D4D4D4",
             filled=True,
             text_size=16,
             multiline=False,
