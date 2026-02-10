@@ -51,7 +51,7 @@ class Containers():
         return container
     
 
-    def generic_text_container_with_right_button(self, text_1, text_2, text_button, on_click_event, data=True):
+    def generic_text_container_with_right_button(self, text_1, text_2, text_button, button_color="#028268", container_color="#123F38", on_click_event=None, data=True):
         text = ft.Column(
             spacing=2,
             controls=[
@@ -61,7 +61,7 @@ class Containers():
     
         button = ft.Button(
             content=text_button,
-            color="#028268",
+            color=button_color,
             height=40,
             style=ft.ButtonStyle(
                 shape=ft.RoundedRectangleBorder(radius=8)
@@ -71,7 +71,7 @@ class Containers():
         )
 
         container = ft.Container(
-            bgcolor="#032C21",
+            bgcolor=container_color,
             padding=20,
             border_radius=10,
             width=600,
@@ -86,7 +86,7 @@ class Containers():
         return container
     
 
-    def generic_text_container_with_right_text_field(self, text_right_up, text_right_down, text_field):
+    def generic_text_container_with_right_text_field(self, text_right_up, text_right_down, text_field, container_color="#00302d"):
         text = ft.Column(
             spacing=2,
             controls=[
@@ -106,7 +106,7 @@ class Containers():
         )
 
         container = ft.Container(
-            bgcolor="#032C21",
+            bgcolor=container_color,
             padding=20,
             border_radius=10,
             width=600,

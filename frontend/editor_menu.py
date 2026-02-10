@@ -47,10 +47,11 @@ class EditorMenu():
                 full_path = os.path.join(path, item)
 
                 if os.path.isdir(full_path):
-                    tile = self.generic_tile.generic_expand_tile(item, full_path, self.get_directory_tree)
+                    tile = self.generic_tile.generic_expand_tile(item, full_path, self.get_directory_tree, self.refresh_sidebar)
                 else:
                     if item.endswith(".md"):
-                        tile = self.generic_tile.generic_list_tile(item, full_path)
+                        logging.info(f"Saving markdown name: {item}")
+                        tile = self.generic_tile.generic_list_tile(item, full_path, self.refresh_sidebar)
                         
                 
                 controls.append( 
@@ -85,11 +86,10 @@ class EditorMenu():
         return controls
 
 
-    def refresh_sidebar(self, path):
-        new_directory_controls = self.get_directory_tree(path)
+    def refresh_sidebar(self):
+        new_directory_controls = self.get_directory_tree(self.current_file_path)
         self.file_tree_column.controls = new_directory_controls
-        self.sidebar.content.controls[1] = self.file_tree_column 
-        self.sidebar.update()
+        self.file_tree_column.update()
 
 
     def load_file_to_editor(self, item_name : str, full_path: str):
@@ -98,8 +98,10 @@ class EditorMenu():
             path=full_path,
             dir_widget=self.dir_name,
             message_widget=self.new_message,
-            main_area=self.main_area
+            main_area=self.main_area,
+            refresh_sidebar=self.refresh_sidebar
         )
+
 
     def create_and_open_new_markdown(self):
         final_path, new_name = self.create_new_markdown()
@@ -108,14 +110,14 @@ class EditorMenu():
 
     def create_new_markdown(self):
         final_path, new_name = self.handler.name_counter(self.current_file_path, created_type="File")     
-        self.refresh_sidebar(self.current_file_path)
+        self.refresh_sidebar()
 
         return final_path, new_name
             
 
     def create_new_dir(self):
         final_path, new_name = self.handler.name_counter(self.current_file_path, created_type="Dir")
-        self.refresh_sidebar(self.current_file_path)
+        self.refresh_sidebar()
 
 
     def route_to_main_menu(self, page: ft.Page):
@@ -215,7 +217,7 @@ class EditorMenu():
 
         routes_menu = self.routes_menu()
 
-        self.sidebar = ft.Container(
+        sidebar = ft.Container(
             width=250,
             bgcolor="#202020",
             padding=10,
@@ -224,18 +226,20 @@ class EditorMenu():
                     sidebar_icons,
                     self.file_tree_column,
                     ft.Column(spacing=2, horizontal_alignment=ft.CrossAxisAlignment.START, controls=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#D4D4D4", on_click=lambda e: self.route_to_main_menu(self.page)), ft.Text("Back", size=16, color="#858585")]),
-                    ft.Divider(height=1, color="#0C5F49"),
+                    ft.Divider(height=1, color="#055b5f"),
                     routes_menu
                 ]
             )
         )
 
+        self.sidebar = ft.DragTarget(group="folder", content=sidebar, on_accept=lambda e: self.handler.move_file_on_drop(e, self.current_file_path, self.refresh_sidebar))
+
 
         self.dir_name = ft.Column(
             align=ft.Alignment.CENTER,
             spacing=20,
-            controls=[ ft.Text("Create new file", size=14, weight="bold", color="#0C5F49", selectable=True, on_tap=self.create_and_open_new_markdown), 
-                    ft.Text("Open recent file", size=14, weight="bold", color="#0C5F49",selectable=True, on_tap=lambda e: print("Open Recent"))])
+            controls=[ ft.Text("Create new file", size=14, weight="bold", color="#055b5f", selectable=True, on_tap=self.create_and_open_new_markdown), 
+                    ft.Text("Open recent file", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"))])
 
 
         self.main_area = ft.Container(
@@ -255,7 +259,7 @@ class EditorMenu():
         side_layout = ft.Row(
             controls=[
                 self.sidebar,
-                ft.VerticalDivider(width=1, color="#0C5F49"),
+                ft.VerticalDivider(width=1, color="#055b5f"),
                 self.main_area
             ],
             expand=True,
@@ -264,7 +268,7 @@ class EditorMenu():
 
         self.home_layout = ft.Column(
             controls=[
-                ft.Divider(height=1, color="#0C5F49"),
+                ft.Divider(height=1, color="#055b5f"),
                 side_layout
             ],
             expand=True,

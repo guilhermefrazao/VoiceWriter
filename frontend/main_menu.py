@@ -54,7 +54,7 @@ class MainEditorMenu():
     async def select_editor_path(self, e: ft.Event[ft.Button]):
         path_editor = await self.explorer.open_explorer()
 
-        self.tf2.content.controls[0].controls.append(ft.Text(path_editor, size=12, color="#0C5F49"))
+        self.tf2.content.controls[0].controls.append(ft.Text(path_editor, size=12, color="#055b5f"))
         self.tf2.update()
 
 
@@ -67,9 +67,9 @@ class MainEditorMenu():
     def build_directory_container(self):
         paths = self.recent_folder.get_recents()
         directory_container = ft.Container(
-                bgcolor="#181818",
+                bgcolor="#202021",
                 padding=10,
-                border=ft.Border.only(right=ft.border.BorderSide(1, "#0C5F49"), top=ft.border.BorderSide(1, "#0C5F49")),
+                border=ft.Border.only(right=ft.border.BorderSide(1, "#055b5f"), top=ft.border.BorderSide(1, "#055b5f")),
                 content=ft.Column(
                     spacing=5,
                     controls=[
@@ -86,7 +86,7 @@ class MainEditorMenu():
         else:
             for path in paths:
                 folder_name = os.path.basename(path)
-                directory_container.content.controls.append(Containers().generic_text_container_with_right_context_menu(folder_name, path, color_2="#0C5F49", route_change=lambda e, p=path: self.route_to_editor(p, self.recent_folder, self.page)))
+                directory_container.content.controls.append(Containers().generic_text_container_with_right_context_menu(folder_name, path, color_2="#055b5f", route_change=lambda e, p=path: self.route_to_editor(p, self.recent_folder, self.page)))
                 
         return directory_container
 
@@ -100,8 +100,8 @@ class MainEditorMenu():
         options_container_1 = ft.Column(
             spacing=10,
             controls=[
-                Containers().generic_text_container_with_right_button("Create new vault", "Create a new vault under a folder.", "Create", lambda e : self.animation.fade(animation_switcher, options_container_1, options_container_2)),
-                Containers().generic_text_container_with_right_button("Open a Folder", "Open Folder with files.", "Open", self.open_editor, True)
+                Containers().generic_text_container_with_right_button("Create new vault", "Create a new vault under a folder.", "Create", "#028268", "#00302d", lambda e : self.animation.fade(animation_switcher, options_container_1, options_container_2)),
+                Containers().generic_text_container_with_right_button("Open a Folder", "Open Folder with files.", "Open", "#028268", "#00302d", self.open_editor, True)
                 ]
             )       
 
@@ -110,8 +110,8 @@ class MainEditorMenu():
             spacing=10,
             controls=[
                 ft.Column(spacing=2, horizontal_alignment=ft.CrossAxisAlignment.START, controls=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="white", on_click=lambda e: self.animation.fade(animation_switcher, options_container_1, options_container_2)), ft.Text("Back", size=16, color="grey")]),
-                tf1 := Containers().generic_text_container_with_right_text_field("Vault name", "Pick a name to gain Aura.", "Aura name"),
-                tf2 := Containers().generic_text_container_with_right_button("Location", "Pick a place to create the Aura + Ego", "Browse", self.select_editor_path, False),
+                tf1 := Containers().generic_text_container_with_right_text_field("Vault name", "Pick a name to gain Aura.", "Aura name", container_color="#00302d"),
+                tf2 := Containers().generic_text_container_with_right_button("Location", "Pick a place to create the Aura + Ego", "Browse", "#028268", "#00302d",  self.select_editor_path, False),
                 ft.Button(content="Create", color="#028268", height=40,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)), on_click=lambda e: self.create_and_open_new_vault(e))
                 ]
             )
@@ -133,7 +133,7 @@ class MainEditorMenu():
         main_container = ft.Container(
             bgcolor="#1111",
             padding=20,
-            border=ft.Border.only(top=ft.border.BorderSide(1, "#0C5F49")),
+            border=ft.Border.only(top=ft.border.BorderSide(1, "#055b5f")),
             content=ft.Column(
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 spacing=15,

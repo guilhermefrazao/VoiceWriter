@@ -1,9 +1,11 @@
 import flet as ft
+from frontend.utils.file_handler import DirectoryUtils
 
 class Tiles():
     def __init__(self, on_file_open):
         self.selected_tile = None
         self.on_file_open = on_file_open
+        self.handler = DirectoryUtils()
         pass
 
     def _handle_tile_change(self, e: ft.Event[ft.ExpansionTile]):
@@ -43,8 +45,8 @@ class Tiles():
             self.on_file_open(item_name, full_path)
 
 
-    def generic_expand_tile(self, item: str, full_path: str, recursive_func) -> ft.ExpansionTile:
-        return ft.ExpansionTile(
+    def generic_expand_tile(self, item: str, full_path: str, recursive_func, refresh_sidebar) -> ft.ExpansionTile:
+        tile = ft.ExpansionTile(
                             title = ft.Text(item, size=14, color="#A4A5A5", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
                             leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=12, color="#858585"),
                             animation_style=ft.AnimationStyle(duration=20, reverse_duration=20),
@@ -63,9 +65,15 @@ class Tiles():
                                 ],
                             on_change=self._handle_tile_change,
                         )
+        
+        return ft.DragTarget(
+            group="folder",
+            content=self.handler.make_draggable(tile, full_path),
+            on_accept=lambda e: self.handler.move_file_on_drop(e, full_path, refresh_sidebar)
+        )
     
-    def generic_list_tile(self, item: str, full_path: str) -> ft.ListTile:
-        return ft.ListTile(
+    def generic_list_tile(self, item: str, full_path: str, refresh_sidebar) -> ft.ListTile:
+        tile = ft.ListTile(
                             title=ft.Text(item, size=14, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
                             height=50,
                             content_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
@@ -74,3 +82,9 @@ class Tiles():
                             is_three_line=False,
                             on_click=lambda e: self._on_file_click(e)
                         )
+        
+        return ft.DragTarget(
+            group="files",
+            content=self.handler.make_draggable(tile, full_path),
+            on_accept=lambda e: self.handler.move_file_on_drop(e, full_path, refresh_sidebar)
+        )
