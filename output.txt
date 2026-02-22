@@ -1,0 +1,74 @@
+{23:23:05}hello hello hello
+{23:24:51}hello hello
+{23:24:55}95 minutes
+{23:25:09}recognizer
+{23:26:41}hello hello hello hello hello hello hello hello hello hello I
+{23:27:39}hello are you listening can you hear
+{20:06:44}-hello hello
+{20:06:47}-hello hello
+{20:07:07}-hello
+{20:07:11}-hello
+{23:49:26} + - +  Hello
+{23:49:29} + - +  Yeah.
+{23:49:33} + - +  Hello
+{23:50:04} + - +  and dun dun
+{23:50:07} + - +  e você está aqui.
+{23:50:12} + - +  Eu quero abrir o...
+{23:50:20} + - +  Eu quero abrir o Google.
+{23:50:27} + - +  Av Kre motherfoShin
+{23:52:18} + - +  Eu consegui baixar o FF.
+{23:52:24} + - +  porque não está funcionando.
+{23:52:29} + - +  O que são os parâmetros?
+{23:52:43} + - +  Hmm.
+{23:53:15} + - +  para falar para ver se...
+{23:53:20} + - +  quando ele para ele ia acar de intervalo.
+{23:53:33} + - +  e a cada x intervalo de tempo ele tá dando algum...
+{23:53:41} + - +  sem me afala, provavelmente eu problema de tentar reconhecer o idioma a partir.
+{23:56:54} + - +  inséminURE
+{23:56:58} + - +  Thank you.
+{23:57:02} + - + 
+{23:57:10} + - +  e é faz em dois
+{00:07:44} + - + {'text': ' God,<|pt|>', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 4.58, 'text': ' God,', 'tokens': [50372, 1265, 11, 50267, 50593], 'temperature': 1.0, 'avg_logprob': -4.527965545654297, 'compression_ratio': 0.5555555555555556, 'no_speech_prob': 0.5486193299293518}], 'language': 'portuguese'}
+{00:07:50} + - + {'text': ' Oi, Oi, Oi, Oi...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 3.0, 'text': ' Oi, Oi, Oi, Oi...', 'tokens': [50364, 31610, 11, 31610, 11, 31610, 11, 31610, 485, 50514], 'temperature': 0.0, 'avg_logprob': -0.8568666631525214, 'compression_ratio': 1.0, 'no_speech_prob': 0.5669246912002563}], 'language': 'portuguese'}
+{00:07:56} + - + {'text': ' Hmm, ele está entendendo até...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 3.0, 'text': ' Hmm, ele está entendendo até...', 'tokens': [50364, 8239, 11, 1118, 3192, 16612, 3999, 8784, 485, 50514], 'temperature': 0.0, 'avg_logprob': -0.7311260916969993, 'compression_ratio': 0.825, 'no_speech_prob': 0.14375519752502441}], 'language': 'portuguese'}
+{00:08:03} + - + {'text': ' Ah, ali só', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Ah, ali só', 'tokens': [50387, 2438, 11, 10198, 6238, 50464], 'temperature': 1.0, 'avg_logprob': -2.3434971400669644, 'compression_ratio': 0.5789473684210527, 'no_speech_prob': 0.07506540417671204}], 'language': 'portuguese'}
+{00:08:57} + - + {'text': ' abrir Google', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' abrir Google', 'tokens': [50364, 27446, 3329, 50464], 'temperature': 0.0, 'avg_logprob': -0.600139570236206, 'compression_ratio': 0.6, 'no_speech_prob': 0.32658958435058594}], 'language': 'portuguese'}
+{00:09:07} + - + {'text': '', 'segments': [], 'language': 'portuguese'}
+{00:09:15} + - + {'text': ' Você está me ouvindo?', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 4.64, 'text': ' Você está me ouvindo?', 'tokens': [50364, 9781, 3192, 385, 21157, 10306, 30, 50596], 'temperature': 0.0, 'avg_logprob': -0.824160099029541, 'compression_ratio': 0.7419354838709677, 'no_speech_prob': 0.26711276173591614}], 'language': 'portuguese'}
+{00:09:39} + - + {'text': ' rolando bem.', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 6.640000000000001, 'text': ' rolando bem.', 'tokens': [50364, 744, 16201, 7577, 13, 50696], 'temperature': 1.0, 'avg_logprob': -3.591263907296317, 'compression_ratio': 0.6, 'no_speech_prob': 0.17488719522953033}], 'language': 'portuguese'}
+{00:09:45} + - + {'text': ' Não te dou nada direito.', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Não te dou nada direito.', 'tokens': [50364, 8010, 535, 2482, 8096, 36601, 13, 50464], 'temperature': 0.4, 'avg_logprob': -0.8667743470933702, 'compression_ratio': 0.7575757575757576, 'no_speech_prob': 0.10522950440645218}], 'language': 'portuguese'}
+{00:09:51} + - + {'text': ' O máximo deles são os...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' O máximo deles são os...', 'tokens': [50364, 422, 38876, 30789, 8364, 3003, 485, 50464], 'temperature': 0.0, 'avg_logprob': -0.4348794354332818, 'compression_ratio': 0.7647058823529411, 'no_speech_prob': 0.06082788482308388}], 'language': 'portuguese'}
+{00:09:56} + - + {'text': 'ky perfecto.', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 21.42, 'text': 'ky perfecto.', 'tokens': [50364, 4133, 2176, 78, 13, 51435], 'temperature': 1.0, 'avg_logprob': -3.605100631713867, 'compression_ratio': 0.6, 'no_speech_prob': 0.09074513614177704}], 'language': 'portuguese'}
+{00:10:00} + - + {'text': ' traduzir 5 palavras ou...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 3.0, 'text': ' traduzir 5 palavras ou...', 'tokens': [50364, 2479, 3334, 347, 1025, 46169, 2820, 485, 50514], 'temperature': 0.0, 'avg_logprob': -0.7763189315795899, 'compression_ratio': 0.7575757575757576, 'no_speech_prob': 0.051927391439676285}], 'language': 'portuguese'}
+{00:10:03} + - + {'text': ' além disso', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' além disso', 'tokens': [50364, 30388, 20088, 50464], 'temperature': 0.0, 'avg_logprob': -0.29851865768432617, 'compression_ratio': 0.5789473684210527, 'no_speech_prob': 0.2345592975616455}], 'language': 'portuguese'}
+{00:24:06} + - + {'text': ' Está me ouvindo?', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Está me ouvindo?', 'tokens': [50364, 27304, 385, 21157, 10306, 30, 50464], 'temperature': 0.0, 'avg_logprob': -0.6269859671592712, 'compression_ratio': 0.68, 'no_speech_prob': 0.244350865483284}], 'language': 'portuguese'}
+{00:24:20} + - + {'text': '', 'segments': [], 'language': 'portuguese'}
+{00:24:24} + - + {'text': ' e overhear test...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' e overhear test...', 'tokens': [50364, 308, 29807, 289, 1500, 485, 50464], 'temperature': 0.2, 'avg_logprob': -0.9473018646240234, 'compression_ratio': 0.6923076923076923, 'no_speech_prob': 0.5929686427116394}], 'language': 'portuguese'}
+{00:24:29} + - + {'text': '', 'segments': [], 'language': 'portuguese'}
+{00:26:09} + - + 
+{00:26:16} + - + 
+{00:26:20} + - + 
+{00:26:29} + - +  Põe o disappe… ... demanded ...
+{00:26:35} + - + 
+{00:28:20} + - +  Evolution
+{00:28:25} + - +  O que funciona
+{00:28:29} + - +  Não ta pegando muito
+{00:28:32} + - + 
+{00:28:39} + - +  Maiventack
+{00:28:43} + - + 
+{00:29:44} + - +  O Google. O Google.
+{00:29:49} + - +  Abre...
+{00:29:53} + - +  alegre!
+{00:29:56} + - +  O Google
+{00:30:01} + - +  Tudo ostop Blake recipes
+{00:30:04} + - +  abri o Google
+{00:30:28} + - +  Abrei o Google.
+{00:30:33} + - +  Abreir ou Google.
+{00:30:40} + - +  arm...beirou google
+{00:30:43} + - +  Apreu o fogo.
+{00:30:52} + - +  o erro Chief
+{00:31:01} + - +  O Google.
+{00:31:04} + - +  O Google.
+{00:31:06} + - +  Obra o Google
+{00:31:19} + - +  e abre a Gogo. abre a Gogo... haha
+{00:31:26} + - +  Abra o Google, abro o Google, abro o Google
