@@ -6,7 +6,7 @@
       "type": "debugpy",
       "request": "launch",
       // 1. Aponta para o seu arquivo principal, não importa qual arquivo esteja aberto
-      "program": "${workspaceFolder}/frontend/main.py", 
+      "program": "${workspaceFolder}/speech_to_text.py", 
       "console": "integratedTerminal",
       
       // 2. Define a pasta raiz do projeto como o local de execução

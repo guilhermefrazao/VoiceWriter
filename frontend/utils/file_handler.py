@@ -4,10 +4,13 @@ import threading
 import logging
 import shutil
 
+from frontend.utils.color import hover_color_change
+
 class DirectoryUtils():
     def __init__(self):
         self.save_timer = None
         self.old_path = None
+        self.selected_tile = None
         pass
 
     async def open_explorer(self) -> str:
@@ -29,10 +32,61 @@ class DirectoryUtils():
         message_widget.data = path
         message_widget.disabled = False
         message_widget.autofocus = True
+        message_widget.expand = True
 
         main_area.padding = 20
         
         main_area.update()
+
+    
+    def handle_tile_change(self, e: ft.Event[ft.ExpansionTile], on_file_open, selected_tile):
+        self.on_file_selected(e, on_file_open, selected_tile=selected_tile, file_type="Folder")
+        e.control.leading.icon = (
+            ft.Icons.KEYBOARD_ARROW_RIGHT   
+            if e.control.leading.icon == ft.Icons.KEYBOARD_ARROW_DOWN  
+            else ft.Icons.KEYBOARD_ARROW_DOWN
+        )
+        e.page.update()
+
+
+    def on_file_selected(self, e: ft.Event[ft.ExpansionTile], on_file_open, selected_tile=None, file_type="files"):
+        if selected_tile:
+            self.selected_tile = selected_tile
+
+        if isinstance(e.control, ft.ExpansionTile):
+            return 
+
+        if self.selected_tile == e.control:
+            e.control.shape = ft.RoundedRectangleBorder(side=ft.BorderSide(width=1,  color="#D4D4D4"), radius=5)
+            e.control.update()
+            return 
+
+        
+        if self.selected_tile:
+            if file_type == "files":
+                self.selected_tile.bgcolor = ft.Colors.TRANSPARENT
+                self.selected_tile.shape = None
+                self.selected_tile.update()
+            else:
+                self.selected_tile.collapsed_bgcolor = ft.Colors.TRANSPARENT
+                self.selected_tile.shape = None
+                self.selected_tile.update()
+            
+        if file_type == "files":
+            e.control.bgcolor = "#37373d"
+            e.control.shape = None
+            e.control.update()
+        else:
+            e.control.collapsed_bgcolor = "#37373d"
+            e.control.shape = None
+            e.control.update()
+
+        self.selected_tile = e.control
+
+        if on_file_open:
+            item_name = e.control.title.value
+            full_path = e.control.data
+            on_file_open(item_name, full_path)
 
 
     def name_counter(self, current_path: str, created_type: str ="File") -> tuple[str, str]:
@@ -102,13 +156,59 @@ class DirectoryUtils():
         self.old_path = new_path
 
 
-    def make_draggable(self, tile, full_path):
+    def _on_drag_start(self, e, tile_wrapper, tile_type: str):
+        if tile_type == "files":
+            tile_wrapper.bgcolor = "#055b5f"
+        else:
+            tile_wrapper.collapsed_bgcolor = "#055b5f"
+        tile_wrapper.update()
+
+
+    def _on_drag_end(self, e, tile_wrapper, tile_type: str):
+        if tile_type == "files":
+            tile_wrapper.bgcolor = ft.Colors.TRANSPARENT
+        else:
+            tile_wrapper.collapsed_bgcolor = ft.Colors.TRANSPARENT
+        tile_wrapper.update()
+
+
+    def _create_drag_feedback(self, item_name, is_folder):
+        icon = ft.Icons.FOLDER if is_folder else ft.Icons.DESCRIPTION
+        
+        feedback_card = ft.Container(
+            bgcolor="#202020", 
+            padding=ft.padding.symmetric(horizontal=12, vertical=8),
+            border_radius=6,
+            content=ft.Row(
+                controls=[
+                    ft.Icon(icon, color="#858585", size=16),
+                    ft.Text(
+                        item_name, 
+                        color="#858585", 
+                        size=14, 
+                        overflow=ft.TextOverflow.ELLIPSIS
+                    ),
+                ],
+                alignment=ft.MainAxisAlignment.START,
+                vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                spacing=10,
+            ),
+        )
+        
+        return feedback_card
+
+
+    def make_draggable(self, tile, full_path, tile_type: str = "files"):
+
+        feedback_widget = self._create_drag_feedback(os.path.basename(full_path), tile_type)
+
         return ft.Draggable(
             group="folder",
             content=tile,
-            content_feedback=tile,
-            content_when_dragging=tile,
-            data=full_path
+            content_feedback=feedback_widget,
+            data=full_path,
+            on_drag_start=lambda e: self._on_drag_start(e, tile, tile_type),
+            on_drag_complete=lambda e: self._on_drag_end(e, tile, tile_type),
         )
     
 

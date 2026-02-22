@@ -7502,3 +7502,2031 @@ RuntimeError: Session closed
 2026-02-09 21:53:05,843 | INFO | Saving markdown name: .md
 2026-02-09 21:53:05,843 | INFO | Saving markdown name: Untitled 1.md
 2026-02-09 21:53:05,844 | INFO | Saving markdown name: Untitled.md
+2026-02-09 22:02:34,539 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-09 22:02:34,541 | INFO | Starting up TCP server on localhost:56735
+2026-02-09 22:02:34,549 | INFO | Flet app has started...
+2026-02-09 22:02:34,560 | INFO | App URL: tcp://localhost:56735
+2026-02-09 22:02:34,564 | INFO | Starting Flet View app...
+2026-02-09 22:02:34,568 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:02:34,569 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:02:35,056 | INFO | App session started
+2026-02-09 22:02:35,058 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-09 22:02:37,301 | ERROR | Unhandled error in 'on_secondary_tap_up' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 67, in <lambda>
+    self.context_menu_right_click.show_menu(e, name, path, acts),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 43, in show_menu
+    ft.Icon(ft.icons.CIRCLE, size=8, color="#858585"), # Exemplo de ícone
+            ^^^^^^^^^^^^^^^
+AttributeError: module 'flet.controls.material.icons' has no attribute 'CIRCLE'
+2026-02-09 22:03:06,412 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-09 22:03:06,414 | INFO | Starting up TCP server on localhost:6041
+2026-02-09 22:03:06,420 | INFO | Flet app has started...
+2026-02-09 22:03:06,430 | INFO | App URL: tcp://localhost:6041
+2026-02-09 22:03:06,430 | INFO | Starting Flet View app...
+2026-02-09 22:03:06,432 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:03:06,432 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:03:06,882 | INFO | App session started
+2026-02-09 22:03:06,884 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-09 22:03:07,891 | ERROR | Unhandled error in 'on_secondary_tap_up' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 67, in <lambda>
+    self.context_menu_right_click.show_menu(e, name, path, acts),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 75, in show_menu
+    bgcolor=ft.colors.TRANSPARENT,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'. Did you mean: 'Colors'?
+2026-02-09 22:03:17,273 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-09 22:03:17,275 | INFO | Starting up TCP server on localhost:54158
+2026-02-09 22:03:17,281 | INFO | Flet app has started...
+2026-02-09 22:03:17,291 | INFO | App URL: tcp://localhost:54158
+2026-02-09 22:03:17,291 | INFO | Starting Flet View app...
+2026-02-09 22:03:17,292 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:03:17,293 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:03:17,758 | INFO | App session started
+2026-02-09 22:03:17,761 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-09 22:03:18,610 | ERROR | Unhandled error in 'on_secondary_tap_up' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 67, in <lambda>
+    self.context_menu_right_click.show_menu(e, name, path, acts),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 81, in show_menu
+    left=e.global_x,
+         ^^^^^^^^^^
+AttributeError: 'TapEvent' object has no attribute 'global_x'
+2026-02-09 22:03:59,125 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-09 22:03:59,128 | INFO | Starting up TCP server on localhost:44487
+2026-02-09 22:03:59,138 | INFO | Flet app has started...
+2026-02-09 22:03:59,151 | INFO | App URL: tcp://localhost:44487
+2026-02-09 22:03:59,151 | INFO | Starting Flet View app...
+2026-02-09 22:03:59,153 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:03:59,154 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:03:59,609 | INFO | App session started
+2026-02-09 22:07:54,519 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-09 22:07:54,520 | INFO | Starting up TCP server on localhost:11487
+2026-02-09 22:07:54,527 | INFO | Flet app has started...
+2026-02-09 22:07:54,538 | INFO | App URL: tcp://localhost:11487
+2026-02-09 22:07:54,538 | INFO | Starting Flet View app...
+2026-02-09 22:07:54,539 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:07:54,539 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:07:54,993 | INFO | App session started
+2026-02-09 22:07:54,995 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-09 22:08:14,856 | ERROR | Unhandled error in 'on_hover' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 49, in <lambda>
+    on_hover=lambda e: self.hover_effect(e) # Função opcional de hover
+                       ~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 90, in hover_effect
+    e.control.bgcolor = "#2d2d2d" if e.data == "true" else ft.colors.TRANSPARENT
+                                                           ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'. Did you mean: 'Colors'?
+2026-02-09 22:08:14,891 | ERROR | Unhandled error in 'on_hover' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 49, in <lambda>
+    on_hover=lambda e: self.hover_effect(e) # Função opcional de hover
+                       ~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 90, in hover_effect
+    e.control.bgcolor = "#2d2d2d" if e.data == "true" else ft.colors.TRANSPARENT
+                                                           ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'. Did you mean: 'Colors'?
+2026-02-09 22:09:39,810 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-09 22:09:39,812 | INFO | Starting up TCP server on localhost:57172
+2026-02-09 22:09:39,819 | INFO | Flet app has started...
+2026-02-09 22:09:39,829 | INFO | App URL: tcp://localhost:57172
+2026-02-09 22:09:39,830 | INFO | Starting Flet View app...
+2026-02-09 22:09:39,832 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:09:39,832 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:09:40,370 | INFO | App session started
+2026-02-09 22:09:40,372 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-09 22:09:43,032 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 44, in <lambda>
+    on_click=lambda ev, func=action: [func(full_path), self.close_menu()],
+                                      ~~~~^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 50, in <lambda>
+    "Rename": lambda p=full_path: self.context_menu_right_click.rename_widget(p),
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: ContextMenu.rename_widget() takes 1 positional argument but 2 were given
+2026-02-09 22:10:58,649 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-09 22:10:58,651 | INFO | Starting up TCP server on localhost:38078
+2026-02-09 22:10:58,658 | INFO | Flet app has started...
+2026-02-09 22:10:58,669 | INFO | App URL: tcp://localhost:38078
+2026-02-09 22:10:58,669 | INFO | Starting Flet View app...
+2026-02-09 22:10:58,670 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:10:58,671 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-09 22:10:59,567 | INFO | App session started
+2026-02-09 22:10:59,569 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-09 22:11:01,227 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 46, in <lambda>
+    on_click=lambda ev, func=action: [func(full_path), self.close_menu()],
+                                      ~~~~^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 50, in <lambda>
+    "Rename": lambda e: self.context_menu_right_click.rename_widget(),
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 123, in rename_widget
+    current_name: str = self.current_selected_item.title.value
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'title'
+2026-02-10 14:15:19,989 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:15:19,992 | INFO | Starting up TCP server on localhost:8999
+2026-02-10 14:15:20,001 | INFO | Flet app has started...
+2026-02-10 14:15:20,012 | INFO | App URL: tcp://localhost:8999
+2026-02-10 14:15:20,012 | INFO | Starting Flet View app...
+2026-02-10 14:15:20,014 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:15:20,014 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:15:20,610 | INFO | App session started
+2026-02-10 14:15:20,613 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 14:15:28,466 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 46, in <lambda>
+    on_click=lambda ev, func=action: [func(full_path), self.close_menu()],
+                                      ~~~~^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 50, in <lambda>
+    "Rename": lambda e: self.context_menu_right_click.rename_widget(),
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 123, in rename_widget
+    current_name: str = self.current_selected_item.title.value
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'title'
+2026-02-10 14:19:47,632 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:19:47,636 | INFO | Starting up TCP server on localhost:28494
+2026-02-10 14:19:47,645 | INFO | Flet app has started...
+2026-02-10 14:19:47,656 | INFO | App URL: tcp://localhost:28494
+2026-02-10 14:19:47,656 | INFO | Starting Flet View app...
+2026-02-10 14:19:47,659 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:19:47,660 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:19:48,256 | INFO | App session started
+2026-02-10 14:20:41,049 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:20:41,053 | INFO | Starting up TCP server on localhost:18448
+2026-02-10 14:20:41,062 | INFO | Flet app has started...
+2026-02-10 14:20:41,077 | INFO | App URL: tcp://localhost:18448
+2026-02-10 14:20:41,078 | INFO | Starting Flet View app...
+2026-02-10 14:20:41,081 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:20:41,081 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:20:41,571 | INFO | App session started
+2026-02-10 14:23:46,629 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:23:46,634 | INFO | Starting up TCP server on localhost:40402
+2026-02-10 14:23:46,643 | INFO | Flet app has started...
+2026-02-10 14:23:46,656 | INFO | App URL: tcp://localhost:40402
+2026-02-10 14:23:46,656 | INFO | Starting Flet View app...
+2026-02-10 14:23:46,659 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:23:46,660 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:23:47,175 | INFO | App session started
+2026-02-10 14:25:50,045 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:25:50,049 | INFO | Starting up TCP server on localhost:49405
+2026-02-10 14:25:50,059 | INFO | Flet app has started...
+2026-02-10 14:25:50,079 | INFO | App URL: tcp://localhost:49405
+2026-02-10 14:25:50,080 | INFO | Starting Flet View app...
+2026-02-10 14:25:50,083 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:25:50,084 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:25:50,580 | INFO | App session started
+2026-02-10 14:28:21,448 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:28:21,452 | INFO | Starting up TCP server on localhost:31079
+2026-02-10 14:28:21,462 | INFO | Flet app has started...
+2026-02-10 14:28:21,475 | INFO | App URL: tcp://localhost:31079
+2026-02-10 14:28:21,475 | INFO | Starting Flet View app...
+2026-02-10 14:28:21,478 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:28:21,479 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:28:22,260 | INFO | App session started
+2026-02-10 14:28:33,093 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:28:33,097 | INFO | Starting up TCP server on localhost:63787
+2026-02-10 14:28:33,109 | INFO | Flet app has started...
+2026-02-10 14:28:33,122 | INFO | App URL: tcp://localhost:63787
+2026-02-10 14:28:33,123 | INFO | Starting Flet View app...
+2026-02-10 14:28:33,125 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:28:33,125 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:28:33,656 | INFO | App session started
+2026-02-10 14:29:17,950 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:29:17,955 | INFO | Starting up TCP server on localhost:54255
+2026-02-10 14:29:17,965 | INFO | Flet app has started...
+2026-02-10 14:29:17,980 | INFO | App URL: tcp://localhost:54255
+2026-02-10 14:29:17,980 | INFO | Starting Flet View app...
+2026-02-10 14:29:17,985 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:29:17,986 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:29:18,557 | INFO | App session started
+2026-02-10 14:35:48,604 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:35:48,608 | INFO | Starting up TCP server on localhost:59862
+2026-02-10 14:35:48,618 | INFO | Flet app has started...
+2026-02-10 14:35:48,630 | INFO | App URL: tcp://localhost:59862
+2026-02-10 14:35:48,630 | INFO | Starting Flet View app...
+2026-02-10 14:35:48,633 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:35:48,633 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:35:49,133 | INFO | App session started
+2026-02-10 14:37:28,671 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:37:28,673 | INFO | Starting up TCP server on localhost:56310
+2026-02-10 14:37:28,680 | INFO | Flet app has started...
+2026-02-10 14:37:28,695 | INFO | App URL: tcp://localhost:56310
+2026-02-10 14:37:28,695 | INFO | Starting Flet View app...
+2026-02-10 14:37:28,697 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:37:28,697 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:37:29,895 | INFO | App session started
+2026-02-10 14:37:29,900 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 14:37:47,383 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 46, in <lambda>
+    on_click=lambda e, func=action: [func(e, full_path), self.close_menu()],
+                                     ~~~~^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 50, in <lambda>
+    "Rename": lambda e, p=full_path: self.context_menu_right_click.rename_widget(e, p),
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 139, in rename_widget
+    self.current_selected_item.title = edit_field
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'title' and no __dict__ for setting new attributes
+2026-02-10 14:38:01,213 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:38:01,217 | INFO | Starting up TCP server on localhost:63080
+2026-02-10 14:38:01,226 | INFO | Flet app has started...
+2026-02-10 14:38:01,239 | INFO | App URL: tcp://localhost:63080
+2026-02-10 14:38:01,239 | INFO | Starting Flet View app...
+2026-02-10 14:38:01,241 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:38:01,242 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:38:01,766 | INFO | App session started
+2026-02-10 14:40:46,556 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:40:46,561 | INFO | Starting up TCP server on localhost:7800
+2026-02-10 14:40:46,570 | INFO | Flet app has started...
+2026-02-10 14:40:46,584 | INFO | App URL: tcp://localhost:7800
+2026-02-10 14:40:46,584 | INFO | Starting Flet View app...
+2026-02-10 14:40:46,588 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:40:46,588 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:40:47,083 | INFO | App session started
+2026-02-10 14:41:16,431 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:41:16,436 | INFO | Starting up TCP server on localhost:60864
+2026-02-10 14:41:16,446 | INFO | Flet app has started...
+2026-02-10 14:41:16,459 | INFO | App URL: tcp://localhost:60864
+2026-02-10 14:41:16,460 | INFO | Starting Flet View app...
+2026-02-10 14:41:16,462 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:41:16,463 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:41:17,241 | INFO | App session started
+2026-02-10 14:42:07,265 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:42:07,271 | INFO | Starting up TCP server on localhost:1081
+2026-02-10 14:42:07,282 | INFO | Flet app has started...
+2026-02-10 14:42:07,299 | INFO | App URL: tcp://localhost:1081
+2026-02-10 14:42:07,300 | INFO | Starting Flet View app...
+2026-02-10 14:42:07,303 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:42:07,305 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:42:08,006 | INFO | App session started
+2026-02-10 14:42:27,916 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:42:27,920 | INFO | Starting up TCP server on localhost:40947
+2026-02-10 14:42:27,932 | INFO | Flet app has started...
+2026-02-10 14:42:27,946 | INFO | App URL: tcp://localhost:40947
+2026-02-10 14:42:27,947 | INFO | Starting Flet View app...
+2026-02-10 14:42:27,950 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:42:27,950 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:42:28,441 | INFO | App session started
+2026-02-10 14:45:08,608 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:45:08,612 | INFO | Starting up TCP server on localhost:51044
+2026-02-10 14:45:08,622 | INFO | Flet app has started...
+2026-02-10 14:45:08,637 | INFO | App URL: tcp://localhost:51044
+2026-02-10 14:45:08,637 | INFO | Starting Flet View app...
+2026-02-10 14:45:08,639 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:45:08,639 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:45:09,140 | INFO | App session started
+2026-02-10 14:48:41,300 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:48:41,302 | INFO | Starting up TCP server on localhost:50851
+2026-02-10 14:48:41,310 | INFO | Flet app has started...
+2026-02-10 14:48:41,322 | INFO | App URL: tcp://localhost:50851
+2026-02-10 14:48:41,322 | INFO | Starting Flet View app...
+2026-02-10 14:48:41,323 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:48:41,323 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:48:41,823 | INFO | App session started
+2026-02-10 14:48:41,826 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 14:49:07,904 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:49:07,909 | INFO | Starting up TCP server on localhost:26164
+2026-02-10 14:49:07,920 | INFO | Flet app has started...
+2026-02-10 14:49:07,933 | INFO | App URL: tcp://localhost:26164
+2026-02-10 14:49:07,933 | INFO | Starting Flet View app...
+2026-02-10 14:49:07,936 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:49:07,936 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:49:08,444 | INFO | App session started
+2026-02-10 14:49:56,806 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:49:56,810 | INFO | Starting up TCP server on localhost:45526
+2026-02-10 14:49:56,823 | INFO | Flet app has started...
+2026-02-10 14:49:56,839 | INFO | App URL: tcp://localhost:45526
+2026-02-10 14:49:56,839 | INFO | Starting Flet View app...
+2026-02-10 14:49:56,842 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:49:56,843 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:49:57,379 | INFO | App session started
+2026-02-10 14:50:50,695 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:50:50,697 | INFO | Starting up TCP server on localhost:62268
+2026-02-10 14:50:50,705 | INFO | Flet app has started...
+2026-02-10 14:50:50,721 | INFO | App URL: tcp://localhost:62268
+2026-02-10 14:50:50,721 | INFO | Starting Flet View app...
+2026-02-10 14:50:50,723 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:50:50,723 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:50:51,301 | INFO | App session started
+2026-02-10 14:50:51,304 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 14:50:55,685 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 83, in <lambda>
+    on_click=lambda e: self._on_file_click(e)
+                       ~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 45, in _on_file_click
+    self.on_file_open(item_name, full_path)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 85, in load_file_to_editor
+    self.handler.display_markdown_information(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        item=item_name,
+        ^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        refresh_sidebar=self.refresh_sidebar
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 27, in display_markdown_information
+    dir_widget.controls = [ft.TextField(display_name,  border=ft.InputBorder.NONE, text_size=30,  multiline=False, autofocus=False, color="#D4D4D4", on_change=lambda e: self.change_directory_title_name(e, refresh_sidebar, markdown), expand=True)]
+                                        ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'display_name' where it is not associated with a value
+2026-02-10 14:51:35,145 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 14:51:35,147 | INFO | Starting up TCP server on localhost:31753
+2026-02-10 14:51:35,155 | INFO | Flet app has started...
+2026-02-10 14:51:35,167 | INFO | App URL: tcp://localhost:31753
+2026-02-10 14:51:35,167 | INFO | Starting Flet View app...
+2026-02-10 14:51:35,168 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:51:35,168 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 14:51:35,654 | INFO | App session started
+2026-02-10 14:51:35,657 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 14:51:38,918 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 83, in <lambda>
+    on_click=lambda e: self._on_file_click(e)
+                       ~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 45, in _on_file_click
+    self.on_file_open(item_name, full_path)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 85, in load_file_to_editor
+    self.handler.display_markdown_information(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        item=item_name,
+        ^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        refresh_sidebar=self.refresh_sidebar
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 27, in display_markdown_information
+    dir_widget.controls = [ft.TextField(display_name,  border=ft.InputBorder.NONE, text_size=30,  multiline=False, autofocus=False, color="#D4D4D4", on_change=lambda e: self.change_directory_title_name(e, refresh_sidebar, markdown), expand=True)]
+                                        ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'display_name' where it is not associated with a value
+2026-02-10 17:19:18,022 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:19:18,028 | INFO | Starting up TCP server on localhost:58193
+2026-02-10 17:19:18,039 | INFO | Flet app has started...
+2026-02-10 17:19:18,052 | INFO | App URL: tcp://localhost:58193
+2026-02-10 17:19:18,053 | INFO | Starting Flet View app...
+2026-02-10 17:19:18,056 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:19:18,057 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:19:18,609 | INFO | App session started
+2026-02-10 17:20:01,777 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:20:01,782 | INFO | Starting up TCP server on localhost:55297
+2026-02-10 17:20:01,794 | INFO | Flet app has started...
+2026-02-10 17:20:01,809 | INFO | App URL: tcp://localhost:55297
+2026-02-10 17:20:01,809 | INFO | Starting Flet View app...
+2026-02-10 17:20:01,813 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:20:01,813 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:20:02,402 | INFO | App session started
+2026-02-10 17:22:30,874 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:22:30,879 | INFO | Starting up TCP server on localhost:15771
+2026-02-10 17:22:30,891 | INFO | Flet app has started...
+2026-02-10 17:22:30,903 | INFO | App URL: tcp://localhost:15771
+2026-02-10 17:22:30,904 | INFO | Starting Flet View app...
+2026-02-10 17:22:30,906 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:22:30,907 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:22:31,496 | INFO | App session started
+2026-02-10 17:23:55,979 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:23:55,980 | INFO | Starting up TCP server on localhost:46117
+2026-02-10 17:23:55,988 | INFO | Flet app has started...
+2026-02-10 17:23:56,000 | INFO | App URL: tcp://localhost:46117
+2026-02-10 17:23:56,000 | INFO | Starting Flet View app...
+2026-02-10 17:23:56,002 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:23:56,003 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:23:56,582 | INFO | App session started
+2026-02-10 17:23:56,585 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:24:46,580 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:24:46,585 | INFO | Starting up TCP server on localhost:6047
+2026-02-10 17:24:46,594 | INFO | Flet app has started...
+2026-02-10 17:24:46,608 | INFO | App URL: tcp://localhost:6047
+2026-02-10 17:24:46,609 | INFO | Starting Flet View app...
+2026-02-10 17:24:46,611 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:24:46,612 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:24:47,262 | INFO | App session started
+2026-02-10 17:27:09,056 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:27:09,058 | INFO | Starting up TCP server on localhost:40606
+2026-02-10 17:27:09,065 | INFO | Flet app has started...
+2026-02-10 17:27:09,075 | INFO | App URL: tcp://localhost:40606
+2026-02-10 17:27:09,075 | INFO | Starting Flet View app...
+2026-02-10 17:27:09,076 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:27:09,077 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:27:09,848 | INFO | App session started
+2026-02-10 17:27:09,851 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:27:18,554 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 85, in <lambda>
+    on_click=lambda e: self._on_file_click(e)
+                       ~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 45, in _on_file_click
+    self.on_file_open(item_name, full_path)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 86, in load_file_to_editor
+    self.handler.display_markdown_information(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        item=item_name,
+        ^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        refresh_sidebar=self.refresh_sidebar
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 27, in display_markdown_information
+    dir_widget.controls = [ft.TextField(display_name,  border=ft.InputBorder.NONE, text_size=30,  multiline=False, autofocus=False, color="#D4D4D4", on_change=lambda e: self.change_directory_title_name(e, refresh_sidebar, markdown), expand=True)]
+                                        ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'display_name' where it is not associated with a value
+2026-02-10 17:27:23,864 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:27:23,866 | INFO | Starting up TCP server on localhost:27525
+2026-02-10 17:27:23,873 | INFO | Flet app has started...
+2026-02-10 17:27:23,883 | INFO | App URL: tcp://localhost:27525
+2026-02-10 17:27:23,883 | INFO | Starting Flet View app...
+2026-02-10 17:27:23,884 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:27:23,884 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:27:24,381 | INFO | App session started
+2026-02-10 17:27:24,383 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:27:27,779 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 85, in <lambda>
+    on_click=lambda e: self._on_file_click(e)
+                       ~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 45, in _on_file_click
+    self.on_file_open(item_name, full_path)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 86, in load_file_to_editor
+    self.handler.display_markdown_information(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        item=item_name,
+        ^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        refresh_sidebar=self.refresh_sidebar
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 27, in display_markdown_information
+    dir_widget.controls = [ft.TextField(display_name,  border=ft.InputBorder.NONE, text_size=30,  multiline=False, autofocus=False, color="#D4D4D4", on_change=lambda e: self.change_directory_title_name(e, refresh_sidebar, markdown), expand=True)]
+                                        ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'display_name' where it is not associated with a value
+2026-02-10 17:28:46,972 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:28:46,974 | INFO | Starting up TCP server on localhost:37322
+2026-02-10 17:28:46,980 | INFO | Flet app has started...
+2026-02-10 17:28:46,989 | INFO | App URL: tcp://localhost:37322
+2026-02-10 17:28:46,989 | INFO | Starting Flet View app...
+2026-02-10 17:28:46,991 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:28:46,991 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:28:47,453 | INFO | App session started
+2026-02-10 17:28:47,455 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:29:00,294 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:29:00,298 | INFO | Starting up TCP server on localhost:61682
+2026-02-10 17:29:00,309 | INFO | Flet app has started...
+2026-02-10 17:29:00,324 | INFO | App URL: tcp://localhost:61682
+2026-02-10 17:29:00,324 | INFO | Starting Flet View app...
+2026-02-10 17:29:00,327 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:29:00,327 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:29:00,933 | INFO | App session started
+2026-02-10 17:33:45,599 | ERROR | Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\guilh\AppData\Roaming\uv\python\cpython-3.13.3-windows-x86_64-none\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\AppData\Roaming\uv\python\cpython-3.13.3-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Foi forçado o cancelamento de uma conexão existente pelo host remoto
+2026-02-10 17:40:08,565 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:40:08,568 | INFO | Starting up TCP server on localhost:42474
+2026-02-10 17:40:08,575 | INFO | Flet app has started...
+2026-02-10 17:40:08,585 | INFO | App URL: tcp://localhost:42474
+2026-02-10 17:40:08,585 | INFO | Starting Flet View app...
+2026-02-10 17:40:08,586 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:40:08,587 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:40:09,157 | INFO | App session started
+2026-02-10 17:40:09,160 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:40:30,520 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1.md
+2026-02-10 17:40:32,211 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 17:40:33,890 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\context_menu.py", line 35, in <lambda>
+    on_click=lambda ev, func=action: [func(ev, w, tile), self.close_menu()],
+                                      ~~~~^^^^^^^^^^^^^
+TypeError: EditorMenu.get_directory_tree.<locals>.<lambda>() takes from 1 to 2 positional arguments but 3 were given
+2026-02-10 17:40:55,452 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:40:55,454 | INFO | Starting up TCP server on localhost:16409
+2026-02-10 17:40:55,462 | INFO | Flet app has started...
+2026-02-10 17:40:55,472 | INFO | App URL: tcp://localhost:16409
+2026-02-10 17:40:55,472 | INFO | Starting Flet View app...
+2026-02-10 17:40:55,473 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:40:55,474 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:40:56,232 | INFO | App session started
+2026-02-10 17:40:56,234 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:41:50,242 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:41:50,246 | INFO | Starting up TCP server on localhost:3655
+2026-02-10 17:41:50,256 | INFO | Flet app has started...
+2026-02-10 17:41:50,269 | INFO | App URL: tcp://localhost:3655
+2026-02-10 17:41:50,269 | INFO | Starting Flet View app...
+2026-02-10 17:41:50,271 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:41:50,272 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:41:50,739 | INFO | App session started
+2026-02-10 17:42:42,522 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:42:42,526 | INFO | Starting up TCP server on localhost:17361
+2026-02-10 17:42:42,536 | INFO | Flet app has started...
+2026-02-10 17:42:42,548 | INFO | App URL: tcp://localhost:17361
+2026-02-10 17:42:42,548 | INFO | Starting Flet View app...
+2026-02-10 17:42:42,552 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:42:42,552 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:42:43,035 | INFO | App session started
+2026-02-10 17:44:14,626 | ERROR | Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\guilh\AppData\Roaming\uv\python\cpython-3.13.3-windows-x86_64-none\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\AppData\Roaming\uv\python\cpython-3.13.3-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Foi forçado o cancelamento de uma conexão existente pelo host remoto
+2026-02-10 17:44:53,135 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:44:53,139 | INFO | Starting up TCP server on localhost:31591
+2026-02-10 17:44:53,150 | INFO | Flet app has started...
+2026-02-10 17:44:53,163 | INFO | App URL: tcp://localhost:31591
+2026-02-10 17:44:53,163 | INFO | Starting Flet View app...
+2026-02-10 17:44:53,165 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:44:53,166 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:44:53,660 | INFO | App session started
+2026-02-10 17:45:56,667 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:45:56,671 | INFO | Starting up TCP server on localhost:15512
+2026-02-10 17:45:56,680 | INFO | Flet app has started...
+2026-02-10 17:45:56,692 | INFO | App URL: tcp://localhost:15512
+2026-02-10 17:45:56,693 | INFO | Starting Flet View app...
+2026-02-10 17:45:56,695 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:45:56,696 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:45:57,231 | INFO | App session started
+2026-02-10 17:48:13,063 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:48:13,068 | INFO | Starting up TCP server on localhost:1304
+2026-02-10 17:48:13,081 | INFO | Flet app has started...
+2026-02-10 17:48:13,097 | INFO | App URL: tcp://localhost:1304
+2026-02-10 17:48:13,098 | INFO | Starting Flet View app...
+2026-02-10 17:48:13,101 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:48:13,101 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:48:13,598 | INFO | App session started
+2026-02-10 17:50:29,200 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:50:29,204 | INFO | Starting up TCP server on localhost:25734
+2026-02-10 17:50:29,214 | INFO | Flet app has started...
+2026-02-10 17:50:29,225 | INFO | App URL: tcp://localhost:25734
+2026-02-10 17:50:29,226 | INFO | Starting Flet View app...
+2026-02-10 17:50:29,228 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:50:29,229 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:50:29,707 | INFO | App session started
+2026-02-10 17:50:46,524 | INFO | GestureDetector(111 - 1498338455184)
+2026-02-10 17:51:05,557 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:51:05,561 | INFO | Starting up TCP server on localhost:3985
+2026-02-10 17:51:05,571 | INFO | Flet app has started...
+2026-02-10 17:51:05,584 | INFO | App URL: tcp://localhost:3985
+2026-02-10 17:51:05,584 | INFO | Starting Flet View app...
+2026-02-10 17:51:05,587 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:51:05,587 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:51:06,081 | INFO | App session started
+2026-02-10 17:51:13,281 | INFO | GestureDetector(111 - 2536788094928)
+2026-02-10 17:51:45,923 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:51:45,927 | INFO | Starting up TCP server on localhost:64723
+2026-02-10 17:51:45,937 | INFO | Flet app has started...
+2026-02-10 17:51:45,948 | INFO | App URL: tcp://localhost:64723
+2026-02-10 17:51:45,948 | INFO | Starting Flet View app...
+2026-02-10 17:51:45,951 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:51:45,951 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:51:46,425 | INFO | App session started
+2026-02-10 17:53:09,167 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:53:09,171 | INFO | Starting up TCP server on localhost:58001
+2026-02-10 17:53:09,180 | INFO | Flet app has started...
+2026-02-10 17:53:09,193 | INFO | App URL: tcp://localhost:58001
+2026-02-10 17:53:09,193 | INFO | Starting Flet View app...
+2026-02-10 17:53:09,196 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:53:09,196 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:53:09,676 | INFO | App session started
+2026-02-10 17:53:24,215 | INFO | Column(111 - 1866429016464)
+2026-02-10 17:54:09,953 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:54:09,955 | INFO | Starting up TCP server on localhost:5142
+2026-02-10 17:54:09,962 | INFO | Flet app has started...
+2026-02-10 17:54:09,974 | INFO | App URL: tcp://localhost:5142
+2026-02-10 17:54:09,974 | INFO | Starting Flet View app...
+2026-02-10 17:54:09,975 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:54:09,975 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:54:10,530 | INFO | App session started
+2026-02-10 17:54:10,532 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:54:14,541 | ERROR | Erro ao mover arquivo: Cannot move a directory 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1' into itself 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1\Untitled 1'.
+2026-02-10 17:57:00,601 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:57:00,603 | INFO | Starting up TCP server on localhost:42334
+2026-02-10 17:57:00,610 | INFO | Flet app has started...
+2026-02-10 17:57:00,619 | INFO | App URL: tcp://localhost:42334
+2026-02-10 17:57:00,620 | INFO | Starting Flet View app...
+2026-02-10 17:57:00,621 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:57:00,621 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:57:01,265 | INFO | App session started
+2026-02-10 17:57:01,267 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:57:01,271 | ERROR | Exception occured 'ExpansionTile' object has no attribute 'value' with C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 17:57:01,272 | ERROR | Exception occured 'ExpansionTile' object has no attribute 'value' with C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:57:02,889 | ERROR | Exception occured 'ExpansionTile' object has no attribute 'value' with C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 17:57:02,890 | ERROR | Exception occured 'ExpansionTile' object has no attribute 'value' with C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:57:16,282 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:57:16,287 | INFO | Starting up TCP server on localhost:36353
+2026-02-10 17:57:16,298 | INFO | Flet app has started...
+2026-02-10 17:57:16,310 | INFO | App URL: tcp://localhost:36353
+2026-02-10 17:57:16,310 | INFO | Starting Flet View app...
+2026-02-10 17:57:16,314 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:57:16,314 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:57:16,805 | INFO | App session started
+2026-02-10 17:58:00,258 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:58:00,260 | INFO | Starting up TCP server on localhost:5928
+2026-02-10 17:58:00,268 | INFO | Flet app has started...
+2026-02-10 17:58:00,279 | INFO | App URL: tcp://localhost:5928
+2026-02-10 17:58:00,279 | INFO | Starting Flet View app...
+2026-02-10 17:58:00,281 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:58:00,281 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:58:00,754 | INFO | App session started
+2026-02-10 17:58:00,757 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:58:17,118 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:58:17,119 | INFO | Starting up TCP server on localhost:42192
+2026-02-10 17:58:17,126 | INFO | Flet app has started...
+2026-02-10 17:58:17,134 | INFO | App URL: tcp://localhost:42192
+2026-02-10 17:58:17,135 | INFO | Starting Flet View app...
+2026-02-10 17:58:17,136 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:58:17,137 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:58:17,586 | INFO | App session started
+2026-02-10 17:58:17,589 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 17:58:20,829 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1.md
+2026-02-10 17:58:32,690 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 17:58:34,953 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 17:59:31,929 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 17:59:31,931 | INFO | Starting up TCP server on localhost:1143
+2026-02-10 17:59:31,938 | INFO | Flet app has started...
+2026-02-10 17:59:31,948 | INFO | App URL: tcp://localhost:1143
+2026-02-10 17:59:31,948 | INFO | Starting Flet View app...
+2026-02-10 17:59:31,952 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:59:31,952 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 17:59:32,418 | INFO | App session started
+2026-02-10 17:59:32,422 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:11:46,916 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:11:46,918 | INFO | Starting up TCP server on localhost:48541
+2026-02-10 18:11:46,926 | INFO | Flet app has started...
+2026-02-10 18:11:46,935 | INFO | App URL: tcp://localhost:48541
+2026-02-10 18:11:46,935 | INFO | Starting Flet View app...
+2026-02-10 18:11:46,937 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:11:46,937 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:11:47,445 | INFO | App session started
+2026-02-10 18:11:47,448 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:11:47,454 | ERROR | Exception occured Container.__init__() got an unexpected keyword argument 'constraints' with C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:12:10,156 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:12:10,158 | INFO | Starting up TCP server on localhost:3083
+2026-02-10 18:12:10,164 | INFO | Flet app has started...
+2026-02-10 18:12:10,173 | INFO | App URL: tcp://localhost:3083
+2026-02-10 18:12:10,173 | INFO | Starting Flet View app...
+2026-02-10 18:12:10,174 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:12:10,175 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:12:10,619 | INFO | App session started
+2026-02-10 18:12:10,621 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:12:10,625 | ERROR | Exception occured module 'flet' has no attribute 'Opacity' with C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:12:21,941 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:12:21,943 | INFO | Starting up TCP server on localhost:22906
+2026-02-10 18:12:21,949 | INFO | Flet app has started...
+2026-02-10 18:12:21,960 | INFO | App URL: tcp://localhost:22906
+2026-02-10 18:12:21,960 | INFO | Starting Flet View app...
+2026-02-10 18:12:21,962 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:12:21,962 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:12:22,447 | INFO | App session started
+2026-02-10 18:12:22,450 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:12:22,456 | ERROR | Exception occured Draggable.__init__() got an unexpected keyword argument 'on_drag_end' with C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:12:38,888 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:12:38,889 | INFO | Starting up TCP server on localhost:31127
+2026-02-10 18:12:38,895 | INFO | Flet app has started...
+2026-02-10 18:12:38,906 | INFO | App URL: tcp://localhost:31127
+2026-02-10 18:12:38,906 | INFO | Starting Flet View app...
+2026-02-10 18:12:38,907 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:12:38,907 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:12:39,430 | INFO | App session started
+2026-02-10 18:12:39,433 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:12:40,847 | ERROR | Unhandled error in 'on_drag_start' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+TypeError: DirectoryUtils._on_drag_start() missing 1 required positional argument: 'tile_wrapper'
+2026-02-10 18:13:13,036 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:13:13,038 | INFO | Starting up TCP server on localhost:54069
+2026-02-10 18:13:13,047 | INFO | Flet app has started...
+2026-02-10 18:13:13,057 | INFO | App URL: tcp://localhost:54069
+2026-02-10 18:13:13,057 | INFO | Starting Flet View app...
+2026-02-10 18:13:13,058 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:13:13,059 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:13:13,580 | INFO | App session started
+2026-02-10 18:13:13,583 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:13:13,587 | ERROR | Exception occured DirectoryUtils._on_drag_start() missing 1 required positional argument: 'tile_wrapper' with C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:13:41,984 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:13:41,985 | INFO | Starting up TCP server on localhost:54701
+2026-02-10 18:13:41,992 | INFO | Flet app has started...
+2026-02-10 18:13:42,003 | INFO | App URL: tcp://localhost:54701
+2026-02-10 18:13:42,003 | INFO | Starting Flet View app...
+2026-02-10 18:13:42,004 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:13:42,005 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:13:42,497 | INFO | App session started
+2026-02-10 18:13:42,499 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:14:07,619 | ERROR | Erro ao mover arquivo: Cannot move a directory 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1' into itself 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1\Untitled 1'.
+2026-02-10 18:14:11,118 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1
+2026-02-10 18:15:18,978 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:15:18,980 | INFO | Starting up TCP server on localhost:32187
+2026-02-10 18:15:18,986 | INFO | Flet app has started...
+2026-02-10 18:15:18,997 | INFO | App URL: tcp://localhost:32187
+2026-02-10 18:15:18,997 | INFO | Starting Flet View app...
+2026-02-10 18:15:18,998 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:15:18,999 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:15:19,470 | INFO | App session started
+2026-02-10 18:15:19,473 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:15:27,849 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 18:15:29,392 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1
+2026-02-10 18:15:30,907 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 18:18:17,814 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:18:17,816 | INFO | Starting up TCP server on localhost:16930
+2026-02-10 18:18:17,823 | INFO | Flet app has started...
+2026-02-10 18:18:17,833 | INFO | App URL: tcp://localhost:16930
+2026-02-10 18:18:17,833 | INFO | Starting Flet View app...
+2026-02-10 18:18:17,835 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:18:17,835 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:18:18,293 | INFO | App session started
+2026-02-10 18:18:18,295 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:19:24,450 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:19:24,452 | INFO | Starting up TCP server on localhost:62117
+2026-02-10 18:19:24,459 | INFO | Flet app has started...
+2026-02-10 18:19:24,470 | INFO | App URL: tcp://localhost:62117
+2026-02-10 18:19:24,470 | INFO | Starting Flet View app...
+2026-02-10 18:19:24,472 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:19:24,472 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:19:24,955 | INFO | App session started
+2026-02-10 18:19:24,958 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:19:42,362 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:19:42,364 | INFO | Starting up TCP server on localhost:49481
+2026-02-10 18:19:42,370 | INFO | Flet app has started...
+2026-02-10 18:19:42,379 | INFO | App URL: tcp://localhost:49481
+2026-02-10 18:19:42,379 | INFO | Starting Flet View app...
+2026-02-10 18:19:42,380 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:19:42,381 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:19:42,862 | INFO | App session started
+2026-02-10 18:19:42,865 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:19:51,355 | ERROR | Erro ao mover arquivo: Cannot move a directory 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1' into itself 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1\Untitled 1'.
+2026-02-10 18:57:24,321 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:57:24,326 | INFO | Starting up TCP server on localhost:21551
+2026-02-10 18:57:24,335 | INFO | Flet app has started...
+2026-02-10 18:57:24,349 | INFO | App URL: tcp://localhost:21551
+2026-02-10 18:57:24,349 | INFO | Starting Flet View app...
+2026-02-10 18:57:24,352 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:57:24,353 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:57:24,835 | INFO | App session started
+2026-02-10 18:58:36,150 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1
+2026-02-10 18:59:23,277 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 18:59:23,279 | INFO | Starting up TCP server on localhost:25728
+2026-02-10 18:59:23,286 | INFO | Flet app has started...
+2026-02-10 18:59:23,297 | INFO | App URL: tcp://localhost:25728
+2026-02-10 18:59:23,297 | INFO | Starting Flet View app...
+2026-02-10 18:59:23,298 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:59:23,299 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 18:59:23,796 | INFO | App session started
+2026-02-10 18:59:23,799 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 18:59:27,213 | ERROR | Erro ao mover arquivo: Cannot move a directory 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1' into itself 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1\Untitled 1'.
+2026-02-10 19:05:27,246 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:05:27,249 | INFO | Starting up TCP server on localhost:47557
+2026-02-10 19:05:27,256 | INFO | Flet app has started...
+2026-02-10 19:05:27,269 | INFO | App URL: tcp://localhost:47557
+2026-02-10 19:05:27,269 | INFO | Starting Flet View app...
+2026-02-10 19:05:27,271 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:05:27,271 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:05:27,761 | INFO | App session started
+2026-02-10 19:05:27,764 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:05:33,763 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:05:41,176 | ERROR | Erro ao mover arquivo: Cannot move a directory 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1' into itself 'C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1\Untitled 1'.
+2026-02-10 19:06:00,427 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:06:00,428 | INFO | Starting up TCP server on localhost:28037
+2026-02-10 19:06:00,436 | INFO | Flet app has started...
+2026-02-10 19:06:00,447 | INFO | App URL: tcp://localhost:28037
+2026-02-10 19:06:00,447 | INFO | Starting Flet View app...
+2026-02-10 19:06:00,449 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:06:00,449 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:06:00,933 | INFO | App session started
+2026-02-10 19:06:00,936 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:10:07,076 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:10:07,079 | INFO | Starting up TCP server on localhost:1417
+2026-02-10 19:10:07,088 | INFO | Flet app has started...
+2026-02-10 19:10:07,100 | INFO | App URL: tcp://localhost:1417
+2026-02-10 19:10:07,100 | INFO | Starting Flet View app...
+2026-02-10 19:10:07,102 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:10:07,103 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:10:07,586 | INFO | App session started
+2026-02-10 19:21:21,320 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:21:21,323 | INFO | Starting up TCP server on localhost:27530
+2026-02-10 19:21:21,331 | INFO | Flet app has started...
+2026-02-10 19:21:21,341 | INFO | App URL: tcp://localhost:27530
+2026-02-10 19:21:21,341 | INFO | Starting Flet View app...
+2026-02-10 19:21:21,342 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:21:21,343 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:21:21,829 | INFO | App session started
+2026-02-10 19:21:21,831 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:21:25,131 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Renaming.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1\Renaming.md
+2026-02-10 19:21:26,704 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1\Renaming.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Renaming.md
+2026-02-10 19:21:30,738 | INFO | Column(95 - 2504319161744)
+2026-02-10 19:21:30,744 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled .md
+2026-02-10 19:21:34,822 | INFO | Column(95 - 2504319161744)
+2026-02-10 19:21:34,825 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:21:35,777 | INFO | Column(95 - 2504319161744)
+2026-02-10 19:21:35,782 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:21:36,795 | INFO | Column(95 - 2504319161744)
+2026-02-10 19:21:36,799 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:21:38,467 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 47, in <lambda>
+    on_click=lambda e: self.handler.on_file_click(e, on_file_open)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 54, in on_file_click
+    if self.selected_tile == e.control:
+       ^^^^^^^^^^^^^^^^^^
+AttributeError: 'DirectoryUtils' object has no attribute 'selected_tile'
+2026-02-10 19:21:50,225 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:21:50,226 | INFO | Starting up TCP server on localhost:38814
+2026-02-10 19:21:50,233 | INFO | Flet app has started...
+2026-02-10 19:21:50,243 | INFO | App URL: tcp://localhost:38814
+2026-02-10 19:21:50,243 | INFO | Starting Flet View app...
+2026-02-10 19:21:50,244 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:21:50,245 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:21:50,994 | INFO | App session started
+2026-02-10 19:21:50,997 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:21:51,740 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 47, in <lambda>
+    on_click=lambda e: self.handler.on_file_click(e, on_file_open)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 54, in on_file_click
+    if self.selected_tile == e.control:
+       ^^^^^^^^^^^^^^^^^^
+AttributeError: 'DirectoryUtils' object has no attribute 'selected_tile'
+2026-02-10 19:22:21,014 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:22:21,016 | INFO | Starting up TCP server on localhost:32238
+2026-02-10 19:22:21,024 | INFO | Flet app has started...
+2026-02-10 19:22:21,035 | INFO | App URL: tcp://localhost:32238
+2026-02-10 19:22:21,036 | INFO | Starting Flet View app...
+2026-02-10 19:22:21,037 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:22:21,038 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:22:21,768 | INFO | App session started
+2026-02-10 19:22:21,771 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:30,230 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:30,937 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:31,095 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:31,190 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:31,393 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:31,426 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:31,645 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:31,740 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:31,928 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:32,053 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:32,209 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:32,414 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:32,539 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:32,665 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:32,774 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:32,897 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:33,086 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:33,149 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:33,304 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:33,556 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:33,713 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:33,868 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:33,962 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:34,104 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:34,230 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:34,635 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:34,802 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:34,958 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:35,114 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:35,378 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:35,472 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:35,597 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:35,738 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:35,927 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:36,100 | INFO | data controls C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:37,492 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 47, in <lambda>
+    on_click=lambda e: self.handler.on_file_click(e, on_file_open)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 64, in on_file_click
+    self.selected_tile.update()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 253, in update
+    if not self.page:
+           ^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 200, in page
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: ListTile(36) Control must be added to the page first
+2026-02-10 19:22:43,823 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:22:43,824 | INFO | Starting up TCP server on localhost:53869
+2026-02-10 19:22:43,833 | INFO | Flet app has started...
+2026-02-10 19:22:43,844 | INFO | App URL: tcp://localhost:53869
+2026-02-10 19:22:43,844 | INFO | Starting Flet View app...
+2026-02-10 19:22:43,848 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:22:43,848 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:22:44,328 | INFO | App session started
+2026-02-10 19:22:44,330 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:48,279 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1
+2026-02-10 19:22:49,515 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled\Untitled 1 -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:22:50,382 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 47, in <lambda>
+    on_click=lambda e: self.handler.on_file_click(e, on_file_open)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 64, in on_file_click
+    self.selected_tile.update()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 253, in update
+    if not self.page:
+           ^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 200, in page
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: ListTile(36) Control must be added to the page first
+2026-02-10 19:22:54,979 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:22:54,981 | INFO | Starting up TCP server on localhost:39715
+2026-02-10 19:22:54,988 | INFO | Flet app has started...
+2026-02-10 19:22:54,997 | INFO | App URL: tcp://localhost:39715
+2026-02-10 19:22:54,997 | INFO | Starting Flet View app...
+2026-02-10 19:22:54,999 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:22:54,999 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:22:55,498 | INFO | App session started
+2026-02-10 19:22:55,500 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:22:57,165 | INFO | Column(59 - 1958001586448)
+2026-02-10 19:22:57,168 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Trocando o nome do bichinho.md
+2026-02-10 19:22:58,750 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 342, in _trigger_event
+    event_handler()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 99, in create_and_open_new_markdown
+    self.handler.on_file_click(self.load_file_to_editor)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DirectoryUtils.on_file_click() missing 1 required positional argument: 'on_file_open'
+2026-02-10 19:33:51,468 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:33:51,470 | INFO | Starting up TCP server on localhost:47461
+2026-02-10 19:33:51,478 | INFO | Flet app has started...
+2026-02-10 19:33:51,488 | INFO | App URL: tcp://localhost:47461
+2026-02-10 19:33:51,488 | INFO | Starting Flet View app...
+2026-02-10 19:33:51,490 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:33:51,490 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:33:52,091 | INFO | App session started
+2026-02-10 19:33:52,093 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:33:53,030 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 342, in _trigger_event
+    event_handler()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 99, in create_and_open_new_markdown
+    self.handler.on_file_selected(self.file_tree_column, self.load_file_to_editor)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 52, in on_file_selected
+    if isinstance(e.control, ft.ExpansionTile):
+                  ^^^^^^^^^
+AttributeError: 'Column' object has no attribute 'control'. Did you mean: 'controls'?
+2026-02-10 19:41:12,853 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:41:12,855 | INFO | Starting up TCP server on localhost:10086
+2026-02-10 19:41:12,862 | INFO | Flet app has started...
+2026-02-10 19:41:12,873 | INFO | App URL: tcp://localhost:10086
+2026-02-10 19:41:12,873 | INFO | Starting Flet View app...
+2026-02-10 19:41:12,874 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:41:12,874 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:41:13,408 | INFO | App session started
+2026-02-10 19:41:13,410 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:46:37,655 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:46:37,657 | INFO | Starting up TCP server on localhost:63587
+2026-02-10 19:46:37,665 | INFO | Flet app has started...
+2026-02-10 19:46:37,675 | INFO | App URL: tcp://localhost:63587
+2026-02-10 19:46:37,675 | INFO | Starting Flet View app...
+2026-02-10 19:46:37,677 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:46:37,677 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:46:38,165 | INFO | App session started
+2026-02-10 19:46:38,168 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:46:41,183 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 342, in _trigger_event
+    event_handler()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 99, in create_and_open_new_markdown
+    self.handler.on_file_selected(self.file_tree_column, self.load_file_to_editor)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\utils\file_handler.py", line 52, in on_file_selected
+    if isinstance(e.control, ft.ExpansionTile):
+                  ^^^^^^^^^
+AttributeError: 'Column' object has no attribute 'control'. Did you mean: 'controls'?
+2026-02-10 19:48:05,947 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:48:05,949 | INFO | Starting up TCP server on localhost:1706
+2026-02-10 19:48:05,956 | INFO | Flet app has started...
+2026-02-10 19:48:05,966 | INFO | App URL: tcp://localhost:1706
+2026-02-10 19:48:05,966 | INFO | Starting Flet View app...
+2026-02-10 19:48:05,967 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:48:05,967 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:48:06,534 | INFO | App session started
+2026-02-10 19:48:06,536 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:48:14,745 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:14,751 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:48:16,865 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:16,870 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:48:17,659 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:17,663 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:48:19,799 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:19,803 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:48:20,640 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:20,643 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:48:22,300 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:22,303 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:48:24,077 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:24,079 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:48:25,843 | INFO | Column(77 - 2130683331280)
+2026-02-10 19:48:25,843 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:50:02,284 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:50:02,287 | INFO | Starting up TCP server on localhost:48712
+2026-02-10 19:50:02,295 | INFO | Flet app has started...
+2026-02-10 19:50:02,306 | INFO | App URL: tcp://localhost:48712
+2026-02-10 19:50:02,307 | INFO | Starting Flet View app...
+2026-02-10 19:50:02,308 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:50:02,309 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:50:02,794 | INFO | App session started
+2026-02-10 19:50:02,796 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:50:12,072 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:50:12,072 | INFO | final_path None
+2026-02-10 19:50:34,189 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:50:34,190 | INFO | final_path None
+2026-02-10 19:50:34,191 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:50:34,191 | INFO | final_path None
+2026-02-10 19:50:35,706 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:50:35,706 | INFO | final_path None
+2026-02-10 19:50:35,707 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:50:35,707 | INFO | final_path None
+2026-02-10 19:50:35,708 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:50:35,708 | INFO | final_path None
+2026-02-10 19:50:36,658 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:50:36,658 | INFO | final_path None
+2026-02-10 19:50:36,659 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:50:36,659 | INFO | final_path None
+2026-02-10 19:50:36,660 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:50:36,660 | INFO | final_path None
+2026-02-10 19:50:36,660 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:50:36,661 | INFO | final_path None
+2026-02-10 19:51:01,768 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:51:01,770 | INFO | Starting up TCP server on localhost:57405
+2026-02-10 19:51:01,777 | INFO | Flet app has started...
+2026-02-10 19:51:01,786 | INFO | App URL: tcp://localhost:57405
+2026-02-10 19:51:01,786 | INFO | Starting Flet View app...
+2026-02-10 19:51:01,788 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:51:01,788 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:51:02,312 | INFO | App session started
+2026-02-10 19:51:02,315 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:51:02,319 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:02,319 | INFO | final_path None
+2026-02-10 19:51:02,320 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:02,321 | INFO | final_path None
+2026-02-10 19:51:02,321 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:02,321 | INFO | final_path None
+2026-02-10 19:51:02,322 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:02,322 | INFO | final_path None
+2026-02-10 19:51:03,912 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:04,577 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:04,578 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:04,579 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:04,579 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:04,580 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:04,580 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:04,580 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:04,580 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:11,464 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:11,464 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:11,465 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:11,465 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:11,466 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:11,466 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:11,467 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:11,467 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:11,467 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:11,468 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:13,101 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:13,102 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:13,103 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:13,103 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:13,104 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:13,104 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:13,104 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:13,105 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:13,105 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:51:13,105 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:13,106 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:13,106 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:16,240 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:16,240 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:16,241 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:16,241 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:16,242 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:16,242 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:16,243 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:16,243 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:16,244 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:51:16,244 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:16,244 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:51:16,245 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:16,245 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:16,245 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:18,485 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:19,387 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:51:20,532 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:51:21,288 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:23,115 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:25,795 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:26,829 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:28,006 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:28,007 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:29,451 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:29,452 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:29,452 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:29,452 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:51:31,014 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:31,015 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:31,015 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:51:31,015 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:31,016 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:31,016 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:51:32,306 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:32,307 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:32,307 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:51:32,307 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:32,308 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:51:32,308 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:32,309 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:32,309 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:51:37,073 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:37,073 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:51:37,073 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:51:37,073 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:51:37,074 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:51:37,074 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:51:37,075 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:51:37,075 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:51:37,075 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:37,075 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:51:38,543 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:38,543 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:38,544 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:51:38,544 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:38,545 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:51:38,545 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:38,545 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:51:38,546 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:38,546 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:51:38,546 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:51:38,547 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:51:38,547 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:52:13,593 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:52:13,594 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:13,594 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:13,595 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:13,595 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:52:13,596 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:13,596 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:52:13,596 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:13,597 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:52:13,597 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:13,597 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:52:13,598 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:13,598 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:52:13,598 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:14,780 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:52:14,781 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,781 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:14,781 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,782 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,783 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,783 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:52:14,783 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,784 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:52:14,784 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,785 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:52:14,785 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,785 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:52:14,785 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:14,786 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:52:14,786 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:15,667 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:52:15,667 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,668 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:15,668 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,669 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:15,669 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,670 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,670 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,670 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:52:15,670 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,671 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:52:15,671 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,672 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:52:15,672 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,673 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:52:15,673 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:15,673 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:52:15,673 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:16,423 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:52:16,423 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,424 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:16,424 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,425 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:16,425 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,426 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:16,426 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,426 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,426 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,427 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:52:16,427 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,428 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:52:16,428 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,429 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:52:16,429 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,429 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:52:16,429 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:16,430 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:52:16,430 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:18,640 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:52:18,640 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,641 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:52:18,641 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,642 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:52:18,642 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,643 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:18,643 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,644 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:52:18,644 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,645 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,645 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,646 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:52:18,646 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,646 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:52:18,647 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,647 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:52:18,647 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,648 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:52:18,648 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:18,649 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:52:18,649 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:31,907 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:52:35,173 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:52:36,036 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:52:37,199 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:52:38,526 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:52:39,603 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:52:40,871 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:11,332 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:53:11,334 | INFO | Starting up TCP server on localhost:16059
+2026-02-10 19:53:11,341 | INFO | Flet app has started...
+2026-02-10 19:53:11,350 | INFO | App URL: tcp://localhost:16059
+2026-02-10 19:53:11,350 | INFO | Starting Flet View app...
+2026-02-10 19:53:11,352 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:53:11,352 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:53:12,019 | INFO | App session started
+2026-02-10 19:53:12,022 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:53:12,027 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:12,027 | INFO | final_path None
+2026-02-10 19:53:12,028 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:12,028 | INFO | final_path None
+2026-02-10 19:53:12,029 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:12,029 | INFO | final_path None
+2026-02-10 19:53:12,030 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:53:12,030 | INFO | final_path None
+2026-02-10 19:53:12,961 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:12,961 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:12,962 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:12,962 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:12,963 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:12,963 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:12,964 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:53:12,964 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:12,965 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:53:12,965 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:15,118 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:15,118 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:15,119 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:15,119 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:15,120 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:15,120 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:15,121 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:53:15,121 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:15,122 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:53:15,122 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:15,122 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:53:15,122 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:16,611 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:16,611 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:53:16,612 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:16,612 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:53:16,613 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:16,613 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:53:16,614 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:53:16,614 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:53:16,615 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:53:16,615 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:53:16,615 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:53:16,616 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:53:16,616 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:53:16,616 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:53:17,724 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:17,724 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:17,725 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:17,725 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:17,726 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:17,726 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:17,727 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:53:17,727 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:17,727 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:53:17,727 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:17,728 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:53:17,728 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:17,729 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:53:17,729 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:17,729 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:53:17,729 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:53:24,436 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:53:25,588 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:53:26,384 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:53:27,437 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:53:28,257 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:28,257 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:28,258 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:53:28,258 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:28,259 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:53:28,259 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:28,260 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:53:28,260 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:53:28,261 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:53:28,261 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:55:38,162 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:55:38,164 | INFO | Starting up TCP server on localhost:22534
+2026-02-10 19:55:38,172 | INFO | Flet app has started...
+2026-02-10 19:55:38,183 | INFO | App URL: tcp://localhost:22534
+2026-02-10 19:55:38,183 | INFO | Starting Flet View app...
+2026-02-10 19:55:38,185 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:55:38,185 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:55:38,705 | INFO | App session started
+2026-02-10 19:55:38,707 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:55:38,712 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:55:38,712 | INFO | final_path None
+2026-02-10 19:55:38,713 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:55:38,713 | INFO | final_path None
+2026-02-10 19:55:38,714 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:38,714 | INFO | final_path None
+2026-02-10 19:55:38,715 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:55:38,715 | INFO | final_path None
+2026-02-10 19:55:38,715 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:55:38,715 | INFO | final_path None
+2026-02-10 19:55:41,371 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:55:41,371 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:41,372 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:55:41,372 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:41,374 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:41,374 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:41,375 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:55:41,375 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:41,376 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:55:41,376 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:41,376 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:55:41,377 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:42,510 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:55:42,511 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:42,512 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:55:42,512 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:42,512 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:42,513 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:42,513 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:42,513 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:42,514 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:55:42,514 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:42,515 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:55:42,515 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:42,516 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:55:42,516 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,257 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:55:44,257 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,258 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:55:44,258 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,259 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:44,259 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,260 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,260 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,261 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:55:44,262 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,262 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:55:44,262 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,263 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:55:44,263 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:44,264 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:55:44,264 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:46,349 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:55:46,349 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,350 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:55:46,350 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,351 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:55:46,351 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,352 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:55:46,352 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,353 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:55:46,353 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,353 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:55:46,353 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,354 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:55:46,354 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,355 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:55:46,355 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:55:46,355 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:55:46,356 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 19:56:53,669 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:56:53,671 | INFO | Starting up TCP server on localhost:29639
+2026-02-10 19:56:53,679 | INFO | Flet app has started...
+2026-02-10 19:56:53,688 | INFO | App URL: tcp://localhost:29639
+2026-02-10 19:56:53,689 | INFO | Starting Flet View app...
+2026-02-10 19:56:53,690 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:56:53,690 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:56:54,167 | INFO | App session started
+2026-02-10 19:56:54,170 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:56:54,173 | ERROR | Unhandled error in 'on_route_change' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 318, in _trigger_event
+    await event_handler()
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main.py", line 47, in route_change
+    editor_instance = EditorMenu(page)
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\editor_menu.py", line 38, in __init__
+    self.generic_tile = Tiles()
+                        ~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\tiles_generic.py", line 6, in __init__
+    self.handler = DirectoryUtils(self.selected_tile)
+                                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tiles' object has no attribute 'selected_tile'
+2026-02-10 19:57:05,457 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 19:57:05,459 | INFO | Starting up TCP server on localhost:43053
+2026-02-10 19:57:05,466 | INFO | Flet app has started...
+2026-02-10 19:57:05,476 | INFO | App URL: tcp://localhost:43053
+2026-02-10 19:57:05,476 | INFO | Starting Flet View app...
+2026-02-10 19:57:05,477 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:57:05,478 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 19:57:05,952 | INFO | App session started
+2026-02-10 19:57:05,954 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 19:57:05,959 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:57:05,960 | INFO | final_path None
+2026-02-10 19:57:05,960 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:57:05,961 | INFO | final_path None
+2026-02-10 19:57:05,961 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:57:05,961 | INFO | final_path None
+2026-02-10 19:57:05,962 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:57:05,962 | INFO | final_path None
+2026-02-10 19:57:05,963 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:57:05,963 | INFO | final_path None
+2026-02-10 19:57:05,964 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:57:05,964 | INFO | final_path None
+2026-02-10 19:57:05,964 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:57:05,964 | INFO | final_path None
+2026-02-10 19:57:05,965 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:57:05,965 | INFO | final_path None
+2026-02-10 19:57:05,966 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:57:05,966 | INFO | final_path None
+2026-02-10 19:57:10,481 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 19:57:11,884 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 19:57:13,262 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 19:57:13,946 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 19:57:13,946 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:57:13,947 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 19:57:13,947 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:57:13,948 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 19:57:13,948 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:57:13,949 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 19:57:13,949 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:57:13,949 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 19:57:13,949 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:57:13,950 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 19:57:13,950 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 19:57:13,951 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 19:57:13,951 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5
+2026-02-10 20:02:02,934 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:02:02,936 | INFO | Starting up TCP server on localhost:38624
+2026-02-10 20:02:02,945 | INFO | Flet app has started...
+2026-02-10 20:02:02,956 | INFO | App URL: tcp://localhost:38624
+2026-02-10 20:02:02,957 | INFO | Starting Flet View app...
+2026-02-10 20:02:02,958 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:02:02,959 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:02:03,499 | INFO | App session started
+2026-02-10 20:02:03,502 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:02:03,506 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:02:03,506 | INFO | final_path None
+2026-02-10 20:02:03,507 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:02:03,507 | INFO | final_path None
+2026-02-10 20:02:03,508 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:02:03,508 | INFO | final_path None
+2026-02-10 20:02:03,508 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:02:03,509 | INFO | final_path None
+2026-02-10 20:02:03,509 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:02:03,509 | INFO | final_path None
+2026-02-10 20:02:03,510 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:02:03,510 | INFO | final_path None
+2026-02-10 20:02:03,510 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:02:03,510 | INFO | final_path None
+2026-02-10 20:02:04,796 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:02:04,797 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:04,798 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:02:04,798 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:04,798 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:02:04,798 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:04,799 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:02:04,799 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:04,800 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:02:04,800 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:04,800 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:02:04,801 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:04,801 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:02:04,801 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:04,802 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:02:04,802 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6
+2026-02-10 20:02:11,560 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,560 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,561 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:02:11,561 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,562 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:02:11,562 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,563 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:02:11,563 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,563 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:02:11,563 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,564 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:02:11,564 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,564 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:02:11,565 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,565 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:02:11,565 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:11,566 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:02:11,566 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:17,532 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:17,533 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,533 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:02:17,534 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,534 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:02:17,535 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,535 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:02:17,535 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,536 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:02:17,536 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,536 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:02:17,537 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,537 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:02:17,537 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,538 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:02:17,538 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,538 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7.md
+2026-02-10 20:02:17,539 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:17,539 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:02:17,539 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7
+2026-02-10 20:02:19,903 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:02:19,903 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,904 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,904 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,905 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:02:19,905 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,906 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:02:19,906 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,907 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:02:19,907 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,907 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:02:19,907 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,908 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:02:19,908 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,909 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:02:19,909 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,909 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:02:19,910 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,910 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7.md
+2026-02-10 20:02:19,910 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:02:19,911 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:02:19,911 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:03:31,840 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:03:31,842 | INFO | Starting up TCP server on localhost:46868
+2026-02-10 20:03:31,850 | INFO | Flet app has started...
+2026-02-10 20:03:31,862 | INFO | App URL: tcp://localhost:46868
+2026-02-10 20:03:31,862 | INFO | Starting Flet View app...
+2026-02-10 20:03:31,864 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:03:31,864 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:03:32,372 | INFO | App session started
+2026-02-10 20:03:32,375 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:03:32,380 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:03:32,380 | INFO | final_path None
+2026-02-10 20:03:32,381 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:03:32,382 | INFO | final_path None
+2026-02-10 20:03:32,382 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:03:32,383 | INFO | final_path None
+2026-02-10 20:03:32,383 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:03:32,383 | INFO | final_path None
+2026-02-10 20:03:32,384 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:03:32,384 | INFO | final_path None
+2026-02-10 20:03:32,385 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:03:32,385 | INFO | final_path None
+2026-02-10 20:03:32,385 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:03:32,385 | INFO | final_path None
+2026-02-10 20:03:32,386 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:03:32,386 | INFO | final_path None
+2026-02-10 20:03:32,387 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:03:32,387 | INFO | final_path None
+2026-02-10 20:03:32,388 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7.md
+2026-02-10 20:03:32,388 | INFO | final_path None
+2026-02-10 20:03:32,389 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:03:32,389 | INFO | final_path None
+2026-02-10 20:03:42,758 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:03:42,758 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,759 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:03:42,759 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,760 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:03:42,760 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,761 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:03:42,761 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,761 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:03:42,761 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,762 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:03:42,762 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,763 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:03:42,763 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,763 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:03:42,763 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,764 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:03:42,764 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,765 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7.md
+2026-02-10 20:03:42,765 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,765 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8.md
+2026-02-10 20:03:42,766 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:03:42,766 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:03:42,766 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8
+2026-02-10 20:04:26,200 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:04:26,202 | INFO | Starting up TCP server on localhost:11251
+2026-02-10 20:04:26,210 | INFO | Flet app has started...
+2026-02-10 20:04:26,221 | INFO | App URL: tcp://localhost:11251
+2026-02-10 20:04:26,221 | INFO | Starting Flet View app...
+2026-02-10 20:04:26,222 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:04:26,223 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:04:26,768 | INFO | App session started
+2026-02-10 20:04:26,771 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:04:26,778 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:26,778 | INFO | final_path None
+2026-02-10 20:04:26,779 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:04:26,779 | INFO | final_path None
+2026-02-10 20:04:26,779 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:04:26,780 | INFO | final_path None
+2026-02-10 20:04:26,780 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:04:26,781 | INFO | final_path None
+2026-02-10 20:04:26,781 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:04:26,781 | INFO | final_path None
+2026-02-10 20:04:26,782 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:04:26,782 | INFO | final_path None
+2026-02-10 20:04:26,783 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:04:26,783 | INFO | final_path None
+2026-02-10 20:04:26,783 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:04:26,783 | INFO | final_path None
+2026-02-10 20:04:26,784 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:04:26,784 | INFO | final_path None
+2026-02-10 20:04:26,784 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7.md
+2026-02-10 20:04:26,785 | INFO | final_path None
+2026-02-10 20:04:26,785 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8.md
+2026-02-10 20:04:26,785 | INFO | final_path None
+2026-02-10 20:04:26,786 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:04:26,786 | INFO | final_path None
+2026-02-10 20:04:28,099 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-10 20:04:28,824 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3.md
+2026-02-10 20:04:32,388 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4.md
+2026-02-10 20:04:33,143 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 5.md
+2026-02-10 20:04:33,836 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 6.md
+2026-02-10 20:04:34,446 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 7.md
+2026-02-10 20:04:36,949 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 8.md
+2026-02-10 20:04:37,708 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:04:38,575 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:04:39,284 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:39,284 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:39,285 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:04:39,285 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:39,286 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:04:39,286 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:39,287 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:04:39,287 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:43,722 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:43,723 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:04:43,723 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:04:43,723 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:04:43,724 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:04:43,724 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:04:43,725 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:04:43,725 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:04:43,726 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:04:43,726 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:04:50,195 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:04:50,196 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:04:50,197 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:04:50,197 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:04:50,197 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:04:50,198 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:04:50,198 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:04:50,198 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:04:50,199 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:04:50,200 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:04:50,200 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:04:50,200 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:08:02,034 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:08:02,036 | INFO | Starting up TCP server on localhost:42828
+2026-02-10 20:08:02,045 | INFO | Flet app has started...
+2026-02-10 20:08:02,060 | INFO | App URL: tcp://localhost:42828
+2026-02-10 20:08:02,063 | INFO | Starting Flet View app...
+2026-02-10 20:08:02,071 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:08:02,073 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:08:02,769 | INFO | App session started
+2026-02-10 20:08:02,773 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:08:02,780 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:08:02,781 | INFO | final_path None
+2026-02-10 20:08:02,782 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:02,782 | INFO | final_path None
+2026-02-10 20:08:02,783 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:08:02,783 | INFO | final_path None
+2026-02-10 20:08:02,785 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:08:02,785 | INFO | final_path None
+2026-02-10 20:08:02,786 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:08:02,786 | INFO | final_path None
+2026-02-10 20:08:02,788 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:08:02,788 | INFO | final_path None
+2026-02-10 20:08:03,775 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:08:03,776 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:03,777 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:03,778 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:03,779 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:08:03,780 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:03,781 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:08:03,781 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:03,783 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:08:03,784 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:03,785 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:08:03,785 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:03,786 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:08:03,786 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:29,410 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:08:29,413 | INFO | Starting up TCP server on localhost:17002
+2026-02-10 20:08:29,421 | INFO | Flet app has started...
+2026-02-10 20:08:29,434 | INFO | App URL: tcp://localhost:17002
+2026-02-10 20:08:29,434 | INFO | Starting Flet View app...
+2026-02-10 20:08:29,436 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:08:29,437 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:08:29,918 | INFO | App session started
+2026-02-10 20:08:29,920 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:08:29,925 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:08:29,925 | INFO | final_path None
+2026-02-10 20:08:29,926 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:08:29,926 | INFO | final_path None
+2026-02-10 20:08:29,927 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:08:29,927 | INFO | final_path None
+2026-02-10 20:08:29,928 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:08:29,928 | INFO | final_path None
+2026-02-10 20:08:29,928 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:08:29,929 | INFO | final_path None
+2026-02-10 20:08:29,929 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:08:29,930 | INFO | final_path None
+2026-02-10 20:08:29,930 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:08:29,930 | INFO | final_path None
+2026-02-10 20:08:59,035 | INFO | New Vault path: Pick a place to create the Aura + Ego\
+2026-02-10 20:18:09,498 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:18:09,500 | INFO | Starting up TCP server on localhost:62103
+2026-02-10 20:18:09,509 | INFO | Flet app has started...
+2026-02-10 20:18:09,521 | INFO | App URL: tcp://localhost:62103
+2026-02-10 20:18:09,521 | INFO | Starting Flet View app...
+2026-02-10 20:18:09,522 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:18:09,523 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:18:10,048 | INFO | App session started
+2026-02-10 20:18:10,051 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:18:10,056 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:18:10,056 | INFO | final_path None
+2026-02-10 20:18:10,057 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:18:10,058 | INFO | final_path None
+2026-02-10 20:18:10,059 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:18:10,059 | INFO | final_path None
+2026-02-10 20:18:10,059 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:18:10,060 | INFO | final_path None
+2026-02-10 20:18:10,060 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:18:10,061 | INFO | final_path None
+2026-02-10 20:18:10,061 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:18:10,062 | INFO | final_path None
+2026-02-10 20:18:10,062 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:18:10,062 | INFO | final_path None
+2026-02-10 20:20:18,415 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:20:18,421 | INFO | Starting up TCP server on localhost:30164
+2026-02-10 20:20:18,435 | INFO | Flet app has started...
+2026-02-10 20:20:18,450 | INFO | App URL: tcp://localhost:30164
+2026-02-10 20:20:18,451 | INFO | Starting Flet View app...
+2026-02-10 20:20:18,455 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:20:18,456 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:20:19,093 | INFO | App session started
+2026-02-10 20:21:38,209 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:21:38,213 | INFO | Starting up TCP server on localhost:59534
+2026-02-10 20:21:38,223 | INFO | Flet app has started...
+2026-02-10 20:21:38,235 | INFO | App URL: tcp://localhost:59534
+2026-02-10 20:21:38,235 | INFO | Starting Flet View app...
+2026-02-10 20:21:38,238 | INFO | Looking for Flet executable at: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:21:38,238 | INFO | Flet View found in: c:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:21:38,841 | INFO | App session started
+2026-02-10 20:26:11,427 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:26:11,430 | INFO | Starting up TCP server on localhost:8440
+2026-02-10 20:26:11,438 | INFO | Flet app has started...
+2026-02-10 20:26:11,452 | INFO | App URL: tcp://localhost:8440
+2026-02-10 20:26:11,452 | INFO | Starting Flet View app...
+2026-02-10 20:26:11,454 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:26:11,454 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:26:11,949 | INFO | App session started
+2026-02-10 20:26:11,951 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:26:11,956 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:26:11,956 | INFO | final_path None
+2026-02-10 20:26:11,957 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:26:11,957 | INFO | final_path None
+2026-02-10 20:26:11,958 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:26:11,958 | INFO | final_path None
+2026-02-10 20:26:11,958 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:26:11,959 | INFO | final_path None
+2026-02-10 20:26:11,959 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:26:11,959 | INFO | final_path None
+2026-02-10 20:26:11,960 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:26:11,960 | INFO | final_path None
+2026-02-10 20:26:11,961 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:26:11,961 | INFO | final_path None
+2026-02-10 20:29:19,940 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:29:19,942 | INFO | Starting up TCP server on localhost:58324
+2026-02-10 20:29:19,949 | INFO | Flet app has started...
+2026-02-10 20:29:19,959 | INFO | App URL: tcp://localhost:58324
+2026-02-10 20:29:19,959 | INFO | Starting Flet View app...
+2026-02-10 20:29:19,960 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:29:19,961 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:29:20,455 | INFO | App session started
+2026-02-10 20:29:20,458 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:29:20,462 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:29:20,462 | INFO | final_path None
+2026-02-10 20:29:20,463 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:29:20,463 | INFO | final_path None
+2026-02-10 20:29:20,464 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:29:20,465 | INFO | final_path None
+2026-02-10 20:29:20,465 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:29:20,465 | INFO | final_path None
+2026-02-10 20:29:20,466 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:29:20,466 | INFO | final_path None
+2026-02-10 20:29:20,467 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:29:20,467 | INFO | final_path None
+2026-02-10 20:29:20,467 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:29:20,468 | INFO | final_path None
+2026-02-10 20:29:27,021 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main_menu.py", line 119, in <lambda>
+    ft.Button(content="Create", color="#028268", height=40,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)), on_click=lambda e: self.create_and_open_new_vault(e))
+                                                                                                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main_menu.py", line 29, in create_and_open_new_vault
+    if self.path_editor and new_dir:
+       ^^^^^^^^^^^^^^^^
+AttributeError: 'MainEditorMenu' object has no attribute 'path_editor'. Did you mean: 'open_editor'?
+2026-02-10 20:29:56,209 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-10 20:29:56,211 | INFO | Starting up TCP server on localhost:1935
+2026-02-10 20:29:56,217 | INFO | Flet app has started...
+2026-02-10 20:29:56,229 | INFO | App URL: tcp://localhost:1935
+2026-02-10 20:29:56,229 | INFO | Starting Flet View app...
+2026-02-10 20:29:56,230 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:29:56,230 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-10 20:29:56,691 | INFO | App session started
+2026-02-10 20:29:56,694 | INFO | Manager: C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-10 20:29:56,698 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-10 20:29:56,698 | INFO | final_path None
+2026-02-10 20:29:56,699 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-10 20:29:56,699 | INFO | final_path None
+2026-02-10 20:29:56,700 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-10 20:29:56,701 | INFO | final_path None
+2026-02-10 20:29:56,702 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-10 20:29:56,702 | INFO | final_path None
+2026-02-10 20:29:56,703 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-10 20:29:56,703 | INFO | final_path None
+2026-02-10 20:29:56,703 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-10 20:29:56,704 | INFO | final_path None
+2026-02-10 20:29:56,704 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-10 20:29:56,704 | INFO | final_path None
+2026-02-10 20:30:00,122 | INFO | Not all information was put
+2026-02-10 20:30:03,667 | INFO | Not all information was put
+2026-02-10 20:30:07,373 | INFO | New Vault path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\sa

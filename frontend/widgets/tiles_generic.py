@@ -2,77 +2,45 @@ import flet as ft
 from frontend.utils.file_handler import DirectoryUtils
 
 class Tiles():
-    def __init__(self, on_file_open):
+    def __init__(self):
         self.selected_tile = None
-        self.on_file_open = on_file_open
         self.handler = DirectoryUtils()
-        pass
-
-    def _handle_tile_change(self, e: ft.Event[ft.ExpansionTile]):
-        self._on_file_click(e)
-        e.control.leading.icon = (
-            ft.Icons.KEYBOARD_ARROW_RIGHT   
-            if e.control.leading.icon == ft.Icons.KEYBOARD_ARROW_DOWN  
-            else ft.Icons.KEYBOARD_ARROW_DOWN
-        )
-        e.page.update()
 
 
-    def _on_file_click(self, e: ft.Event[ft.ExpansionTile]):
-        if isinstance(e.control, ft.ExpansionTile):
-            return 
-
-        if self.selected_tile == e.control:
-            e.control.shape = ft.RoundedRectangleBorder(side=ft.BorderSide(width=1,  color="#D4D4D4"), radius=5)
-            e.control.update()
-            return 
-
-        
-        if self.selected_tile:
-            self.selected_tile.bgcolor = ft.Colors.TRANSPARENT
-            self.selected_tile.shape = None
-            self.selected_tile.update()
-            
-        e.control.bgcolor = "#37373d"
-        e.control.shape = None
-        e.control.update()
-
-        self.selected_tile = e.control
-
-        if self.on_file_open:
-            item_name = e.control.title.value
-            full_path = e.control.data
-            self.on_file_open(item_name, full_path)
-
-
-    def generic_expand_tile(self, item: str, full_path: str, recursive_func, refresh_sidebar) -> ft.ExpansionTile:
+    def generic_expand_tile(self, item: str, full_path: str, final_path: str, file_type: str, recursive_func, refresh_sidebar, on_file_open) -> tuple[ft.DragTarget, ft.ExpansionTile]:
         tile = ft.ExpansionTile(
-                            title = ft.Text(item, size=14, color="#A4A5A5", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
-                            leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=12, color="#858585"),
-                            animation_style=ft.AnimationStyle(duration=20, reverse_duration=20),
-                            affinity=ft.TileAffinity.LEADING,
-                            collapsed_shape=ft.RoundedRectangleBorder(),
-                            shape=ft.RoundedRectangleBorder(),
-                            tile_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
-                            data=full_path,
-                            controls_padding=ft.Padding.only(left=20),
-                            controls=[
-                                ft.Container(
-                                    border=ft.Border.only(left=ft.BorderSide(1, "#0C5F49")),
-                                    padding=ft.Padding.only(left=10),
-                                    content=ft.Column(controls=recursive_func(full_path),spacing=0)
-                                    )
-                                ],
-                            on_change=self._handle_tile_change,
-                        )
+                                title = ft.Text(item, size=14, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
+                                leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=12, color="#858585"),
+                                animation_style=ft.AnimationStyle(duration=20, reverse_duration=20),
+                                affinity=ft.TileAffinity.LEADING,
+                                collapsed_shape=ft.RoundedRectangleBorder(),
+                                shape=ft.RoundedRectangleBorder(),
+                                tile_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
+                                data=full_path,
+                                controls_padding=ft.Padding.only(left=20),
+                                controls=[
+                                    ft.Container(
+                                        border=ft.Border.only(left=ft.BorderSide(1, "#0C5F49")),
+                                        padding=ft.Padding.only(left=10),
+                                        content=ft.Column(controls=recursive_func(full_path),spacing=0)
+                                        )
+                                    ],
+                                on_change=lambda e: self.handler.handle_tile_change(e, on_file_open, self.selected_tile),
+                            )
+        if full_path == final_path and file_type.lower() == "folder":
+            tile.collapsed_bgcolor = "#37373d"
+            self.selected_tile = tile
         
-        return ft.DragTarget(
+        wrapper = ft.DragTarget(
             group="folder",
-            content=self.handler.make_draggable(tile, full_path),
+            content=self.handler.make_draggable(tile, full_path, "folder"),
             on_accept=lambda e: self.handler.move_file_on_drop(e, full_path, refresh_sidebar)
         )
     
-    def generic_list_tile(self, item: str, full_path: str, refresh_sidebar) -> ft.ListTile:
+        return wrapper, tile
+    
+
+    def generic_list_tile(self, item: str, full_path: str, final_path: str, file_type: str, refresh_sidebar, on_file_open) -> tuple[ft.DragTarget, ft.ListTile]:
         tile = ft.ListTile(
                             title=ft.Text(item, size=14, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
                             height=50,
@@ -80,11 +48,17 @@ class Tiles():
                             hover_color="black",
                             data=full_path,
                             is_three_line=False,
-                            on_click=lambda e: self._on_file_click(e)
+                            on_click=lambda e: self.handler.on_file_selected(e, on_file_open, self.selected_tile)
                         )
         
-        return ft.DragTarget(
+        if full_path.removesuffix(".md") == final_path and file_type.lower() == "file":
+            tile.bgcolor = "#37373d"
+            self.selected_tile = tile
+        
+        wrapper = ft.DragTarget(
             group="files",
-            content=self.handler.make_draggable(tile, full_path),
+            content=self.handler.make_draggable(tile, full_path, "files"),
             on_accept=lambda e: self.handler.move_file_on_drop(e, full_path, refresh_sidebar)
         )
+        
+        return wrapper, tile

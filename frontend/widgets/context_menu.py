@@ -3,43 +3,93 @@ import os
 import logging
 
 from send2trash import send2trash
+from frontend.utils.color import hover_color_change
 
 class ContextMenu():
-    def __init__(self):
-        self.current_selected_item = None
-        self.directory_column = None
+    def __init__(self, page):
+        self.page = page
+        self.current_menu = None
 
 
-    async def show_context_menu(self, e: ft.TapEvent[ft.GestureDetector]):
-        self.current_selected_item = e.control.content
-        self.directory_column = e.control.parent
-        
-        await self.directory_column.open(
-            local_position=e.local_position,
-            global_position=e.global_position
+    def close_menu(self, e=None):
+        if self.current_menu in self.page.overlay:
+            self.page.overlay.remove(self.current_menu)
+            self.current_menu = None
+            self.page.update()
+
+
+    def show_menu(self, e, w, tile, callbacks):
+        self.close_menu()
+
+        menu_items = []
+        for title, action in callbacks.items():
+            menu_items.append(
+                ft.Container(
+                    content=ft.Row([
+                        ft.Icon(ft.Icons.CIRCLE, size=8, color="#858585"), 
+                        ft.Text(title, size=14, color="#D4D4D4")
+                    ]),
+                    padding=10,
+                    border_radius=4,
+                    on_click=lambda ev, func=action: [func(ev, w, tile), self.close_menu()],
+                    on_hover=lambda e: hover_color_change(e)
+                )
+            )
+
+        card_content = ft.Container(
+            content=ft.Column(controls=menu_items, spacing=0),
+            bgcolor="#1e1e1e", 
+            border=ft.border.all(1, "#333333"),
+            border_radius=8,
+            shadow=ft.BoxShadow(
+                spread_radius=1,
+                blur_radius=15,
+                color=ft.Colors.with_opacity(0.5, "black"),
+            ),
+            padding=5,
+            width=200, 
         )
 
+        self.current_menu = ft.Stack([
+            ft.Container(
+                expand=True,
+                width=self.page.window.width,
+                height=self.page.window.height,
+                bgcolor=ft.Colors.TRANSPARENT,
+                on_click=self.close_menu
+            ),
+            ft.Container(
+                content=card_content,
+                left=e.global_position.x,
+                top=e.global_position.y,
+            )
+        ])
 
-    def revert_to_text(self, tile, name):
+        self.page.overlay.append(self.current_menu)
+        self.page.update()
+
+
+    def _revert_to_text(self, wrapper, tile, name):
         tile.title = ft.Text(
             name, 
             size=14, 
-            color="#A4A5A5", 
+            color="#858585", 
             max_lines=1, 
             overflow=ft.TextOverflow.ELLIPSIS, 
             tooltip=name
         )
-        tile.update()
+        wrapper.update()
     
 
-    def finish_rename(self, e, tile, old_name):
+    def _finish_rename(self, e, wrapper, tile, old_name):
         new_name = tile.title.value
         
         if not new_name or new_name == old_name:
-            self.revert_to_text(tile, old_name)
+            self._revert_to_text(wrapper, tile, old_name)
             return
 
         old_path = tile.data 
+
         parent_dir = os.path.dirname(old_path)
 
         if old_name.endswith(".md"):
@@ -50,37 +100,33 @@ class ContextMenu():
         try:
             os.rename(old_path, new_path)
             tile.data = new_path
-            self.revert_to_text(tile, new_name)
+            self._revert_to_text(wrapper, tile, new_name)
+        
         except Exception as ex:
-            print(f"Erro ao renomear: {ex}")
-            self.revert_to_text(tile, old_name)
-
-        pass
+            logging.info(f"Erro ao renomear: {ex}")
+            self._revert_to_text(wrapper, tile, old_name)
 
     
-    def rename_widget(self):
-        current_name: str = self.current_selected_item.title.value
-        
+    def rename_widget(self, e: ft.TapEvent, parent_wrapper, tile):
+        current_name: str = os.path.basename(tile.data)
+
+        display_name = current_name.removesuffix(".md") if current_name.endswith(".md") else current_name
+
         edit_field = ft.TextField(
-            value=current_name,
+            value=display_name,
             dense=True,
             text_size=14,
             content_padding=5,
             autofocus=True, 
-            on_submit=lambda e: self.finish_rename(e, self.current_selected_item, current_name),
-            on_blur=lambda e: self.finish_rename(e, self.current_selected_item, current_name) 
+            on_submit=lambda e: self._finish_rename(e, parent_wrapper, tile, current_name),
+            on_blur=lambda e: self._finish_rename(e, parent_wrapper, tile, current_name) 
         )
         
-        if current_name.endswith(".md"):
-            correct_name = current_name.strip(".md")
-            edit_field.value = correct_name
-        
-        self.current_selected_item.title = edit_field
-        self.current_selected_item.update()
+        tile.title = edit_field
+        parent_wrapper.update()
 
 
-    def delete_widget(self):
-        tile = self.current_selected_item
+    def delete_widget(self, e: ft.TapEvent, parent_wrapper, tile):
         path_to_delete = tile.data 
         if not path_to_delete:
             return
@@ -89,18 +135,18 @@ class ContextMenu():
                 send2trash(path_to_delete)
             else:
                 send2trash(path_to_delete)   
-
-            main_container = self.directory_column.parent 
-            if main_container and  self.directory_column in main_container.controls:
-                logging.info(main_container)
-                main_container.controls.remove(self.directory_column)
-                main_container.update()
+           
+            gesture_detector = parent_wrapper.parent
+            parent_collum = gesture_detector.parent
+            if parent_collum and gesture_detector in parent_collum.controls:
+                parent_collum.controls.remove(gesture_detector)
+                parent_collum.update()
                 
-            print(f"Sucesso ao deletar: {path_to_delete}")
+            logging.info(f"Sucesso ao deletar: {path_to_delete}")
 
         except Exception as ex:
-            print(f"Erro ao deletar: {ex}")
+            logging.error(f"Erro ao deletar: {ex}")
     
 
-    def open_properties(self):
+    def open_properties(self, e: ft.TapEvent, parent_wrapper, tile):
         pass

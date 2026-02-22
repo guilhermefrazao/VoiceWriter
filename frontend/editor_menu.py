@@ -31,14 +31,14 @@ class EditorMenu():
         self.file_tree_column = None
         self.sidebar = None
         self.current_file_path = str
-        self.context_menu_right_click = ContextMenu()
+        self.context_menu_right_click = ContextMenu(page)
         self.handler = DirectoryUtils()
         self.container = Containers()
         self.recent_manager = RecentManager()
-        self.generic_tile = Tiles(self.load_file_to_editor)
+        self.generic_tile = Tiles()
 
 
-    def get_directory_tree(self, path):
+    def get_directory_tree(self, path, final_path=None, file_type=None):
         controls = []
         try:
             items = sorted(os.listdir(path), key=lambda x: (not os.path.isdir(os.path.join(path, x))))
@@ -46,38 +46,31 @@ class EditorMenu():
             for item in items:
                 full_path = os.path.join(path, item)
 
+                logging.info(f"full_path: {full_path}")
+                logging.info(f"final_path {final_path}")
+                
                 if os.path.isdir(full_path):
-                    tile = self.generic_tile.generic_expand_tile(item, full_path, self.get_directory_tree, self.refresh_sidebar)
+                    wrapper, tile = self.generic_tile.generic_expand_tile(item, full_path, final_path, file_type, self.get_directory_tree, self.refresh_sidebar, self.load_file_to_editor)
                 else:
                     if item.endswith(".md"):
-                        logging.info(f"Saving markdown name: {item}")
-                        tile = self.generic_tile.generic_list_tile(item, full_path, self.refresh_sidebar)
-                        
-                
-                controls.append( 
-                            menu := ft.ContextMenu(
-                            expand=True,
-                            items=[
-                                    ft.PopupMenuItem(
-                                        content="Rename",
-                                        on_click=lambda e: self.context_menu_right_click.rename_widget(),
-                                    ),
-                                    ft.PopupMenuItem(
-                                        content="Delete",
-                                        on_click=lambda e: self.context_menu_right_click.delete_widget(),
-                                    ),
-                                    ft.PopupMenuItem(
-                                        content="Properties",
-                                        on_click=lambda e: self.context_menu_right_click.open_properties(),
-                                    ),
-                                ],
-                            content = ft.GestureDetector(
-                                mouse_cursor=ft.MouseCursor.CONTEXT_MENU,
-                                on_secondary_tap_down=lambda e: asyncio.create_task(self.context_menu_right_click.show_context_menu(e)),
-                                content=tile
-                            )
-                        )
-                    )       
+                        wrapper, tile = self.generic_tile.generic_list_tile(item, full_path, final_path, file_type,  self.refresh_sidebar, self.load_file_to_editor)
+                    else:
+                        continue 
+
+                item_actions = {
+                "Rename": lambda e, w=wrapper, t=tile: self.context_menu_right_click.rename_widget(e, w, t),
+                "Delete": lambda e, w=wrapper, t=tile: self.context_menu_right_click.delete_widget(e, w, t),
+                "Properties": lambda e, w=wrapper, t=tile: self.context_menu_right_click.open_properties(e, w, t)
+                }
+
+
+                controls.append(
+                    ft.GestureDetector(
+                        mouse_cursor=ft.MouseCursor.CONTEXT_MENU,
+                        on_secondary_tap_up=lambda e, w=wrapper, acts=item_actions, t=tile: self.context_menu_right_click.show_menu(e, w, t, acts),
+                        content=wrapper
+                    )
+                )   
                         
         
         except Exception as e:
@@ -86,8 +79,8 @@ class EditorMenu():
         return controls
 
 
-    def refresh_sidebar(self):
-        new_directory_controls = self.get_directory_tree(self.current_file_path)
+    def refresh_sidebar(self, final_path=None, file_type=None):
+        new_directory_controls = self.get_directory_tree(self.current_file_path, final_path, file_type)
         self.file_tree_column.controls = new_directory_controls
         self.file_tree_column.update()
 
@@ -104,20 +97,14 @@ class EditorMenu():
 
 
     def create_and_open_new_markdown(self):
-        final_path, new_name = self.create_new_markdown()
-        self.load_file_to_editor(new_name + ".md", final_path + ".md")
-
-
-    def create_new_markdown(self):
         final_path, new_name = self.handler.name_counter(self.current_file_path, created_type="File")     
-        self.refresh_sidebar()
-
-        return final_path, new_name
-            
+        self.refresh_sidebar(final_path, file_type="file")
+        self.load_file_to_editor(new_name + ".md", final_path + ".md")
+        
 
     def create_new_dir(self):
         final_path, new_name = self.handler.name_counter(self.current_file_path, created_type="Dir")
-        self.refresh_sidebar()
+        self.refresh_sidebar(final_path, file_type="folder")
 
 
     def route_to_main_menu(self, page: ft.Page):
@@ -188,22 +175,10 @@ class EditorMenu():
 
         intial_tree_controls = self.get_directory_tree(path)
 
-        topbar = ft.Container(
-            width=float("inf"),
-            bgcolor="#202020",
-            padding=10,
-            content=ft.Row(
-                controls=[
-                    ft.Text("Editor - Voice Writter", size=12, weight="bold", color="#858585")
-                ],
-            ),
-        )
-
-
         sidebar_icons = ft.Row(
             align=ft.Alignment.CENTER,
             controls=[
-                ft.IconButton(icon=ft.Icons.PASTE, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_markdown),
+                ft.IconButton(icon=ft.Icons.PASTE, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
                 ft.IconButton(icon=ft.Icons.FOLDER, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_dir),
             ]
         )

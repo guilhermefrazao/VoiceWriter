@@ -17,6 +17,7 @@ class MainEditorMenu():
         self.home_menu = ""
         self.folder_path = ""
         self.directory_container = ""
+        self.path_editor = None
         self.editor_menu = EditorMenu(page)
         self.animation = AnimationUtils()
         self.explorer = DirectoryUtils()
@@ -25,18 +26,22 @@ class MainEditorMenu():
    
     def create_and_open_new_vault(self, e: ft.Event[ft.Button]):
         new_dir = self.tf1.content.controls[-1].value
-        
-        original_path = self.tf2.content.controls[0].controls[-1].value
 
-        path = os.path.join(original_path, new_dir)
+        if self.path_editor and new_dir:
+            original_path = self.path_editor
 
-        os.makedirs(path, exist_ok=True)
+            path = os.path.join(original_path, new_dir)
 
-        logging.info(f"New Vault path: {path}")
+            os.makedirs(path, exist_ok=True)
 
-        self.folder_path = path
+            logging.info(f"New Vault path: {path}")
 
-        self.route_to_editor(path, self.recent_folder, self.page)        
+            self.folder_path = path
+
+            self.route_to_editor(path, self.recent_folder, self.page)
+
+        else:
+            logging.info("Not all information was put")        
 
 
     async def open_editor(self, e: ft.Event[ft.Button]):
@@ -52,9 +57,9 @@ class MainEditorMenu():
 
 
     async def select_editor_path(self, e: ft.Event[ft.Button]):
-        path_editor = await self.explorer.open_explorer()
+        self.path_editor = await self.explorer.open_explorer()
 
-        self.tf2.content.controls[0].controls.append(ft.Text(path_editor, size=12, color="#055b5f"))
+        self.tf2.content.controls[0].controls.append(ft.Text(self.path_editor, size=12, color="#055b5f"))
         self.tf2.update()
 
 
