@@ -9530,3 +9530,195 @@ AttributeError: 'MainEditorMenu' object has no attribute 'path_editor'. Did you 
 2026-02-10 20:30:00,122 | INFO | Not all information was put
 2026-02-10 20:30:03,667 | INFO | Not all information was put
 2026-02-10 20:30:07,373 | INFO | New Vault path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\sa
+2026-02-25 18:08:54,847 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:08:54,850 | INFO | Starting up TCP server on localhost:3191
+2026-02-25 18:08:54,857 | INFO | Flet app has started...
+2026-02-25 18:08:54,868 | INFO | App URL: tcp://localhost:3191
+2026-02-25 18:08:54,868 | INFO | Starting Flet View app...
+2026-02-25 18:08:54,870 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:08:54,871 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:08:56,004 | INFO | App session started
+2026-02-25 18:09:02,522 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação\Vídeos importantes.md
+2026-02-25 18:09:02,522 | INFO | final_path None
+2026-02-25 18:09:45,420 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:09:45,421 | INFO | Starting up TCP server on localhost:18742
+2026-02-25 18:09:45,429 | INFO | Flet app has started...
+2026-02-25 18:09:45,439 | INFO | App URL: tcp://localhost:18742
+2026-02-25 18:09:45,439 | INFO | Starting Flet View app...
+2026-02-25 18:09:45,441 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:09:45,441 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:09:45,915 | INFO | App session started
+2026-02-25 18:10:53,020 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:10:53,022 | INFO | Starting up TCP server on localhost:15235
+2026-02-25 18:10:53,029 | INFO | Flet app has started...
+2026-02-25 18:10:53,040 | INFO | App URL: tcp://localhost:15235
+2026-02-25 18:10:53,040 | INFO | Starting Flet View app...
+2026-02-25 18:10:53,041 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:10:53,042 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:10:53,501 | INFO | App session started
+2026-02-25 18:18:44,640 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:18:44,641 | INFO | Starting up TCP server on localhost:5224
+2026-02-25 18:18:44,648 | INFO | Flet app has started...
+2026-02-25 18:18:44,657 | INFO | App URL: tcp://localhost:5224
+2026-02-25 18:18:44,658 | INFO | Starting Flet View app...
+2026-02-25 18:18:44,659 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:18:44,659 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:18:45,141 | INFO | App session started
+2026-02-25 18:18:45,143 | ERROR | Unhandled error in main() handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\app.py", line 260, in on_session_created
+    await main(session.page)
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main.py", line 95, in main
+    await route_change()
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\main.py", line 31, in route_change
+    speech_instance = SpeechMenu(page)
+TypeError: SpeechMenu.__init__() takes 0 positional arguments but 2 were given
+2026-02-25 18:19:50,799 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:19:50,801 | INFO | Starting up TCP server on localhost:37795
+2026-02-25 18:19:50,807 | INFO | Flet app has started...
+2026-02-25 18:19:50,816 | INFO | App URL: tcp://localhost:37795
+2026-02-25 18:19:50,817 | INFO | Starting Flet View app...
+2026-02-25 18:19:50,818 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:19:50,818 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:19:51,266 | INFO | App session started
+2026-02-25 18:20:07,302 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:20:07,304 | INFO | Starting up TCP server on localhost:45492
+2026-02-25 18:20:07,310 | INFO | Flet app has started...
+2026-02-25 18:20:07,321 | INFO | App URL: tcp://localhost:45492
+2026-02-25 18:20:07,321 | INFO | Starting Flet View app...
+2026-02-25 18:20:07,322 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:20:07,323 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:20:07,757 | INFO | App session started
+2026-02-25 18:20:14,160 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:20:14,161 | INFO | Starting up TCP server on localhost:1439
+2026-02-25 18:20:14,168 | INFO | Flet app has started...
+2026-02-25 18:20:14,177 | INFO | App URL: tcp://localhost:1439
+2026-02-25 18:20:14,177 | INFO | Starting Flet View app...
+2026-02-25 18:20:14,179 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:20:14,179 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:20:15,020 | INFO | App session started
+2026-02-25 18:20:19,903 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:20:19,904 | INFO | Starting up TCP server on localhost:49072
+2026-02-25 18:20:19,911 | INFO | Flet app has started...
+2026-02-25 18:20:19,921 | INFO | App URL: tcp://localhost:49072
+2026-02-25 18:20:19,921 | INFO | Starting Flet View app...
+2026-02-25 18:20:19,922 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:20:19,922 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:20:20,375 | INFO | App session started
+2026-02-25 18:20:20,377 | INFO | Manager: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação
+2026-02-25 18:20:20,381 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação\Vídeos importantes.md
+2026-02-25 18:20:20,381 | INFO | final_path None
+2026-02-25 18:20:27,915 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação
+2026-02-25 18:20:27,915 | INFO | final_path None
+2026-02-25 18:20:27,916 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação\Vídeos importantes.md
+2026-02-25 18:20:27,916 | INFO | final_path None
+2026-02-25 18:20:27,917 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Modelagem
+2026-02-25 18:20:27,917 | INFO | final_path None
+2026-02-25 18:20:27,918 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Modelagem\Animações Customizadas.md
+2026-02-25 18:20:27,918 | INFO | final_path None
+2026-02-25 18:20:27,919 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\sa
+2026-02-25 18:20:27,919 | INFO | final_path None
+2026-02-25 18:20:27,920 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Unreal Engine Reinforcement Learning
+2026-02-25 18:20:27,920 | INFO | final_path None
+2026-02-25 18:20:27,921 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Unreal Engine Reinforcement Learning\Unreal Engine Bugfixes.md
+2026-02-25 18:20:27,921 | INFO | final_path None
+2026-02-25 18:20:27,922 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled 1.mdd
+2026-02-25 18:20:27,922 | INFO | final_path None
+2026-02-25 18:20:27,922 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled 63.md
+2026-02-25 18:20:27,923 | INFO | final_path None
+2026-02-25 18:20:27,923 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled.md
+2026-02-25 18:20:27,923 | INFO | final_path None
+2026-02-25 18:20:37,405 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\sa
+2026-02-25 18:20:41,199 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled 63.md
+2026-02-25 18:20:42,296 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled.md
+2026-02-25 18:20:46,591 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação
+2026-02-25 18:20:46,591 | INFO | final_path C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled
+2026-02-25 18:20:46,592 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação\Vídeos importantes.md
+2026-02-25 18:20:46,592 | INFO | final_path None
+2026-02-25 18:20:46,593 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Modelagem
+2026-02-25 18:20:46,593 | INFO | final_path C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled
+2026-02-25 18:20:46,594 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Modelagem\Animações Customizadas.md
+2026-02-25 18:20:46,594 | INFO | final_path None
+2026-02-25 18:20:46,595 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Unreal Engine Reinforcement Learning
+2026-02-25 18:20:46,595 | INFO | final_path C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled
+2026-02-25 18:20:46,596 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Unreal Engine Reinforcement Learning\Unreal Engine Bugfixes.md
+2026-02-25 18:20:46,596 | INFO | final_path None
+2026-02-25 18:20:46,597 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled 1.mdd
+2026-02-25 18:20:46,597 | INFO | final_path C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled
+2026-02-25 18:20:46,597 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled.md
+2026-02-25 18:20:46,598 | INFO | final_path C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled
+2026-02-25 18:20:52,803 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled.md
+2026-02-25 18:21:09,903 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\frontend\assets
+2026-02-25 18:21:09,905 | INFO | Starting up TCP server on localhost:10884
+2026-02-25 18:21:09,911 | INFO | Flet app has started...
+2026-02-25 18:21:09,920 | INFO | App URL: tcp://localhost:10884
+2026-02-25 18:21:09,920 | INFO | Starting Flet View app...
+2026-02-25 18:21:09,922 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:21:09,922 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-02-25 18:21:10,409 | INFO | App session started
+2026-02-25 18:21:10,411 | INFO | Manager: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games
+2026-02-25 18:21:10,415 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação
+2026-02-25 18:21:10,415 | INFO | final_path None
+2026-02-25 18:21:10,416 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação\Vídeos importantes.md
+2026-02-25 18:21:10,416 | INFO | final_path None
+2026-02-25 18:21:10,417 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Modelagem
+2026-02-25 18:21:10,417 | INFO | final_path None
+2026-02-25 18:21:10,418 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Modelagem\Animações Customizadas.md
+2026-02-25 18:21:10,418 | INFO | final_path None
+2026-02-25 18:21:10,419 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Unreal Engine Reinforcement Learning
+2026-02-25 18:21:10,419 | INFO | final_path None
+2026-02-25 18:21:10,419 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Unreal Engine Reinforcement Learning\Unreal Engine Bugfixes.md
+2026-02-25 18:21:10,419 | INFO | final_path None
+2026-02-25 18:21:10,420 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Untitled 1.mdd
+2026-02-25 18:21:10,420 | INFO | final_path None
+2026-02-25 18:21:17,419 | INFO | Navegando para C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação
+2026-02-25 18:21:17,420 | INFO | full_path: C:\Users\guilh\Documents\Obsidian Vault\Ideias_Pessoais\Games\Implementação\Vídeos importantes.md
+2026-02-25 18:21:17,420 | INFO | final_path None
+2026-02-25 18:21:19,078 | INFO | Navegando para C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-25 18:21:19,080 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-25 18:21:19,080 | INFO | final_path None
+2026-02-25 18:21:19,081 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-25 18:21:19,081 | INFO | final_path None
+2026-02-25 18:21:19,082 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:19,082 | INFO | final_path None
+2026-02-25 18:21:19,083 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-25 18:21:19,084 | INFO | final_path None
+2026-02-25 18:21:19,085 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-25 18:21:19,085 | INFO | final_path None
+2026-02-25 18:21:19,086 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-25 18:21:19,086 | INFO | final_path None
+2026-02-25 18:21:19,086 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-25 18:21:19,087 | INFO | final_path None
+2026-02-25 18:21:37,549 | INFO | New Vault path: C:\Users\guilh\Documents\Testando_criação
+2026-02-25 18:21:43,296 | INFO | Navegando para C:\Users\guilh\Documents\VoiceWriter\testes_folder
+2026-02-25 18:21:43,298 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-25 18:21:43,298 | INFO | final_path None
+2026-02-25 18:21:43,299 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-25 18:21:43,299 | INFO | final_path None
+2026-02-25 18:21:43,300 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:43,300 | INFO | final_path None
+2026-02-25 18:21:43,301 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-25 18:21:43,301 | INFO | final_path None
+2026-02-25 18:21:43,302 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-25 18:21:43,302 | INFO | final_path None
+2026-02-25 18:21:43,303 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-25 18:21:43,303 | INFO | final_path None
+2026-02-25 18:21:43,304 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-25 18:21:43,304 | INFO | final_path None
+2026-02-25 18:21:49,929 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled
+2026-02-25 18:21:49,929 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,930 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1
+2026-02-25 18:21:49,930 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,931 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,931 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,932 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 3
+2026-02-25 18:21:49,932 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,933 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4
+2026-02-25 18:21:49,933 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,934 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-02-25 18:21:49,934 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,935 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md
+2026-02-25 18:21:49,935 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:49,936 | INFO | full_path: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled.md
+2026-02-25 18:21:49,936 | INFO | final_path C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2
+2026-02-25 18:21:52,802 | INFO | Sucesso ao deletar: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 2.md

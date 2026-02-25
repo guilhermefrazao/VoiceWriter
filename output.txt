@@ -72,3 +72,45 @@
 {00:31:06} + - +  Obra o Google
 {00:31:19} + - +  e abre a Gogo. abre a Gogo... haha
 {00:31:26} + - +  Abra o Google, abro o Google, abro o Google
+{12:44:49} + - +  Oi, alô, alô, alô.
+{15:08:08} + - +  Hello mom, te amo, boa tarde.
+{15:10:40} + - +  Vamos ver o quadro de ferem.
+{15:10:43} + - + 
+{15:10:52} + - + 
+{15:10:55} + - + 
+{15:11:13} + - +  testando aqui développem
+{15:11:18} + - +  desfineir glutamose
+{15:11:23} + - +  Eu não sei exatamente como poderia fazer isso.
+{15:11:29} + - +  porque o modelo pequeno é muito ruim, porque ele não consegue entender.
+{15:11:34} + - +  mas ele consegue entender várias...
+{15:11:38} + - +  ele não consegue entender coisas como
+{15:14:33} + - + 
+{15:14:38} + - +  ele não tem tendendo muito mais
+{15:14:41} + - +  Vamos lá menos de uma noção.
+{15:14:47} + - +  E perutiliz ele
+{15:14:52} + - +  fiz ele das, não, só que é cada cinco segundos ele para
+{15:52:21} + - +  estou usando o modelo menor
+{15:52:57} + - +  Tá, agora ele vai conseguir reconhecer o que eu tô falando Eu vou mostrar pra mó
+{15:53:11} + - +  Vendo porque eu estou testando um modelo pesado e ele está...
+{15:53:25} + - +  aqui, abra o Google.
+{15:53:30} + - +  Ah, tá bemzinho.
+{15:53:36} + - +  O final do reconhecimento, ele vai conseguir abrir o Google.
+{15:53:38} + - +  o modelo não é tão...
+{15:53:43} + - +  que estão n ...
+{15:53:48} + - +  o avaniano, mas não nos cortados ali.
+{15:54:00} + - +  Acabou.
+{17:39:41} + - +  Alô, alô, alô, alô, alô, alô
+{17:39:56} + - +  Então, na teoria era pra ele...
+{17:40:05} + - +  Eu falei por 10 segundos
+{17:40:09} + - +  Boa dia!
+{17:40:15} + - +  Se eu continuar falando, ele vai ter...
+{17:40:33} + - +  Agora você já saíaos de occupation.
+{17:59:24} + - +  Alô, alô, alô
+{17:59:42} + - +  Arabicácopa
+{17:59:52} + - + 
+{18:00:11} + - +  Abra o bloco de notas.
+{18:00:20} + - + 
+{18:00:37} + - + 
+{18:01:29} + - +  Abra a calculadora.
+{18:02:04} + - +  Abra o Google
+{18:02:31} + - +  de algo para conseguir escrever por mim.
