@@ -38,22 +38,19 @@ class EditorMenu():
         self.generic_tile = Tiles()
 
 
-    def get_directory_tree(self, path, final_path=None, file_type=None):
+    def get_directory_tree(self, path):
         controls = []
         try:
             items = sorted(os.listdir(path), key=lambda x: (not os.path.isdir(os.path.join(path, x))))
 
             for item in items:
                 full_path = os.path.join(path, item)
-
-                logging.info(f"full_path: {full_path}")
-                logging.info(f"final_path {final_path}")
                 
                 if os.path.isdir(full_path):
-                    wrapper, tile = self.generic_tile.generic_expand_tile(item, full_path, final_path, file_type, self.get_directory_tree, self.refresh_sidebar, self.load_file_to_editor)
+                    wrapper, tile = self.generic_tile.generic_expand_tile(item, full_path, self.get_directory_tree, self.refresh_sidebar)
                 else:
                     if item.endswith(".md"):
-                        wrapper, tile = self.generic_tile.generic_list_tile(item, full_path, final_path, file_type,  self.refresh_sidebar, self.load_file_to_editor)
+                        wrapper, tile = self.generic_tile.generic_list_tile(item, full_path, self.refresh_sidebar, self.load_file_to_editor)
                     else:
                         continue 
 
@@ -79,8 +76,8 @@ class EditorMenu():
         return controls
 
 
-    def refresh_sidebar(self, final_path=None, file_type=None):
-        new_directory_controls = self.get_directory_tree(self.current_file_path, final_path, file_type)
+    def refresh_sidebar(self):
+        new_directory_controls = self.get_directory_tree(self.current_file_path)
         self.file_tree_column.controls = new_directory_controls
         self.file_tree_column.update()
 
@@ -98,17 +95,17 @@ class EditorMenu():
 
     def create_and_open_new_markdown(self):
         final_path, new_name = self.handler.name_counter(self.current_file_path, created_type="File")     
-        self.refresh_sidebar(final_path, file_type="file")
+        self.refresh_sidebar()
         self.load_file_to_editor(new_name + ".md", final_path + ".md")
         
 
     def create_new_dir(self):
         final_path, new_name = self.handler.name_counter(self.current_file_path, created_type="Dir")
-        self.refresh_sidebar(final_path, file_type="folder")
+        self.refresh_sidebar()
 
 
     def route_to_main_menu(self, page: ft.Page):
-        asyncio.create_task(page.push_route("/"))
+        asyncio.create_task(page.push_route("/main_menu"))
 
 
     def open_new_editor(self, e):
@@ -142,6 +139,7 @@ class EditorMenu():
                         content=folder_name,
                         data=path,
                         on_click=lambda e: self.open_new_editor(e)
+                        
                     )
                 )
 
@@ -176,7 +174,7 @@ class EditorMenu():
         intial_tree_controls = self.get_directory_tree(path)
 
         sidebar_icons = ft.Row(
-            align=ft.Alignment.CENTER,
+            alignment=ft.Alignment.CENTER,
             controls=[
                 ft.IconButton(icon=ft.Icons.PASTE, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
                 ft.IconButton(icon=ft.Icons.FOLDER, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_dir),
@@ -201,7 +199,6 @@ class EditorMenu():
                     sidebar_icons,
                     self.file_tree_column,
                     ft.Column(spacing=2, horizontal_alignment=ft.CrossAxisAlignment.START, controls=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#D4D4D4", on_click=lambda e: self.route_to_main_menu(self.page)), ft.Text("Back", size=16, color="#858585")]),
-                    ft.Divider(height=1, color="#055b5f"),
                     routes_menu
                 ]
             )
@@ -213,7 +210,7 @@ class EditorMenu():
         self.dir_name = ft.Column(
             align=ft.Alignment.CENTER,
             spacing=20,
-            controls=[ ft.Text("Create new file", size=14, weight="bold", color="#055b5f", selectable=True, on_tap=self.create_and_open_new_markdown), 
+            controls=[ft.Text("Create new file", size=14, weight="bold", color="#055b5f", selectable=True, on_tap=self.create_and_open_new_markdown), 
                     ft.Text("Open recent file", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"))])
 
 

@@ -29,7 +29,7 @@ class Speech_to_text():
             logging.info("Adjusted for ambient noise. Linstening")
             
             try:
-                audio = self.recognizer.listen(microphone, timeout=20, phrase_time_limit=5)
+                audio = self.recognizer.listen(microphone, timeout=10, phrase_time_limit=5)
                 
                 text_log, text = self.recognize_speech(audio)
                 

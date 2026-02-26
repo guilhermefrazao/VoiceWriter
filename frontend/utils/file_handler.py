@@ -39,54 +39,58 @@ class DirectoryUtils():
         main_area.update()
 
     
-    def handle_tile_change(self, e: ft.Event[ft.ExpansionTile], on_file_open, selected_tile):
-        self.on_file_selected(e, on_file_open, selected_tile=selected_tile, file_type="Folder")
+    def handle_tile_change(self, e: ft.ControlEvent, expanded_folders: set):
         e.control.leading.icon = (
             ft.Icons.KEYBOARD_ARROW_RIGHT   
             if e.control.leading.icon == ft.Icons.KEYBOARD_ARROW_DOWN  
             else ft.Icons.KEYBOARD_ARROW_DOWN
         )
+
+        is_expanded = e.data == True
+        folder_path = e.control.data 
+        
+        if is_expanded:
+            expanded_folders.add(folder_path)
+        else:
+            expanded_folders.discard(folder_path)
+
         e.page.update()
 
 
-    def on_file_selected(self, e: ft.Event[ft.ExpansionTile], on_file_open, selected_tile=None, file_type="files"):
-        if selected_tile:
-            self.selected_tile = selected_tile
+    def on_file_selected(self, e: ft.ControlEvent, on_file_open=None):
+        clicked_tile = e.control
 
-        if isinstance(e.control, ft.ExpansionTile):
-            return 
-
-        if self.selected_tile == e.control:
+        if hasattr(self, "selected_tile") and self.selected_tile == clicked_tile:
             e.control.shape = ft.RoundedRectangleBorder(side=ft.BorderSide(width=1,  color="#D4D4D4"), radius=5)
             e.control.update()
             return 
 
-        
-        if self.selected_tile:
-            if file_type == "files":
-                self.selected_tile.bgcolor = ft.Colors.TRANSPARENT
-                self.selected_tile.shape = None
-                self.selected_tile.update()
-            else:
-                self.selected_tile.collapsed_bgcolor = ft.Colors.TRANSPARENT
-                self.selected_tile.shape = None
-                self.selected_tile.update()
-            
-        if file_type == "files":
-            e.control.bgcolor = "#37373d"
-            e.control.shape = None
-            e.control.update()
-        else:
-            e.control.collapsed_bgcolor = "#37373d"
-            e.control.shape = None
-            e.control.update()
+        if hasattr(self, "selected_tile") and self.selected_tile:
+            self._apply_style(self.selected_tile, is_selected=False)
+            self.selected_tile.update()
 
-        self.selected_tile = e.control
+
+        self.selected_tile = clicked_tile   
+        self._apply_style(self.selected_tile, is_selected=True)
+        
 
         if on_file_open:
-            item_name = e.control.title.value
-            full_path = e.control.data
+            item_name = getattr(clicked_tile.title, "value", "")
+            full_path = clicked_tile.data
             on_file_open(item_name, full_path)
+
+
+    def _apply_style(self, tile, is_selected=True):
+        bg_color = "#0C5F49" if is_selected else ft.Colors.TRANSPARENT
+
+        if isinstance(tile, ft.ExpansionTile):
+                tile.collapsed_bgcolor = bg_color
+                tile.shape = None
+                tile.update()
+        else:
+                tile.bgcolor = bg_color
+                tile.shape = None
+                tile.update()
 
 
     def name_counter(self, current_path: str, created_type: str ="File") -> tuple[str, str]:
@@ -186,12 +190,13 @@ class DirectoryUtils():
                         item_name, 
                         color="#858585", 
                         size=14, 
-                        overflow=ft.TextOverflow.ELLIPSIS
+                        overflow=ft.TextOverflow.ELLIPSIS,
+                        style=ft.TextStyle(decoration=ft.TextDecoration.NONE)
                     ),
                 ],
                 alignment=ft.MainAxisAlignment.START,
                 vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=10,
+
             ),
         )
         

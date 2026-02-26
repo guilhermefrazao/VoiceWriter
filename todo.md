@@ -1,6 +1,7 @@
 Essenciais antes da transcrição:
 #TODO: Adaptar o TextInput para aceitar o formato markdown (negrito, itálico, listas, etc).
 #TODO: Corrigir a seleção dos arquivos e tiles da sidebar.
+#TODO: Não permitir que seja aberto um diretório imenso.
 
 Estilo:
 #TODO: Ligar markdowns abertos à barra superior para facilitar a navegação e deleção.

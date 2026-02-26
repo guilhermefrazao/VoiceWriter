@@ -114,3 +114,5 @@
 {18:01:29} + - +  Abra a calculadora.
 {18:02:04} + - +  Abra o Google
 {18:02:31} + - +  de algo para conseguir escrever por mim.
+{21:02:14} + - +  abriu o Google
+{21:02:47} + - +  Abra o Google, o navegador.

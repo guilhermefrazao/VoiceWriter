@@ -7,7 +7,7 @@ class Containers():
     def __init__(self):
         pass
 
-    def generic_text_container_with_right_context_menu(self, text_1="text_1", text_2="text_2", color_1="#D4D4D4", color_2="#858585", route_change=None):
+    def generic_text_container_with_right_context_menu(self, text_1="text_1", text_2="text_2", color_1="#D4D4D4", color_2="#858585", on_click=None):
         text = ft.Column(
             spacing=2,
             expand=True,
@@ -45,7 +45,7 @@ class Containers():
                 vertical_alignment=ft.CrossAxisAlignment.CENTER
             ),
             on_hover=lambda e: hover_color_change(e),
-            on_click=route_change
+            on_click=on_click
         )
 
         return container
@@ -119,3 +119,6 @@ class Containers():
         )
 
         return container    
+    
+
+    

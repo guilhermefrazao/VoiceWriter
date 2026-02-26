@@ -91,7 +91,7 @@ class MainEditorMenu():
         else:
             for path in paths:
                 folder_name = os.path.basename(path)
-                directory_container.content.controls.append(Containers().generic_text_container_with_right_context_menu(folder_name, path, color_2="#055b5f", route_change=lambda e, p=path: self.route_to_editor(p, self.recent_folder, self.page)))
+                directory_container.content.controls.append(Containers().generic_text_container_with_right_context_menu(folder_name, path, color_2="#055b5f", on_click=lambda e, p=path: self.route_to_editor(p, self.recent_folder, self.page)))
                 
         return directory_container
 
