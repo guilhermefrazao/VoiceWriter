@@ -121,4 +121,29 @@ class Containers():
         return container    
     
 
+    def generic_container_with_mic_button(self, width=100, height=100, mic_size=45, on_click=None):
+        container = ft.Container(
+                        content=ft.Icon(ft.Icons.MIC, size=mic_size, color="white"),
+                        width=width,
+                        height=height,
+                        border_radius=50,
+                        bgcolor="#1A1D24",
+                        border=ft.border.all(2, "#028268"),
+                        alignment=ft.Alignment.CENTER,
+                        shadow=ft.BoxShadow(
+                            blur_radius=30,
+                            color=ft.Colors.with_opacity(0.15, "blue"),
+                            spread_radius=1,
+                        ),
+                        scale=1.0,
+                        animate_scale=ft.Animation(500, ft.AnimationCurve.EASE_IN_OUT),
+                        animate=ft.Animation(500, ft.AnimationCurve.EASE_IN_OUT),
+                        on_hover=lambda e: hover_color_change(e, color="#055b5f"),
+                        on_click=lambda e: on_click(e)
+                        
+        )
+
+        return container
+    
+    
     

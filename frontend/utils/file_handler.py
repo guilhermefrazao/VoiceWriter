@@ -33,8 +33,6 @@ class DirectoryUtils():
         message_widget.disabled = False
         message_widget.autofocus = True
         message_widget.expand = True
-
-        main_area.padding = 20
         
         main_area.update()
 
@@ -81,7 +79,7 @@ class DirectoryUtils():
 
 
     def _apply_style(self, tile, is_selected=True):
-        bg_color = "#0C5F49" if is_selected else ft.Colors.TRANSPARENT
+        bg_color = "#1E1E1E" if is_selected else ft.Colors.TRANSPARENT
 
         if isinstance(tile, ft.ExpansionTile):
                 tile.collapsed_bgcolor = bg_color

@@ -2,6 +2,7 @@ import flet as ft
 import os
 import asyncio
 import logging
+import keyboard
 
 from frontend.widgets.context_menu import ContextMenu
 from frontend.widgets.tiles_generic import Tiles
@@ -9,13 +10,15 @@ from frontend.utils.file_handler import DirectoryUtils
 from frontend.widgets.containers_generic import Containers
 from frontend.utils.recent_manager import RecentManager
 from frontend.utils.color import hover_color_change
+from voice.speech import Speech_to_text
+from frontend.widgets.toolbar import TopToolbar 
 
 class EditorMenu():
     def __init__(self, page : ft.Page):
         self.page = page
-        self.home_layout = None
-        self.main_area = None
-        self.dir_name = None
+        keyboard.add_hotkey("f8", self.trigger_mic_translation_keyboard)
+        keyboard.add_hotkey("ctrl+p", self.create_and_open_new_markdown)
+        keyboard.add_hotkey("ctrl+n", self.create_new_dir)
         self.new_message = ft.TextField(
             border=ft.InputBorder.NONE,
             always_call_on_tap=False,
@@ -28,14 +31,15 @@ class EditorMenu():
             disabled=True,
             on_change=lambda e: self.handler.save_changed_text(e)
         )
-        self.file_tree_column = None
-        self.sidebar = None
         self.current_file_path = str
         self.context_menu_right_click = ContextMenu(page)
         self.handler = DirectoryUtils()
         self.container = Containers()
         self.recent_manager = RecentManager()
         self.generic_tile = Tiles()
+        self.speech = Speech_to_text()
+        self.can_listen = False
+
 
 
     def get_directory_tree(self, path):
@@ -91,6 +95,8 @@ class EditorMenu():
             main_area=self.main_area,
             refresh_sidebar=self.refresh_sidebar
         )
+
+        self.can_listen = True
 
 
     def create_and_open_new_markdown(self):
@@ -159,10 +165,78 @@ class EditorMenu():
         return ft.Container(
             content=popup_menu,
             padding=10,
-            border_radius=5,
+            border_radius=0,
             bgcolor= ft.Colors.TRANSPARENT,
             on_hover=lambda e: hover_color_change(e),
+            border=ft.border.only(top=ft.border.BorderSide(width=1, color="#055b5f")),
+            height=50
         )
+    
+
+    def trigger_mic_translation_keyboard(self):
+        self._handle_mic_click()
+
+
+    def _handle_mic_click(self, e=None):
+        if getattr(self, "is_listening", False):
+            return
+        
+        if self.can_listen == False:
+            logging.info("Bloqueado: Abra um arquivo antes de usar o microfone.")
+            return
+
+        self.is_listening = True
+        
+        self.page.run_task(self._run_speech_recognition)
+
+        self.page.run_task(self._pulse_animation)
+
+
+    async def _pulse_animation(self):
+            await asyncio.sleep(1.5)
+            while self.is_listening:
+                self.mic_button.scale = 1.15
+                self.mic_button.shadow.color = ft.Colors.with_opacity(0.6, "#028268") 
+                self.mic_button.shadow.spread_radius = 5
+                self.mic_button.content.color = "#028268" 
+                self.mic_button.update()
+                
+                await asyncio.sleep(0.5)
+                
+                if not self.is_listening:
+                    break
+                    
+                self.mic_button.scale = 1.0
+                self.mic_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
+                self.mic_button.shadow.spread_radius = 1
+                self.mic_button.content.color = "white"
+                self.mic_button.update()
+                
+                await asyncio.sleep(0.5) 
+
+
+            self.mic_button.scale = 1.0
+            self.mic_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
+            self.mic_button.shadow.spread_radius = 1
+            self.mic_button.content.color = "white"
+            self.mic_button.update()
+
+
+    async def _run_speech_recognition(self):
+        try:
+            recognized_speech = await asyncio.to_thread(self.speech.main_translation)
+
+            self.new_message.value += f" {recognized_speech}"
+
+            self.new_message.update()
+
+            await self.new_message.focus()
+            
+        except Exception as e:
+            print(f"Erro no reconhecimento: {e}")
+        finally:
+            self.is_listening = False
+
 
 
     def build_ui(self, path: str = "C:/Users/guilh/Documents/VoiceWriter/testes_folder"):
@@ -173,13 +247,16 @@ class EditorMenu():
 
         intial_tree_controls = self.get_directory_tree(path)
 
-        sidebar_icons = ft.Row(
-            alignment=ft.Alignment.CENTER,
-            controls=[
-                ft.IconButton(icon=ft.Icons.PASTE, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
-                ft.IconButton(icon=ft.Icons.FOLDER, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_dir),
-            ]
+        self.mic_button = self.container.generic_container_with_mic_button(width=20, height=20, mic_size=10, on_click=self._handle_mic_click)
+
+        sidebar_icons = TopToolbar(left_items=[
+            ft.IconButton(icon=ft.Icons.PASTE, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
+            ft.IconButton(icon=ft.Icons.FOLDER, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_dir),
+            ],
+            right_items=[self.mic_button],
+            vertical_padding=5
         )
+                
 
         self.file_tree_column = ft.Column(
             controls=intial_tree_controls,
@@ -192,54 +269,95 @@ class EditorMenu():
 
         sidebar = ft.Container(
             width=250,
-            bgcolor="#202020",
-            padding=10,
+            bgcolor="#181818",
             content=ft.Column(
                 controls=[
-                    sidebar_icons,
-                    self.file_tree_column,
-                    ft.Column(spacing=2, horizontal_alignment=ft.CrossAxisAlignment.START, controls=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#D4D4D4", on_click=lambda e: self.route_to_main_menu(self.page)), ft.Text("Back", size=16, color="#858585")]),
-                    routes_menu
+                    ft.Container(
+                        padding=ft.padding.symmetric(horizontal=5), 
+                        expand=True, 
+                        content=ft.Column(
+                            controls=[
+                                sidebar_icons,
+                                self.file_tree_column,
+                                ft.Column(
+                                    spacing=2, 
+                                    horizontal_alignment=ft.CrossAxisAlignment.START, 
+                                    controls=[
+                                        ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585", on_click=lambda e: self.route_to_main_menu(self.page)), 
+                                        ft.Text("Back", size=16, color="#858585")
+                                    ]
+                                )
+                            ]
+                        )
+                    ),
+                    routes_menu 
                 ]
             )
         )
 
-        self.sidebar = ft.DragTarget(group="folder", content=sidebar, on_accept=lambda e: self.handler.move_file_on_drop(e, self.current_file_path, self.refresh_sidebar))
-
+        self.dragabble_sidebar = ft.DragTarget(group="folder", content=sidebar, on_accept=lambda e: self.handler.move_file_on_drop(e, self.current_file_path, self.refresh_sidebar))
 
         self.dir_name = ft.Column(
-            align=ft.Alignment.CENTER,
             spacing=20,
-            controls=[ft.Text("Create new file", size=14, weight="bold", color="#055b5f", selectable=True, on_tap=self.create_and_open_new_markdown), 
-                    ft.Text("Open recent file", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"))])
+            controls=[ft.Text("Create new file (ctrl + p)", size=14, weight="bold", color="#055b5f", selectable=True, on_tap=self.create_and_open_new_markdown), 
+                    ft.Text("Open recent file (ctrl + n)", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"))])
+        
 
+        main_area_topbar = TopToolbar(left_items=ft.Text("Main area", color="#42A5F5", size=14, weight=ft.FontWeight.W_500), bgcolor="#121212")
 
         self.main_area = ft.Container(
-                expand=True,
-                bgcolor="#11111",
-                padding=300,
-                align=ft.Alignment.CENTER,
+                expand=6,
+                bgcolor="#0d0d0d",
                 content=ft.Column(
-                    align=ft.Alignment.CENTER,
+                    alignment=ft.MainAxisAlignment.START,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    spacing=0,
                     controls=[
-                        self.dir_name,
-                        self.new_message
+                        main_area_topbar,
+                        ft.Container(
+                        content=ft.Column(
+                            controls=[
+                                self.dir_name,
+                                self.new_message
+                            ],
+                            alignment=ft.MainAxisAlignment.CENTER, 
+                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                        ),
+                        expand=True, 
+                    )
                     ]
                 )
         )
 
         side_layout = ft.Row(
             controls=[
-                self.sidebar,
+                self.dragabble_sidebar,
                 ft.VerticalDivider(width=1, color="#055b5f"),
-                self.main_area
+                self.main_area,
+                ft.VerticalDivider(width=0.5, color="#055b5f"),
             ],
             expand=True,
             spacing=0
         )
 
+        top_bar = TopToolbar(
+            left_items=[
+            ft.Text("Voice Writter", color="#42A5F5", size=14, weight=ft.FontWeight.W_500)
+            ],
+
+            right_items=[
+                ft.IconButton(icon=ft.Icons.LINK, icon_color="#858585", tooltip="Copiar Link"),
+                ft.IconButton(icon=ft.Icons.FORMAT_QUOTE, icon_color="#858585", tooltip="Citar"),
+                ft.IconButton(icon=ft.Icons.SAVE, icon_color="#858585", tooltip="Salvar"),
+                ft.IconButton(icon=ft.Icons.SETTINGS, icon_color="#858585", tooltip="Configurações"),
+                ft.IconButton(icon=ft.Icons.MORE_VERT, icon_color="#858585", tooltip="Mais Opções")
+            ],
+            bgcolor="#1c1c1c"
+        )
+
         self.home_layout = ft.Column(
             controls=[
+                top_bar,
                 ft.Divider(height=1, color="#055b5f"),
                 side_layout
             ],

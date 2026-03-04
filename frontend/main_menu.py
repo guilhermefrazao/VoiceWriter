@@ -72,7 +72,7 @@ class MainEditorMenu():
     def build_directory_container(self):
         paths = self.recent_folder.get_recents()
         directory_container = ft.Container(
-                bgcolor="#202021",
+                bgcolor="#181818",
                 padding=10,
                 border=ft.Border.only(right=ft.border.BorderSide(1, "#055b5f"), top=ft.border.BorderSide(1, "#055b5f")),
                 content=ft.Column(

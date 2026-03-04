@@ -1,8 +1,8 @@
 import flet as ft
 
-def hover_color_change(e):
+def hover_color_change(e, color="#333333"):
         if e.data == True:
-            e.control.bgcolor = "#333333"
+            e.control.bgcolor = color
         else:
             e.control.bgcolor = ft.Colors.TRANSPARENT
 
