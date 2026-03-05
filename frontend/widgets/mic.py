@@ -6,19 +6,14 @@ import logging
 from frontend.widgets.containers_generic import Containers
 from voice.speech import SpeechToText
 
-class Mic_menu():
+class MicMenu():
     def __init__(self, page: ft.Page):
         self.page = page
         self.speech = SpeechToText()
         self.containers = Containers()
-        keyboard.add_hotkey("f8", self.trigger_from_keyboard)
-        pass
 
-    def trigger_from_keyboard(self):
-        self.handle_mic_click(None)
 
-    
-    def handle_mic_click(self, e):
+    def handle_mic_click(self, mic_button, e=None):
         if getattr(self, "is_listening", False):
             return
 
@@ -26,37 +21,37 @@ class Mic_menu():
         
         self.page.run_task(self.run_speech_recognition)
 
-        self.page.run_task(self.pulse_animation)
+        self.page.run_task(self.pulse_animation, mic_button)
 
 
-    async def pulse_animation(self):
-        await asyncio.sleep(1.5)
+    async def pulse_animation(self, container_button: ft.Container):
+        await asyncio.sleep(0.75)
         while self.is_listening:
-            self.mic_button.scale = 1.15
-            self.mic_button.shadow.color = ft.Colors.with_opacity(0.6, "#028268") 
-            self.mic_button.shadow.spread_radius = 5
-            self.mic_button.content.color = "#028268" 
-            self.mic_button.update()
+            container_button.scale = 1.15
+            container_button.shadow.color = ft.Colors.with_opacity(0.6, "#028268") 
+            container_button.shadow.spread_radius = 5
+            container_button.content.color = "#028268" 
+            container_button.update()
             
             await asyncio.sleep(0.5)
             
             if not self.is_listening:
                 break
                 
-            self.mic_button.scale = 1.0
-            self.mic_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
-            self.mic_button.shadow.spread_radius = 1
-            self.mic_button.content.color = "white"
-            self.mic_button.update()
+            container_button.scale = 1.0
+            container_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
+            container_button.shadow.spread_radius = 1
+            container_button.content.color = "white"
+            container_button.update()
             
             await asyncio.sleep(0.5) 
 
 
-        self.mic_button.scale = 1.0
-        self.mic_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
-        self.mic_button.shadow.spread_radius = 1
-        self.mic_button.content.color = "white"
-        self.mic_button.update()
+        container_button.scale = 1.0
+        container_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
+        container_button.shadow.spread_radius = 1
+        container_button.content.color = "white"
+        container_button.update()
 
 
     async def run_speech_recognition(self):
@@ -73,12 +68,12 @@ class Mic_menu():
         self.page.padding = 0
         self.page.title = "Mic Menu"
 
-        self.mic_button = self.containers.generic_container_with_mic_button(on_click=self.handle_mic_click)
+        mic_button = self.containers.generic_container_with_mic_button(on_click=self.handle_mic_click)
 
         mic_card = ft.Container(
             content=ft.Column(
                 controls=[
-                    self.mic_button,
+                    mic_button,
                     ft.Text("Detect Voice", size=18, color="#858585")
                 ],
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,

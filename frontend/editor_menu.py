@@ -16,7 +16,6 @@ from frontend.widgets.toolbar import TopToolbar
 class EditorMenu():
     def __init__(self, page : ft.Page):
         self.page = page
-        keyboard.add_hotkey("f8", self.trigger_mic_translation_keyboard)
         keyboard.add_hotkey("ctrl+p", self.create_and_open_new_markdown)
         keyboard.add_hotkey("ctrl+n", self.create_new_dir)
         self.new_message = ft.TextField(
@@ -97,6 +96,8 @@ class EditorMenu():
             mic=self.mic_button
         )
 
+        self.can_listen = True
+
 
     def create_and_open_new_markdown(self):
         final_path, new_name = self.handler.name_counter(self.current_file_path, created_type="File")     
@@ -172,55 +173,50 @@ class EditorMenu():
         )
     
 
-    def trigger_mic_translation_keyboard(self):
-        self._handle_mic_click()
-
-
-    def _handle_mic_click(self, e=None):
+    def handle_mic_click(self, mic_button, e=None):
         if getattr(self, "is_listening", False):
             return
 
         self.is_listening = True
 
-        self.page.run_task(self._pulse_animation)
+        self.page.run_task(self.pulse_animation, mic_button)
         
         self.page.run_task(self._run_speech_recognition)
 
 
-    async def _pulse_animation(self):
-            await asyncio.sleep(1.5)
-            while self.is_listening:
-                self.mic_button.scale = 1.15
-                self.mic_button.shadow.color = ft.Colors.with_opacity(0.6, "#028268") 
-                self.mic_button.shadow.spread_radius = 5
-                self.mic_button.content.color = "#028268" 
-                self.mic_button.update()
+    async def pulse_animation(self, container_button: ft.Container):
+        await asyncio.sleep(0.75)
+        while self.is_listening:
+            container_button.scale = 1.15
+            container_button.shadow.color = ft.Colors.with_opacity(0.6, "#028268") 
+            container_button.shadow.spread_radius = 5
+            container_button.content.color = "#028268" 
+            container_button.update()
+            
+            await asyncio.sleep(0.5)
+            
+            if not self.is_listening:
+                break
                 
-                await asyncio.sleep(0.5)
-                
-                if not self.is_listening:
-                    break
-                    
-                self.mic_button.scale = 1.0
-                self.mic_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
-                self.mic_button.shadow.spread_radius = 1
-                self.mic_button.content.color = "white"
-                self.mic_button.update()
-                
-                await asyncio.sleep(0.5) 
+            container_button.scale = 1.0
+            container_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
+            container_button.shadow.spread_radius = 1
+            container_button.content.color = "white"
+            container_button.update()
+            
+            await asyncio.sleep(0.5) 
 
 
-            self.mic_button.scale = 1.0
-            self.mic_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
-            self.mic_button.shadow.spread_radius = 1
-            self.mic_button.content.color = "white"
-            self.mic_button.update()
+        container_button.scale = 1.0
+        container_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
+        container_button.shadow.spread_radius = 1
+        container_button.content.color = "white"
+        container_button.update()
 
 
     async def _run_speech_recognition(self):
         try:
             recognized_speech = await asyncio.to_thread(self.speech.main_transcription)
-
 
             await self.update_interface(recognized_speech)
 
@@ -248,10 +244,10 @@ class EditorMenu():
 
         intial_tree_controls = self.get_directory_tree(path)
 
-        self.mic_button = self.container.generic_container_with_mic_button(width=80, height=80, mic_size=36, on_click=self._handle_mic_click)
+        self.mic_button = self.container.generic_container_with_mic_button(width=80, height=80, mic_size=36, on_click=self.handle_mic_click)
 
         sidebar_icons = TopToolbar(left_items=[
-            ft.IconButton(icon=ft.Icons.PASTE, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
+            ft.IconButton(icon=ft.Image(src="frontend/images/Paste_sprite.png"), icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
             ft.IconButton(icon=ft.Icons.FOLDER, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_dir),
             ],
             vertical_padding=5
@@ -305,7 +301,7 @@ class EditorMenu():
 
         main_area_topbar = TopToolbar(left_items=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585"),
                                                   ft.IconButton(icon=ft.Icons.ARROW_FORWARD, icon_color="#858585"),
-                                                  ft.Text("Main area", color="#42A5F5", size=14, weight=ft.FontWeight.W_500)], bgcolor="#121212")
+                                                  ft.Text(self.current_file_path, color="#42A5F5", size=14, weight=ft.FontWeight.W_500)], bgcolor="#121212")
 
 
         self.main_area = ft.Container(

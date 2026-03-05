@@ -19,10 +19,10 @@ class Tiles():
                                 data=full_path,
                                 controls_padding=ft.Padding.only(left=20),
                                 expanded=(full_path in self.expanded_folders),
+                                enable_feedback=True,
                                 controls=[
                                     ft.Container(
-                                        border=ft.Border.only(left=ft.BorderSide(1, "#0C5F49")),
-                                        padding=ft.Padding.only(left=10),
+                                        border=ft.Border.only(left=ft.BorderSide(1, "#858585")),
                                         content=ft.Column(controls=recursive_func(full_path), spacing=0)
                                         )
                                     ],

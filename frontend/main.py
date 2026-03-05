@@ -8,7 +8,7 @@ from frontend.main_menu import MainEditorMenu
 from frontend.editor_menu import EditorMenu
 from frontend.utils.recent_manager import RecentManager
 from frontend.speech_menu import SpeechMenu
-
+from frontend.widgets.mic import MicMenu
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", 
         level=logging.INFO, 
@@ -19,93 +19,136 @@ logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s",
         logging.StreamHandler(sys.stdout)                    
         ])
 
+class MainPage():
+    def __init__(self, page: ft.Page):
+        self.page = page
+        self.mic_menu = MicMenu(page)
+        self.menu_instance = None
 
-async def main(page: ft.Page):
-    page.title = "Voice Writter"
-    page.theme_mode = ft.ThemeMode.DARK
-    page.padding = 0
 
-    parser = argparse.ArgumentParser(description='Voice Writter App')
-    parser.add_argument('--editor', type=str, nargs="?", const="last_path", help='Abrir o editor no último caminho utilizado')
-    parser.add_argument('--main_menu', type=str, nargs="?", const="Exists", help="Abrir o menu_inicial")
-    args, unknown = parser.parse_known_args()
+    async def main(self):
+        self.page.title = "Voice Writter"
+        self.page.theme_mode = ft.ThemeMode.DARK
+        self.page.padding = 0
+        
 
-    async def route_change():
-        page.views.clear()
+        parser = argparse.ArgumentParser(description='Voice Writter App')
+        parser.add_argument('--editor', type=str, nargs="?", const="last_path", help='Abrir o editor no último caminho utilizado')
+        parser.add_argument('--main_menu', type=str, nargs="?", const="Exists", help="Abrir o menu_inicial")
+        args, unknown = parser.parse_known_args()
 
-        if page.route == "/":
-            speech_instance = SpeechMenu(page)
+        mic_menu_container = self.mic_menu.build_ui()
 
-            speech_view = ft.View(
-                route="/",
-                padding=0,
-                spacing=0,
-                controls=[]
-            )
+        mic_window = ft.AlertDialog(
+            content=mic_menu_container,
+            content_padding=0,
+            bgcolor=ft.Colors.TRANSPARENT,
+            open=False
+        )
 
-            page.views.append(speech_view)
+        async def route_change():
+            self.page.views.clear()
 
-            speech_view.controls.append(speech_instance.build_ui())
+            if self.page.route == "/":
+                self.menu_instance = SpeechMenu(self.page)
 
-        if page.route == "/main_menu":
-            menu_instance = MainEditorMenu(page) 
-            
-            home_view = ft.View(
-                route="/main_menu",
-                padding=0, 
-                spacing=0,
-                controls=[]
-            )
-            
-            page.views.append(home_view)
-            
-            home_view.controls.append(menu_instance.build_ui())
-
-        if page.route == "/editor":
-            current_path = page.current_project_path
-            
-            if current_path and os.path.exists(current_path):
-                editor_instance = EditorMenu(page)
-
-                editor_layout = ft.View(
-                    route="/editor",
+                speech_view = ft.View(
+                    route="/",
                     padding=0,
                     spacing=0,
                     controls=[]
                 )
 
-                page.views.append(editor_layout)
+                self.page.views.append(speech_view)
 
-                editor_layout.controls.append(editor_instance.build_ui(current_path))
+                speech_view.controls.append(self.menu_instance.build_ui())
+
+            if self.page.route == "/main_menu":
+                self.menu_instance = MainEditorMenu(self.page) 
                 
-            else:
-                logging.info("Path inválido ou não fornecido, voltando para Home.")
-                await page.push_route("/")
+                home_view = ft.View(
+                    route="/main_menu",
+                    padding=0, 
+                    spacing=0,
+                    controls=[]
+                )
+                
+                self.page.views.append(home_view)
+                
+                home_view.controls.append(self.menu_instance.build_ui())
 
-        page.update()
+            if self.page.route == "/editor":
+                current_path = self.page.current_project_path
+                
+                if current_path and os.path.exists(current_path):
+                    self.menu_instance = EditorMenu(self.page)
 
-    async def view_pop(view):
-        page.views.pop()
-        top_view = page.views[-1]
-        await page.push_route(top_view.route)
+                    editor_layout = ft.View(
+                        route="/editor",
+                        padding=0,
+                        spacing=0,
+                        controls=[]
+                    )
 
-    page.on_route_change = route_change
-    page.on_view_pop = view_pop
+                    self.page.views.append(editor_layout)
 
-    logging.info(f"Argum {args}")
+                    editor_layout.controls.append(self.menu_instance.build_ui(current_path))
+                    
+                else:
+                    logging.info("Path inválido ou não fornecido, voltando para Home.")
+                    await self.page.push_route("/")
 
-    if args.editor:
-        manager = RecentManager().get_recents()[0]
-        logging.info(f"Manager: {manager}")
-        page.current_project_path = manager
-        await page.push_route("/editor")
-    
-    elif args.main_menu:
-        await page.push_route("/main_menu")
-    
-    else:
-        await route_change()
+            self.page.update()
+
+        async def view_pop(view):
+            self.page.views.pop()
+            top_view = self.page.views[-1]
+            await self.page.push_route(top_view.route)
+
+
+        def manage_shortcuts(e: ft.KeyboardEvent):
+            if e.key == "F9":
+                if not mic_window.open:
+                    self.page.show_dialog(mic_window)
+                    self.mic_menu.handle_mic_click(mic_button=mic_window.content.content.controls[0])
+                else:
+                    self.page.pop_dialog()
+
+                self.page.update()
+
+            if e.key == "F8":
+                if mic_window.open:
+                    self.mic_menu.handle_mic_click(mic_button=mic_window.content.content.controls[0])
+                
+                elif type(self.menu_instance) == SpeechMenu:
+                    self.mic_menu.handle_mic_click(self.menu_instance.mic_card.content.controls[0])
+                
+                elif type(self.menu_instance) == EditorMenu and self.menu_instance.can_listen == True:
+                    self.menu_instance.handle_mic_click(self.menu_instance.mic_button)
+
+
+        self.page.on_route_change = route_change
+        self.page.on_view_pop = view_pop
+
+        self.page.on_keyboard_event = manage_shortcuts
+
+        if args.editor:
+            manager = RecentManager().get_recents()[0]
+            logging.info(f"Manager: {manager}")
+            self.page.current_project_path = manager
+            await self.page.push_route("/editor")
+        
+        elif args.main_menu:
+            await self.page.push_route("/main_menu")
+        
+        else:
+            await route_change()
+
+async def flet_target(page:ft.Page):
+    app = MainPage(page)
+
+    await app.main()
 
 
 if __name__ == "__main__":
-    ft.run(main)
+    ft.app(target=flet_target)

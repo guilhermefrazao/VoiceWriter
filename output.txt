@@ -202,3 +202,28 @@
 {15:41:22} + - + Execute o aze pra ir
 {15:41:33} + - + Execute a Zebra
 {15:41:43} + - + Execute a Zeprite.
+{17:50:05} + - + Abra o don't start to get it
+{17:50:33} + - + Feche o Don't Start Together
+{17:51:36} + - + Abra o ópera GX
+{17:53:44} + - + 
+{17:57:07} + - + 
+{18:02:46} + - + Está funcionando, está.
+{18:03:11} + - + e aí e aí E aí
+{18:04:49} + - + 
+{18:08:30} + - + Alô, alô, alô, está funcionando.
+{18:23:32} + - + está detectando minha voz
+{18:26:19} + - + Os dois confusos...
+{18:26:19} + - + Ah, os dois são fússal, hein?
+{18:27:05} + - + Hmm, as duas claras.
+{18:49:37} + - + Alô, alô, alô...
+{18:50:36} + - + Você está me ouvindo, então se você está me ouvindo, você conseguiria abrir o Discord.
+{18:56:04} + - + 
+{18:56:27} + - + Ah, então nós temos essa opção, não é?
+{19:17:18} + - + Alô, alô, alô, alô
+{19:17:26} + - + ele é muito lindo
+{19:17:42} + - + 
+{19:20:08} + - + Está funcionando, está funcionando.
+{19:20:16} + - + Está funcionando, está funcionando.
+{19:20:30} + - + Ainda está funcionando, está funcionando.
+{19:20:40} + - + Ah, ele se enlouce.
+{19:20:51} + - + Olha aí, está funcionando e ele vai transcriber, certo?

@@ -4,14 +4,15 @@ import time
 
 from frontend.widgets.containers_generic import Containers  
 from voice.speech import SpeechToText
-from frontend.widgets.mic import Mic_menu
+from frontend.widgets.mic import MicMenu
 
 class SpeechMenu():
     def __init__(self, page: ft.Page):
         self.page = page
         self.containers = Containers()
         self.speech = SpeechToText()
-        self.mic_menu = Mic_menu(page)
+        self.MicMenu = MicMenu(page)
+        self.mic_card = None
 
     def build_ui(self):
         self.page.padding = 0
@@ -24,7 +25,7 @@ class SpeechMenu():
             alignment=ft.MainAxisAlignment.START
         )
 
-        mic_card = self.mic_menu.build_ui()
+        self.mic_card = self.MicMenu.build_ui()
 
         execute_card = ft.Container(
             content=ft.Column(
@@ -57,7 +58,7 @@ class SpeechMenu():
                     controls=[
                         header,
                         ft.Column(
-                            controls=[mic_card, execute_card],
+                            controls=[self.mic_card, execute_card],
                             alignment=ft.MainAxisAlignment.CENTER,
                             spacing=20
                         )

@@ -44,10 +44,10 @@ class SpeechToText():
     
     def _load_model(self):
         if SpeechToText._cached_model is None:
-            logging.info("Carregando modelo Whisper na gpu, pode demorar um pouco mais na primeira vez")
+            logging.info("Carregando Whisper Model.")
             SpeechToText._cached_model = WhisperModel("small", device="cuda", compute_type="float16")
         else:
-            logging.info("Modelo já carregado no cache, pronto para ser iniciado")
+            logging.info("Whisper Model já carregado.")
         self.model = SpeechToText._cached_model
 
 

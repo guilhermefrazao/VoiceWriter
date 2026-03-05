@@ -139,7 +139,7 @@ class Containers():
                         animate_scale=ft.Animation(500, ft.AnimationCurve.EASE_IN_OUT),
                         animate=ft.Animation(500, ft.AnimationCurve.EASE_IN_OUT),
                         on_hover=lambda e: hover_color_change(e, color="#055b5f"),
-                        on_click=lambda e: on_click(e)
+                        on_click=lambda e: on_click(mic_button=container, e=e)
                         
         )
 
