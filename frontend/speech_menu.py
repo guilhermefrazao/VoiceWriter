@@ -3,14 +3,14 @@ import asyncio
 import time
 
 from frontend.widgets.containers_generic import Containers  
-from voice.speech import Speech_to_text
+from voice.speech import SpeechToText
 from frontend.widgets.mic import Mic_menu
 
 class SpeechMenu():
     def __init__(self, page: ft.Page):
         self.page = page
         self.containers = Containers()
-        self.speech = Speech_to_text()
+        self.speech = SpeechToText()
         self.mic_menu = Mic_menu(page)
 
     def build_ui(self):

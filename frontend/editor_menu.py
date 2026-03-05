@@ -10,7 +10,7 @@ from frontend.utils.file_handler import DirectoryUtils
 from frontend.widgets.containers_generic import Containers
 from frontend.utils.recent_manager import RecentManager
 from frontend.utils.color import hover_color_change
-from voice.speech import Speech_to_text
+from voice.speech import SpeechToText
 from frontend.widgets.toolbar import TopToolbar 
 
 class EditorMenu():
@@ -37,7 +37,7 @@ class EditorMenu():
         self.container = Containers()
         self.recent_manager = RecentManager()
         self.generic_tile = Tiles()
-        self.speech = Speech_to_text()
+        self.speech = SpeechToText()
         self.can_listen = False
 
 
@@ -93,10 +93,9 @@ class EditorMenu():
             dir_widget=self.dir_name,
             message_widget=self.new_message,
             main_area=self.main_area,
-            refresh_sidebar=self.refresh_sidebar
+            refresh_sidebar=self.refresh_sidebar,
+            mic=self.mic_button
         )
-
-        self.can_listen = True
 
 
     def create_and_open_new_markdown(self):
@@ -180,16 +179,12 @@ class EditorMenu():
     def _handle_mic_click(self, e=None):
         if getattr(self, "is_listening", False):
             return
-        
-        if self.can_listen == False:
-            logging.info("Bloqueado: Abra um arquivo antes de usar o microfone.")
-            return
 
         self.is_listening = True
-        
-        self.page.run_task(self._run_speech_recognition)
 
         self.page.run_task(self._pulse_animation)
+        
+        self.page.run_task(self._run_speech_recognition)
 
 
     async def _pulse_animation(self):
@@ -224,18 +219,24 @@ class EditorMenu():
 
     async def _run_speech_recognition(self):
         try:
-            recognized_speech = await asyncio.to_thread(self.speech.main_translation)
+            recognized_speech = await asyncio.to_thread(self.speech.main_transcription)
 
-            self.new_message.value += f" {recognized_speech}"
 
-            self.new_message.update()
+            await self.update_interface(recognized_speech)
 
-            await self.new_message.focus()
-            
         except Exception as e:
             print(f"Erro no reconhecimento: {e}")
         finally:
             self.is_listening = False
+
+
+    async def update_interface(self, recognized_speech: str):
+        self.new_message.value += f" {recognized_speech}"
+        
+        await self.new_message.focus()
+
+        self.new_message.update()
+
 
 
 
@@ -247,13 +248,12 @@ class EditorMenu():
 
         intial_tree_controls = self.get_directory_tree(path)
 
-        self.mic_button = self.container.generic_container_with_mic_button(width=20, height=20, mic_size=10, on_click=self._handle_mic_click)
+        self.mic_button = self.container.generic_container_with_mic_button(width=80, height=80, mic_size=36, on_click=self._handle_mic_click)
 
         sidebar_icons = TopToolbar(left_items=[
             ft.IconButton(icon=ft.Icons.PASTE, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
             ft.IconButton(icon=ft.Icons.FOLDER, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_dir),
             ],
-            right_items=[self.mic_button],
             vertical_padding=5
         )
                 
@@ -303,7 +303,10 @@ class EditorMenu():
                     ft.Text("Open recent file (ctrl + n)", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"))])
         
 
-        main_area_topbar = TopToolbar(left_items=ft.Text("Main area", color="#42A5F5", size=14, weight=ft.FontWeight.W_500), bgcolor="#121212")
+        main_area_topbar = TopToolbar(left_items=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585"),
+                                                  ft.IconButton(icon=ft.Icons.ARROW_FORWARD, icon_color="#858585"),
+                                                  ft.Text("Main area", color="#42A5F5", size=14, weight=ft.FontWeight.W_500)], bgcolor="#121212")
+
 
         self.main_area = ft.Container(
                 expand=6,
@@ -318,7 +321,7 @@ class EditorMenu():
                         content=ft.Column(
                             controls=[
                                 self.dir_name,
-                                self.new_message
+                                self.new_message,
                             ],
                             alignment=ft.MainAxisAlignment.CENTER, 
                             horizontal_alignment=ft.CrossAxisAlignment.CENTER,

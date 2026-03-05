@@ -17,7 +17,7 @@ class DirectoryUtils():
         return await ft.FilePicker().get_directory_path()
     
 
-    def display_markdown_information(self, item: str, path: str, dir_widget, message_widget, main_area, refresh_sidebar):
+    def display_markdown_information(self, item: str, path: str, dir_widget, message_widget, main_area, refresh_sidebar, mic):
         with open(path, "r", encoding="utf-8") as f:
             content = f.read()
 
@@ -33,6 +33,18 @@ class DirectoryUtils():
         message_widget.disabled = False
         message_widget.autofocus = True
         message_widget.expand = True
+
+        if not getattr(self, "_layout_mic_configurado", False):
+    
+            for i in main_area.content.controls: 
+                if type(i) == ft.Container:
+                    i.padding = ft.padding.symmetric(horizontal=10) 
+                
+            main_area.content.controls.append(mic)
+
+            main_area.content.horizontal_alignment = ft.CrossAxisAlignment.END
+            
+            self._layout_mic_configurado = True
         
         main_area.update()
 

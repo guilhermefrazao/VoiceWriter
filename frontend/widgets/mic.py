@@ -4,12 +4,12 @@ import keyboard
 import logging
 
 from frontend.widgets.containers_generic import Containers
-from voice.speech import Speech_to_text
+from voice.speech import SpeechToText
 
 class Mic_menu():
     def __init__(self, page: ft.Page):
         self.page = page
-        self.speech = Speech_to_text()
+        self.speech = SpeechToText()
         self.containers = Containers()
         keyboard.add_hotkey("f8", self.trigger_from_keyboard)
         pass
