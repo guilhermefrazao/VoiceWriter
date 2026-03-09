@@ -136,7 +136,7 @@ class DirectoryUtils():
         if self.save_timer:
             self.save_timer.cancel()
 
-        self.save_timer = threading.Timer(1.0, self.save_to_disk, args=[e.control.data, e.data])
+        self.save_timer = threading.Timer(5.0, self.save_to_disk, args=[e.control.data, e.data])
         self.save_timer.start()
 
    

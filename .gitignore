@@ -9,3 +9,4 @@ recent_folders.json
 /testes_folder
 /testes_folder
 *.log
+/frontend/utils/__pycache__

@@ -23,11 +23,13 @@ class EditorMenu():
             always_call_on_tap=False,
             animate_cursor_opacity=True,
             multiline=True,
-            text_size=16,
+            text_size=14,
+            border_color="#333333",
+            color="#FFFFFF",
+            focused_border_color="#555555"
             autocorrect=True,
-            expand=False,
+            expand=True,
             autofocus=True,
-            disabled=True,
             on_change=lambda e: self.handler.save_changed_text(e)
         )
         self.current_file_path = str
@@ -306,7 +308,7 @@ class EditorMenu():
 
         self.main_area = ft.Container(
                 expand=6,
-                bgcolor="#0d0d0d",
+                bgcolor="#191919",
                 content=ft.Column(
                     alignment=ft.MainAxisAlignment.START,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
