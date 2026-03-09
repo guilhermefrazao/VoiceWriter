@@ -26,7 +26,7 @@ class EditorMenu():
             text_size=14,
             border_color="#333333",
             color="#FFFFFF",
-            focused_border_color="#555555"
+            focused_border_color="#555555",
             autocorrect=True,
             expand=True,
             autofocus=True,
