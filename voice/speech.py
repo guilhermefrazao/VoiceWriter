@@ -62,25 +62,25 @@ class SpeechToText():
     def main_transcription(self, callback_function=None)-> str:
         self.recognizer.pause_threshold = 3.0
         
-        #self.trancription_callback = callback_function
+        self.trancription_callback = callback_function
 
-        #self._start_listen
+        self._start_listen()
 
-        text_log, text = self._listen_and_transcribe()
+        #text_log, text = self._listen_and_transcribe(phrase_time_limit=5)
 
-        save_text(text_log)
+        #save_text(text_log)
 
-        return text
+        #return text
 
 
-    def _listen_and_transcribe(self, stream=False) -> tuple[str, str]:
+    def _listen_and_transcribe(self, phrase_time_limit=None, stream=False) -> tuple[str, str]:
          with sr.Microphone() as microphone:
             self.recognizer.adjust_for_ambient_noise(microphone, duration=1)
 
             logging.info("Adjusted for ambient noise. Linstening...")
 
             try:
-                audio = self.recognizer.listen(microphone, timeout=10, phrase_time_limit=None, stream=stream)
+                audio = self.recognizer.listen(microphone, timeout=10, phrase_time_limit=phrase_time_limit, stream=stream)
 
                 logging.info(f"Listen end: {audio}")
 
@@ -137,6 +137,7 @@ class SpeechToText():
         logging.info("Microfone aberto. Pode falar!")
 
         threading.Thread(target=self.real_time_transcription, daemon=True).start()
+        threading.Thread(target=self.real_time_listen_transcription, daemon=True).start()
 
 
     def _microfone_callback(self, in_data, frame_count, time_info, status):
@@ -145,14 +146,27 @@ class SpeechToText():
         return (None, pyaudio.paContinue)
 
 
+    def real_time_listen_transcription(self):
+        while self.is_recording:
+            text_log, text = self._listen_and_transcribe(phrase_time_limit=3)
+            
+            logging.info(f"Ao vivo: {text}")
+
+            if text:
+                if self.trancription_callback is not None:
+                        self.trancription_callback(text)
+
+
     def real_time_transcription(self):
         while self.is_recording:
             try:
                 chunk = self.audio_queue.get(timeout=1.0)
 
-                audio_array = np.frombuffer(chunk, dtype=np.int16).astype(np.float32)
+                self.audio_data_acumulado += chunk
+
+                chunk_array = np.frombuffer(chunk, dtype=np.int16).astype(np.float32)
                 
-                volume = math.sqrt(np.mean(audio_array**2))
+                volume = math.sqrt(np.mean(chunk_array**2))
                 
                 logging.info(f"Volume: {volume}")
 
@@ -165,15 +179,6 @@ class SpeechToText():
                         break
                 else:
                     self.silent_time = 0
-
-                segmentos, info = self.model.transcribe(audio_array, language="pt", vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500), condition_on_previous_text=False)
-                
-                recognized_text = "".join([s.text for s in segmentos]).strip()
-                
-                logging.info(f"Ao vivo: {recognized_text}")
-
-                if recognized_text:
-                    self.trancription_callback(recognized_text)
 
             except queue.Empty:
                 continue

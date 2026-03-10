@@ -222,9 +222,11 @@ class EditorMenu():
 
     async def _run_speech_recognition(self):
         try:
-            recognized_speech = await asyncio.to_thread(self.speech.main_transcription)
+            """recognized = await asyncio.to_thread(self.speech.main_transcription)
 
-            await self.update_interface(recognized_speech)
+            await self.update_interface(recognized)"""
+
+            await asyncio.to_thread(self.speech.main_transcription(self.update_interface))
 
         except Exception as e:
             print(f"Erro no reconhecimento: {e}")
@@ -232,11 +234,10 @@ class EditorMenu():
             self.is_listening = False
 
 
-    async def update_interface(self, recognized_speech: str):
+    def update_interface(self, recognized_speech: str):
         self.new_message.value += f" {recognized_speech}"
-        
-        await self.new_message.focus()
 
+        
         self.new_message.update()
 
 
