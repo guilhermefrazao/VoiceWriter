@@ -8,13 +8,24 @@ class Tiles():
 
 
     def generic_expand_tile(self, item: str, full_path: str, recursive_func, refresh_sidebar) -> tuple[ft.DragTarget, ft.ExpansionTile]:
-        tile = ft.ExpansionTile(
-                                title = ft.Text(item, size=14, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
-                                leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=12, color="#858585"),
+        """tile = ft.Container(
+            border=ft.border.all(1, ft.Colors.with_opacity(0.1, ft.Colors.WHITE)),
+            border_radius=ft.border_radius.all(6),
+            bgcolor="#1E1E1E",
+            shadow=ft.BoxShadow(
+                spread_radius=0,
+                blur_radius=8,
+                color=ft.Colors.with_opacity(0.25, ft.Colors.BLACK),
+                offset=ft.Offset(0, 4)
+            ),
+            margin=ft.margin.only(bottom=4),
+            content= ft.ExpansionTile(
+                                title = ft.Text(item, size=13, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
+                                leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=16, color="#858585"),
                                 animation_style=ft.AnimationStyle(duration=20, reverse_duration=20),
                                 affinity=ft.TileAffinity.LEADING,
-                                collapsed_shape=ft.RoundedRectangleBorder(),
-                                shape=ft.RoundedRectangleBorder(),
+                                collapsed_shape=ft.RoundedRectangleBorder(side=ft.BorderSide(color=ft.Colors.TRANSPARENT)),
+                                shape=ft.RoundedRectangleBorder(side=ft.BorderSide(color=ft.Colors.TRANSPARENT)),
                                 tile_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
                                 data=full_path,
                                 controls_padding=ft.Padding.only(left=20),
@@ -28,7 +39,28 @@ class Tiles():
                                     ],
                                 on_change=lambda e: self.handler.handle_tile_change(e, self.expanded_folders),
                             )
-        
+        )"""
+        tile = ft.ExpansionTile(
+                                title = ft.Text(item, size=13, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
+                                leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=16, color="#858585"),
+                                animation_style=ft.AnimationStyle(duration=20, reverse_duration=20),
+                                affinity=ft.TileAffinity.LEADING,
+                                collapsed_shape=ft.RoundedRectangleBorder(side=ft.BorderSide(color=ft.Colors.TRANSPARENT)),
+                                shape=ft.RoundedRectangleBorder(side=ft.BorderSide(color=ft.Colors.TRANSPARENT)),
+                                tile_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
+                                data=full_path,
+                                controls_padding=ft.Padding.only(left=20),
+                                expanded=(full_path in self.expanded_folders),
+                                enable_feedback=True,
+                                controls=[
+                                    ft.Container(
+                                        border=ft.Border.only(left=ft.BorderSide(1, "#858585")),
+                                        content=ft.Column(controls=recursive_func(full_path), spacing=0)
+                                        )
+                                    ],
+                                on_change=lambda e: self.handler.handle_tile_change(e, self.expanded_folders),
+                            )
+
         wrapper = ft.DragTarget(
             group="folder",
             content=self.handler.make_draggable(tile, full_path, "folder"),
@@ -39,16 +71,35 @@ class Tiles():
     
 
     def generic_list_tile(self, item: str, full_path: str, refresh_sidebar, on_file_open) -> tuple[ft.DragTarget, ft.ListTile]:
-        tile = ft.ListTile(
-                            title=ft.Text(item, size=14, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
-                            height=50,
+        """tile = ft.Container(
+            border=ft.border.all(1, ft.Colors.with_opacity(0.1, ft.Colors.WHITE)),
+            border_radius=ft.border_radius.all(6),
+            bgcolor="#1E1E1E",
+            shadow=ft.BoxShadow(
+                spread_radius=0,
+                blur_radius=8,
+                color=ft.Colors.with_opacity(0.25, ft.Colors.BLACK),
+                offset=ft.Offset(0, 4)
+            ),
+            margin=ft.margin.only(bottom=4),
+            content=ft.ListTile(
+                            title=ft.Text(item, size=13, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
                             content_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
                             hover_color="black",
                             data=full_path,
                             is_three_line=False,
                             on_click=lambda e: self.handler.on_file_selected(e, on_file_open)
-                        )         
-        
+                        )   
+        )"""
+        tile = ft.ListTile(
+                            title=ft.Text(item, size=13, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
+                            content_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
+                            hover_color="black",
+                            data=full_path,
+                            is_three_line=False,
+                            on_click=lambda e: self.handler.on_file_selected(e, on_file_open)
+                        )   
+
         wrapper = ft.DragTarget(
             group="files",
             content=self.handler.make_draggable(tile, full_path, "files"),

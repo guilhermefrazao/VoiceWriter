@@ -25,10 +25,11 @@ class EditorMenu():
             multiline=True,
             text_size=14,
             border_color="#333333",
-            color="#FFFFFF",
+            color="#D4D4D4",
             focused_border_color="#555555",
             autocorrect=True,
-            expand=True,
+            expand=False,
+            disabled=True,
             autofocus=True,
             on_change=lambda e: self.handler.save_changed_text(e)
         )
@@ -40,6 +41,7 @@ class EditorMenu():
         self.generic_tile = Tiles()
         self.speech = SpeechToText()
         self.can_listen = False
+        self.open_file_path = str
 
 
 
@@ -88,11 +90,13 @@ class EditorMenu():
 
 
     def load_file_to_editor(self, item_name : str, full_path: str):
+        self.open_file_path = full_path
         self.handler.display_markdown_information(
             item=item_name,
             path=full_path,
             dir_widget=self.dir_name,
             message_widget=self.new_message,
+            main_topbar=self.main_area_topbar,
             main_area=self.main_area,
             refresh_sidebar=self.refresh_sidebar,
             mic=self.mic_button
@@ -243,13 +247,14 @@ class EditorMenu():
         self.page.title = "Editor - Voice Writter"
         self.page.theme_mode = ft.ThemeMode.DARK
         self.current_file_path = path
+        self.open_file_path = path
 
         intial_tree_controls = self.get_directory_tree(path)
 
         self.mic_button = self.container.generic_container_with_mic_button(width=80, height=80, mic_size=36, on_click=self.handle_mic_click)
 
         sidebar_icons = TopToolbar(left_items=[
-            ft.IconButton(icon=ft.Image(src="frontend/images/Paste_sprite.png"), icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
+            ft.IconButton(icon=ft.Icons.FILE_OPEN, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
             ft.IconButton(icon=ft.Icons.FOLDER, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_new_dir),
             ],
             vertical_padding=5
@@ -276,24 +281,27 @@ class EditorMenu():
                         content=ft.Column(
                             controls=[
                                 sidebar_icons,
-                                self.file_tree_column,
-                                ft.Column(
+                                self.file_tree_column,                                
+                            ]
+                        )
+                    ),
+                    ft.Container(
+                        border=ft.border.only(top=ft.border.BorderSide(width=1, color="#055b5f")),
+                        content=ft.Column(
                                     spacing=2, 
                                     horizontal_alignment=ft.CrossAxisAlignment.START, 
                                     controls=[
                                         ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585", on_click=lambda e: self.route_to_main_menu(self.page)), 
                                         ft.Text("Back", size=16, color="#858585")
                                     ]
-                                )
-                            ]
-                        )
-                    ),
+                            )
+                        ),
                     routes_menu 
                 ]
             )
         )
 
-        self.dragabble_sidebar = ft.DragTarget(group="folder", content=sidebar, on_accept=lambda e: self.handler.move_file_on_drop(e, self.current_file_path, self.refresh_sidebar))
+        self.dragabble_sidebar = ft.DragTarget(group="folder", content=sidebar, on_accept=lambda e: self.handler.move_file_on_drop(e, path, self.refresh_sidebar))
 
         self.dir_name = ft.Column(
             spacing=20,
@@ -301,9 +309,10 @@ class EditorMenu():
                     ft.Text("Open recent file (ctrl + n)", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"))])
         
 
-        main_area_topbar = TopToolbar(left_items=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585"),
-                                                  ft.IconButton(icon=ft.Icons.ARROW_FORWARD, icon_color="#858585"),
-                                                  ft.Text(self.current_file_path, color="#42A5F5", size=14, weight=ft.FontWeight.W_500)], bgcolor="#121212")
+        self.main_area_topbar = TopToolbar(left_items=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585"),
+                                                  ft.IconButton(icon=ft.Icons.ARROW_FORWARD, icon_color="#858585"),],
+                                      central_items=[ft.Text(self.open_file_path, color="#42A5F5", size=14, weight=ft.FontWeight.W_500)], 
+                                      bgcolor="#191919")
 
 
         self.main_area = ft.Container(
@@ -314,7 +323,7 @@ class EditorMenu():
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                     spacing=0,
                     controls=[
-                        main_area_topbar,
+                        self.main_area_topbar,
                         ft.Container(
                         content=ft.Column(
                             controls=[
@@ -351,7 +360,7 @@ class EditorMenu():
                 ft.IconButton(icon=ft.Icons.FORMAT_QUOTE, icon_color="#858585", tooltip="Citar"),
                 ft.IconButton(icon=ft.Icons.SAVE, icon_color="#858585", tooltip="Salvar"),
                 ft.IconButton(icon=ft.Icons.SETTINGS, icon_color="#858585", tooltip="Configurações"),
-                ft.IconButton(icon=ft.Icons.MORE_VERT, icon_color="#858585", tooltip="Mais Opções")
+                ft.IconButton(icon=ft.Icons.MORE_VERT, icon_color="#858585", tooltip="Mais Opções"),
             ],
             bgcolor="#1c1c1c"
         )

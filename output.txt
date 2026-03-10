@@ -253,3 +253,11 @@
 {16:38:14} + - + Abro navegador ópera e gixi
 {18:43:30} + - + E aqui? Chega!
 {18:43:42} + - + desligar o computador
+{12:11:39} + - + imagens Python padrão para conseguir criar o Dockerfile. Aí para isso a gente usa umas imagens que são, elas podem ser eslin, alpine e a imagem comum, em que a imagem comum é mais pesada, a imagem alpine é a mais leve, que tem menos parte de compiladores, esses podem ser para algumas bibliotecas, e a imagem eslin é a mais leve.
+{12:14:25} + - + Tem também outras imagens que são, por exemplo, o Bookworm, Trixie e o Windows Server Core. Elas são utilizadas para, respectivamente, o Bookworm e a Trixie são imagens do Debian, ou seja, imagens Linux, que são mais leves do que as imagens Windows, só que a diferença é que a imagem do Windows Server Core, que é uma das imagens de tamanhos variáveis do Windows, ela é mais compatível com ferramentas que só funcionam no Windows. Então, às vezes, você tem a implicação que tem coisas que só funcionam para o Windows, você tem que usar ela.
+{12:26:03} + - + A diferença entre os parâmetros ED e COP, que eu tive alguns dos dois, é que o parâmetro ED é mais utilizado para quando você quer baixar alguma coisa na internet ou você precisa de alguma dependência para adicionar no Dockerfile. Enquanto o COP ele pega do seu próprio código e adiciona dentro do pacote do Docker aquilo que você precisa, então normalmente você pega e coloca o Pills Requirements e depois adiciona eles ao pacote.
+{12:48:12} + - + Abre o docker destope
+{12:48:30} + - + Abre o docker destope.
+{12:48:53} + - + Abra o docker, desculpe!
+{13:03:59} + - + Às vezes também, em vez de você utilizar uma imagem mais pesada, seria bom você baixar só os parâmetros necessários para você utilizar aquela imagem mais leve. Isso foi o que eu fiz dentro do Web Explorer da Winwin Test. Para baixar o Playwright, que seria uma ferramenta para você conseguir abrir o Chrome na Vega na Web, ele é necessário. Aí eu baixei o Playwright, em vez de baixar o Python que vem junto com ele. De maneira que eu baixei o Python Slim, que é mais leve do que o Python comum. Assim, eu economizei espaço e ainda tive a aplicação funcionar.
+{22:34:12} + - + Agora está funcionando, ele está editando.
