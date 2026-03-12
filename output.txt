@@ -261,3 +261,5 @@
 {12:48:53} + - + Abra o docker, desculpe!
 {13:03:59} + - + Às vezes também, em vez de você utilizar uma imagem mais pesada, seria bom você baixar só os parâmetros necessários para você utilizar aquela imagem mais leve. Isso foi o que eu fiz dentro do Web Explorer da Winwin Test. Para baixar o Playwright, que seria uma ferramenta para você conseguir abrir o Chrome na Vega na Web, ele é necessário. Aí eu baixei o Playwright, em vez de baixar o Python que vem junto com ele. De maneira que eu baixei o Python Slim, que é mais leve do que o Python comum. Assim, eu economizei espaço e ainda tive a aplicação funcionar.
 {22:34:12} + - + Agora está funcionando, ele está editando.
+{00:13:46} + - + Desligo com o thunder
+{00:13:57} + - + desligue-o

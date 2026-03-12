@@ -10,3 +10,9 @@ recent_folders.json
 /testes_folder
 *.log
 /frontend/utils/__pycache__
+/main.dist
+/Installation_folder
+main.exe
+/build
+/dist
+/installer
