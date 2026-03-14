@@ -1,1 +1,9 @@
-    
+speechrecognition==3.14.5 
+flet[all]==0.80.2
+pyaudio==0.2.14
+openai-whisper==20250625
+soundfile==0.13.1
+appopener==1.7 
+faster-whisper==1.2.1
+keyboard==0.13.5
+send2trash==2.1.0
