@@ -263,3 +263,48 @@
 {22:34:12} + - + Agora está funcionando, ele está editando.
 {00:13:46} + - + Desligo com o thunder
 {00:13:57} + - + desligue-o
+{19:17:09} + - + Vamos lá.
+{19:17:14} + - + Vamos ao passo a passo.
+{19:17:22} + - + Vamos lá.
+{19:17:25} + - + Vamos lá.
+{19:17:33} + - + Tchau.
+{19:18:19} + - + Obrigado.
+{19:18:29} + - + Tchau.
+{19:18:40} + - + Vamos lá.
+{19:18:51} + - + Vamos lá.
+{19:19:00} + - + Vamos lá.
+{19:19:10} + - + Vamos lá.
+{19:19:25} + - + Tchau.
+{19:20:00} + - + Alô, alô, alô, você poderia abrir o Discord para mim?
+{19:20:04} + - + E aí
+{19:20:11} + - + Ah, ele só interrompe e depois...
+{19:20:13} + - + Fala mesmo.
+{19:20:20} + - + Hum...
+{19:20:34} + - + Vamos lá.
+{19:29:00} + - + Se está dando certo para ele conseguir escutar, ele vai conseguir escutar até quando e onde que ele está colocando esses outputs.
+{19:29:12} + - + Ele vai escutar infinitamente para apertar aqui.
+{19:34:13} + - + Eu estou vendo um mangá Gachiakuta e ele é muito bom.
+{16:43:17} + - + robótica, falar por 10 segundos até que é bastante tempo.
+{16:43:22} + - + Só de mim isso.
+{16:43:27} + - + Isso.
+{16:43:35} + - + Demorou um pouquinho para ele reconhecer, na verdade eu acho que é um tempo ideal.
+{16:43:44} + - + Ó, ele tá fazendo a transcrição.
+{16:45:39} + - + O modelo que está utilizando é o Whisper Turbo Whisper Small
+{16:45:48} + - + Apareceu o esperturbo nele, reconheceu tudo certinho aqui que eu to falando.
+{16:45:54} + - + Ele reconhece e quando eu falo...
+{16:46:02} + - + Asterisco ou Chaves
+16:59:59 - Mas agora ele demora bastante para ele conseguir começar o...
+17:00:23 - Mas na segunda vez ele não demora tanto.
+17:00:29 - Vou fazer o que ele chamasse.
+17:06:53 - Ah, esse problema não sei se está fazendo tanto...
+17:15:16 - Tá, tá, tá, tá, tá, tá, tá. Tá, tá, tá.
+17:15:22 - Dá vergonha isso aí.
+17:15:28 - Mas bom, ele consegue reconhecer muito tempo de áudio.
+17:15:34 - Esses áudios em tempos menores de 5 segundos.
+17:15:40 - Vou tentar utilizar isso na aula e ver como ele funciona.
+17:15:46 - que alguém fale alguma coisa, né? Eu acho que isso vai ser muito...
+17:58:06 - tá tudo funcionando. Acho que ele nem entendeu nada do que eu falei até agora.
+17:58:13 - Precisa então ensinar o Tudu para fazer com que o entendimento seja mais fácil.
+17:58:20 - Vamos lá.
+17:58:27 - Então, vamos lá.
+17:58:33 - Tchau.

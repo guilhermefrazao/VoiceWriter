@@ -75,6 +75,12 @@ python main.py --editor
 python main.py --main_menu
 ```
 
+## Empacotar o projeto em um executável
+
+```bash
+flet pack main.py --name "VoiceWriter" --onefile --exclude-module "dist"
+```
+
 ---
 
 ## Estrutura do projeto

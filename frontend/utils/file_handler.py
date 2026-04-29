@@ -137,19 +137,28 @@ class DirectoryUtils():
     def save_changed_text(self, e):
         if self.save_timer:
             self.save_timer.cancel()
-
-        self.save_timer = threading.Timer(5.0, self.save_to_disk, args=[e.control.data, e.data])
+        self.save_timer = threading.Timer(2.0, self.save_to_disk, args=[e.control.data, e.control])
         self.save_timer.start()
 
-   
-    def save_to_disk(self, file_path, new_message):
-        if file_path:
+
+    def schedule_save(self, file_path: str, text_field):
+        if not file_path or not isinstance(file_path, str):
+            return
+        if self.save_timer:
+            self.save_timer.cancel()
+        self.save_timer = threading.Timer(1.0, self.save_to_disk, args=[file_path, text_field])
+        self.save_timer.start()
+
+
+    def save_to_disk(self, file_path: str, text_field):
+        content = text_field.value or ""
+        if file_path and isinstance(file_path, str):
             try:
                 with open(file_path, "w", encoding="utf-8") as f:
-                    f.write(new_message)
-
+                    f.write(content)
+                logging.info(f"Arquivo salvo: {file_path}")
             except Exception as e:
-                print(f"Erro ao salvar: {e}")
+                logging.error(f"Erro ao salvar: {e}")
 
    
     def change_directory_title_name(self, e, refresh_sidebar, markdown: bool=True):
