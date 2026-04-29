@@ -2,15 +2,13 @@ import flet as ft
 import asyncio
 import time
 
-from frontend.widgets.containers_generic import Containers  
-from voice.speech import SpeechToText
+from frontend.widgets.containers_generic import Containers
 from frontend.widgets.mic import MicMenu
 
 class SpeechMenu():
     def __init__(self, page: ft.Page):
         self.page = page
         self.containers = Containers()
-        self.speech = SpeechToText()
         self.MicMenu = MicMenu(page)
         self.mic_card = None
 

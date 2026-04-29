@@ -4,7 +4,6 @@ import asyncio
 import logging
 
 from frontend.widgets.containers_generic import Containers
-from frontend.editor_menu import EditorMenu
 from frontend.utils.animation import AnimationUtils
 from frontend.utils.file_handler import DirectoryUtils
 from frontend.utils.recent_manager import RecentManager
@@ -18,7 +17,6 @@ class MainEditorMenu():
         self.folder_path = ""
         self.directory_container = ""
         self.path_editor = None
-        self.editor_menu = EditorMenu(page)
         self.animation = AnimationUtils()
         self.explorer = DirectoryUtils()
         self.recent_folder = RecentManager()
@@ -54,6 +52,8 @@ class MainEditorMenu():
         else:
             self.route_to_editor(path_editor, self.recent_folder, self.page)
             
+    async def open_speech_menu(self, e: ft.Event[ft.Button]):
+        asyncio.create_task(self.page.push_route("/"))
 
 
     async def select_editor_path(self, e: ft.Event[ft.Button]):
@@ -106,7 +106,8 @@ class MainEditorMenu():
             spacing=10,
             controls=[
                 Containers().generic_text_container_with_right_button("Create new vault", "Create a new vault under a folder.", "Create", "#028268", "#00302d", lambda e : self.animation.fade(animation_switcher, options_container_1, options_container_2)),
-                Containers().generic_text_container_with_right_button("Open a Folder", "Open Folder with files.", "Open", "#028268", "#00302d", self.open_editor, True)
+                Containers().generic_text_container_with_right_button("Open a Folder", "Open Folder with files.", "Open", "#028268", "#00302d", self.open_editor, True),
+                Containers().generic_text_container_with_right_button("Return to Main_Menu", "Returns to main_menu", "Back", "#028268", "#00302d", self.open_speech_menu)
                 ]
             )       
 

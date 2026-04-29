@@ -10,8 +10,7 @@ from frontend.utils.file_handler import DirectoryUtils
 from frontend.widgets.containers_generic import Containers
 from frontend.utils.recent_manager import RecentManager
 from frontend.utils.color import hover_color_change
-from voice.speech import SpeechToText
-from frontend.widgets.toolbar import TopToolbar 
+from frontend.widgets.toolbar import TopToolbar
 
 class EditorMenu():
     def __init__(self, page : ft.Page):
@@ -39,10 +38,18 @@ class EditorMenu():
         self.container = Containers()
         self.recent_manager = RecentManager()
         self.generic_tile = Tiles()
-        self.speech = SpeechToText()
+        self._speech = None
         self.can_listen = False
         self.open_file_path = str
 
+
+
+    @property
+    def speech(self):
+        if self._speech is None:
+            from voice.speech import SpeechToText
+            self._speech = SpeechToText()
+        return self._speech
 
 
     def get_directory_tree(self, path):
@@ -181,6 +188,7 @@ class EditorMenu():
 
     def handle_mic_click(self, mic_button, e=None):
         if getattr(self, "is_listening", False):
+            self.speech.stop_listen()
             return
 
         self.is_listening = True
@@ -222,22 +230,19 @@ class EditorMenu():
 
     async def _run_speech_recognition(self):
         try:
-            recognized_speech = await asyncio.to_thread(self.speech.main_transcription)
+            def on_text_chunk(text: str):
+                self.new_message.value = (self.new_message.value or "") + f" {text}"
+                self.new_message.update()
 
-            await self.update_interface(recognized_speech)
+            await asyncio.to_thread(self.speech.main_transcription, on_text_chunk)
+
+            await self.new_message.focus()
+            self.handler.schedule_save(self.open_file_path, self.new_message)
 
         except Exception as e:
-            print(f"Erro no reconhecimento: {e}")
+            logging.error(f"Erro no reconhecimento: {e}")
         finally:
             self.is_listening = False
-
-
-    async def update_interface(self, recognized_speech: str):
-        self.new_message.value += f" {recognized_speech}"
-        
-        await self.new_message.focus()
-
-        self.new_message.update()
 
 
 
@@ -274,29 +279,27 @@ class EditorMenu():
             width=250,
             bgcolor="#181818",
             content=ft.Column(
+                horizontal_alignment=ft.CrossAxisAlignment.STRETCH,
                 controls=[
+                    sidebar_icons,
+                    ft.Divider(height=1, color="#055b5f", thickness=1),
                     ft.Container(
-                        padding=ft.padding.symmetric(horizontal=5), 
-                        expand=True, 
-                        content=ft.Column(
-                            controls=[
-                                sidebar_icons,
-                                self.file_tree_column,                                
-                            ]
-                        )
+                        padding=ft.padding.symmetric(horizontal=5),
+                        expand=True,
+                        content=self.file_tree_column,
                     ),
                     ft.Container(
                         border=ft.border.only(top=ft.border.BorderSide(width=1, color="#055b5f")),
-                        content=ft.Column(
-                                    spacing=2, 
-                                    horizontal_alignment=ft.CrossAxisAlignment.START, 
-                                    controls=[
-                                        ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585", on_click=lambda e: self.route_to_main_menu(self.page)), 
-                                        ft.Text("Back", size=16, color="#858585")
-                                    ]
-                            )
-                        ),
-                    routes_menu 
+                        content=ft.Row(
+                            spacing=0,
+                            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                            controls=[
+                                ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585", on_click=lambda e: self.route_to_main_menu(self.page)),
+                                ft.Text("Back", size=16, color="#C8C8C8")
+                            ]
+                        )
+                    ),
+                    routes_menu
                 ]
             )
         )
