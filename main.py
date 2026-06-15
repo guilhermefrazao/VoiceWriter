@@ -3,12 +3,20 @@ import argparse
 import logging
 import os
 import sys
+import threading
 
-from frontend.main_menu import MainEditorMenu
-from frontend.editor_menu import EditorMenu
 from frontend.utils.recent_manager import RecentManager
-from frontend.speech_menu import SpeechMenu
 from frontend.widgets.mic import MicMenu
+
+
+def _prewarm_speech():
+    try:
+        from voice.speech import SpeechToText
+        stt = SpeechToText()
+        stt._load_model(model_size="turbo")
+        logging.info("Pre-warm concluído.")
+    except Exception as e:
+        logging.warning(f"Pre-warm falhou: {e}")
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", 
         level=logging.INFO, 
@@ -50,6 +58,7 @@ class MainPage():
             self.page.views.clear()
 
             if self.page.route == "/":
+                from frontend.speech_menu import SpeechMenu
                 self.menu_instance = SpeechMenu(self.page)
 
                 speech_view = ft.View(
@@ -64,7 +73,8 @@ class MainPage():
                 speech_view.controls.append(self.menu_instance.build_ui())
 
             if self.page.route == "/main_menu":
-                self.menu_instance = MainEditorMenu(self.page) 
+                from frontend.main_menu import MainEditorMenu
+                self.menu_instance = MainEditorMenu(self.page)
                 
                 home_view = ft.View(
                     route="/main_menu",
@@ -79,8 +89,9 @@ class MainPage():
 
             if self.page.route == "/editor":
                 current_path = self.page.current_project_path
-                
+
                 if current_path and os.path.exists(current_path):
+                    from frontend.editor_menu import EditorMenu
                     self.menu_instance = EditorMenu(self.page)
 
                     editor_layout = ft.View(
@@ -117,11 +128,14 @@ class MainPage():
                 self.page.update()
 
             if e.key == "F8":
+                from frontend.speech_menu import SpeechMenu
+                from frontend.editor_menu import EditorMenu
                 if mic_window.open:
                     self.mic_menu.handle_mic_click(mic_button=mic_window.content.content.controls[0])
                 
                 elif type(self.menu_instance) == SpeechMenu:
                     self.mic_menu.handle_mic_click(self.menu_instance.mic_card.content.controls[0])
+                
                 
                 elif type(self.menu_instance) == EditorMenu and self.menu_instance.can_listen == True:
                     self.menu_instance.handle_mic_click(self.menu_instance.mic_button)
@@ -137,12 +151,14 @@ class MainPage():
             logging.info(f"Manager: {manager}")
             self.page.current_project_path = manager
             await self.page.push_route("/editor")
-        
+
         elif args.main_menu:
             await self.page.push_route("/main_menu")
-        
+
         else:
             await route_change()
+
+        threading.Thread(target=_prewarm_speech, daemon=True).start()
 
 async def flet_target(page:ft.Page):
     app = MainPage(page)

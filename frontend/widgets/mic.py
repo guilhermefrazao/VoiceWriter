@@ -4,17 +4,24 @@ import keyboard
 import logging
 
 from frontend.widgets.containers_generic import Containers
-from voice.speech import SpeechToText
 
 class MicMenu():
     def __init__(self, page: ft.Page):
         self.page = page
-        self.speech = SpeechToText()
+        self._speech = None
         self.containers = Containers()
+
+    @property
+    def speech(self):
+        if self._speech is None:
+            from voice.speech import SpeechToText
+            self._speech = SpeechToText()
+        return self._speech
 
 
     def handle_mic_click(self, mic_button, e=None):
         if getattr(self, "is_listening", False):
+            self.speech.stop_listen()
             return
 
         self.is_listening = True

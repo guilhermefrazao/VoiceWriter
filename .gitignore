@@ -16,3 +16,4 @@ main.exe
 /build
 /dist
 /installer
+.env
