@@ -237,13 +237,20 @@ class EditorMenu():
 
             await asyncio.to_thread(self.speech.main_transcription, on_text_chunk)
 
-            await self.new_message.focus()
-            self.handler.schedule_save(self.open_file_path, self.new_message)
+            await self.update_interface(recognized_speech)
 
         except Exception as e:
             logging.error(f"Erro no reconhecimento: {e}")
         finally:
             self.is_listening = False
+
+
+    async def update_interface(self, recognized_speech: str):
+        self.new_message.value += f" {recognized_speech}"
+        
+        await self.new_message.focus()
+
+        self.new_message.update()
 
 
 

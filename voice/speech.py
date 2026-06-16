@@ -70,7 +70,7 @@ class SpeechToText():
         return text
     
 
-    def _listen_and_transcribe(self, stream=False) -> tuple[str, str]:
+    def _listen_and_transcribe(self, phrase_time_limit=None, stream=False) -> tuple[str, str]:
          with sr.Microphone() as microphone:
             self.recognizer.adjust_for_ambient_noise(microphone, duration=1)
 

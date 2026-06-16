@@ -12,47 +12,47 @@
 {23:49:29} + - +  Yeah.
 {23:49:33} + - +  Hello
 {23:50:04} + - +  and dun dun
-{23:50:07} + - +  e você está aqui.
+{23:50:07} + - +  e vocï¿½ estï¿½ aqui.
 {23:50:12} + - +  Eu quero abrir o...
 {23:50:20} + - +  Eu quero abrir o Google.
 {23:50:27} + - +  Av Kre motherfoShin
 {23:52:18} + - +  Eu consegui baixar o FF.
-{23:52:24} + - +  porque não está funcionando.
-{23:52:29} + - +  O que são os parâmetros?
+{23:52:24} + - +  porque nï¿½o estï¿½ funcionando.
+{23:52:29} + - +  O que sï¿½o os parï¿½metros?
 {23:52:43} + - +  Hmm.
 {23:53:15} + - +  para falar para ver se...
 {23:53:20} + - +  quando ele para ele ia acar de intervalo.
-{23:53:33} + - +  e a cada x intervalo de tempo ele tá dando algum...
+{23:53:33} + - +  e a cada x intervalo de tempo ele tï¿½ dando algum...
 {23:53:41} + - +  sem me afala, provavelmente eu problema de tentar reconhecer o idioma a partir.
-{23:56:54} + - +  inséminURE
+{23:56:54} + - +  insï¿½minURE
 {23:56:58} + - +  Thank you.
 {23:57:02} + - + 
-{23:57:10} + - +  e é faz em dois
+{23:57:10} + - +  e ï¿½ faz em dois
 {00:07:44} + - + {'text': ' God,<|pt|>', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 4.58, 'text': ' God,', 'tokens': [50372, 1265, 11, 50267, 50593], 'temperature': 1.0, 'avg_logprob': -4.527965545654297, 'compression_ratio': 0.5555555555555556, 'no_speech_prob': 0.5486193299293518}], 'language': 'portuguese'}
 {00:07:50} + - + {'text': ' Oi, Oi, Oi, Oi...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 3.0, 'text': ' Oi, Oi, Oi, Oi...', 'tokens': [50364, 31610, 11, 31610, 11, 31610, 11, 31610, 485, 50514], 'temperature': 0.0, 'avg_logprob': -0.8568666631525214, 'compression_ratio': 1.0, 'no_speech_prob': 0.5669246912002563}], 'language': 'portuguese'}
-{00:07:56} + - + {'text': ' Hmm, ele está entendendo até...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 3.0, 'text': ' Hmm, ele está entendendo até...', 'tokens': [50364, 8239, 11, 1118, 3192, 16612, 3999, 8784, 485, 50514], 'temperature': 0.0, 'avg_logprob': -0.7311260916969993, 'compression_ratio': 0.825, 'no_speech_prob': 0.14375519752502441}], 'language': 'portuguese'}
-{00:08:03} + - + {'text': ' Ah, ali só', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Ah, ali só', 'tokens': [50387, 2438, 11, 10198, 6238, 50464], 'temperature': 1.0, 'avg_logprob': -2.3434971400669644, 'compression_ratio': 0.5789473684210527, 'no_speech_prob': 0.07506540417671204}], 'language': 'portuguese'}
+{00:07:56} + - + {'text': ' Hmm, ele estï¿½ entendendo atï¿½...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 3.0, 'text': ' Hmm, ele estï¿½ entendendo atï¿½...', 'tokens': [50364, 8239, 11, 1118, 3192, 16612, 3999, 8784, 485, 50514], 'temperature': 0.0, 'avg_logprob': -0.7311260916969993, 'compression_ratio': 0.825, 'no_speech_prob': 0.14375519752502441}], 'language': 'portuguese'}
+{00:08:03} + - + {'text': ' Ah, ali sï¿½', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Ah, ali sï¿½', 'tokens': [50387, 2438, 11, 10198, 6238, 50464], 'temperature': 1.0, 'avg_logprob': -2.3434971400669644, 'compression_ratio': 0.5789473684210527, 'no_speech_prob': 0.07506540417671204}], 'language': 'portuguese'}
 {00:08:57} + - + {'text': ' abrir Google', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' abrir Google', 'tokens': [50364, 27446, 3329, 50464], 'temperature': 0.0, 'avg_logprob': -0.600139570236206, 'compression_ratio': 0.6, 'no_speech_prob': 0.32658958435058594}], 'language': 'portuguese'}
 {00:09:07} + - + {'text': '', 'segments': [], 'language': 'portuguese'}
-{00:09:15} + - + {'text': ' Você está me ouvindo?', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 4.64, 'text': ' Você está me ouvindo?', 'tokens': [50364, 9781, 3192, 385, 21157, 10306, 30, 50596], 'temperature': 0.0, 'avg_logprob': -0.824160099029541, 'compression_ratio': 0.7419354838709677, 'no_speech_prob': 0.26711276173591614}], 'language': 'portuguese'}
+{00:09:15} + - + {'text': ' Vocï¿½ estï¿½ me ouvindo?', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 4.64, 'text': ' Vocï¿½ estï¿½ me ouvindo?', 'tokens': [50364, 9781, 3192, 385, 21157, 10306, 30, 50596], 'temperature': 0.0, 'avg_logprob': -0.824160099029541, 'compression_ratio': 0.7419354838709677, 'no_speech_prob': 0.26711276173591614}], 'language': 'portuguese'}
 {00:09:39} + - + {'text': ' rolando bem.', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 6.640000000000001, 'text': ' rolando bem.', 'tokens': [50364, 744, 16201, 7577, 13, 50696], 'temperature': 1.0, 'avg_logprob': -3.591263907296317, 'compression_ratio': 0.6, 'no_speech_prob': 0.17488719522953033}], 'language': 'portuguese'}
-{00:09:45} + - + {'text': ' Não te dou nada direito.', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Não te dou nada direito.', 'tokens': [50364, 8010, 535, 2482, 8096, 36601, 13, 50464], 'temperature': 0.4, 'avg_logprob': -0.8667743470933702, 'compression_ratio': 0.7575757575757576, 'no_speech_prob': 0.10522950440645218}], 'language': 'portuguese'}
-{00:09:51} + - + {'text': ' O máximo deles são os...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' O máximo deles são os...', 'tokens': [50364, 422, 38876, 30789, 8364, 3003, 485, 50464], 'temperature': 0.0, 'avg_logprob': -0.4348794354332818, 'compression_ratio': 0.7647058823529411, 'no_speech_prob': 0.06082788482308388}], 'language': 'portuguese'}
+{00:09:45} + - + {'text': ' Nï¿½o te dou nada direito.', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Nï¿½o te dou nada direito.', 'tokens': [50364, 8010, 535, 2482, 8096, 36601, 13, 50464], 'temperature': 0.4, 'avg_logprob': -0.8667743470933702, 'compression_ratio': 0.7575757575757576, 'no_speech_prob': 0.10522950440645218}], 'language': 'portuguese'}
+{00:09:51} + - + {'text': ' O mï¿½ximo deles sï¿½o os...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' O mï¿½ximo deles sï¿½o os...', 'tokens': [50364, 422, 38876, 30789, 8364, 3003, 485, 50464], 'temperature': 0.0, 'avg_logprob': -0.4348794354332818, 'compression_ratio': 0.7647058823529411, 'no_speech_prob': 0.06082788482308388}], 'language': 'portuguese'}
 {00:09:56} + - + {'text': 'ky perfecto.', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 21.42, 'text': 'ky perfecto.', 'tokens': [50364, 4133, 2176, 78, 13, 51435], 'temperature': 1.0, 'avg_logprob': -3.605100631713867, 'compression_ratio': 0.6, 'no_speech_prob': 0.09074513614177704}], 'language': 'portuguese'}
 {00:10:00} + - + {'text': ' traduzir 5 palavras ou...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 3.0, 'text': ' traduzir 5 palavras ou...', 'tokens': [50364, 2479, 3334, 347, 1025, 46169, 2820, 485, 50514], 'temperature': 0.0, 'avg_logprob': -0.7763189315795899, 'compression_ratio': 0.7575757575757576, 'no_speech_prob': 0.051927391439676285}], 'language': 'portuguese'}
-{00:10:03} + - + {'text': ' além disso', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' além disso', 'tokens': [50364, 30388, 20088, 50464], 'temperature': 0.0, 'avg_logprob': -0.29851865768432617, 'compression_ratio': 0.5789473684210527, 'no_speech_prob': 0.2345592975616455}], 'language': 'portuguese'}
-{00:24:06} + - + {'text': ' Está me ouvindo?', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Está me ouvindo?', 'tokens': [50364, 27304, 385, 21157, 10306, 30, 50464], 'temperature': 0.0, 'avg_logprob': -0.6269859671592712, 'compression_ratio': 0.68, 'no_speech_prob': 0.244350865483284}], 'language': 'portuguese'}
+{00:10:03} + - + {'text': ' alï¿½m disso', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' alï¿½m disso', 'tokens': [50364, 30388, 20088, 50464], 'temperature': 0.0, 'avg_logprob': -0.29851865768432617, 'compression_ratio': 0.5789473684210527, 'no_speech_prob': 0.2345592975616455}], 'language': 'portuguese'}
+{00:24:06} + - + {'text': ' Estï¿½ me ouvindo?', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' Estï¿½ me ouvindo?', 'tokens': [50364, 27304, 385, 21157, 10306, 30, 50464], 'temperature': 0.0, 'avg_logprob': -0.6269859671592712, 'compression_ratio': 0.68, 'no_speech_prob': 0.244350865483284}], 'language': 'portuguese'}
 {00:24:20} + - + {'text': '', 'segments': [], 'language': 'portuguese'}
 {00:24:24} + - + {'text': ' e overhear test...', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.0, 'text': ' e overhear test...', 'tokens': [50364, 308, 29807, 289, 1500, 485, 50464], 'temperature': 0.2, 'avg_logprob': -0.9473018646240234, 'compression_ratio': 0.6923076923076923, 'no_speech_prob': 0.5929686427116394}], 'language': 'portuguese'}
 {00:24:29} + - + {'text': '', 'segments': [], 'language': 'portuguese'}
 {00:26:09} + - + 
 {00:26:16} + - + 
 {00:26:20} + - + 
-{00:26:29} + - +  Põe o disappe… ... demanded ...
+{00:26:29} + - +  Pï¿½e o disappeï¿½ ... demanded ...
 {00:26:35} + - + 
 {00:28:20} + - +  Evolution
 {00:28:25} + - +  O que funciona
-{00:28:29} + - +  Não ta pegando muito
+{00:28:29} + - +  Nï¿½o ta pegando muito
 {00:28:32} + - + 
 {00:28:39} + - +  Maiventack
 {00:28:43} + - + 
@@ -72,41 +72,41 @@
 {00:31:06} + - +  Obra o Google
 {00:31:19} + - +  e abre a Gogo. abre a Gogo... haha
 {00:31:26} + - +  Abra o Google, abro o Google, abro o Google
-{12:44:49} + - +  Oi, alô, alô, alô.
+{12:44:49} + - +  Oi, alï¿½, alï¿½, alï¿½.
 {15:08:08} + - +  Hello mom, te amo, boa tarde.
 {15:10:40} + - +  Vamos ver o quadro de ferem.
 {15:10:43} + - + 
 {15:10:52} + - + 
 {15:10:55} + - + 
-{15:11:13} + - +  testando aqui développem
+{15:11:13} + - +  testando aqui dï¿½veloppem
 {15:11:18} + - +  desfineir glutamose
-{15:11:23} + - +  Eu não sei exatamente como poderia fazer isso.
-{15:11:29} + - +  porque o modelo pequeno é muito ruim, porque ele não consegue entender.
-{15:11:34} + - +  mas ele consegue entender várias...
-{15:11:38} + - +  ele não consegue entender coisas como
+{15:11:23} + - +  Eu nï¿½o sei exatamente como poderia fazer isso.
+{15:11:29} + - +  porque o modelo pequeno ï¿½ muito ruim, porque ele nï¿½o consegue entender.
+{15:11:34} + - +  mas ele consegue entender vï¿½rias...
+{15:11:38} + - +  ele nï¿½o consegue entender coisas como
 {15:14:33} + - + 
-{15:14:38} + - +  ele não tem tendendo muito mais
-{15:14:41} + - +  Vamos lá menos de uma noção.
+{15:14:38} + - +  ele nï¿½o tem tendendo muito mais
+{15:14:41} + - +  Vamos lï¿½ menos de uma noï¿½ï¿½o.
 {15:14:47} + - +  E perutiliz ele
-{15:14:52} + - +  fiz ele das, não, só que é cada cinco segundos ele para
+{15:14:52} + - +  fiz ele das, nï¿½o, sï¿½ que ï¿½ cada cinco segundos ele para
 {15:52:21} + - +  estou usando o modelo menor
-{15:52:57} + - +  Tá, agora ele vai conseguir reconhecer o que eu tô falando Eu vou mostrar pra mó
-{15:53:11} + - +  Vendo porque eu estou testando um modelo pesado e ele está...
+{15:52:57} + - +  Tï¿½, agora ele vai conseguir reconhecer o que eu tï¿½ falando Eu vou mostrar pra mï¿½
+{15:53:11} + - +  Vendo porque eu estou testando um modelo pesado e ele estï¿½...
 {15:53:25} + - +  aqui, abra o Google.
-{15:53:30} + - +  Ah, tá bemzinho.
+{15:53:30} + - +  Ah, tï¿½ bemzinho.
 {15:53:36} + - +  O final do reconhecimento, ele vai conseguir abrir o Google.
-{15:53:38} + - +  o modelo não é tão...
-{15:53:43} + - +  que estão n ...
-{15:53:48} + - +  o avaniano, mas não nos cortados ali.
+{15:53:38} + - +  o modelo nï¿½o ï¿½ tï¿½o...
+{15:53:43} + - +  que estï¿½o n ...
+{15:53:48} + - +  o avaniano, mas nï¿½o nos cortados ali.
 {15:54:00} + - +  Acabou.
-{17:39:41} + - +  Alô, alô, alô, alô, alô, alô
-{17:39:56} + - +  Então, na teoria era pra ele...
+{17:39:41} + - +  Alï¿½, alï¿½, alï¿½, alï¿½, alï¿½, alï¿½
+{17:39:56} + - +  Entï¿½o, na teoria era pra ele...
 {17:40:05} + - +  Eu falei por 10 segundos
 {17:40:09} + - +  Boa dia!
 {17:40:15} + - +  Se eu continuar falando, ele vai ter...
-{17:40:33} + - +  Agora você já saíaos de occupation.
-{17:59:24} + - +  Alô, alô, alô
-{17:59:42} + - +  Arabicácopa
+{17:40:33} + - +  Agora vocï¿½ jï¿½ saï¿½aos de occupation.
+{17:59:24} + - +  Alï¿½, alï¿½, alï¿½
+{17:59:42} + - +  Arabicï¿½copa
 {17:59:52} + - + 
 {18:00:11} + - +  Abra o bloco de notas.
 {18:00:20} + - + 
@@ -117,38 +117,38 @@
 {21:02:14} + - +  abriu o Google
 {21:02:47} + - +  Abra o Google, o navegador.
 {13:04:08} + - +  na tela detectando.
-{13:04:46} + - +  Abra o ópera.
-{13:06:54} + - +  Abro a óbita.
-{13:09:25} + - +  Execute o ópera.
+{13:04:46} + - +  Abra o ï¿½pera.
+{13:06:54} + - +  Abro a ï¿½bita.
+{13:09:25} + - +  Execute o ï¿½pera.
 {13:10:38} + - +  e emcip Micheus. Silver
-{13:11:13} + - +  Executo o ópera.
-{13:11:34} + - +  Execute a ópera.
-{13:14:15} + - +  Entendi abrir o ópera.
-{13:15:23} + - +  esse print para ver o ópera funcionou bastante
-{13:15:49} + - +  Abra o ópera.
+{13:11:13} + - +  Executo o ï¿½pera.
+{13:11:34} + - +  Execute a ï¿½pera.
+{13:14:15} + - +  Entendi abrir o ï¿½pera.
+{13:15:23} + - +  esse print para ver o ï¿½pera funcionou bastante
+{13:15:49} + - +  Abra o ï¿½pera.
 {13:19:15} + - +  Abra o Microsoft Edge.
 {13:19:27} + - +  Agora o navegador...
 {13:19:38} + - +  Abra o navegador
 {13:20:02} + - +  Abra o navegador Opera, gente.
 {14:07:44} + - + 
-{14:09:32} + - +  não, agora está bom
-{14:18:17} + - +  Está funcionando, está funcionando...
+{14:09:32} + - +  nï¿½o, agora estï¿½ bom
+{14:18:17} + - +  Estï¿½ funcionando, estï¿½ funcionando...
 {14:18:31} + - +  Que legal!
 {14:18:41} + - +  Ops, navegador, Ops.
-{14:18:50} + - +  o navegador ópera.
+{14:18:50} + - +  o navegador ï¿½pera.
 {14:19:01} + - +  abrir o navegador.
-{14:24:37} + - +  Está funcionando, abro a apre.
+{14:24:37} + - +  Estï¿½ funcionando, abro a apre.
 {14:24:52} + - + 
-{14:37:01} + - +  Agora faz sentido porque estava tão estranho quando ele estava reconhecendo, ele só estava ouvindo 5 segundos Mas se eu continuar assim ele vai ouvir até o parante falar, considerando o tamanho que...
-{14:37:24} + - +  Acho que está dando certo, mas para isso você precisa abrir o navegador Google Chrome.
-{14:38:30} + - +  Ah, ele não conseguiu meu vidro, a gente o tempo, a gente abriu...
-{14:38:57} + - +  Agora eu estou entendendo como ele funciona, ele cortava um nobeio por isso que estava meio esquisito, mas então abre o Jagex Launcher.
-{14:40:26} + - +  Então agora tente abrir o jagu...
+{14:37:01} + - +  Agora faz sentido porque estava tï¿½o estranho quando ele estava reconhecendo, ele sï¿½ estava ouvindo 5 segundos Mas se eu continuar assim ele vai ouvir atï¿½ o parante falar, considerando o tamanho que...
+{14:37:24} + - +  Acho que estï¿½ dando certo, mas para isso vocï¿½ precisa abrir o navegador Google Chrome.
+{14:38:30} + - +  Ah, ele nï¿½o conseguiu meu vidro, a gente o tempo, a gente abriu...
+{14:38:57} + - +  Agora eu estou entendendo como ele funciona, ele cortava um nobeio por isso que estava meio esquisito, mas entï¿½o abre o Jagex Launcher.
+{14:40:26} + - +  Entï¿½o agora tente abrir o jagu...
 {14:40:55} + - +  ante cuz30 em witnesses
 {14:41:11} + - +  ruim para tentar ouvir minha voz mas tem gente abrir o jaguete
 {14:42:21} + - +  com um modelo pesado.
-{14:42:45} + - +  Agora ele está ouvindo Tente abrir o...
-{14:44:18} + - +  para reconhecimento de voz, eu tenho que melhorar esse reconhecimento para ele conseguir ouvir em veiculações impeditivas, mas abra o...
+{14:42:45} + - +  Agora ele estï¿½ ouvindo Tente abrir o...
+{14:44:18} + - +  para reconhecimento de voz, eu tenho que melhorar esse reconhecimento para ele conseguir ouvir em veiculaï¿½ï¿½es impeditivas, mas abra o...
 {14:44:48} + - +  Execute o Jagex Launcher.
 {14:53:16} + - + 
 {14:54:42} + - + 
@@ -160,25 +160,25 @@
 {16:19:51} + - + a gigaix loancher
 {16:19:59} + - + Jagex Launcher
 {16:21:09} + - + Execute o Jagex Launch
-{16:22:17} + - + Alô, executa-o.
-{16:23:00} + - + mas é curtir o fio no pico
+{16:22:17} + - + Alï¿½, executa-o.
+{16:23:00} + - + mas ï¿½ curtir o fio no pico
 {16:26:51} + - + Fete o Discord
 {16:27:01} + - + Feche o Discord
 {16:27:37} + - + Fecha o Discord
 {16:27:54} + - + Abra o Discord
-{17:32:35} + - + Ah, era só isso, agora ele tá funcionando. Se você estiver funcionando, poderia...
-{17:33:06} + - + Ah, ele só está funcionando quando eu aperto a fio, então agora vamos ver, poderia abrir o Blender?
-{17:35:34} + - + Agora você poderia abrir o explorador de arquivos?
+{17:32:35} + - + Ah, era sï¿½ isso, agora ele tï¿½ funcionando. Se vocï¿½ estiver funcionando, poderia...
+{17:33:06} + - + Ah, ele sï¿½ estï¿½ funcionando quando eu aperto a fio, entï¿½o agora vamos ver, poderia abrir o Blender?
+{17:35:34} + - + Agora vocï¿½ poderia abrir o explorador de arquivos?
 {17:38:15} + - + 
-{17:47:42} + - + Até eu consigo entender o que eu estou falando, como é que está, e por entendimento.
+{17:47:42} + - + Atï¿½ eu consigo entender o que eu estou falando, como ï¿½ que estï¿½, e por entendimento.
 {19:28:24} + - + Abro a Zeprite
-{20:07:45} + - + Alô, você tá me ouvindo? Tenta editar ali no conteúdo, no texto de input inicial.
-{20:10:45} + - + Alô, alô, alô
-{20:10:58} + - + Alô, alô, alô, alô
-{20:27:25} + - + Não era para funcionar agora, porque ele vai substituir ali.
-{20:30:13} + - + Agora sim ele consegue me ouvir. Quando será que eu consigo falar até que ele me viu aqui? Eu vou tentar fechar o asoprite, fechar o discord, depois abrir o discord e abrir o dv make right.
+{20:07:45} + - + Alï¿½, vocï¿½ tï¿½ me ouvindo? Tenta editar ali no conteï¿½do, no texto de input inicial.
+{20:10:45} + - + Alï¿½, alï¿½, alï¿½
+{20:10:58} + - + Alï¿½, alï¿½, alï¿½, alï¿½
+{20:27:25} + - + Nï¿½o era para funcionar agora, porque ele vai substituir ali.
+{20:30:13} + - + Agora sim ele consegue me ouvir. Quando serï¿½ que eu consigo falar atï¿½ que ele me viu aqui? Eu vou tentar fechar o asoprite, fechar o discord, depois abrir o discord e abrir o dv make right.
 {20:31:13} + - + A gente vai fazer praite
-{20:31:21} + - + Feche o azepraí.
+{20:31:21} + - + Feche o azepraï¿½.
 {20:32:10} + - + Close as a bright.
 {20:32:24} + - + Feche o azer praia
 {20:32:37} + - + Fecho o discord
@@ -188,123 +188,124 @@
 {21:39:18} + - + com tudo no CES.
 {09:56:55} + - + Execute deve make right 3
 {09:57:17} + - + Execute Devil May Cry 3.
-{12:31:00} + - + A lá você está funcionando, não está conseguindo gravar o microfone, vou tentar deixar ele um pouquinho menor e colocar um pouquinho para direito.
-{12:36:32} + - + Eu vou buscar minha filha agora porque eu estou conseguindo avançar bastante e consegui ver muitas coisas.
-{15:05:51} + - + Está piscando, não está piscando, ele está ajustando, mas por algum motivo, eu vou estar montando piscando, porque será que piscando é sofrimento, é que eu vou estar montando, eu vou piscar, você não deixa, porque tudo isso, você não deixa, não está funcionando, então eu estou falando, não está parado, né, vamos ver, vamos ver.
+{12:31:00} + - + A lï¿½ vocï¿½ estï¿½ funcionando, nï¿½o estï¿½ conseguindo gravar o microfone, vou tentar deixar ele um pouquinho menor e colocar um pouquinho para direito.
+{12:36:32} + - + Eu vou buscar minha filha agora porque eu estou conseguindo avanï¿½ar bastante e consegui ver muitas coisas.
+{15:05:51} + - + Estï¿½ piscando, nï¿½o estï¿½ piscando, ele estï¿½ ajustando, mas por algum motivo, eu vou estar montando piscando, porque serï¿½ que piscando ï¿½ sofrimento, ï¿½ que eu vou estar montando, eu vou piscar, vocï¿½ nï¿½o deixa, porque tudo isso, vocï¿½ nï¿½o deixa, nï¿½o estï¿½ funcionando, entï¿½o eu estou falando, nï¿½o estï¿½ parado, nï¿½, vamos ver, vamos ver.
 {15:07:28} + - + Hmm...
-{15:11:40} + - + Alô, alô, alô, no destano
-{15:19:18} + - + Está funcionando, você está funcionando, porque não está pescando, não sei, mas está funcionando.
-{15:20:20} + - + Por que que o microfone não está pescado também? Não tem, porque não está pescado.
-{15:25:07} + - + Agora está funcionando por microfone, não nada, nada nem por causa daquela tesca.
-{15:26:15} + - + O código da transcrição voltou a funcionar agora.
-{15:31:35} + - + Se ainda está funcionando, você deveria abrir o desconto.
-{15:32:33} + - + Não tem pede, mesmo que eu tenha edição lá, eu tenho que colocar pede em outro lugar.
+{15:11:40} + - + Alï¿½, alï¿½, alï¿½, no destano
+{15:19:18} + - + Estï¿½ funcionando, vocï¿½ estï¿½ funcionando, porque nï¿½o estï¿½ pescando, nï¿½o sei, mas estï¿½ funcionando.
+{15:20:20} + - + Por que que o microfone nï¿½o estï¿½ pescado tambï¿½m? Nï¿½o tem, porque nï¿½o estï¿½ pescado.
+{15:25:07} + - + Agora estï¿½ funcionando por microfone, nï¿½o nada, nada nem por causa daquela tesca.
+{15:26:15} + - + O cï¿½digo da transcriï¿½ï¿½o voltou a funcionar agora.
+{15:31:35} + - + Se ainda estï¿½ funcionando, vocï¿½ deveria abrir o desconto.
+{15:32:33} + - + Nï¿½o tem pede, mesmo que eu tenha ediï¿½ï¿½o lï¿½, eu tenho que colocar pede em outro lugar.
 {15:41:22} + - + Execute o aze pra ir
 {15:41:33} + - + Execute a Zebra
 {15:41:43} + - + Execute a Zeprite.
 {17:50:05} + - + Abra o don't start to get it
 {17:50:33} + - + Feche o Don't Start Together
-{17:51:36} + - + Abra o ópera GX
+{17:51:36} + - + Abra o ï¿½pera GX
 {17:53:44} + - + 
 {17:57:07} + - + 
-{18:02:46} + - + Está funcionando, está.
-{18:03:11} + - + e aí e aí E aí
+{18:02:46} + - + Estï¿½ funcionando, estï¿½.
+{18:03:11} + - + e aï¿½ e aï¿½ E aï¿½
 {18:04:49} + - + 
-{18:08:30} + - + Alô, alô, alô, está funcionando.
-{18:23:32} + - + está detectando minha voz
+{18:08:30} + - + Alï¿½, alï¿½, alï¿½, estï¿½ funcionando.
+{18:23:32} + - + estï¿½ detectando minha voz
 {18:26:19} + - + Os dois confusos...
-{18:26:19} + - + Ah, os dois são fússal, hein?
+{18:26:19} + - + Ah, os dois sï¿½o fï¿½ssal, hein?
 {18:27:05} + - + Hmm, as duas claras.
-{18:49:37} + - + Alô, alô, alô...
-{18:50:36} + - + Você está me ouvindo, então se você está me ouvindo, você conseguiria abrir o Discord.
+{18:49:37} + - + Alï¿½, alï¿½, alï¿½...
+{18:50:36} + - + Vocï¿½ estï¿½ me ouvindo, entï¿½o se vocï¿½ estï¿½ me ouvindo, vocï¿½ conseguiria abrir o Discord.
 {18:56:04} + - + 
-{18:56:27} + - + Ah, então nós temos essa opção, não é?
-{19:17:18} + - + Alô, alô, alô, alô
-{19:17:26} + - + ele é muito lindo
+{18:56:27} + - + Ah, entï¿½o nï¿½s temos essa opï¿½ï¿½o, nï¿½o ï¿½?
+{19:17:18} + - + Alï¿½, alï¿½, alï¿½, alï¿½
+{19:17:26} + - + ele ï¿½ muito lindo
 {19:17:42} + - + 
-{19:20:08} + - + Está funcionando, está funcionando.
-{19:20:16} + - + Está funcionando, está funcionando.
-{19:20:30} + - + Ainda está funcionando, está funcionando.
+{19:20:08} + - + Estï¿½ funcionando, estï¿½ funcionando.
+{19:20:16} + - + Estï¿½ funcionando, estï¿½ funcionando.
+{19:20:30} + - + Ainda estï¿½ funcionando, estï¿½ funcionando.
 {19:20:40} + - + Ah, ele se enlouce.
-{19:20:51} + - + Olha aí, está funcionando e ele vai transcriber, certo?
+{19:20:51} + - + Olha aï¿½, estï¿½ funcionando e ele vai transcriber, certo?
 {09:33:52} + - + Abra o...
-{09:34:03} + - + Execute o Pokémon Oranjo!
+{09:34:03} + - + Execute o Pokï¿½mon Oranjo!
 {22:36:50} + - + Execute o Discord.
 {22:36:58} + - + Execute Devil May Cry HD Collection.
 {23:58:47} + - + Execute e pique!
 {23:58:54} + - + Execute o jogo PIC!
-{23:59:12} + - + Não, ele está em português, só que ele não reconhece coisas que não estão no vocabulário, sabe?
+{23:59:12} + - + Nï¿½o, ele estï¿½ em portuguï¿½s, sï¿½ que ele nï¿½o reconhece coisas que nï¿½o estï¿½o no vocabulï¿½rio, sabe?
 {23:59:20} + - + Execute, PIC!
-{23:59:31} + - + É... Execute... O... Google.
-{23:59:50} + - + Execute o Google, não é só porque ele botou um monte de ponta...
+{23:59:31} + - + ï¿½... Execute... O... Google.
+{23:59:50} + - + Execute o Google, nï¿½o ï¿½ sï¿½ porque ele botou um monte de ponta...
 {00:00:40} + - + 
-{00:00:50} + - + Ah, mas eu achei que ficou bonitinho essa animaçãozinha do microfone.
+{00:00:50} + - + Ah, mas eu achei que ficou bonitinho essa animaï¿½ï¿½ozinha do microfone.
 {00:01:14} + - + Fecho de escorre
 {00:01:21} + - + do Discord.
 {00:01:28} + - + Execute o Discord.
-{00:03:11} + - + que é muito bonitão, escrevo um texto sobre ele.
-{00:17:23} + - + Alô, feche o Discord e depois feche o computador.
+{00:03:11} + - + que ï¿½ muito bonitï¿½o, escrevo um texto sobre ele.
+{00:17:23} + - + Alï¿½, feche o Discord e depois feche o computador.
 {00:17:50} + - + Desligue o VSCode
 {23:39:33} + - + Desliga o computador.
 {23:40:10} + - + desligo computador
 {10:17:44} + - + desligar computador.
 {14:27:14} + - + Abra, executa o Opera GX, navegador.
-{16:38:04} + - + Abra o ópera GX
-{16:38:14} + - + Abro navegador ópera e gixi
+{16:38:04} + - + Abra o ï¿½pera GX
+{16:38:14} + - + Abro navegador ï¿½pera e gixi
 {18:43:30} + - + E aqui? Chega!
 {18:43:42} + - + desligar o computador
-{12:11:39} + - + imagens Python padrão para conseguir criar o Dockerfile. Aí para isso a gente usa umas imagens que são, elas podem ser eslin, alpine e a imagem comum, em que a imagem comum é mais pesada, a imagem alpine é a mais leve, que tem menos parte de compiladores, esses podem ser para algumas bibliotecas, e a imagem eslin é a mais leve.
-{12:14:25} + - + Tem também outras imagens que são, por exemplo, o Bookworm, Trixie e o Windows Server Core. Elas são utilizadas para, respectivamente, o Bookworm e a Trixie são imagens do Debian, ou seja, imagens Linux, que são mais leves do que as imagens Windows, só que a diferença é que a imagem do Windows Server Core, que é uma das imagens de tamanhos variáveis do Windows, ela é mais compatível com ferramentas que só funcionam no Windows. Então, às vezes, você tem a implicação que tem coisas que só funcionam para o Windows, você tem que usar ela.
-{12:26:03} + - + A diferença entre os parâmetros ED e COP, que eu tive alguns dos dois, é que o parâmetro ED é mais utilizado para quando você quer baixar alguma coisa na internet ou você precisa de alguma dependência para adicionar no Dockerfile. Enquanto o COP ele pega do seu próprio código e adiciona dentro do pacote do Docker aquilo que você precisa, então normalmente você pega e coloca o Pills Requirements e depois adiciona eles ao pacote.
+{12:11:39} + - + imagens Python padrï¿½o para conseguir criar o Dockerfile. Aï¿½ para isso a gente usa umas imagens que sï¿½o, elas podem ser eslin, alpine e a imagem comum, em que a imagem comum ï¿½ mais pesada, a imagem alpine ï¿½ a mais leve, que tem menos parte de compiladores, esses podem ser para algumas bibliotecas, e a imagem eslin ï¿½ a mais leve.
+{12:14:25} + - + Tem tambï¿½m outras imagens que sï¿½o, por exemplo, o Bookworm, Trixie e o Windows Server Core. Elas sï¿½o utilizadas para, respectivamente, o Bookworm e a Trixie sï¿½o imagens do Debian, ou seja, imagens Linux, que sï¿½o mais leves do que as imagens Windows, sï¿½ que a diferenï¿½a ï¿½ que a imagem do Windows Server Core, que ï¿½ uma das imagens de tamanhos variï¿½veis do Windows, ela ï¿½ mais compatï¿½vel com ferramentas que sï¿½ funcionam no Windows. Entï¿½o, ï¿½s vezes, vocï¿½ tem a implicaï¿½ï¿½o que tem coisas que sï¿½ funcionam para o Windows, vocï¿½ tem que usar ela.
+{12:26:03} + - + A diferenï¿½a entre os parï¿½metros ED e COP, que eu tive alguns dos dois, ï¿½ que o parï¿½metro ED ï¿½ mais utilizado para quando vocï¿½ quer baixar alguma coisa na internet ou vocï¿½ precisa de alguma dependï¿½ncia para adicionar no Dockerfile. Enquanto o COP ele pega do seu prï¿½prio cï¿½digo e adiciona dentro do pacote do Docker aquilo que vocï¿½ precisa, entï¿½o normalmente vocï¿½ pega e coloca o Pills Requirements e depois adiciona eles ao pacote.
 {12:48:12} + - + Abre o docker destope
 {12:48:30} + - + Abre o docker destope.
 {12:48:53} + - + Abra o docker, desculpe!
-{13:03:59} + - + Às vezes também, em vez de você utilizar uma imagem mais pesada, seria bom você baixar só os parâmetros necessários para você utilizar aquela imagem mais leve. Isso foi o que eu fiz dentro do Web Explorer da Winwin Test. Para baixar o Playwright, que seria uma ferramenta para você conseguir abrir o Chrome na Vega na Web, ele é necessário. Aí eu baixei o Playwright, em vez de baixar o Python que vem junto com ele. De maneira que eu baixei o Python Slim, que é mais leve do que o Python comum. Assim, eu economizei espaço e ainda tive a aplicação funcionar.
-{22:34:12} + - + Agora está funcionando, ele está editando.
+{13:03:59} + - + ï¿½s vezes tambï¿½m, em vez de vocï¿½ utilizar uma imagem mais pesada, seria bom vocï¿½ baixar sï¿½ os parï¿½metros necessï¿½rios para vocï¿½ utilizar aquela imagem mais leve. Isso foi o que eu fiz dentro do Web Explorer da Winwin Test. Para baixar o Playwright, que seria uma ferramenta para vocï¿½ conseguir abrir o Chrome na Vega na Web, ele ï¿½ necessï¿½rio. Aï¿½ eu baixei o Playwright, em vez de baixar o Python que vem junto com ele. De maneira que eu baixei o Python Slim, que ï¿½ mais leve do que o Python comum. Assim, eu economizei espaï¿½o e ainda tive a aplicaï¿½ï¿½o funcionar.
+{22:34:12} + - + Agora estï¿½ funcionando, ele estï¿½ editando.
 {00:13:46} + - + Desligo com o thunder
 {00:13:57} + - + desligue-o
-{19:17:09} + - + Vamos lá.
+{19:17:09} + - + Vamos lï¿½.
 {19:17:14} + - + Vamos ao passo a passo.
-{19:17:22} + - + Vamos lá.
-{19:17:25} + - + Vamos lá.
+{19:17:22} + - + Vamos lï¿½.
+{19:17:25} + - + Vamos lï¿½.
 {19:17:33} + - + Tchau.
 {19:18:19} + - + Obrigado.
 {19:18:29} + - + Tchau.
-{19:18:40} + - + Vamos lá.
-{19:18:51} + - + Vamos lá.
-{19:19:00} + - + Vamos lá.
-{19:19:10} + - + Vamos lá.
+{19:18:40} + - + Vamos lï¿½.
+{19:18:51} + - + Vamos lï¿½.
+{19:19:00} + - + Vamos lï¿½.
+{19:19:10} + - + Vamos lï¿½.
 {19:19:25} + - + Tchau.
-{19:20:00} + - + Alô, alô, alô, você poderia abrir o Discord para mim?
-{19:20:04} + - + E aí
-{19:20:11} + - + Ah, ele só interrompe e depois...
+{19:20:00} + - + Alï¿½, alï¿½, alï¿½, vocï¿½ poderia abrir o Discord para mim?
+{19:20:04} + - + E aï¿½
+{19:20:11} + - + Ah, ele sï¿½ interrompe e depois...
 {19:20:13} + - + Fala mesmo.
 {19:20:20} + - + Hum...
-{19:20:34} + - + Vamos lá.
-{19:29:00} + - + Se está dando certo para ele conseguir escutar, ele vai conseguir escutar até quando e onde que ele está colocando esses outputs.
+{19:20:34} + - + Vamos lï¿½.
+{19:29:00} + - + Se estï¿½ dando certo para ele conseguir escutar, ele vai conseguir escutar atï¿½ quando e onde que ele estï¿½ colocando esses outputs.
 {19:29:12} + - + Ele vai escutar infinitamente para apertar aqui.
-{19:34:13} + - + Eu estou vendo um mangá Gachiakuta e ele é muito bom.
-{16:43:17} + - + robótica, falar por 10 segundos até que é bastante tempo.
-{16:43:22} + - + Só de mim isso.
+{19:34:13} + - + Eu estou vendo um mangï¿½ Gachiakuta e ele ï¿½ muito bom.
+{16:43:17} + - + robï¿½tica, falar por 10 segundos atï¿½ que ï¿½ bastante tempo.
+{16:43:22} + - + Sï¿½ de mim isso.
 {16:43:27} + - + Isso.
-{16:43:35} + - + Demorou um pouquinho para ele reconhecer, na verdade eu acho que é um tempo ideal.
-{16:43:44} + - + Ó, ele tá fazendo a transcrição.
-{16:45:39} + - + O modelo que está utilizando é o Whisper Turbo Whisper Small
+{16:43:35} + - + Demorou um pouquinho para ele reconhecer, na verdade eu acho que ï¿½ um tempo ideal.
+{16:43:44} + - + ï¿½, ele tï¿½ fazendo a transcriï¿½ï¿½o.
+{16:45:39} + - + O modelo que estï¿½ utilizando ï¿½ o Whisper Turbo Whisper Small
 {16:45:48} + - + Apareceu o esperturbo nele, reconheceu tudo certinho aqui que eu to falando.
 {16:45:54} + - + Ele reconhece e quando eu falo...
 {16:46:02} + - + Asterisco ou Chaves
-16:59:59 - Mas agora ele demora bastante para ele conseguir começar o...
-17:00:23 - Mas na segunda vez ele não demora tanto.
+16:59:59 - Mas agora ele demora bastante para ele conseguir comeï¿½ar o...
+17:00:23 - Mas na segunda vez ele nï¿½o demora tanto.
 17:00:29 - Vou fazer o que ele chamasse.
-17:06:53 - Ah, esse problema não sei se está fazendo tanto...
-17:15:16 - Tá, tá, tá, tá, tá, tá, tá. Tá, tá, tá.
-17:15:22 - Dá vergonha isso aí.
-17:15:28 - Mas bom, ele consegue reconhecer muito tempo de áudio.
-17:15:34 - Esses áudios em tempos menores de 5 segundos.
+17:06:53 - Ah, esse problema nï¿½o sei se estï¿½ fazendo tanto...
+17:15:16 - Tï¿½, tï¿½, tï¿½, tï¿½, tï¿½, tï¿½, tï¿½. Tï¿½, tï¿½, tï¿½.
+17:15:22 - Dï¿½ vergonha isso aï¿½.
+17:15:28 - Mas bom, ele consegue reconhecer muito tempo de ï¿½udio.
+17:15:34 - Esses ï¿½udios em tempos menores de 5 segundos.
 17:15:40 - Vou tentar utilizar isso na aula e ver como ele funciona.
-17:15:46 - que alguém fale alguma coisa, né? Eu acho que isso vai ser muito...
-17:58:06 - tá tudo funcionando. Acho que ele nem entendeu nada do que eu falei até agora.
-17:58:13 - Precisa então ensinar o Tudu para fazer com que o entendimento seja mais fácil.
-17:58:20 - Vamos lá.
-17:58:27 - Então, vamos lá.
+17:15:46 - que alguï¿½m fale alguma coisa, nï¿½? Eu acho que isso vai ser muito...
+17:58:06 - tï¿½ tudo funcionando. Acho que ele nem entendeu nada do que eu falei atï¿½ agora.
+17:58:13 - Precisa entï¿½o ensinar o Tudu para fazer com que o entendimento seja mais fï¿½cil.
+17:58:20 - Vamos lï¿½.
+17:58:27 - Entï¿½o, vamos lï¿½.
 17:58:33 - Tchau.
+{22:56:04} + - + E assim funciona, o problema de ruï¿½do ï¿½ que nï¿½o funciona.
