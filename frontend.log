@@ -538,3 +538,7 @@ Traceback (most recent call last):
   File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 840, in session
     raise RuntimeError("An attempt to fetch destroyed session.")
 RuntimeError: An attempt to fetch destroyed session.
+2026-06-16 15:11:26 | INFO | Adjusted for ambient noise. Listening...
+2026-06-16 15:11:32 | INFO | Processing audio with duration 00:04.412
+2026-06-16 15:11:33 | INFO | Recognizing speech: E aí E aí
+2026-06-16 15:11:33 | INFO | Finished recording! Transcription saved to: output.txt
