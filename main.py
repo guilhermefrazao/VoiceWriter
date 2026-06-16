@@ -13,7 +13,7 @@ def _prewarm_speech():
     try:
         from voice.speech import SpeechToText
         stt = SpeechToText()
-        stt._load_model(model_size="turbo")
+        stt._load_model(model_size="small")
         logging.info("Pre-warm concluído.")
     except Exception as e:
         logging.warning(f"Pre-warm falhou: {e}")

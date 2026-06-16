@@ -28,7 +28,10 @@ logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s",
 
 
 class SpeechToText():
-    _cached_model = None
+    _model_cache: dict = {}
+    _model_events: dict = {}
+    _model_load_lock = threading.Lock()
+
     def __init__(self):
         self.recognizer = sr.Recognizer()
         self.recognizer.pause_threshold = 1.5
@@ -43,17 +46,31 @@ class SpeechToText():
         self.taxa_amostragem = 16000
         self.tamanho_chunk = 16000
 
-    def _load_model(self, model_size="small"):
-        if SpeechToText._cached_model is None:
-            logging.info("Carregando Whisper Model.")
-            SpeechToText._cached_model = WhisperModel(model_size, device="cuda", compute_type="float16")
-        else:
-            logging.info("Whisper Model já carregado.")
-        self.model = SpeechToText._cached_model
+        self._current_model_size = "small"
+        self._load_model("small")
 
+    def _load_model(self, model_size: str):
+        with SpeechToText._model_load_lock:
+            if model_size in SpeechToText._model_events:
+                return
+            event = threading.Event()
+            SpeechToText._model_events[model_size] = event
+
+        def _worker():
+            logging.info(f"Carregando Whisper Model: {model_size}.")
+            SpeechToText._model_cache[model_size] = WhisperModel(model_size, device="cuda", compute_type="float16")
+            logging.info(f"Whisper Model '{model_size}' pronto.")
+            event.set()
+
+        threading.Thread(target=_worker, daemon=True).start()
+
+    def _ensure_model(self):
+        SpeechToText._model_events[self._current_model_size].wait()
+        self.model = SpeechToText._model_cache[self._current_model_size]
 
     def main_commands(self):
-        self._load_model(model_size="small")
+        self._current_model_size = "small"
+        self._load_model("small")
 
         text_log, text = self._listen_and_transcribe()
 
@@ -61,7 +78,8 @@ class SpeechToText():
 
 
     def main_transcription(self, text_callback=None) -> str:
-        self._load_model(model_size="turbo")
+        self._current_model_size = "large-v2"
+        self._load_model("large-v2")
 
         self.recognizer.pause_threshold = 3.0
 
@@ -139,6 +157,7 @@ class SpeechToText():
 
 
     def _recognize_speech_turbo(self, audio) -> tuple[str, str]:
+        self._ensure_model()
         try:
             wav_data = audio.get_wav_data(convert_rate=16000, convert_width=2)
                 
