@@ -3,35 +3,48 @@ import logging
 import time
 import sys
 import io
+import pyaudio
+import queue
+import numpy as np
 import threading
+import math
+import asyncio
 
 from dotenv import load_dotenv
 load_dotenv()
 
 from voice.interact_app import translation_tasks
 from voice.utils.json_utils import save_text
+from faster_whisper import WhisperModel
 
 
-logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s",
+
+logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", 
                     datefmt="%Y-%m-%d %H:%M:%S",
-                    level=logging.INFO,
-                    encoding="utf-8",
+                    level=logging.INFO, 
+                    encoding="utf-8", 
                     handlers=[logging.FileHandler("voice.log", encoding="utf-8"),
                               logging.StreamHandler(sys.stdout)])
 
 
 class SpeechToText():
     _cached_model = None
-
     def __init__(self):
         self.recognizer = sr.Recognizer()
         self.recognizer.pause_threshold = 1.5
+        self.audio_queue = queue.Queue()
+        self.is_recording = False
         self.stop_listening = None
+        self.silent_limit = 100
+        self.silent_time = 0
 
+        self.format = pyaudio.paInt16
+        self.canais = 1
+        self.taxa_amostragem = 16000
+        self.tamanho_chunk = 16000
 
     def _load_model(self, model_size="small"):
         if SpeechToText._cached_model is None:
-            from faster_whisper import WhisperModel
             logging.info("Carregando Whisper Model.")
             SpeechToText._cached_model = WhisperModel(model_size, device="cuda", compute_type="float16")
         else:
@@ -41,31 +54,40 @@ class SpeechToText():
 
     def main_commands(self):
         self._load_model(model_size="small")
+
         text_log, text = self._listen_and_transcribe()
+
         translation_tasks(text)
 
 
     def main_transcription(self, text_callback=None) -> str:
         self._load_model(model_size="turbo")
-        self.recognizer.pause_threshold = 3.0
-        text_log, text = self._listen_and_transcribe_background(text_callback=text_callback)
-        return text
 
+        self.recognizer.pause_threshold = 3.0
+
+        text_log, text = self._listen_and_transcribe_background(text_callback=text_callback)
+
+        return text
+    
 
     def _listen_and_transcribe(self, stream=False) -> tuple[str, str]:
-        with sr.Microphone() as microphone:
+         with sr.Microphone() as microphone:
             self.recognizer.adjust_for_ambient_noise(microphone, duration=1)
-            logging.info("Adjusted for ambient noise. Listening...")
+
+            logging.info("Adjusted for ambient noise. Linstening...")
 
             try:
-                audio = self.recognizer.listen(microphone, timeout=5, phrase_time_limit=10, stream=stream)
+                audio = self.recognizer.listen(microphone, timeout=4, phrase_time_limit=7, stream=stream)
+
                 logging.info(f"Listen end: {audio}")
+
                 text_log, text = self._recognize_speech_turbo(audio)
+
                 return text_log, text
 
             except sr.WaitTimeoutError:
-                logging.error("Listening timeout while waiting for a phrase to start")
-
+                logging.error("Listenting timeout while waiting for a phrase to start")
+            
             except Exception as e:
                 logging.error(f"Error {e}")
                 time.sleep(0.5)
@@ -93,13 +115,14 @@ class SpeechToText():
         logging.info("Adjusted for ambient noise. Listening...")
 
         self.stop_listening = self.recognizer.listen_in_background(
-            microphone, _callback, phrase_time_limit=5
+            microphone, _callback, phrase_time_limit=4
         )
 
         self._stop_event.wait()
 
         full_text = " ".join(self._collected_texts)
         full_log = f"{time.strftime('%H:%M:%S')} - {full_text}"
+        
         return full_log, full_text
 
 
@@ -118,17 +141,19 @@ class SpeechToText():
     def _recognize_speech_turbo(self, audio) -> tuple[str, str]:
         try:
             wav_data = audio.get_wav_data(convert_rate=16000, convert_width=2)
+                
             wav_stream = io.BytesIO(wav_data)
-
-            segmentos, info = self.model.transcribe(wav_stream, beam_size=5, language="pt")
-
+            
+            segmentos, info = self.model.transcribe(wav_stream, beam_size=5, language="pt")          
+            
             texto_reconhecido = "".join([segment.text for segment in segmentos]).strip()
+                
             logging.info(f"Recognizing speech: {texto_reconhecido}")
-
-            return f"{time.strftime('%H:%M:%S')} - {texto_reconhecido}", texto_reconhecido
-
+        
+            return f"{time.strftime("{%H:%M:%S}")} + - + {texto_reconhecido}", texto_reconhecido
+        
         except sr.UnknownValueError:
             logging.error("Could not understand")
-
+        
         except Exception as e:
             logging.error(f"Error during recognition: {e}")

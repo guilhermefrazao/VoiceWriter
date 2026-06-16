@@ -233,6 +233,7 @@ class EditorMenu():
             def on_text_chunk(text: str):
                 self.new_message.value = (self.new_message.value or "") + f" {text}"
                 self.new_message.update()
+                self.handler.schedule_save(self.open_file_path, self.new_message)
 
             await asyncio.to_thread(self.speech.main_transcription, on_text_chunk)
 
