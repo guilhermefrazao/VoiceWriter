@@ -41,8 +41,8 @@ class Tiles():
                             )
         )"""
         tile = ft.ExpansionTile(
-                                title = ft.Text(item, size=13, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
-                                leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=16, color="#858585"),
+                                title = ft.Text(item, size=15, color="#C8C8C8", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
+                                leading=ft.Icon(ft.Icons.KEYBOARD_ARROW_RIGHT, size=16, color="#C8C8C8"),
                                 animation_style=ft.AnimationStyle(duration=20, reverse_duration=20),
                                 affinity=ft.TileAffinity.LEADING,
                                 collapsed_shape=ft.RoundedRectangleBorder(side=ft.BorderSide(color=ft.Colors.TRANSPARENT)),
@@ -92,7 +92,7 @@ class Tiles():
                         )   
         )"""
         tile = ft.ListTile(
-                            title=ft.Text(item, size=13, color="#858585", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
+                            title=ft.Text(item, size=15, color="#C8C8C8", max_lines=1, overflow=ft.TextOverflow.ELLIPSIS, tooltip=item),
                             content_padding=ft.Padding.symmetric(horizontal=10, vertical=0),
                             hover_color="black",
                             data=full_path,

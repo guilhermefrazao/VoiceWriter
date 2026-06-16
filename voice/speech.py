@@ -10,6 +10,9 @@ import threading
 import math
 import asyncio
 
+from dotenv import load_dotenv
+load_dotenv()
+
 from voice.interact_app import translation_tasks
 from voice.utils.json_utils import save_text
 from faster_whisper import WhisperModel
@@ -31,6 +34,7 @@ class SpeechToText():
         self.recognizer.pause_threshold = 1.5
         self.audio_queue = queue.Queue()
         self.is_recording = False
+        self.stop_listening = None
         self.silent_limit = 100
         self.silent_time = 0
 
@@ -39,39 +43,32 @@ class SpeechToText():
         self.taxa_amostragem = 16000
         self.tamanho_chunk = 16000
 
-        self._load_model()
-
-    
-    def _load_model(self):
+    def _load_model(self, model_size="small"):
         if SpeechToText._cached_model is None:
             logging.info("Carregando Whisper Model.")
-            SpeechToText._cached_model = WhisperModel("small", device="cuda", compute_type="float16")
+            SpeechToText._cached_model = WhisperModel(model_size, device="cuda", compute_type="float16")
         else:
             logging.info("Whisper Model já carregado.")
         self.model = SpeechToText._cached_model
 
 
     def main_commands(self):
-        text_log, text = self._listen_and_transcribe()
+        self._load_model(model_size="small")
 
-        save_text(text_log)
+        text_log, text = self._listen_and_transcribe()
 
         translation_tasks(text)
 
 
-    def main_transcription(self, callback_function=None)-> str:
+    def main_transcription(self, text_callback=None) -> str:
+        self._load_model(model_size="turbo")
+
         self.recognizer.pause_threshold = 3.0
-        
-        self.trancription_callback = callback_function
 
-        self._start_listen()
+        text_log, text = self._listen_and_transcribe_background(text_callback=text_callback)
 
-        #text_log, text = self._listen_and_transcribe(phrase_time_limit=5)
-
-        #save_text(text_log)
-
-        #return text
-
+        return text
+    
 
     def _listen_and_transcribe(self, phrase_time_limit=None, stream=False) -> tuple[str, str]:
          with sr.Microphone() as microphone:
@@ -80,7 +77,7 @@ class SpeechToText():
             logging.info("Adjusted for ambient noise. Linstening...")
 
             try:
-                audio = self.recognizer.listen(microphone, timeout=10, phrase_time_limit=phrase_time_limit, stream=stream)
+                audio = self.recognizer.listen(microphone, timeout=4, phrase_time_limit=7, stream=stream)
 
                 logging.info(f"Listen end: {audio}")
 
@@ -94,6 +91,51 @@ class SpeechToText():
             except Exception as e:
                 logging.error(f"Error {e}")
                 time.sleep(0.5)
+
+
+    def _listen_and_transcribe_background(self, text_callback=None) -> tuple[str, str]:
+        self._collected_texts = []
+        self._stop_event = threading.Event()
+
+        def _callback(recognizer, audio):
+            result = self._recognize_speech_turbo(audio)
+            if result:
+                text_log, text = result
+                if text:
+                    self._collected_texts.append(text)
+                    save_text(text_log)
+                    if text_callback:
+                        text_callback(text)
+
+        microphone = sr.Microphone()
+
+        with microphone as source:
+            self.recognizer.adjust_for_ambient_noise(source, duration=1)
+
+        logging.info("Adjusted for ambient noise. Listening...")
+
+        self.stop_listening = self.recognizer.listen_in_background(
+            microphone, _callback, phrase_time_limit=4
+        )
+
+        self._stop_event.wait()
+
+        full_text = " ".join(self._collected_texts)
+        full_log = f"{time.strftime('%H:%M:%S')} - {full_text}"
+        
+        return full_log, full_text
+
+
+    def stop_listen(self):
+        if self.stop_listening:
+            self.stop_listening(wait_for_stop=False)
+            self.stop_listening = None
+            logging.info("Escuta interrompida com sucesso.")
+        else:
+            logging.warning("Nenhuma escuta ativa para interromper.")
+
+        if hasattr(self, "_stop_event"):
+            self._stop_event.set()
 
 
     def _recognize_speech_turbo(self, audio) -> tuple[str, str]:
@@ -115,87 +157,3 @@ class SpeechToText():
         
         except Exception as e:
             logging.error(f"Error during recognition: {e}")
-
-
-    def _start_listen(self):
-        self.is_recording = True
-        self.audio_data_acumulado = b""
-        
-        self.p = pyaudio.PyAudio()
-        
-        self.stream = self.p.open(
-            format=self.format,
-            channels=self.canais,
-            rate=self.taxa_amostragem,
-            input=True,
-            frames_per_buffer=self.tamanho_chunk,
-            stream_callback=self._microfone_callback 
-        )
-        
-        self.stream.start_stream()
-
-        logging.info("Microfone aberto. Pode falar!")
-
-        threading.Thread(target=self.real_time_transcription, daemon=True).start()
-        threading.Thread(target=self.real_time_listen_transcription, daemon=True).start()
-
-
-    def _microfone_callback(self, in_data, frame_count, time_info, status):
-        if self.is_recording:
-            self.audio_queue.put(in_data)
-        return (None, pyaudio.paContinue)
-
-
-    def real_time_listen_transcription(self):
-        while self.is_recording:
-            text_log, text = self._listen_and_transcribe(phrase_time_limit=3)
-            
-            logging.info(f"Ao vivo: {text}")
-
-            if text:
-                if self.trancription_callback is not None:
-                        self.trancription_callback(text)
-
-
-    def real_time_transcription(self):
-        while self.is_recording:
-            try:
-                chunk = self.audio_queue.get(timeout=1.0)
-
-                self.audio_data_acumulado += chunk
-
-                chunk_array = np.frombuffer(chunk, dtype=np.int16).astype(np.float32)
-                
-                volume = math.sqrt(np.mean(chunk_array**2))
-                
-                logging.info(f"Volume: {volume}")
-
-                if volume < self.silent_limit:
-                    if self.silent_time == 0:
-                        self.silent_time = time.time()
-                    elif time.time() - self.silent_time > 1.5: 
-                        logging.info("Silêncio detectado. Parando a gravação...")
-                        self.stop_listen() 
-                        break
-                else:
-                    self.silent_time = 0
-
-            except queue.Empty:
-                continue
-            except Exception as e:
-                logging.error(f"Erro no processamento: {e}")
-
-
-    def stop_listen(self):
-        self.is_recording = False
-        self.stream.stop_stream()
-        self.stream.close()
-        self.p.terminate()
-        logging.info("Microfone fechado.")
-
-
-
-
-
-
-
