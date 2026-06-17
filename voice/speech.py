@@ -47,9 +47,9 @@ class SpeechToText():
         self.tamanho_chunk = 16000
 
         self._current_model_size = "small"
-        self._load_model("small")
+        self.load_model("small")
 
-    def _load_model(self, model_size: str):
+    def load_model(self, model_size: str):
         with SpeechToText._model_load_lock:
             if model_size in SpeechToText._model_events:
                 return
@@ -70,38 +70,40 @@ class SpeechToText():
 
     def main_commands(self):
         self._current_model_size = "small"
-        self._load_model("small")
+        self._stop_requested = False
+        self.load_model("small")
 
-        text_log, text = self._listen_and_transcribe()
+        text = self._listen_and_transcribe()
 
-        translation_tasks(text)
+        if not self._stop_requested and text:
+            translation_tasks(text)
 
 
     def main_transcription(self, text_callback=None) -> str:
         self._current_model_size = "large-v2"
-        self._load_model("large-v2")
+        self.load_model("large-v2")
 
         self.recognizer.pause_threshold = 3.0
 
-        text_log, text = self._listen_and_transcribe_background(text_callback=text_callback)
+        text = self._listen_and_transcribe_background(text_callback=text_callback)
 
         return text
     
 
-    def _listen_and_transcribe(self, phrase_time_limit=None, stream=False) -> tuple[str, str]:
+    def _listen_and_transcribe(self, phrase_time_limit=7, stream=False) -> tuple[str, str]:
          with sr.Microphone() as microphone:
             self.recognizer.adjust_for_ambient_noise(microphone, duration=1)
 
             logging.info("Adjusted for ambient noise. Linstening...")
 
             try:
-                audio = self.recognizer.listen(microphone, timeout=4, phrase_time_limit=7, stream=stream)
+                audio = self.recognizer.listen(microphone, timeout=4, phrase_time_limit=phrase_time_limit, stream=stream)
 
                 logging.info(f"Listen end: {audio}")
 
                 text_log, text = self._recognize_speech_turbo(audio)
 
-                return text_log, text
+                return text
 
             except sr.WaitTimeoutError:
                 logging.error("Listenting timeout while waiting for a phrase to start")
@@ -111,11 +113,13 @@ class SpeechToText():
                 time.sleep(0.5)
 
 
-    def _listen_and_transcribe_background(self, text_callback=None) -> tuple[str, str]:
+    def _listen_and_transcribe_background(self, text_callback=None, silence_timeout: int = 20) -> str:
         self._collected_texts = []
         self._stop_event = threading.Event()
+        self._last_audio_time = time.time()
 
         def _callback(recognizer, audio):
+            self._last_audio_time = time.time()
             result = self._recognize_speech_turbo(audio)
             if result:
                 text_log, text = result
@@ -124,6 +128,14 @@ class SpeechToText():
                     save_text(text_log)
                     if text_callback:
                         text_callback(text)
+
+        def _silence_watchdog():
+            while not self._stop_event.is_set():
+                if time.time() - self._last_audio_time > silence_timeout:
+                    logging.info(f"Timeout por silêncio ({silence_timeout}s) — encerrando transcrição.")
+                    self._stop_event.set()
+                    break
+                time.sleep(1)
 
         microphone = sr.Microphone()
 
@@ -136,21 +148,29 @@ class SpeechToText():
             microphone, _callback, phrase_time_limit=4
         )
 
+        threading.Thread(target=_silence_watchdog, daemon=True).start()
+
         self._stop_event.wait()
+
+        if self.stop_listening:
+            self.stop_listening(wait_for_stop=False)
+            self.stop_listening = None
 
         full_text = " ".join(self._collected_texts)
         full_log = f"{time.strftime('%H:%M:%S')} - {full_text}"
-        
-        return full_log, full_text
+
+        return full_text
 
 
     def stop_listen(self):
+        self._stop_requested = True
+
         if self.stop_listening:
             self.stop_listening(wait_for_stop=False)
             self.stop_listening = None
             logging.info("Escuta interrompida com sucesso.")
         else:
-            logging.warning("Nenhuma escuta ativa para interromper.")
+            logging.info("Escuta de comandos: aguardando timeout natural.")
 
         if hasattr(self, "_stop_event"):
             self._stop_event.set()
@@ -168,8 +188,10 @@ class SpeechToText():
             texto_reconhecido = "".join([segment.text for segment in segmentos]).strip()
                 
             logging.info(f"Recognizing speech: {texto_reconhecido}")
+
+            text_log =  f"{time.strftime("{%H:%M:%S}")} + - + {texto_reconhecido}"
         
-            return f"{time.strftime("{%H:%M:%S}")} + - + {texto_reconhecido}", texto_reconhecido
+            return text_log, texto_reconhecido
         
         except sr.UnknownValueError:
             logging.error("Could not understand")

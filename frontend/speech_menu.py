@@ -18,7 +18,7 @@ class SpeechMenu():
 
         header = ft.Row(
             controls=[
-               ft.Image(src="frontend/images/Aura.webp", width=200, height=200)
+               #ft.Image(src="frontend/images/Aura.webp", width=200, height=200)
             ],
             alignment=ft.MainAxisAlignment.START
         )

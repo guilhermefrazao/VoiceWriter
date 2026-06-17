@@ -9,7 +9,8 @@ class MicMenu():
     def __init__(self, page: ft.Page):
         self.page = page
         self._speech = None
-        self.containers = Containers()
+        self.is_listening = False
+        self.container = Containers()
 
     @property
     def speech(self):
@@ -20,7 +21,8 @@ class MicMenu():
 
 
     def handle_mic_click(self, mic_button, e=None):
-        if getattr(self, "is_listening", False):
+        if self.is_listening:
+            self.is_listening = False
             self.speech.stop_listen()
             return
 
@@ -75,7 +77,7 @@ class MicMenu():
         self.page.padding = 0
         self.page.title = "Mic Menu"
 
-        mic_button = self.containers.generic_container_with_mic_button(on_click=self.handle_mic_click)
+        mic_button = self.container.generic_container_with_mic_button(on_click=self.handle_mic_click)
 
         mic_card = ft.Container(
             content=ft.Column(

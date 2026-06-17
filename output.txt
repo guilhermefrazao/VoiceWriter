@@ -317,3 +317,16 @@
 {15:57:32} + - + Enquanto a pessoa esteja falando, a ideia dela para estudar é...
 {15:57:37} + - + A transcrição com ICR iria em chunks?
 {15:57:42} + - + de uma pessoa e publicar dentro desse texto aqui.
+{18:17:15} + - + Testar no reconhecimento de voz, terá funcionado?
+{18:20:22} + - + O microfone detecta a voz simultaneamente e consegue fazer o estudo.
+{18:20:28} + - + que atualmente ela não está sendo feita em tempo real, ela está sendo feita em tempo real.
+{18:20:33} + - + eu vou falando e a cada intervalo de 5 segundos...
+{18:20:38} + - + depois, e envia para ele ter esse markdown aqui.
+{18:20:43} + - + escrever. Isso seria pra realmente.
+{21:07:48} + - + É, agora eu estou aprontando e ele está reconhecendo minha voz.
+{21:07:53} + - + Está atualizando o contêinerzinho.
+{21:07:59} + - + E aí, se eu posso fechar esse negócio pra ele parar de rir?
+{21:08:04} + - + Se eu ficar calado, ele some.
+{21:08:14} + - + Também vai.
+{21:08:30} + - + Era pra assumir.
+{21:08:35} + - + Hum, tem que rever a implementação então, não tá subindo.

@@ -7,14 +7,14 @@ import keyboard
 from frontend.widgets.context_menu import ContextMenu
 from frontend.widgets.tiles_generic import Tiles
 from frontend.utils.file_handler import DirectoryUtils
-from frontend.widgets.containers_generic import Containers
 from frontend.utils.recent_manager import RecentManager
 from frontend.utils.color import hover_color_change
 from frontend.widgets.toolbar import TopToolbar
+from frontend.widgets.mic import MicMenu
 
-class EditorMenu():
+class EditorMenu(MicMenu):
     def __init__(self, page : ft.Page):
-        self.page = page
+        super().__init__(page)
         keyboard.add_hotkey("ctrl+p", self.create_and_open_new_markdown)
         keyboard.add_hotkey("ctrl+n", self.create_new_dir)
         self.new_message = ft.TextField(
@@ -35,21 +35,10 @@ class EditorMenu():
         self.current_file_path = str
         self.context_menu_right_click = ContextMenu(page)
         self.handler = DirectoryUtils()
-        self.container = Containers()
         self.recent_manager = RecentManager()
         self.generic_tile = Tiles()
-        self._speech = None
         self.can_listen = False
         self.open_file_path = str
-
-
-
-    @property
-    def speech(self):
-        if self._speech is None:
-            from voice.speech import SpeechToText
-            self._speech = SpeechToText()
-        return self._speech
 
 
     def get_directory_tree(self, path):
@@ -186,49 +175,7 @@ class EditorMenu():
         )
     
 
-    def handle_mic_click(self, mic_button, e=None):
-        if getattr(self, "is_listening", False):
-            self.speech.stop_listen()
-            return
-
-        self.is_listening = True
-
-        self.page.run_task(self.pulse_animation, mic_button)
-        
-        self.page.run_task(self._run_speech_recognition)
-
-
-    async def pulse_animation(self, container_button: ft.Container):
-        await asyncio.sleep(0.75)
-        while self.is_listening:
-            container_button.scale = 1.15
-            container_button.shadow.color = ft.Colors.with_opacity(0.6, "#028268") 
-            container_button.shadow.spread_radius = 5
-            container_button.content.color = "#028268" 
-            container_button.update()
-            
-            await asyncio.sleep(0.5)
-            
-            if not self.is_listening:
-                break
-                
-            container_button.scale = 1.0
-            container_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
-            container_button.shadow.spread_radius = 1
-            container_button.content.color = "white"
-            container_button.update()
-            
-            await asyncio.sleep(0.5) 
-
-
-        container_button.scale = 1.0
-        container_button.shadow.color = ft.Colors.with_opacity(0.15, "blue")
-        container_button.shadow.spread_radius = 1
-        container_button.content.color = "white"
-        container_button.update()
-
-
-    async def _run_speech_recognition(self):
+    async def run_speech_recognition(self):
         try:
             def on_text_chunk(text: str):
                 self.new_message.value = (self.new_message.value or "") + f" {text}"
@@ -237,22 +184,10 @@ class EditorMenu():
 
             await asyncio.to_thread(self.speech.main_transcription, on_text_chunk)
 
-            await self.update_interface(recognized_speech)
-
         except Exception as e:
             logging.error(f"Erro no reconhecimento: {e}")
         finally:
             self.is_listening = False
-
-
-    async def update_interface(self, recognized_speech: str):
-        self.new_message.value += f" {recognized_speech}"
-        
-        await self.new_message.focus()
-
-        self.new_message.update()
-
-
 
 
     def build_ui(self, path: str = "C:/Users/guilh/Documents/VoiceWriter/testes_folder"):
