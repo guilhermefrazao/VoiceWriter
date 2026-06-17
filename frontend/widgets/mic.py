@@ -5,6 +5,7 @@ import logging
 
 from frontend.widgets.containers_generic import Containers
 
+
 class MicMenu():
     def __init__(self, page: ft.Page):
         self.page = page
@@ -65,12 +66,45 @@ class MicMenu():
 
     async def run_speech_recognition(self):
         try:
-            await asyncio.to_thread(self.speech.main_commands)
-            
+            text = await asyncio.to_thread(self.speech.main_commands)
+
+            if text:
+                sr = await self._ask_command_feedback(text)
+                self.speech.record_feedback(sr)
+
         except Exception as e:
-            print(f"Erro no reconhecimento: {e}")
+            logging.error(f"Erro no reconhecimento: {e}")
         finally:
             self.is_listening = False
+
+    async def _ask_command_feedback(self, command_text: str) -> bool:
+        answered = asyncio.Event()
+        result: dict[str, bool] = {}
+
+        async def on_sim(_):
+            result["ok"] = True
+            self.page.pop_dialog()
+            answered.set()
+
+        async def on_nao(_):
+            result["ok"] = False
+            self.page.pop_dialog()
+            answered.set()
+
+        dialog = ft.AlertDialog(
+            modal=True,
+            title=ft.Text("Comando executado com sucesso?"),
+            content=ft.Text(f'"{command_text}"', italic=True),
+            actions=[
+                ft.Button("Sim", bgcolor="#055b5f", on_click=on_sim),
+                ft.Button("Não", bgcolor="#FF2C2C", on_click=on_nao),
+            ],
+            actions_alignment=ft.MainAxisAlignment.END,
+        )
+
+        self.page.show_dialog(dialog)
+        await answered.wait()
+        return result.get("ok", False)
 
 
     def build_ui(self):

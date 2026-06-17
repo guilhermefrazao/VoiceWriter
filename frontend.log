@@ -946,3 +946,568 @@ RuntimeError: Container(18) Control must be added to the page first
 2026-06-16 21:08:36 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
 2026-06-16 21:08:42 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
 2026-06-16 21:08:45 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 01:16:41 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 01:16:41 | INFO | Starting up TCP server on localhost:54328
+2026-06-17 01:16:41 | INFO | Flet app has started...
+2026-06-17 01:16:41 | INFO | App URL: tcp://localhost:54328
+2026-06-17 01:16:41 | INFO | Starting Flet View app...
+2026-06-17 01:16:41 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 01:16:41 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 01:16:41 | INFO | App session started
+2026-06-17 01:16:45 | INFO | Carregando Whisper Model: small.
+2026-06-17 01:16:45 | INFO | Pre-warm concluído.
+2026-06-17 01:16:45 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 01:16:46 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 01:16:46 | INFO | Whisper Model 'small' pronto.
+2026-06-17 01:16:53 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x00000272B7039D30>
+2026-06-17 01:16:53 | INFO | Processing audio with duration 00:05.875
+2026-06-17 01:16:53 | INFO | Recognizing speech: desligar com o computador. Alô galera, adeus!
+2026-06-17 12:50:02 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 12:50:02 | INFO | Starting up TCP server on localhost:7969
+2026-06-17 12:50:02 | INFO | Flet app has started...
+2026-06-17 12:50:02 | INFO | App URL: tcp://localhost:7969
+2026-06-17 12:50:02 | INFO | Starting Flet View app...
+2026-06-17 12:50:02 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 12:50:02 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 12:50:03 | INFO | App session started
+2026-06-17 12:50:13 | INFO | Carregando Whisper Model: small.
+2026-06-17 12:50:13 | INFO | Pre-warm concluído.
+2026-06-17 12:50:14 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 12:50:15 | INFO | Whisper Model 'small' pronto.
+2026-06-17 12:50:17 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:50:20 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x00000157AF7416A0>
+2026-06-17 12:50:20 | INFO | Processing audio with duration 00:02.067
+2026-06-17 12:50:21 | INFO | Recognizing speech: Alex Heligar, Outro!
+2026-06-17 12:50:21 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 12:50:25 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:50:28 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x00000157AF6B5F90>
+2026-06-17 12:50:28 | INFO | Processing audio with duration 00:02.043
+2026-06-17 12:50:29 | INFO | Recognizing speech: Ligar agora.
+2026-06-17 12:50:29 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 12:50:42 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:50:46 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x00000157AF6B6350>
+2026-06-17 12:50:47 | INFO | Processing audio with duration 00:03.251
+2026-06-17 12:50:49 | INFO | Recognizing speech: Alexis Ligarra Aure.
+2026-06-17 12:50:49 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 12:50:53 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:50:58 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x00000157AF627360>
+2026-06-17 12:50:58 | INFO | Processing audio with duration 00:02.624
+2026-06-17 12:50:59 | INFO | Recognizing speech: Alexa, Ligar, Aura.
+2026-06-17 12:50:59 | INFO | Aura ativada!
+2026-06-17 12:51:40 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 12:51:40 | INFO | Starting up TCP server on localhost:15508
+2026-06-17 12:51:40 | INFO | Flet app has started...
+2026-06-17 12:51:40 | INFO | App URL: tcp://localhost:15508
+2026-06-17 12:51:40 | INFO | Starting Flet View app...
+2026-06-17 12:51:40 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 12:51:40 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 12:51:40 | INFO | App session started
+2026-06-17 12:51:43 | INFO | Carregando Whisper Model: small.
+2026-06-17 12:51:43 | INFO | Pre-warm concluído.
+2026-06-17 12:51:44 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 12:51:45 | INFO | Whisper Model 'small' pronto.
+2026-06-17 12:51:54 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:51:59 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002399F3C17F0>
+2026-06-17 12:51:59 | INFO | Processing audio with duration 00:03.204
+2026-06-17 12:51:59 | INFO | Recognizing speech: Abra o Google, crome!
+2026-06-17 12:51:59 | INFO | Comando identificado! Tentando abrir: google, crome!...
+2026-06-17 12:51:59 | INFO | Opening: google, crome!
+2026-06-17 12:52:12 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:52:15 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002399F335F90>
+2026-06-17 12:52:15 | INFO | Processing audio with duration 00:01.881
+2026-06-17 12:52:15 | INFO | Recognizing speech: Abre o Google Chrome.
+2026-06-17 12:52:15 | INFO | Comando identificado! Tentando abrir: google chrome....
+2026-06-17 12:52:15 | INFO | Opening: google chrome.
+2026-06-17 12:52:29 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:52:32 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002399F336350>
+2026-06-17 12:52:33 | INFO | Processing audio with duration 00:02.392
+2026-06-17 12:52:33 | INFO | Recognizing speech: Abra o TESC Manager
+2026-06-17 12:52:33 | INFO | Comando identificado! Tentando abrir: tesc manager...
+2026-06-17 12:52:33 | INFO | Opening: tesc manager
+2026-06-17 12:52:54 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:52:57 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002399F2A7360>
+2026-06-17 12:52:58 | INFO | Processing audio with duration 00:02.206
+2026-06-17 12:52:59 | INFO | Recognizing speech: Eu vou ver o que há, hola.
+2026-06-17 12:52:59 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 12:53:03 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:53:09 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002399F2A75C0>
+2026-06-17 12:53:10 | INFO | Processing audio with duration 00:05.039
+2026-06-17 12:53:10 | INFO | Recognizing speech: Farmar Outer, Vigar Outer.
+2026-06-17 12:53:10 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 12:53:16 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 12:53:19 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002399C69E210>
+2026-06-17 12:53:20 | INFO | Processing audio with duration 00:02.810
+2026-06-17 12:53:20 | INFO | Recognizing speech: Então, Alexa ligar agora.
+2026-06-17 12:53:20 | INFO | Aura ativada!
+2026-06-17 12:57:02 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 12:57:02 | INFO | Starting up TCP server on localhost:56418
+2026-06-17 12:57:02 | INFO | Flet app has started...
+2026-06-17 12:57:02 | INFO | App URL: tcp://localhost:56418
+2026-06-17 12:57:02 | INFO | Starting Flet View app...
+2026-06-17 12:57:02 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 12:57:02 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 12:57:02 | INFO | App session started
+2026-06-17 12:57:06 | INFO | Carregando Whisper Model: small.
+2026-06-17 12:57:06 | INFO | Pre-warm concluído.
+2026-06-17 12:57:06 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 12:57:08 | INFO | Whisper Model 'small' pronto.
+2026-06-17 12:57:11 | INFO | Carregando Whisper Model: large-v2.
+2026-06-17 12:57:11 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-large-v2/revision/main "HTTP/1.1 200 OK"
+2026-06-17 12:57:12 | INFO | Adjusted for ambient noise. Listening...
+2026-06-17 12:57:15 | INFO | Whisper Model 'large-v2' pronto.
+2026-06-17 12:57:17 | INFO | Processing audio with duration 00:03.135
+2026-06-17 12:57:18 | INFO | Recognizing speech: falando aqui e ele vai transcrever no 3D Markdown.
+2026-06-17 12:57:18 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 12:57:19 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 12:57:22 | INFO | Processing audio with duration 00:04.435
+2026-06-17 12:57:23 | INFO | Recognizing speech: Aí a gente teria que utilizar o WordErrorRate dentro de...
+2026-06-17 12:57:23 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 12:57:24 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 12:57:28 | INFO | Processing audio with duration 00:03.854
+2026-06-17 12:57:29 | INFO | Recognizing speech: porque o word error rate eu não acho que seja tão útil no dos comandos
+2026-06-17 12:57:29 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 12:57:30 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 12:57:33 | INFO | Processing audio with duration 00:04.180
+2026-06-17 12:57:34 | INFO | Recognizing speech: implementarmos features para melhorar a aplicação no geral.
+2026-06-17 12:57:34 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 12:57:35 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 12:57:40 | INFO | Processing audio with duration 00:04.505
+2026-06-17 12:57:41 | INFO | Recognizing speech: Então, eu acho que vai incluir os dois, e todo mundo vai...
+2026-06-17 12:57:41 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 12:57:42 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 12:57:45 | INFO | Processing audio with duration 00:04.110
+2026-06-17 12:57:46 | INFO | Recognizing speech: as coisas e de áudio nesse caso para não ficar tipo mandar voar
+2026-06-17 12:57:46 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 12:57:47 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 12:57:50 | INFO | Escuta interrompida com sucesso.
+2026-06-17 16:29:41 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 16:29:41 | INFO | Starting up TCP server on localhost:48339
+2026-06-17 16:29:41 | INFO | Flet app has started...
+2026-06-17 16:29:41 | INFO | App URL: tcp://localhost:48339
+2026-06-17 16:29:41 | INFO | Starting Flet View app...
+2026-06-17 16:29:41 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:29:41 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:29:42 | INFO | App session started
+2026-06-17 16:29:45 | INFO | Carregando Whisper Model: small.
+2026-06-17 16:29:45 | INFO | Pre-warm concluído.
+2026-06-17 16:29:46 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 16:29:46 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 16:29:47 | INFO | Whisper Model 'small' pronto.
+2026-06-17 16:29:50 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001C69EF99E80>
+2026-06-17 16:29:51 | INFO | Processing audio with duration 00:02.299
+2026-06-17 16:29:51 | INFO | Recognizing speech: para o Discord.
+2026-06-17 16:29:51 | INFO | [ASR Metrics] success=True | latency=514ms | RTF=0.224 | confidence=60.37%
+2026-06-17 16:29:51 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 16:39:50 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 16:39:50 | INFO | Starting up TCP server on localhost:23941
+2026-06-17 16:39:50 | INFO | Flet app has started...
+2026-06-17 16:39:50 | INFO | App URL: tcp://localhost:23941
+2026-06-17 16:39:50 | INFO | Starting Flet View app...
+2026-06-17 16:39:50 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:39:50 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:39:51 | INFO | App session started
+2026-06-17 16:39:54 | INFO | Carregando Whisper Model: small.
+2026-06-17 16:39:54 | INFO | Pre-warm concluído.
+2026-06-17 16:39:54 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 16:39:55 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 16:39:55 | INFO | Whisper Model 'small' pronto.
+2026-06-17 16:40:01 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002A4FEA89E80>
+2026-06-17 16:40:01 | INFO | Processing audio with duration 00:04.598
+2026-06-17 16:40:01 | INFO | Recognizing speech: Oi, abra o Discord, depois abra o Google Chrome.
+2026-06-17 16:40:01 | INFO | [ASR Metrics] confidence=66.59%
+2026-06-17 16:40:01 | INFO | [time_transcription] _recognize_speech_turbo levou 662.43ms
+2026-06-17 16:40:01 | INFO | Comando identificado! Tentando abrir: discord, depois abra o google chrome....
+2026-06-17 16:40:01 | INFO | Opening: discord, depois abra o google chrome.
+2026-06-17 16:40:02 | ERROR | Erro no reconhecimento: 'Page' object has no attribute 'open'
+2026-06-17 16:42:21 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 16:42:21 | INFO | Starting up TCP server on localhost:62068
+2026-06-17 16:42:21 | INFO | Flet app has started...
+2026-06-17 16:42:21 | INFO | App URL: tcp://localhost:62068
+2026-06-17 16:42:21 | INFO | Starting Flet View app...
+2026-06-17 16:42:21 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:42:21 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:42:21 | INFO | App session started
+2026-06-17 16:42:24 | INFO | Carregando Whisper Model: small.
+2026-06-17 16:42:24 | INFO | Pre-warm concluído.
+2026-06-17 16:42:25 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 16:42:26 | INFO | Whisper Model 'small' pronto.
+2026-06-17 16:42:30 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 16:42:33 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001BF2BEC5940>
+2026-06-17 16:42:33 | INFO | Processing audio with duration 00:02.345
+2026-06-17 16:42:34 | INFO | Recognizing speech: Abre o Google Chrome.
+2026-06-17 16:42:34 | INFO | [ASR Metrics] confidence=79.16%
+2026-06-17 16:42:34 | INFO | [time_transcription] _recognize_speech_turbo levou 734.00ms
+2026-06-17 16:42:34 | INFO | Comando identificado! Tentando abrir: google chrome....
+2026-06-17 16:42:34 | INFO | Opening: google chrome.
+2026-06-17 16:42:39 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\messaging\session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 344, in _trigger_event
+    event_handler(e)
+    ~~~~~~~~~~~~~^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\mic.py", line 85, in on_sim
+    self.page.pop_dialog(dialog)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: BasePage.pop_dialog() takes 1 positional argument but 2 were given
+2026-06-17 16:42:44 | ERROR | exception calling callback for <Future at 0x1bf2badd590 state=finished raised RuntimeError>
+Traceback (most recent call last):
+  File "C:\Users\guilh\AppData\Roaming\uv\python\cpython-3.13.3-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 340, in _invoke_callbacks
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 504, in _on_completion
+    raise exception
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\mic.py", line 54, in pulse_animation
+    container_button.update()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 257, in update
+    self.page.update(self)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 454, in update
+    self.__update(*controls)
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 461, in __update
+    self.session.patch_control(c)
+    ^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 840, in session
+    raise RuntimeError("An attempt to fetch destroyed session.")
+RuntimeError: An attempt to fetch destroyed session.
+2026-06-17 16:52:04 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 16:52:04 | INFO | Starting up TCP server on localhost:3898
+2026-06-17 16:52:04 | INFO | Flet app has started...
+2026-06-17 16:52:04 | INFO | App URL: tcp://localhost:3898
+2026-06-17 16:52:04 | INFO | Starting Flet View app...
+2026-06-17 16:52:04 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:52:04 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:52:04 | INFO | App session started
+2026-06-17 16:52:07 | INFO | Carregando Whisper Model: small.
+2026-06-17 16:52:07 | INFO | Pre-warm concluído.
+2026-06-17 16:52:08 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 16:52:09 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 16:52:09 | INFO | Whisper Model 'small' pronto.
+2026-06-17 16:52:13 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000013E288C5FD0>
+2026-06-17 16:52:13 | INFO | Processing audio with duration 00:03.320
+2026-06-17 16:52:14 | INFO | Recognizing speech: abro o discurso de...
+2026-06-17 16:52:14 | INFO | [ASR Metrics] confidence=37.88%
+2026-06-17 16:52:14 | INFO | [time_transcription] _recognize_speech_turbo levou 1146.91ms
+2026-06-17 16:52:14 | INFO | Comando identificado! Tentando abrir: discurso de......
+2026-06-17 16:52:14 | INFO | Opening: discurso de...
+2026-06-17 16:52:27 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-06-17 16:52:57 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 16:52:57 | INFO | Starting up TCP server on localhost:64980
+2026-06-17 16:52:57 | INFO | Flet app has started...
+2026-06-17 16:52:57 | INFO | App URL: tcp://localhost:64980
+2026-06-17 16:52:57 | INFO | Starting Flet View app...
+2026-06-17 16:52:57 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:52:57 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:52:58 | INFO | App session started
+2026-06-17 16:53:01 | INFO | Carregando Whisper Model: small.
+2026-06-17 16:53:01 | INFO | Pre-warm concluído.
+2026-06-17 16:53:02 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 16:53:02 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 16:53:03 | INFO | Whisper Model 'small' pronto.
+2026-06-17 16:53:06 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000025067CA5FD0>
+2026-06-17 16:53:06 | INFO | Processing audio with duration 00:02.601
+2026-06-17 16:53:07 | INFO | Recognizing speech: Abro o Discord
+2026-06-17 16:53:07 | INFO | [ASR Metrics] confidence=55.23%
+2026-06-17 16:53:07 | INFO | [time_transcription] _recognize_speech_turbo levou 452.20ms
+2026-06-17 16:53:07 | INFO | Comando identificado! Tentando abrir: discord...
+2026-06-17 16:53:07 | INFO | Opening: discord
+2026-06-17 16:53:09 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-06-17 16:56:36 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 16:56:36 | INFO | Starting up TCP server on localhost:2309
+2026-06-17 16:56:36 | INFO | Flet app has started...
+2026-06-17 16:56:36 | INFO | App URL: tcp://localhost:2309
+2026-06-17 16:56:36 | INFO | Starting Flet View app...
+2026-06-17 16:56:36 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:56:36 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 16:56:37 | INFO | App session started
+2026-06-17 16:56:40 | INFO | Carregando Whisper Model: small.
+2026-06-17 16:56:40 | INFO | Pre-warm concluído.
+2026-06-17 16:56:41 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 16:56:41 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 16:56:41 | INFO | Whisper Model 'small' pronto.
+2026-06-17 16:56:45 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000029C4AD99E80>
+2026-06-17 16:56:45 | INFO | Processing audio with duration 00:02.717
+2026-06-17 16:56:45 | INFO | Recognizing speech: Feche o Discord.
+2026-06-17 16:56:45 | INFO | [ASR Metrics] confidence=77.57%
+2026-06-17 16:56:45 | INFO | [time_transcription] _recognize_speech_turbo levou 445.08ms
+2026-06-17 16:56:45 | INFO | Comando identificado! Tentando fechar: discord....
+2026-06-17 16:56:45 | INFO | Closing: discord.
+2026-06-17 16:56:49 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-06-17 16:56:54 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 16:56:58 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000029C4AE0D090>
+2026-06-17 16:56:58 | INFO | Processing audio with duration 00:02.299
+2026-06-17 16:56:58 | INFO | Recognizing speech: Abro o Discord.
+2026-06-17 16:56:58 | INFO | [ASR Metrics] confidence=74.76%
+2026-06-17 16:56:58 | INFO | [time_transcription] _recognize_speech_turbo levou 556.09ms
+2026-06-17 16:56:58 | INFO | Comando identificado! Tentando abrir: discord....
+2026-06-17 16:56:58 | INFO | Opening: discord.
+2026-06-17 16:57:03 | INFO | [Feedback] ✓ | Session success rate: 100.0% (2/2)
+2026-06-17 17:03:15 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:03:15 | INFO | Starting up TCP server on localhost:48494
+2026-06-17 17:03:15 | INFO | Flet app has started...
+2026-06-17 17:03:15 | INFO | App URL: tcp://localhost:48494
+2026-06-17 17:03:15 | INFO | Starting Flet View app...
+2026-06-17 17:03:15 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:03:15 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:03:15 | INFO | App session started
+2026-06-17 17:03:18 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:03:18 | INFO | Pre-warm concluído.
+2026-06-17 17:03:19 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:03:19 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:03:20 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:03:23 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001451AA49E80>
+2026-06-17 17:03:23 | INFO | Processing audio with duration 00:02.345
+2026-06-17 17:03:23 | INFO | Recognizing speech: Feche o Discord para eu testar as novas...
+2026-06-17 17:03:23 | INFO | [ASR Metrics] latency=504ms | RTF=0.215 | confidence=85.11%
+2026-06-17 17:03:23 | INFO | Comando identificado! Tentando fechar: discord para eu testar as novas......
+2026-06-17 17:03:23 | INFO | Closing: discord para eu testar as novas...
+2026-06-17 17:03:31 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-06-17 17:26:39 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:26:39 | INFO | Starting up TCP server on localhost:30617
+2026-06-17 17:26:39 | INFO | Flet app has started...
+2026-06-17 17:26:39 | INFO | App URL: tcp://localhost:30617
+2026-06-17 17:26:39 | INFO | Starting Flet View app...
+2026-06-17 17:26:39 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:26:39 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:26:39 | INFO | App session started
+2026-06-17 17:26:43 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:26:43 | INFO | Pre-warm concluído.
+2026-06-17 17:26:44 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:26:45 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:27:40 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:27:40 | INFO | Starting up TCP server on localhost:4660
+2026-06-17 17:27:40 | INFO | Flet app has started...
+2026-06-17 17:27:40 | INFO | App URL: tcp://localhost:4660
+2026-06-17 17:27:40 | INFO | Starting Flet View app...
+2026-06-17 17:27:40 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:27:40 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:27:41 | INFO | App session started
+2026-06-17 17:27:45 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:27:45 | INFO | Pre-warm concluído.
+2026-06-17 17:27:46 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:27:46 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:27:46 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:27:50 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001FF67359E80>
+2026-06-17 17:27:50 | INFO | Processing audio with duration 00:02.879
+2026-06-17 17:27:51 | INFO | Recognizing speech: falo. Abra o Google Chrome.
+2026-06-17 17:27:51 | INFO | [ASR Metrics] latency=587ms | RTF=0.204 | confidence=86.31%
+2026-06-17 17:27:51 | INFO | Comando identificado! Tentando abrir: google chrome....
+2026-06-17 17:27:51 | INFO | Opening: google chrome.
+2026-06-17 17:28:03 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-06-17 17:28:03 | INFO | [Metrics] Salvo localmente em C:\Users\guilh\Documents\VoiceWriter\voice\data\feedback_metrics.json (1 registros)
+2026-06-17 17:28:03 | ERROR | [Metrics] Erro ao salvar no MongoDB: No module named 'pymongo'
+2026-06-17 17:29:47 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Vault\Untitled.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4\Untitled.md
+2026-06-17 17:29:48 | INFO | Movido: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 4\Untitled.md -> C:\Users\guilh\Documents\VoiceWriter\testes_folder\Vault\Untitled.md
+2026-06-17 17:29:56 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:29:58 | INFO | Carregando Whisper Model: large-v2.
+2026-06-17 17:29:58 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-large-v2/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:29:59 | INFO | Adjusted for ambient noise. Listening...
+2026-06-17 17:30:03 | INFO | Whisper Model 'large-v2' pronto.
+2026-06-17 17:30:04 | INFO | Processing audio with duration 00:04.040
+2026-06-17 17:30:05 | INFO | Recognizing speech: Ele transcreve em tempo real o que eu tô falando a cada sentido.
+2026-06-17 17:30:05 | INFO | [ASR Metrics] latency=1094ms | RTF=0.271 | confidence=72.43%
+2026-06-17 17:30:05 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:30:06 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:30:09 | INFO | Processing audio with duration 00:03.692
+2026-06-17 17:30:10 | INFO | Recognizing speech: cortando minha fala e adiciona ali dentro do Markdown
+2026-06-17 17:30:10 | INFO | [ASR Metrics] latency=1152ms | RTF=0.312 | confidence=72.55%
+2026-06-17 17:30:10 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:30:11 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:30:14 | INFO | Processing audio with duration 00:04.133
+2026-06-17 17:30:15 | INFO | Recognizing speech: para fazer anotações dentro do Obsidian, por exemplo, só que...
+2026-06-17 17:30:15 | INFO | [ASR Metrics] latency=1171ms | RTF=0.283 | confidence=70.47%
+2026-06-17 17:30:15 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:30:16 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:30:18 | INFO | Escuta interrompida com sucesso.
+2026-06-17 17:30:25 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:30:30 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001FF67431EB0>
+2026-06-17 17:30:30 | INFO | Processing audio with duration 00:03.669
+2026-06-17 17:30:30 | INFO | Recognizing speech: Se apertar F9 aqui, abre o Google Chrome.
+2026-06-17 17:30:30 | INFO | [ASR Metrics] latency=393ms | RTF=0.107 | confidence=77.96%
+2026-06-17 17:30:30 | INFO | Comando identificado! Tentando abrir: google chrome....
+2026-06-17 17:30:30 | INFO | Opening: google chrome.
+2026-06-17 17:30:36 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-06-17 17:30:36 | INFO | [Metrics] Salvo localmente em C:\Users\guilh\Documents\VoiceWriter\voice\data\feedback_metrics.json (2 registros)
+2026-06-17 17:30:36 | ERROR | [Metrics] Erro ao salvar no MongoDB: No module named 'pymongo'
+2026-06-17 17:39:53 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:39:53 | INFO | Starting up TCP server on localhost:44947
+2026-06-17 17:39:53 | INFO | Flet app has started...
+2026-06-17 17:39:53 | INFO | App URL: tcp://localhost:44947
+2026-06-17 17:39:53 | INFO | Starting Flet View app...
+2026-06-17 17:39:53 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:39:53 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:39:53 | INFO | App session started
+2026-06-17 17:39:57 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:39:57 | INFO | Pre-warm concluído.
+2026-06-17 17:39:58 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:39:59 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:40:17 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:40:21 | ERROR | exception calling callback for <Future at 0x29363049480 state=finished raised RuntimeError>
+Traceback (most recent call last):
+  File "C:\Users\guilh\AppData\Roaming\uv\python\cpython-3.13.3-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 340, in _invoke_callbacks
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 504, in _on_completion
+    raise exception
+  File "C:\Users\guilh\Documents\VoiceWriter\frontend\widgets\mic.py", line 44, in pulse_animation
+    container_button.update()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\base_control.py", line 257, in update
+    self.page.update(self)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 454, in update
+    self.__update(*controls)
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 461, in __update
+    self.session.patch_control(c)
+    ^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet\controls\page.py", line 840, in session
+    raise RuntimeError("An attempt to fetch destroyed session.")
+RuntimeError: An attempt to fetch destroyed session.
+2026-06-17 17:40:24 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002933E4EB8C0>
+2026-06-17 17:40:24 | INFO | Processing audio with duration 00:06.920
+2026-06-17 17:40:24 | INFO | Recognizing speech: tem uma latência antes de iniciar a detecção de voz. Quer ver? Vou fechar aqui e abri de novo.
+2026-06-17 17:40:24 | INFO | [ASR Metrics] latency=845ms | RTF=0.122 | confidence=86.06%
+2026-06-17 17:40:24 | INFO | Comando identificado! Tentando fechar: aqui e abri de novo....
+2026-06-17 17:40:24 | INFO | Closing: aqui e abri de novo.
+2026-06-17 17:40:28 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:40:28 | INFO | Starting up TCP server on localhost:52534
+2026-06-17 17:40:28 | INFO | Flet app has started...
+2026-06-17 17:40:28 | INFO | App URL: tcp://localhost:52534
+2026-06-17 17:40:28 | INFO | Starting Flet View app...
+2026-06-17 17:40:28 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:40:28 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:40:28 | INFO | App session started
+2026-06-17 17:40:31 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:40:31 | INFO | Pre-warm concluído.
+2026-06-17 17:40:32 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:40:33 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:40:33 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:40:38 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000025075219E80>
+2026-06-17 17:40:39 | INFO | Processing audio with duration 00:04.621
+2026-06-17 17:40:43 | INFO | Recognizing speech: 
+2026-06-17 17:40:43 | INFO | [ASR Metrics] latency=4031ms | RTF=0.872
+2026-06-17 17:41:36 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:41:36 | INFO | Starting up TCP server on localhost:54536
+2026-06-17 17:41:36 | INFO | Flet app has started...
+2026-06-17 17:41:36 | INFO | App URL: tcp://localhost:54536
+2026-06-17 17:41:36 | INFO | Starting Flet View app...
+2026-06-17 17:41:36 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:41:36 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:41:37 | INFO | App session started
+2026-06-17 17:41:40 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:41:40 | INFO | Pre-warm concluído.
+2026-06-17 17:41:41 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:41:41 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:41:41 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:41:49 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000020A9F9A9E80>
+2026-06-17 17:41:49 | INFO | Processing audio with duration 00:07.454
+2026-06-17 17:41:49 | INFO | Recognizing speech: alô alô abre o google alô aqui ó já está ajustado para o
+2026-06-17 17:41:49 | INFO | [ASR Metrics] latency=805ms | RTF=0.108 | confidence=75.34%
+2026-06-17 17:41:49 | INFO | Comando identificado! Tentando abrir: google alô aqui ó já está ajustado para o...
+2026-06-17 17:41:49 | INFO | Opening: google alô aqui ó já está ajustado para o
+2026-06-17 17:41:49 | ERROR | Erro no reconhecimento: GOOGLE AL  AQUI   J  EST  AJUSTADO PARA O is not running
+2026-06-17 17:43:37 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:43:37 | INFO | Starting up TCP server on localhost:3325
+2026-06-17 17:43:37 | INFO | Flet app has started...
+2026-06-17 17:43:37 | INFO | App URL: tcp://localhost:3325
+2026-06-17 17:43:37 | INFO | Starting Flet View app...
+2026-06-17 17:43:37 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:43:37 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:43:38 | INFO | App session started
+2026-06-17 17:43:42 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:43:42 | INFO | Pre-warm concluído.
+2026-06-17 17:43:43 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:43:43 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:43:49 | INFO | Carregando Whisper Model: large-v2.
+2026-06-17 17:43:49 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-large-v2/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:43:50 | INFO | Adjusted for ambient noise. Listening...
+2026-06-17 17:43:53 | INFO | Whisper Model 'large-v2' pronto.
+2026-06-17 17:43:55 | INFO | Processing audio with duration 00:02.879
+2026-06-17 17:43:56 | INFO | Recognizing speech: E aí
+2026-06-17 17:43:56 | INFO | [ASR Metrics] latency=1057ms | RTF=0.367 | confidence=50.68%
+2026-06-17 17:43:56 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:43:57 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:44:00 | INFO | Processing audio with duration 00:03.460
+2026-06-17 17:44:01 | INFO | Recognizing speech: E aí
+2026-06-17 17:44:01 | INFO | [ASR Metrics] latency=855ms | RTF=0.247 | confidence=51.48%
+2026-06-17 17:44:01 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:44:02 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:44:04 | INFO | Escuta interrompida com sucesso.
+2026-06-17 17:44:18 | INFO | Adjusted for ambient noise. Listening...
+2026-06-17 17:44:23 | INFO | Processing audio with duration 00:03.994
+2026-06-17 17:44:24 | INFO | Escuta interrompida com sucesso.
+2026-06-17 17:44:26 | INFO | Recognizing speech: Hum... Que horas?
+2026-06-17 17:44:26 | INFO | [ASR Metrics] latency=3312ms | RTF=0.829 | confidence=14.10%
+2026-06-17 17:44:26 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:44:27 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:44:29 | INFO | Adjusted for ambient noise. Listening...
+2026-06-17 17:44:34 | INFO | Processing audio with duration 00:04.272
+2026-06-17 17:44:35 | INFO | Recognizing speech: ...que ele não consegue parar a gravação depois de detectar...
+2026-06-17 17:44:35 | INFO | [ASR Metrics] latency=1205ms | RTF=0.282 | confidence=77.16%
+2026-06-17 17:44:35 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:44:36 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:44:39 | INFO | Processing audio with duration 00:02.136
+2026-06-17 17:44:40 | INFO | Recognizing speech: Quem tá calado aqui, ele não vai parar.
+2026-06-17 17:44:40 | INFO | [ASR Metrics] latency=1068ms | RTF=0.500 | confidence=75.14%
+2026-06-17 17:44:40 | INFO | Finished recording! Transcription saved to: output.txt
+2026-06-17 17:44:41 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:44:45 | INFO | Processing audio with duration 00:04.505
+2026-06-17 17:44:46 | INFO | Recognizing speech: 
+2026-06-17 17:44:46 | INFO | [ASR Metrics] latency=1049ms | RTF=0.233
+2026-06-17 17:44:49 | INFO | Escuta interrompida com sucesso.
+2026-06-17 17:44:58 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:49:21 | INFO | Arquivo salvo: C:\Users\guilh\Documents\VoiceWriter\testes_folder\Untitled 1.md
+2026-06-17 17:54:42 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 17:54:42 | INFO | Starting up TCP server on localhost:46576
+2026-06-17 17:54:42 | INFO | Flet app has started...
+2026-06-17 17:54:42 | INFO | App URL: tcp://localhost:46576
+2026-06-17 17:54:42 | INFO | Starting Flet View app...
+2026-06-17 17:54:42 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:54:42 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 17:54:43 | INFO | App session started
+2026-06-17 17:54:46 | INFO | Carregando Whisper Model: small.
+2026-06-17 17:54:46 | INFO | Pre-warm concluído.
+2026-06-17 17:54:47 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 17:54:48 | INFO | Whisper Model 'small' pronto.
+2026-06-17 17:55:05 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:55:08 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001E36E0197F0>
+2026-06-17 17:55:08 | INFO | Processing audio with duration 00:02.043
+2026-06-17 17:55:09 | INFO | Recognizing speech: Alexia de Garada
+2026-06-17 17:55:09 | INFO | [ASR Metrics] latency=627ms | RTF=0.307 | confidence=39.39%
+2026-06-17 17:55:09 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 17:55:12 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/1)
+2026-06-17 17:55:12 | INFO | [Metrics] Salvo localmente em C:\Users\guilh\Documents\VoiceWriter\voice\data\feedback_metrics.json (3 registros)
+2026-06-17 17:55:12 | ERROR | [Metrics] Erro ao salvar no MongoDB: No module named 'pymongo'
+2026-06-17 17:55:19 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 17:55:24 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001E36E0A1090>
+2026-06-17 17:55:25 | INFO | Processing audio with duration 00:04.505
+2026-06-17 17:55:25 | INFO | Recognizing speech: Alexa, ligar a hora.
+2026-06-17 17:55:25 | INFO | [ASR Metrics] latency=526ms | RTF=0.117 | confidence=70.39%
+2026-06-17 17:55:25 | INFO | Aura ativada!
+2026-06-17 17:55:28 | INFO | [Feedback] ✓ | Session success rate: 50.0% (1/2)
+2026-06-17 17:55:28 | INFO | [Metrics] Salvo localmente em C:\Users\guilh\Documents\VoiceWriter\voice\data\feedback_metrics.json (4 registros)
+2026-06-17 17:55:28 | ERROR | [Metrics] Erro ao salvar no MongoDB: No module named 'pymongo'
+2026-06-17 18:09:10 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-17 18:09:10 | INFO | Starting up TCP server on localhost:14090
+2026-06-17 18:09:10 | INFO | Flet app has started...
+2026-06-17 18:09:10 | INFO | App URL: tcp://localhost:14090
+2026-06-17 18:09:10 | INFO | Starting Flet View app...
+2026-06-17 18:09:10 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 18:09:10 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-17 18:09:10 | INFO | App session started
+2026-06-17 18:09:13 | INFO | Carregando Whisper Model: small.
+2026-06-17 18:09:13 | INFO | Pre-warm concluído.
+2026-06-17 18:09:14 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-17 18:09:14 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-17 18:09:15 | INFO | Whisper Model 'small' pronto.
+2026-06-17 18:09:17 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001C5156B9E80>
+2026-06-17 18:09:17 | INFO | Processing audio with duration 00:01.416
+2026-06-17 18:09:23 | INFO | Recognizing speech: Seis de Farmar, alde...
+2026-06-17 18:09:23 | INFO | [ASR Metrics] latency=5804ms | RTF=4.098 | confidence=14.71%
+2026-06-17 18:09:23 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-17 18:09:27 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/1)
+2026-06-17 18:09:27 | INFO | [Metrics] Salvo localmente em C:\Users\guilh\Documents\VoiceWriter\voice\data\feedback_metrics.json (5 registros)
+2026-06-17 18:09:29 | INFO | [Metrics] Salvo no MongoDB Atlas.

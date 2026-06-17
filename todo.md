@@ -7,7 +7,7 @@
 
 # pessoa 2 - 
 
-3 - Implementar uma feature com Wakeword, fazer funcionar quando a aplicação esteja rodando em background ou com comandos no teclado (F9), para que o usuário possa ativar o reconhecimento de voz sem precisar clicar no botão de gravação. (ex: "Hey Voice Control, abrir Google Chrome")
+3 (Análisar) - Implementar uma feature com Wakeword, fazer funcionar quando a aplicação esteja rodando em background ou com comandos no teclado (F9), para que o usuário possa ativar o reconhecimento de voz sem precisar clicar no botão de gravação. (ex: "Hey Voice Control, abrir Google Chrome")
 
 4 - Expandir o reconhecimento de comandos para mais aplicativos e ações, como por exemplo além de abrir o e fechar aplicativos, conseguir interagir com eles. (Abrir e pesquisar no Google Chrome, abrir e criar arquivos no Visual Studio Code, etc.)
 
@@ -17,7 +17,7 @@
 
 6 - Criar e Avaliar variáveis para diferentes modelos de ASR. (success_rate, WER, Latency, etc.) (na transcrição de comandos e de texto em geral)
 
-7 - Melhorar a feature de transcrição de fala em tempo real, ou seja, enquanto a pessoa fala, o texto já vai aparecendo na tela no modo de editor. (atualmente é feito em batches de fala.)
+7 - Fazer com que a detecção de audio seja interrompida após um tempo de silêncio durante a trasncrição em tempo real no editor de texto.
 
 ## pessoa 4 - 
 
@@ -28,10 +28,10 @@
 # Todos -
 
 10 - Testar diferentes modelos de ASR dentro da arquitetura, atualmente feita com o Whisper, testar também desempenho dos modelos Whisper (Modelo como Parakeet para Pt-BR).
-    10.1 - Testar modelo OpenAI Whisper e Distil-Whisper
-    10.2 - Testar modelo Voxtral-Mini-3B
-    10.3 - Testar modelo NVIDIA Canary-V2
-    10.4 - Testar modelo NVIDIA Parakeet-TDT
+    10.1 - Testar modelo OpenAI Whisper e Distil-Whisper #
+    10.2 - Testar modelo Voxtral-Mini-3B #
+    10.3 - Testar modelo NVIDIA Canary-V2 #
+    10.4 - Testar modelo NVIDIA Parakeet-TDT #
 
 ### Explicação dos modelos de ASR -
 

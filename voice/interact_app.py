@@ -1,8 +1,12 @@
 import logging
 import re
 import subprocess
+import winsound
+from pathlib import Path
 
 from AppOpener import open, close
+
+_SOUNDS_DIR = Path(__file__).parent / "sounds"
 
 
 def translation_tasks(text: str) -> None:
@@ -17,13 +21,21 @@ def translation_tasks(text: str) -> None:
 
     padrao_desligar_computador = r"\b(desligar|desligue|desliga)"
 
+    padrao_ligar_aura = r"\b(alexa|ligar aura|aura)"
+
+    resultado_ligar_aura = re.search(padrao_ligar_aura, comando)
+
     resultado_executar = re.search(padrao_busca_executar, comando)
 
     resultado_fechar = re.search(padrao_busca_fechar, comando)
 
     resultado_desligar = re.search(padrao_desligar_computador, comando)
 
-    if resultado_executar:
+    if resultado_ligar_aura:
+        logging.info("Aura ativada!")
+        _play_sound("ligar_aura.wav")
+
+    elif resultado_executar:
         nome_do_app = resultado_executar.group(3).strip()
         
         logging.info(f"Comando identificado! Tentando abrir: {nome_do_app}...")
@@ -59,4 +71,9 @@ def close_app(recognized_text: str)-> None:
     inp = recognized_text.lower()
 
     close(inp, match_closest=True)
+
+
+def _play_sound(filename: str) -> None:
+    path = str(_SOUNDS_DIR / filename)
+    winsound.PlaySound(path, winsound.SND_FILENAME | winsound.SND_ASYNC)
 

@@ -9,12 +9,16 @@ import numpy as np
 import threading
 import math
 import asyncio
+import uuid
+from datetime import datetime, timezone
 
 from dotenv import load_dotenv
 load_dotenv()
 
 from voice.interact_app import translation_tasks
 from voice.utils.json_utils import save_text
+from voice.utils.asr_metrics import analyze_transcription, success_rate
+from voice.utils.metrics_storage import save_metrics_local, save_metrics_cloud
 from faster_whisper import WhisperModel
 
 
@@ -32,6 +36,7 @@ class SpeechToText():
     _model_events: dict = {}
     _model_load_lock = threading.Lock()
 
+
     def __init__(self):
         self.recognizer = sr.Recognizer()
         self.recognizer.pause_threshold = 1.5
@@ -47,7 +52,30 @@ class SpeechToText():
         self.tamanho_chunk = 16000
 
         self._current_model_size = "small"
+        self._feedback_history: list[bool] = []
+        self._session_id: str = str(uuid.uuid4())
+        self._last_metrics: dict = {}
+        self._last_transcription: str | None = None
         self.load_model("small")
+
+
+    def record_feedback(self, ok: bool) -> None:
+        self._feedback_history.append(ok)
+        rate = success_rate(self._feedback_history)
+        logging.info(f"[Feedback] {'✓' if ok else '✗'} | Session success rate: {rate:.1%} ({sum(self._feedback_history)}/{len(self._feedback_history)})")
+
+        entry = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "session_id": self._session_id,
+            "model": self._current_model_size,
+            "transcribed_text": self._last_transcription,
+            "user_success": ok,
+            **self._last_metrics,
+        }
+
+        save_metrics_local(entry)
+        save_metrics_cloud(entry)
+
 
     def load_model(self, model_size: str):
         with SpeechToText._model_load_lock:
@@ -64,11 +92,13 @@ class SpeechToText():
 
         threading.Thread(target=_worker, daemon=True).start()
 
+
     def _ensure_model(self):
         SpeechToText._model_events[self._current_model_size].wait()
         self.model = SpeechToText._model_cache[self._current_model_size]
 
-    def main_commands(self):
+
+    def main_commands(self) -> str | None:
         self._current_model_size = "small"
         self._stop_requested = False
         self.load_model("small")
@@ -77,6 +107,8 @@ class SpeechToText():
 
         if not self._stop_requested and text:
             translation_tasks(text)
+
+        return text 
 
 
     def main_transcription(self, text_callback=None) -> str:
@@ -176,25 +208,37 @@ class SpeechToText():
             self._stop_event.set()
 
 
-    def _recognize_speech_turbo(self, audio) -> tuple[str, str]:
+    def _recognize_speech_turbo(self, audio, reference: str | None = None) -> tuple[str, str]:
         self._ensure_model()
         try:
+            s_time = time.time()
             wav_data = audio.get_wav_data(convert_rate=16000, convert_width=2)
-                
             wav_stream = io.BytesIO(wav_data)
-            
-            segmentos, info = self.model.transcribe(wav_stream, beam_size=5, language="pt")          
-            
-            texto_reconhecido = "".join([segment.text for segment in segmentos]).strip()
-                
-            logging.info(f"Recognizing speech: {texto_reconhecido}")
 
-            text_log =  f"{time.strftime("{%H:%M:%S}")} + - + {texto_reconhecido}"
-        
+            segmentos, info = self.model.transcribe(wav_stream, beam_size=5, language="pt", word_timestamps=True)
+            segmentos = list(segmentos)
+
+            texto_reconhecido = "".join([segment.text for segment in segmentos]).strip()
+
+            logging.info(f"Recognizing speech: {texto_reconhecido}")
+            end_time = time.time()
+
+            self._last_metrics = analyze_transcription(
+                hypothesis=texto_reconhecido,
+                reference=reference,
+                start_time=s_time,
+                end_time=end_time,
+                audio_duration_s=info.duration if info else None,
+                segments=segmentos,
+            )
+            self._last_transcription = texto_reconhecido
+
+            text_log = f"{time.strftime('{%H:%M:%S}')} + - + {texto_reconhecido}"
+
             return text_log, texto_reconhecido
-        
+
         except sr.UnknownValueError:
             logging.error("Could not understand")
-        
+
         except Exception as e:
             logging.error(f"Error during recognition: {e}")

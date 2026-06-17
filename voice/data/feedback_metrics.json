@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-06-17T20:28:03.592856+00:00",
+    "session_id": "69f8aead-2020-4632-9303-ebc5f46b951b",
+    "model": "small",
+    "transcribed_text": "falo. Abra o Google Chrome.",
+    "user_success": true,
+    "latency_ms": 587.44,
+    "wer": null,
+    "cer": null,
+    "rtf": 0.204,
+    "avg_confidence": 0.8631
+  },
+  {
+    "timestamp": "2026-06-17T20:30:36.838571+00:00",
+    "session_id": "aebab02c-f98c-4020-8320-188db4135d3d",
+    "model": "small",
+    "transcribed_text": "Se apertar F9 aqui, abre o Google Chrome.",
+    "user_success": true,
+    "latency_ms": 392.55,
+    "wer": null,
+    "cer": null,
+    "rtf": 0.107,
+    "avg_confidence": 0.7796
+  },
+  {
+    "timestamp": "2026-06-17T20:55:12.341529+00:00",
+    "session_id": "796ec8f1-020a-4aa1-b185-251a19491ac4",
+    "model": "small",
+    "transcribed_text": "Alexia de Garada",
+    "user_success": false,
+    "latency_ms": 627.46,
+    "wer": null,
+    "cer": null,
+    "rtf": 0.3071,
+    "avg_confidence": 0.3939
+  },
+  {
+    "timestamp": "2026-06-17T20:55:28.639954+00:00",
+    "session_id": "796ec8f1-020a-4aa1-b185-251a19491ac4",
+    "model": "small",
+    "transcribed_text": "Alexa, ligar a hora.",
+    "user_success": true,
+    "latency_ms": 526.0,
+    "wer": null,
+    "cer": null,
+    "rtf": 0.1168,
+    "avg_confidence": 0.7039
+  },
+  {
+    "timestamp": "2026-06-17T21:09:27.240427+00:00",
+    "session_id": "dc052adb-8b50-4bb9-8eae-4197b7781c32",
+    "model": "small",
+    "transcribed_text": "Seis de Farmar, alde...",
+    "user_success": false,
+    "latency_ms": 5804.0,
+    "wer": null,
+    "cer": null,
+    "rtf": 4.0976,
+    "avg_confidence": 0.1471
+  }
+]

@@ -330,3 +330,17 @@
 {21:08:14} + - + Também vai.
 {21:08:30} + - + Era pra assumir.
 {21:08:35} + - + Hum, tem que rever a implementação então, não tá subindo.
+{12:57:18} + - + falando aqui e ele vai transcrever no 3D Markdown.
+{12:57:23} + - + Aí a gente teria que utilizar o WordErrorRate dentro de...
+{12:57:29} + - + porque o word error rate eu não acho que seja tão útil no dos comandos
+{12:57:34} + - + implementarmos features para melhorar a aplicação no geral.
+{12:57:41} + - + Então, eu acho que vai incluir os dois, e todo mundo vai...
+{12:57:46} + - + as coisas e de áudio nesse caso para não ficar tipo mandar voar
+{17:30:05} + - + Ele transcreve em tempo real o que eu tô falando a cada sentido.
+{17:30:10} + - + cortando minha fala e adiciona ali dentro do Markdown
+{17:30:15} + - + para fazer anotações dentro do Obsidian, por exemplo, só que...
+{17:43:56} + - + E aí
+{17:44:01} + - + E aí
+{17:44:26} + - + Hum... Que horas?
+{17:44:35} + - + ...que ele não consegue parar a gravação depois de detectar...
+{17:44:40} + - + Quem tá calado aqui, ele não vai parar.
