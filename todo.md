@@ -1,37 +1,60 @@
+# Roberto -
 
-# pessoa 1 -
+### Prioridade
 
 1 - Melhorar o "reconhecimento de comandos", principalmente para aplicativos com nomes em inglês (Como "Google Chrome", "Visual Studio Code", etc.) e também para comandos de navegação (como "abrir nova aba", "fechar janela", etc.)
 
-2 - Formatação de Markdown utilizando voz. (ex: "hastag", "aspas", "asteriscos", etc.)
-
-# pessoa 2 - 
-
-3 (Análisar) - Implementar uma feature com Wakeword, fazer funcionar quando a aplicação esteja rodando em background ou com comandos no teclado (F9), para que o usuário possa ativar o reconhecimento de voz sem precisar clicar no botão de gravação. (ex: "Hey Voice Control, abrir Google Chrome")
-
-4 - Expandir o reconhecimento de comandos para mais aplicativos e ações, como por exemplo além de abrir o e fechar aplicativos, conseguir interagir com eles. (Abrir e pesquisar no Google Chrome, abrir e criar arquivos no Visual Studio Code, etc.)
-
-# pessoa 3 - 
+### Secundária
 
 5 - Diminuir o tempo para começar o reconhecimento da fala (latência), após clicar no botão de gravação. (tanto com animação visual quanto com o reconhecimento de voz em si, principalmente na primeira execução)
 
+
+# Saraiva - 
+
+### Prioridade
+
 6 - Criar e Avaliar variáveis para diferentes modelos de ASR. (success_rate, WER, Latency, etc.) (na transcrição de comandos e de texto em geral)
 
-7 - Fazer com que a detecção de audio seja interrompida após um tempo de silêncio durante a trasncrição em tempo real no editor de texto.
+### Secundária
 
-## pessoa 4 - 
+2 - Formatação de Markdown utilizando voz. (ex: "hastag", "aspas", "asteriscos", etc.)
+
+
+# Guilherme - 
+
+### Prioridade
+
+10 - Testar diferentes modelos de ASR dentro da arquitetura, atualmente feita com o Whisper, testar também desempenho dos modelos Whisper (Modelo como Parakeet para Pt-BR).
+    10.1 - Testar modelo OpenAI Whisper e Distil-Whisper 
+    10.2 - Testar modelo Voxtral-Mini-3B 
+    10.3 - Testar modelo NVIDIA Canary-V2 
+    10.4 - Testar modelo NVIDIA Parakeet-TDT 
+
+### Secundária
+    
+3 (Análisar) - Implementar uma feature com Wakeword, fazer funcionar quando a aplicação esteja rodando em background ou com comandos no teclado (F9), para que o usuário possa ativar o reconhecimento de voz sem precisar clicar no botão de gravação. (ex: "Hey Voice Control, abrir Google Chrome")
 
 8 - Implementar uma feature de transcrição de fala, que irá realizar o Speech-to-text onde quer que o cursor esteja posicionado, para facilitar a edição de texto.
 
+
+## Carlos - 
+
+### Prioridade
+
+11 - Comparar outras aplicações de controle de voz para computador e realizar uma análise de pontos fortes e fracos, para entender melhor o mercado e possíveis melhorias para a aplicação.
+
+### Secundária
+
+4 - Expandir o reconhecimento de comandos para mais aplicativos e ações, como por exemplo além de abrir o e fechar aplicativos, conseguir interagir com eles. (Abrir e pesquisar no Google Chrome, abrir e criar arquivos no Visual Studio Code, etc.)
+
+
+# Tasks prioridade menor não divididas entre os integrantes -
+
 9 - Adaptar o repositório para conseguir rodar ele tanto no windows quanto no linux, utilizando bibliotecas compatíveis com ambos os sistemas operacionais. (atualmente o repositório é focado para Windows, utilizando a biblioteca pywin32 para controle de janelas e aplicativos)
 
-# Todos -
+7 - Fazer com que a detecção de audio seja interrompida após um tempo de silêncio durante a trasncrição em tempo real no editor de texto.
 
-10 - Testar diferentes modelos de ASR dentro da arquitetura, atualmente feita com o Whisper, testar também desempenho dos modelos Whisper (Modelo como Parakeet para Pt-BR).
-    10.1 - Testar modelo OpenAI Whisper e Distil-Whisper #
-    10.2 - Testar modelo Voxtral-Mini-3B #
-    10.3 - Testar modelo NVIDIA Canary-V2 #
-    10.4 - Testar modelo NVIDIA Parakeet-TDT #
+
 
 ### Explicação dos modelos de ASR -
 
