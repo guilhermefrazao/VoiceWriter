@@ -1,0 +1,36 @@
+# Git e metadados
+.git
+.gitignore
+
+# Cache Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Ambiente virtual local
+.venv
+venv
+env
+
+# Logs gerados localmente
+*.log
+
+# Dados de saída locais
+output.txt
+voice/data/feedback_metrics.json
+
+# IDE e editor
+.vscode
+.obsidian
+*.spec
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Variáveis de ambiente (nunca incluir no contexto do build)
+.env

@@ -1511,6 +1511,110 @@ RuntimeError: An attempt to fetch destroyed session.
 2026-06-17 18:09:27 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/1)
 2026-06-17 18:09:27 | INFO | [Metrics] Salvo localmente em C:\Users\guilh\Documents\VoiceWriter\voice\data\feedback_metrics.json (5 registros)
 2026-06-17 18:09:29 | INFO | [Metrics] Salvo no MongoDB Atlas.
+2026-06-23 20:48:16 | INFO | Assets path configured: /app/assets
+2026-06-23 20:48:16 | INFO | Starting up UDS server on /tmp/z9fxazof15
+2026-06-23 20:48:16 | INFO | Flet app has started...
+2026-06-23 20:48:22 | INFO | App URL: /tmp/z9fxazof15
+2026-06-23 20:48:22 | INFO | Starting Flet View app...
+2026-06-23 20:48:22 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-06-23 20:48:22 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-06-23 20:49:43 | INFO | Assets path configured: /app/assets
+2026-06-23 20:49:43 | INFO | Starting up UDS server on /tmp/ZUDjny9RXH
+2026-06-23 20:49:43 | INFO | Flet app has started...
+2026-06-23 20:49:50 | INFO | App URL: /tmp/ZUDjny9RXH
+2026-06-23 20:49:50 | INFO | Starting Flet View app...
+2026-06-23 20:49:50 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-06-23 20:49:50 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-06-23 20:50:38 | INFO | Assets path configured: /app/assets
+2026-06-23 20:50:38 | INFO | Starting up UDS server on /tmp/q6nf8EV63H
+2026-06-23 20:50:38 | INFO | Flet app has started...
+2026-06-23 20:50:44 | INFO | App URL: /tmp/q6nf8EV63H
+2026-06-23 20:50:44 | INFO | Starting Flet View app...
+2026-06-23 20:50:44 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-06-23 20:50:44 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-06-23 20:50:45 | INFO | App session started
+2026-06-23 20:50:45 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-06-23 20:50:45 | WARNING | Pre-warm falhou: SpeechToText.load_model() got an unexpected keyword argument 'model_size'
+2026-06-23 20:50:47 | INFO | HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-06-23 20:50:47 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-23 20:50:47 | INFO | HTTP Request: HEAD https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-23 20:50:47 | INFO | HTTP Request: HEAD https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/vocabulary.txt "HTTP/1.1 307 Temporary Redirect"
+2026-06-23 20:50:47 | INFO | HTTP Request: HEAD https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-23 20:50:47 | INFO | HTTP Request: HEAD https://huggingface.co/Systran/faster-whisper-small/resolve/536b0662742c02347bc0e980a01041f333bce120/model.bin "HTTP/1.1 302 Found"
+2026-06-23 20:50:47 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Systran/faster-whisper-small/536b0662742c02347bc0e980a01041f333bce120/config.json "HTTP/1.1 200 OK"
+2026-06-23 20:50:47 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Systran/faster-whisper-small/536b0662742c02347bc0e980a01041f333bce120/vocabulary.txt "HTTP/1.1 200 OK"
+2026-06-23 20:50:48 | INFO | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Systran/faster-whisper-small/536b0662742c02347bc0e980a01041f333bce120/config.json "HTTP/1.1 200 OK"
+2026-06-23 20:50:48 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Systran/faster-whisper-small/536b0662742c02347bc0e980a01041f333bce120/tokenizer.json "HTTP/1.1 200 OK"
+2026-06-23 20:50:48 | INFO | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Systran/faster-whisper-small/536b0662742c02347bc0e980a01041f333bce120/vocabulary.txt "HTTP/1.1 200 OK"
+2026-06-23 20:50:48 | INFO | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Systran/faster-whisper-small/536b0662742c02347bc0e980a01041f333bce120/tokenizer.json "HTTP/1.1 200 OK"
+2026-06-23 20:50:52 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 20:50:59 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x70e2cf03d5b0>
+2026-06-23 20:51:17 | INFO | Escuta de comandos: aguardando timeout natural.
+2026-06-23 20:51:31 | ERROR | Erro no reconhecimento: 'NoneType' object has no attribute 'close'
+2026-06-23 20:51:38 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 20:51:48 | INFO | Escuta de comandos: aguardando timeout natural.
+2026-06-23 20:51:49 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x70e2ccd9f410>
+2026-06-23 20:52:41 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-06-23 20:52:41 | INFO | Processing audio with duration 00:02.972
+2026-06-23 20:52:41 | INFO | Processing audio with duration 00:05.155
+2026-06-23 20:52:41 | ERROR | Error during recognition: Library libcublas.so.12 is not found or cannot be loaded
+2026-06-23 20:52:41 | ERROR | Error cannot unpack non-iterable NoneType object
+2026-06-23 20:52:41 | ERROR | Error during recognition: Library libcublas.so.12 is not found or cannot be loaded
+2026-06-23 20:52:41 | ERROR | Error cannot unpack non-iterable NoneType object
+2026-06-23 20:52:41 | ERROR | Erro no reconhecimento: [Errno -9988] Invalid stream pointer
+2026-06-23 20:52:41 | ERROR | Erro no reconhecimento: [Errno -9988] Invalid stream pointer
+2026-06-23 21:21:10 | INFO | Assets path configured: /app/assets
+2026-06-23 21:21:10 | INFO | Starting up UDS server on /tmp/A0a2UQoPnP
+2026-06-23 21:21:10 | INFO | Flet app has started...
+2026-06-23 21:21:16 | INFO | App URL: /tmp/A0a2UQoPnP
+2026-06-23 21:21:16 | INFO | Starting Flet View app...
+2026-06-23 21:21:16 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-06-23 21:21:16 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-06-23 21:21:18 | INFO | App session started
+2026-06-23 21:21:18 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-06-23 21:21:18 | WARNING | Pre-warm falhou: SpeechToText.load_model() got an unexpected keyword argument 'model_size'
+2026-06-23 21:21:20 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-23 21:21:21 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-06-23 21:22:34 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 21:22:38 | ERROR | Listenting timeout while waiting for a phrase to start
+2026-06-23 21:22:42 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 21:22:46 | ERROR | Listenting timeout while waiting for a phrase to start
+2026-06-23 21:22:51 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 21:22:55 | ERROR | Listenting timeout while waiting for a phrase to start
+2026-06-23 21:23:12 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 21:23:14 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x73ae90c00740>
+2026-06-23 21:23:14 | INFO | Processing audio with duration 00:01.300
+2026-06-23 21:23:14 | ERROR | Error during recognition: Library libcublas.so.12 is not found or cannot be loaded
+2026-06-23 21:23:14 | ERROR | Error cannot unpack non-iterable NoneType object
+2026-06-23 22:16:07 | INFO | Assets path configured: /app/assets
+2026-06-23 22:16:07 | INFO | Starting up UDS server on /tmp/AYBITUz1hE
+2026-06-23 22:16:07 | INFO | Flet app has started...
+2026-06-23 22:16:14 | INFO | App URL: /tmp/AYBITUz1hE
+2026-06-23 22:16:14 | INFO | Starting Flet View app...
+2026-06-23 22:16:15 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-06-23 22:16:15 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-06-23 22:16:17 | INFO | App session started
+2026-06-23 22:16:17 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-06-23 22:16:17 | INFO | Pre-warm concluído.
+2026-06-23 22:16:22 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-06-23 22:22:08 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 22:22:11 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7498cc7abfb0>
+2026-06-23 22:22:11 | INFO | Processing audio with duration 00:01.904
+2026-06-23 22:22:12 | INFO | Recognizing speech: Acabou? Tranquilinho!
+2026-06-23 22:22:12 | INFO | [ASR Metrics] latency=694ms | RTF=0.365 | confidence=86.82%
+2026-06-23 22:22:12 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-23 22:22:18 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-06-23 22:22:18 | INFO | [Metrics] Salvo localmente em /app/voice/data/feedback_metrics.json (6 registros)
+2026-06-23 22:22:18 | WARNING | [Metrics] MONGODB_URI não configurado — salvamento na nuvem ignorado.
+2026-06-23 22:28:37 | INFO | Adjusted for ambient noise. Linstening...
+2026-06-23 22:28:41 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7498965b1760>
+2026-06-23 22:28:42 | INFO | Processing audio with duration 00:03.878
+2026-06-23 22:28:42 | INFO | Recognizing speech: Ela morreu gritando.
+2026-06-23 22:28:42 | INFO | [ASR Metrics] latency=409ms | RTF=0.105 | confidence=62.83%
+2026-06-23 22:28:42 | INFO | Nenhum comando reconhecido nesta frase.
+2026-06-23 22:28:54 | INFO | [Feedback] ✗ | Session success rate: 50.0% (1/2)
+2026-06-23 22:28:54 | INFO | [Metrics] Salvo localmente em /app/voice/data/feedback_metrics.json (7 registros)
+2026-06-23 22:28:54 | WARNING | [Metrics] MONGODB_URI não configurado — salvamento na nuvem ignorado.
 2026-06-21 16:09:00 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
 2026-06-21 16:09:00 | INFO | Starting up TCP server on localhost:46404
 2026-06-21 16:09:00 | INFO | Flet app has started...

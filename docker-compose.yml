@@ -1,0 +1,78 @@
+services:
+  voicewriter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: voicewriter:latest
+    container_name: voicewriter
+
+    # ── Timezone e variáveis de ambiente ────────────────────────────────────────
+    environment:
+      - TZ=America/Sao_Paulo
+      # X11: forward da janela do Flet para o display do host
+      - DISPLAY=${DISPLAY:-:0}
+      - XAUTHORITY=/root/.Xauthority
+      # PulseAudio: socket anônimo criado no host (ver README — comando pactl)
+      # Auth anônimo é necessário pois o container roda como root (UID 0 ≠ UID do host)
+      - PULSE_SERVER=unix:/tmp/pulse-docker.sock
+      # Variáveis do projeto (copie .env.example → .env e preencha)
+      - HF_TOKEN=${HF_TOKEN}
+      - MONGODB_URI=${MONGODB_URI}
+      - MONGODB_DB=${MONGODB_DB:-voicewriter}
+      # ── Limite de memória GPU (nível de aplicação) ───────────────────────────
+      # Descomente para simular GPU com menos VRAM disponível:
+      # - PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:2048
+      # Seleciona qual GPU usar (0 = primeira GPU do host):
+      - CUDA_VISIBLE_DEVICES=0
+
+    # ── Volumes ─────────────────────────────────────────────────────────────────
+    volumes:
+      # Código-fonte montado no container (edições refletem imediatamente)
+      - .:/app
+      # Cache de modelos HuggingFace / Whisper (evita re-download a cada run)
+      - hf_cache:/root/.cache/huggingface
+      # Socket X11 para forwarding da janela do Flet
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # Autorização X11
+      - ${HOME}/.Xauthority:/root/.Xauthority:ro
+      # Socket PulseAudio anônimo (criado no host com: pactl load-module module-native-protocol-unix socket=/tmp/pulse-docker.sock auth-anonymous=1)
+      - /tmp/pulse-docker.sock:/tmp/pulse-docker.sock
+
+    # ── Dispositivos de hardware ─────────────────────────────────────────────────
+    devices:
+      # Dispositivos ALSA (microfone / saída de áudio)
+      - /dev/snd:/dev/snd
+
+    # ── Recursos: CPU, RAM e GPU ─────────────────────────────────────────────────
+    # Ajuste os limites abaixo para simular hardware menos potente.
+    deploy:
+      resources:
+        limits:
+          # Número de núcleos de CPU disponíveis para o container
+          # Exemplos: "1.0" (1 core), "2.0" (2 cores), "4.0" (4 cores)
+          cpus: "4.0"
+          # Memória RAM máxima
+          # Exemplos: "2G", "4G", "8G"
+          memory: "8G"
+        reservations:
+          devices:
+            - driver: nvidia
+              # Quantidade de GPUs: 1 para usar apenas uma, "all" para todas
+              count: 1
+              capabilities: [gpu]
+
+    # Adiciona o usuário do container ao grupo de áudio do host
+    group_add:
+      - audio
+
+    # Terminal interativo (útil para logs e debugging)
+    stdin_open: true
+    tty: true
+
+    # Não reinicia automaticamente (ambiente de desenvolvimento/pesquisa)
+    restart: "no"
+
+# ── Volumes nomeados ───────────────────────────────────────────────────────────
+volumes:
+  hf_cache:
+    driver: local
