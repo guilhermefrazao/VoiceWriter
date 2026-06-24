@@ -30,12 +30,28 @@
     10.3 - Testar modelo NVIDIA Canary-V2 
     10.4 - Testar modelo NVIDIA Parakeet-TDT 
 
+## Testes
+
+1- Abra o Discord
+2- Feche o Fire Fox
+3- Execute o Any Desk
+4- Abra System Manager
+5- Abra Devil may Cry collection
+
+
 ### Secundária
     
 3 (Análisar) - Implementar uma feature com Wakeword, fazer funcionar quando a aplicação esteja rodando em background ou com comandos no teclado (F9), para que o usuário possa ativar o reconhecimento de voz sem precisar clicar no botão de gravação. (ex: "Hey Voice Control, abrir Google Chrome")
 
 8 - Implementar uma feature de transcrição de fala, que irá realizar o Speech-to-text onde quer que o cursor esteja posicionado, para facilitar a edição de texto.
 
+Estratégia 1: Exportar o modelo para ONNX (A mais recomendada para o Parakeet)
+
+Você não precisa rodar o framework NeMo inteiro na máquina do cliente. O NeMo permite que você pegue o modelo Parakeet e o exporte para o formato ONNX (.onnx).
+
+    Como funciona: O ONNX é um formato universal. Na máquina do seu cliente, em vez de instalar o NeMo, você instala apenas a biblioteca onnxruntime (que funciona nativamente no Windows, Mac e Linux, com ou sem GPU).
+
+    Vantagem: O aplicativo fica incrivelmente leve, não precisa de compiladores complexos no Windows do cliente e o onnxruntime consegue usar tanto a CPU quanto qualquer placa de vídeo de forma nativa.
 
 ## Carlos - 
 

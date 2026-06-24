@@ -81,6 +81,26 @@ python main.py --main_menu
 flet pack main.py --name "VoiceWriter"
 ```
 
+## Utilizar docker
+
+Permissão para criação da GUI do frontend
+
+```bash
+xhost +local:docker
+```
+
+Criar o socket de aúdio no host
+
+```bash
+pactl load-module module-native-protocol-unix socket=/tmp/pulse-docker.sock auth-anonymous=1
+```
+
+```bash
+docker compose up --build -d
+```
+
+
+
 ---
 
 ## Estrutura do projeto

@@ -8,12 +8,13 @@ import threading
 from frontend.utils.recent_manager import RecentManager
 from frontend.widgets.mic import MicMenu
 
+ASR_MODEL_KEY = "faster-whisper:small"
 
 def _prewarm_speech():
     try:
         from voice.speech import SpeechToText
         stt = SpeechToText()
-        stt.load_model(model_size="small")
+        stt.load_model(ASR_MODEL_KEY)
         logging.info("Pre-warm concluído.")
     except Exception as e:
         logging.warning(f"Pre-warm falhou: {e}")
