@@ -38,18 +38,8 @@ class SpeechToText():
 
 
     def __init__(self):
-        self.recognizer = sr.Recognizer()
-        self.recognizer.pause_threshold = 1.5
-        self.audio_queue = queue.Queue()
         self.is_recording = False
         self.stop_listening = None
-        self.silent_limit = 100
-        self.silent_time = 0
-
-        self.format = pyaudio.paInt16
-        self.canais = 1
-        self.taxa_amostragem = 16000
-        self.tamanho_chunk = 16000
 
         self._current_model_size = "small"
         self._feedback_history: list[bool] = []

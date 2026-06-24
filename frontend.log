@@ -1511,3 +1511,15 @@ RuntimeError: An attempt to fetch destroyed session.
 2026-06-17 18:09:27 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/1)
 2026-06-17 18:09:27 | INFO | [Metrics] Salvo localmente em C:\Users\guilh\Documents\VoiceWriter\voice\data\feedback_metrics.json (5 registros)
 2026-06-17 18:09:29 | INFO | [Metrics] Salvo no MongoDB Atlas.
+2026-06-21 16:09:00 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-06-21 16:09:00 | INFO | Starting up TCP server on localhost:46404
+2026-06-21 16:09:00 | INFO | Flet app has started...
+2026-06-21 16:09:00 | INFO | App URL: tcp://localhost:46404
+2026-06-21 16:09:00 | INFO | Starting Flet View app...
+2026-06-21 16:09:00 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-21 16:09:00 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-06-21 16:09:01 | INFO | App session started
+2026-06-21 16:09:10 | INFO | Carregando Whisper Model: small.
+2026-06-21 16:09:10 | INFO | Pre-warm concluído.
+2026-06-21 16:09:11 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-06-21 16:09:12 | INFO | Whisper Model 'small' pronto.
