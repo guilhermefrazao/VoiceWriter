@@ -1,6 +1,11 @@
 # Git e metadados
 .git
 .gitignore
+.venv
+venv
+node_modules
+*.mp4
+*.zip
 
 # Cache Python
 __pycache__

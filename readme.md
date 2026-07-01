@@ -81,12 +81,13 @@ python main.py --main_menu
 flet pack main.py --name "VoiceWriter"
 ```
 
-## Utilizar docker
+## Utilizar docker dentro do Linux
 
 Permissão para criação da GUI do frontend
 
 ```bash
 xhost +local:docker
+docker compose -f docker-compose.yml -f docker-compose.linux.yml up
 ```
 
 Criar o socket de aúdio no host
@@ -97,6 +98,24 @@ pactl load-module module-native-protocol-unix socket=/tmp/pulse-docker.sock auth
 
 ```bash
 docker compose up --build -d
+```
+
+## Utilizar docker dentro do Windows
+
+É necessário instalar o VcXsrv e permitir o acesso do docker à GUI do Windows rodando o instalador e abrindo o aplicativo do XLaunch (- Marque "Disable access control" ← esta é a parte mais importante (equivale ao xhost +)), seguindo as permissões até que ele esteja rodando em segundo plano.
+
+```bash
+Pesquise na barra do windows XLaunch e abra o aplicativo, siga até aparecer a opção e marque "Disable access control" e clique em Next até finalizar.
+```
+
+Em seguida é necessário seguir o passo a passo abaixo para criar o socket de áudio no host e iniciar o docker, permitindo que o container reconheça o microfone do host.
+
+```bash
+Start-Process -WindowStyle Hidden "C:\Program Files (x86)\PulseAudio\bin\pulseaudio.exe"
+```
+
+```bash
+docker compose up --build
 ```
 
 

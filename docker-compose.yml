@@ -9,12 +9,10 @@ services:
     # ── Timezone e variáveis de ambiente ────────────────────────────────────────
     environment:
       - TZ=America/Sao_Paulo
-      # X11: forward da janela do Flet para o display do host
-      - DISPLAY=${DISPLAY:-:0}
-      - XAUTHORITY=/root/.Xauthority
-      # PulseAudio: socket anônimo criado no host (ver README — comando pactl)
-      # Auth anônimo é necessário pois o container roda como root (UID 0 ≠ UID do host)
-      - PULSE_SERVER=unix:/tmp/pulse-docker.sock
+      # X11: forward da janela do Flet para o X Server do Windows (VcXsrv)
+      - DISPLAY=host.docker.internal:0.0
+      # PulseAudio: servidor rodando no Windows (ver README — instalar PulseAudio para Windows)
+      - PULSE_SERVER=tcp:host.docker.internal:4713
       # Variáveis do projeto (copie .env.example → .env e preencha)
       - HF_TOKEN=${HF_TOKEN}
       - MONGODB_URI=${MONGODB_URI}
@@ -31,17 +29,7 @@ services:
       - .:/app
       # Cache de modelos HuggingFace / Whisper (evita re-download a cada run)
       - hf_cache:/root/.cache/huggingface
-      # Socket X11 para forwarding da janela do Flet
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      # Autorização X11
-      - ${HOME}/.Xauthority:/root/.Xauthority:ro
-      # Socket PulseAudio anônimo (criado no host com: pactl load-module module-native-protocol-unix socket=/tmp/pulse-docker.sock auth-anonymous=1)
-      - /tmp/pulse-docker.sock:/tmp/pulse-docker.sock
-
-    # ── Dispositivos de hardware ─────────────────────────────────────────────────
-    devices:
-      # Dispositivos ALSA (microfone / saída de áudio)
-      - /dev/snd:/dev/snd
+      # (áudio e X11 via TCP no Windows — sem volumes de socket necessários)
 
     # ── Recursos: CPU, RAM e GPU ─────────────────────────────────────────────────
     # Ajuste os limites abaixo para simular hardware menos potente.

@@ -1,0 +1,16 @@
+services:
+  voicewriter:
+    environment:
+      # Sobrescreve o DISPLAY do docker-compose.yml para usar o X Server do Linux
+      - DISPLAY=${DISPLAY:-:0}
+      - XAUTHORITY=/root/.Xauthority
+      # Sobrescreve o PULSE_SERVER para usar socket unix em vez de TCP
+      - PULSE_SERVER=unix:/tmp/pulse-docker.sock
+
+    volumes:
+      # Socket X11 para forwarding da janela do Flet
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # Autorização X11
+      - ${HOME}/.Xauthority:/root/.Xauthority:ro
+      # Socket PulseAudio (criado com: pactl load-module module-native-protocol-unix socket=/tmp/pulse-docker.sock auth-anonymous=1)
+      - /tmp/pulse-docker.sock:/tmp/pulse-docker.sock
