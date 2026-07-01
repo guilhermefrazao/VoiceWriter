@@ -50,6 +50,14 @@ A interface foi construída com [Flet](https://flet.dev/) e o reconhecimento de 
    pip install -r requirements.txt
    ```
 
+4. Configure o arquivo `.env` na raiz do projeto:
+   ```env
+   SUPABASE_URL=<url do projeto>
+   SUPABASE_KEY=<chave anon>
+   MEMBER_NAME=<seu nome>
+   ```
+   > **Peça as credenciais ao Saraiva.** Nunca commite o arquivo `.env`.
+
 ---
 
 ## Como usar

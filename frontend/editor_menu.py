@@ -7,16 +7,21 @@ import keyboard
 from frontend.widgets.context_menu import ContextMenu
 from frontend.widgets.tiles_generic import Tiles
 from frontend.utils.file_handler import DirectoryUtils
+from frontend.widgets.containers_generic import Containers
 from frontend.utils.recent_manager import RecentManager
 from frontend.utils.color import hover_color_change
-from frontend.widgets.toolbar import TopToolbar
-from frontend.widgets.mic import MicMenu
+from voice.speech import SpeechToText
+from frontend.widgets.toolbar import TopToolbar 
 
-class EditorMenu(MicMenu):
+class EditorMenu():
     def __init__(self, page : ft.Page):
-        super().__init__(page)
-        keyboard.add_hotkey("ctrl+p", self.create_and_open_new_markdown)
-        keyboard.add_hotkey("ctrl+n", self.create_new_dir)
+        self.page = page
+        try:
+            keyboard.add_hotkey("ctrl+p", self.create_and_open_new_markdown)
+            keyboard.add_hotkey("ctrl+n", self.create_new_dir)
+            keyboard.add_hotkey("ctrl+s", self._save_now)
+        except (ImportError, PermissionError) as e:
+            logging.warning(f"Could not register global hotkeys: {e}. Continuing without shortcuts.")
         self.new_message = ft.TextField(
             border=ft.InputBorder.NONE,
             always_call_on_tap=False,
@@ -35,10 +40,13 @@ class EditorMenu(MicMenu):
         self.current_file_path = str
         self.context_menu_right_click = ContextMenu(page)
         self.handler = DirectoryUtils()
+        self.container = Containers()
         self.recent_manager = RecentManager()
         self.generic_tile = Tiles()
+        self.speech = SpeechToText()
         self.can_listen = False
         self.open_file_path = str
+
 
 
     def get_directory_tree(self, path):
@@ -115,6 +123,14 @@ class EditorMenu(MicMenu):
     def route_to_main_menu(self, page: ft.Page):
         asyncio.create_task(page.push_route("/main_menu"))
 
+    def route_to_home(self, page: ft.Page):
+        asyncio.create_task(page.push_route("/"))
+
+    def _save_now(self) -> None:
+        if self.handler.save_timer:
+            self.handler.save_timer.cancel()
+        self.handler.save_to_disk(self.new_message.data, self.new_message.value)
+
 
     def open_new_editor(self, e):
         logging.info(f"Navegando para {e.control.data}")
@@ -185,9 +201,19 @@ class EditorMenu(MicMenu):
             await asyncio.to_thread(self.speech.transcribe_continuously, on_text_chunk)
 
         except Exception as e:
-            logging.error(f"Erro no reconhecimento: {e}")
+            print(f"Erro no reconhecimento: {e}")
         finally:
             self.is_listening = False
+
+
+    async def update_interface(self, recognized_speech: str):
+        self.new_message.value += f" {recognized_speech}"
+        
+        await self.new_message.focus()
+
+        self.new_message.update()
+
+
 
 
     def build_ui(self, path: str = "C:/Users/guilh/Documents/VoiceWriter/testes_folder"):
@@ -222,27 +248,32 @@ class EditorMenu(MicMenu):
             width=250,
             bgcolor="#181818",
             content=ft.Column(
-                horizontal_alignment=ft.CrossAxisAlignment.STRETCH,
                 controls=[
-                    sidebar_icons,
-                    ft.Divider(height=1, color="#055b5f", thickness=1),
                     ft.Container(
-                        padding=ft.padding.symmetric(horizontal=5),
-                        expand=True,
-                        content=self.file_tree_column,
-                    ),
-                    ft.Container(
-                        border=ft.border.only(top=ft.border.BorderSide(width=1, color="#055b5f")),
-                        content=ft.Row(
-                            spacing=0,
-                            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                        padding=ft.padding.symmetric(horizontal=5), 
+                        expand=True, 
+                        content=ft.Column(
                             controls=[
-                                ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585", on_click=lambda e: self.route_to_main_menu(self.page)),
-                                ft.Text("Back", size=16, color="#C8C8C8")
+                                sidebar_icons,
+                                self.file_tree_column,                                
                             ]
                         )
                     ),
-                    routes_menu
+                    ft.Container(
+                        border=ft.border.only(top=ft.border.BorderSide(width=1, color="#055b5f")),
+                        content=ft.Column(
+                                    spacing=2,
+                                    horizontal_alignment=ft.CrossAxisAlignment.START,
+                                    controls=[
+                                        ft.Row(controls=[
+                                            ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585", tooltip="Back", on_click=lambda e: self.route_to_main_menu(self.page)),
+                                            ft.IconButton(icon=ft.Icons.HOME, icon_color="#858585", tooltip="Home", on_click=lambda e: self.route_to_home(self.page)),
+                                        ], spacing=0),
+                                        ft.Text("Back / Home", size=14, color="#858585")
+                                    ]
+                            )
+                        ),
+                    routes_menu 
                 ]
             )
         )
