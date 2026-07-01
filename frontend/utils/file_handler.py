@@ -13,8 +13,45 @@ class DirectoryUtils():
         self.selected_tile = None
         pass
 
-    async def open_explorer(self) -> str:
-        return await ft.FilePicker().get_directory_path()
+    async def open_explorer(self, page: ft.Page) -> str:
+        import asyncio
+        loop = asyncio.get_event_loop()
+        future: asyncio.Future[str] = loop.create_future()
+
+        path_field = ft.TextField(
+            hint_text="/home/user/documents/my-vault",
+            autofocus=True,
+            expand=True,
+            border_color="#055b5f",
+            focused_border_color="#028268",
+            color="#D4D4D4",
+            bgcolor="#1E1E1E",
+        )
+
+        def on_confirm(e: ft.ControlEvent) -> None:
+            if not future.done():
+                future.set_result(path_field.value.strip() or "")
+            page.close(dialog)
+
+        def on_cancel(e: ft.ControlEvent) -> None:
+            if not future.done():
+                future.set_result("")
+            page.close(dialog)
+
+        path_field.on_submit = on_confirm
+
+        dialog = ft.AlertDialog(
+            title=ft.Text("Select Directory", color="#D4D4D4"),
+            bgcolor="#181818",
+            content=ft.Container(width=420, content=path_field),
+            actions=[
+                ft.TextButton("Cancel", on_click=on_cancel),
+                ft.TextButton("Open", on_click=on_confirm, style=ft.ButtonStyle(color="#028268")),
+            ],
+        )
+
+        page.open(dialog)
+        return await future
     
 
     def display_markdown_information(self, item: str, path: str, dir_widget: ft.Column, message_widget: ft.TextField, main_topbar: ft.Container,  main_area: ft.Container, refresh_sidebar, mic):
@@ -137,28 +174,19 @@ class DirectoryUtils():
     def save_changed_text(self, e):
         if self.save_timer:
             self.save_timer.cancel()
-        self.save_timer = threading.Timer(2.0, self.save_to_disk, args=[e.control.data, e.control])
+
+        self.save_timer = threading.Timer(5.0, self.save_to_disk, args=[e.control.data, e.data])
         self.save_timer.start()
 
-
-    def schedule_save(self, file_path: str, text_field):
-        if not file_path or not isinstance(file_path, str):
-            return
-        if self.save_timer:
-            self.save_timer.cancel()
-        self.save_timer = threading.Timer(1.0, self.save_to_disk, args=[file_path, text_field])
-        self.save_timer.start()
-
-
-    def save_to_disk(self, file_path: str, text_field):
-        content = text_field.value or ""
-        if file_path and isinstance(file_path, str):
+   
+    def save_to_disk(self, file_path, new_message):
+        if file_path:
             try:
                 with open(file_path, "w", encoding="utf-8") as f:
-                    f.write(content)
-                logging.info(f"Arquivo salvo: {file_path}")
+                    f.write(new_message)
+
             except Exception as e:
-                logging.error(f"Erro ao salvar: {e}")
+                print(f"Erro ao salvar: {e}")
 
    
     def change_directory_title_name(self, e, refresh_sidebar, markdown: bool=True):

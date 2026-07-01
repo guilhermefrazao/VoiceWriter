@@ -2,8 +2,12 @@ import flet as ft
 import argparse
 import logging
 import os
+import platform
 import sys
 import threading
+
+from dotenv import load_dotenv
+load_dotenv()
 
 from frontend.utils.recent_manager import RecentManager
 from frontend.widgets.mic import MicMenu
@@ -40,7 +44,8 @@ class MainPage():
         self.page.title = "Voice Writter"
         self.page.theme_mode = ft.ThemeMode.DARK
         self.page.padding = 0
-        
+        self.page.window.icon = "frontend/images/icon.png"
+
 
         parser = argparse.ArgumentParser(description='Voice Writter App')
         parser.add_argument('--editor', type=str, nargs="?", const="last_path", help='Abrir o editor no último caminho utilizado')
@@ -142,6 +147,10 @@ class MainPage():
                 elif type(self.menu_instance) == EditorMenu and self.menu_instance.can_listen == True:
                     self.menu_instance.handle_mic_click(self.menu_instance.mic_button)
 
+            if e.key == "F7":
+                if hasattr(self.menu_instance, "speech"):
+                    self.menu_instance.speech.stop_listen()
+
 
         self.page.on_route_change = route_change
         self.page.on_view_pop = view_pop
@@ -169,4 +178,9 @@ async def flet_target(page:ft.Page):
 
 
 if __name__ == "__main__":
-    ft.app(target=flet_target)
+    if "--type-at-cursor" in sys.argv:
+        from voice.type_at_cursor import TypeAtCursorMode
+        TypeAtCursorMode().run()
+        sys.exit(0)
+    view = ft.AppView.FLET_APP if platform.system() == "Windows" else ft.AppView.WEB_BROWSER
+    ft.run(flet_target, view=view)

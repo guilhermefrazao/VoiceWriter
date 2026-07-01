@@ -3,9 +3,13 @@ flet[all]==0.80.2
 pyaudio==0.2.14
 openai-whisper==20250625
 soundfile==0.13.1
-appopener==1.7; sys_platform == "win32"
+appopener==1.7
 faster-whisper==1.2.1
 keyboard==0.13.5
 send2trash==2.1.0
-python-dotenv==1.1.1
-pymongo==4.13.0
+pyperclip==1.8.2
+pyautogui==0.9.54
+pillow==11.2.1
+supabase>=2.0.0
+nltk>=3.8
+python-dotenv>=1.0.0

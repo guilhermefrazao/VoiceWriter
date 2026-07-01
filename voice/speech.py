@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import logging
+import os
 import time
 import sys
 import io
@@ -19,7 +20,13 @@ load_dotenv()
 from voice.interact_app import translation_tasks
 from voice.utils.json_utils import save_text
 from voice.utils.asr_metrics import analyze_transcription, success_rate
-from voice.utils.metrics_storage import save_metrics_local, save_metrics_cloud
+from voice.utils.metrics_storage import (
+    save_metrics_local,
+    save_metrics_cloud,
+    create_session,
+    save_transcription_result,
+    flush_offline_queue,
+)
 from main import ASR_MODEL_KEY
 
 
@@ -187,6 +194,8 @@ class SpeechToText():
 
 
     def __init__(self):
+        self.recognizer = sr.Recognizer()
+        self.recognizer.pause_threshold = 0.8
         self.is_recording = False
         self.stop_listening = None
 
@@ -197,6 +206,14 @@ class SpeechToText():
         self._last_transcription: str | None = None
         self._transcriber: _Transcriber | None = None
         self.load_model(ASR_MODEL_KEY)
+
+        self.metrics_session_id = create_session(
+            member_name=os.getenv("MEMBER_NAME", "anonimo"),
+            model_name=self._current_model_key,
+            model_source="huggingface",
+            scenario="dictation",
+        )
+        flush_offline_queue()
 
 
     def record_feedback(self, ok: bool) -> None:
@@ -390,6 +407,8 @@ class SpeechToText():
                 segments=segments,
             )
             self._last_transcription = texto_reconhecido
+
+            save_transcription_result(self.metrics_session_id, dict(self._last_metrics))
 
             text_log = f"{time.strftime('{%H:%M:%S}')} + - + {texto_reconhecido}"
 
