@@ -32,11 +32,12 @@
 
 ## Testes
 
-1- Abra o Discord
-2- Feche o Fire Fox
-3- Execute o Any Desk
-4- Abra System Manager
-5- Abra Devil may Cry collection
+1 - Abra o Google
+2- Abra o Discord
+3- Feche o Fire Fox
+4- Execute o Any Desk
+5- Abra System Manager
+6- Abra Devil may Cry collection
 
 
 ### Secundária

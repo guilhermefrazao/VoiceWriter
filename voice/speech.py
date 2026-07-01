@@ -4,12 +4,8 @@ import os
 import time
 import sys
 import io
-import pyaudio
-import queue
 import numpy as np
 import threading
-import math
-import asyncio
 import uuid
 from datetime import datetime, timezone
 from typing import Callable
@@ -21,10 +17,9 @@ from voice.interact_app import translation_tasks
 from voice.utils.json_utils import save_text
 from voice.utils.asr_metrics import analyze_transcription, success_rate
 from voice.utils.metrics_storage import (
-    save_metrics_local,
-    save_metrics_cloud,
     create_session,
     save_transcription_result,
+    save_command_result,
     flush_offline_queue,
 )
 from main import ASR_MODEL_KEY
@@ -176,7 +171,6 @@ class SpeechToText:
 
         self._current_model_key = ASR_MODEL_KEY
         self._feedback_history: list[bool] = []
-        self._session_id: str = str(uuid.uuid4())
         self._last_metrics: dict = {}
         self._last_transcription: str | None = None
         self._transcriber: _Transcriber | None = None
@@ -185,6 +179,7 @@ class SpeechToText:
         self._collected_texts: list[str] = []
         self._stop_event: threading.Event = threading.Event()
         self._last_audio_time: float = 0.0
+        self._startup_start_time: float | None = None
 
         self.load_model(ASR_MODEL_KEY)
 
@@ -215,16 +210,14 @@ class SpeechToText:
     def _build_metrics_entry(self, ok: bool) -> dict:
         return {
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "session_id": self._session_id,
+            "session_id": self.metrics_session_id,
             "model": self._current_model_key,
-            "transcribed_text": self._last_transcription,
             "user_success": ok,
             **self._last_metrics,
         }
 
     def _persist_metrics(self, entry: dict) -> None:
-        save_metrics_local(entry)
-        save_metrics_cloud(entry)
+        save_command_result(self.metrics_session_id, entry)
 
     # ── Carregamento de modelo ───────────────────────────────────────────────────
 
@@ -341,10 +334,11 @@ class SpeechToText:
             self._last_audio_time = time.time()
             result = self._recognize_and_measure(audio)
             if result:
-                log_entry, text = result
+                metrics, text = result
+                save_transcription_result(self.metrics_session_id, metrics)
                 if text:
                     self._collected_texts.append(text)
-                    save_text(log_entry)
+                    save_text(f"{time.strftime('%H:%M:%S')} - {text}")
                     if text_callback:
                         text_callback(text)
 
@@ -380,8 +374,12 @@ class SpeechToText:
         wav_bytes = audio.get_wav_data(convert_rate=16000, convert_width=2)
         return self._transcriber(wav_bytes)
 
-    def _recognize_and_measure(self, audio, reference: str | None = None) -> tuple[str, str] | None:
+    def _recognize_and_measure(self, audio, reference: str | None = None) -> tuple[dict, str] | None:
         try:
+            statup_end_time = time.time()
+            statup_start_time = self._startup_start_time
+            self._startup_start_time = None
+
             start_time = time.time()
             recognized_text, segments, audio_duration = self._transcribe_audio(audio)
             end_time = time.time()
@@ -391,6 +389,8 @@ class SpeechToText:
             self._last_metrics = analyze_transcription(
                 hypothesis=recognized_text,
                 reference=reference,
+                statup_start_time=statup_start_time,
+                statup_end_time=statup_end_time,
                 start_time=start_time,
                 end_time=end_time,
                 audio_duration_s=audio_duration,
@@ -398,10 +398,7 @@ class SpeechToText:
             )
             self._last_transcription = recognized_text
 
-            save_transcription_result(self.metrics_session_id, dict(self._last_metrics))
-
-            log_entry = f"{time.strftime('%H:%M:%S')} - {recognized_text}"
-            return log_entry, recognized_text
+            return self._last_metrics, recognized_text
 
         except sr.UnknownValueError:
             logging.error("Could not understand audio")

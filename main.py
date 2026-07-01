@@ -12,7 +12,12 @@ load_dotenv()
 from frontend.utils.recent_manager import RecentManager
 from frontend.widgets.mic import MicMenu
 
-ASR_MODEL_KEY = "faster-whisper:small"
+#ASR_MODEL_KEY = "faster-whisper:small"
+ASR_MODEL_KEY = "canary-v2:small"
+#ASR_MODEL_KEY = "parakeet-v3:small"
+#ASR_MODEL_KEY = "voxtral-mini:small"
+
+
 
 def _prewarm_speech():
     try:
@@ -99,7 +104,7 @@ class MainPage():
 
                 if current_path and os.path.exists(current_path):
                     from frontend.editor_menu import EditorMenu
-                    self.menu_instance = EditorMenu(self.page)
+                    self.menu_instance = EditorMenu(self.page, self.mic_menu)
 
                     editor_layout = ft.View(
                         route="/editor",
@@ -139,17 +144,28 @@ class MainPage():
                 from frontend.editor_menu import EditorMenu
                 if mic_window.open:
                     self.mic_menu.handle_mic_click(mic_button=mic_window.content.content.controls[0])
-                
+
                 elif type(self.menu_instance) == SpeechMenu:
                     self.mic_menu.handle_mic_click(self.menu_instance.mic_card.content.controls[0])
-                
-                
+
                 elif type(self.menu_instance) == EditorMenu and self.menu_instance.can_listen == True:
                     self.menu_instance.handle_mic_click(self.menu_instance.mic_button)
 
             if e.key == "F7":
                 if hasattr(self.menu_instance, "speech"):
                     self.menu_instance.speech.stop_listen()
+
+            if e.ctrl and e.key == "P":
+                if hasattr(self.menu_instance, "create_and_open_new_markdown"):
+                    self.menu_instance.create_and_open_new_markdown()
+
+            if e.ctrl and e.key == "N":
+                if hasattr(self.menu_instance, "create_new_dir"):
+                    self.menu_instance.create_new_dir()
+
+            if e.ctrl and e.key == "S":
+                if hasattr(self.menu_instance, "_save_now"):
+                    self.menu_instance._save_now()
 
 
         self.page.on_route_change = route_change
@@ -182,5 +198,4 @@ if __name__ == "__main__":
         from voice.type_at_cursor import TypeAtCursorMode
         TypeAtCursorMode().run()
         sys.exit(0)
-    view = ft.AppView.FLET_APP if platform.system() == "Windows" else ft.AppView.WEB_BROWSER
-    ft.run(flet_target, view=view)
+    ft.run(flet_target, view=ft.AppView.FLET_APP)

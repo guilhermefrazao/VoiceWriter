@@ -2,7 +2,7 @@ import flet as ft
 import os
 import asyncio
 import logging
-import keyboard
+import time
 
 from frontend.widgets.context_menu import ContextMenu
 from frontend.widgets.tiles_generic import Tiles
@@ -14,14 +14,9 @@ from voice.speech import SpeechToText
 from frontend.widgets.toolbar import TopToolbar 
 
 class EditorMenu():
-    def __init__(self, page : ft.Page):
+    def __init__(self, page: ft.Page, mic_menu=None):
         self.page = page
-        try:
-            keyboard.add_hotkey("ctrl+p", self.create_and_open_new_markdown)
-            keyboard.add_hotkey("ctrl+n", self.create_new_dir)
-            keyboard.add_hotkey("ctrl+s", self._save_now)
-        except (ImportError, PermissionError) as e:
-            logging.warning(f"Could not register global hotkeys: {e}. Continuing without shortcuts.")
+        self._mic_menu = mic_menu
         self.new_message = ft.TextField(
             border=ft.InputBorder.NONE,
             always_call_on_tap=False,
@@ -131,6 +126,18 @@ class EditorMenu():
             self.handler.save_timer.cancel()
         self.handler.save_to_disk(self.new_message.data, self.new_message.value)
 
+    def handle_mic_click(self, mic_button, e=None):
+        self.speech._startup_start_time = time.time()
+        if self._mic_menu and self._mic_menu.is_listening:
+            self._mic_menu.is_listening = False
+            self.speech.stop_listen()
+            return
+        if self._mic_menu:
+            self._mic_menu.is_listening = True
+        self.page.run_task(self.run_speech_recognition)
+        if self._mic_menu:
+            self.page.run_task(self._mic_menu.pulse_animation, mic_button)
+
 
     def open_new_editor(self, e):
         logging.info(f"Navegando para {e.control.data}")
@@ -196,14 +203,15 @@ class EditorMenu():
             def on_text_chunk(text: str):
                 self.new_message.value = (self.new_message.value or "") + f" {text}"
                 self.new_message.update()
-                self.handler.schedule_save(self.open_file_path, self.new_message)
+                self.handler.save_to_disk(self.open_file_path, self.new_message)
 
             await asyncio.to_thread(self.speech.transcribe_continuously, on_text_chunk)
 
         except Exception as e:
             print(f"Erro no reconhecimento: {e}")
         finally:
-            self.is_listening = False
+            if self._mic_menu:
+                self._mic_menu.is_listening = False
 
 
     async def update_interface(self, recognized_speech: str):
@@ -225,7 +233,10 @@ class EditorMenu():
 
         intial_tree_controls = self.get_directory_tree(path)
 
-        self.mic_button = self.container.generic_container_with_mic_button(width=80, height=80, mic_size=36, on_click=self.handle_mic_click)
+        self.mic_button = self.container.generic_container_with_mic_button(
+            width=80, height=80, mic_size=36,
+            on_click=lambda e: self.handle_mic_click(self.mic_button, e)
+        )
 
         sidebar_icons = TopToolbar(left_items=[
             ft.IconButton(icon=ft.Icons.FILE_OPEN, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),

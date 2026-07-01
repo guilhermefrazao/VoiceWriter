@@ -157,6 +157,8 @@ def avg_word_confidence(segments) -> float | None:
 def analyze_transcription(
     hypothesis: str | None,
     reference: str | None = None,
+    statup_start_time: float | None = None,
+    statup_end_time: float | None = None,
     start_time: float | None = None,
     end_time: float | None = None,
     audio_duration_s: float | None = None,
@@ -177,20 +179,22 @@ def analyze_transcription(
         cold_start:       True se é a primeira inferência da sessão
         peak_memory_mb:   pico de memória GPU/RAM durante a inferência
     """
-    lat_ms = latency(start_time, end_time) if start_time is not None and end_time is not None else None
+    statup_lat_ms = latency(statup_start_time, statup_end_time) if statup_start_time is not None and statup_end_time is not None else None
+    inference_lat_ms = latency(start_time, end_time) if start_time is not None and end_time is not None else None
 
     wer = word_error_rate(reference, hypothesis or "") if reference else None
     cer = character_error_rate(reference, hypothesis or "") if reference else None
     breakdown = wer_breakdown(reference, hypothesis or "") if reference else None
     nwer = normalized_wer(reference, hypothesis or "") if reference else None
     bleu = bleu_score(reference, hypothesis or "") if reference else None
-    rtf = real_time_factor(lat_ms / 1_000.0, audio_duration_s) if lat_ms is not None and audio_duration_s else None
+    rtf = real_time_factor(inference_lat_ms / 1_000.0, audio_duration_s) if inference_lat_ms is not None and audio_duration_s else None
     confidence = avg_word_confidence(segments) if segments else None
 
     result = {
         "transcribed_text":   hypothesis,
         "reference_text":     reference,
-        "latency_ms":         round(lat_ms, 2) if lat_ms is not None else None,
+        "startup_latency_ms":    round(statup_lat_ms, 2) if statup_lat_ms is not None else None,
+        "inference_latency_ms":    round(inference_lat_ms, 2) if inference_lat_ms is not None else None,
         "wer":                round(wer, 4) if wer is not None else None,
         "cer":                round(cer, 4) if cer is not None else None,
         "wer_normalized":     round(nwer, 4) if nwer is not None else None,
@@ -206,8 +210,10 @@ def analyze_transcription(
     }
 
     parts = []
-    if lat_ms is not None:
-        parts.append(f"latency={lat_ms:.0f}ms")
+    if statup_lat_ms is not None:
+        parts.append(f"Statup latency={statup_lat_ms:.0f}ms")
+    if inference_lat_ms is not None:
+        parts.append(f"Inference latency={inference_lat_ms:.0f}ms")
     if wer is not None:
         parts.append(f"WER={wer:.2%}")
     if cer is not None:

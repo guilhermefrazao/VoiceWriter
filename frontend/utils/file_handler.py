@@ -2,9 +2,12 @@ import flet as ft
 import os
 import threading
 import logging
+import platform
 import shutil
 
 from frontend.utils.color import hover_color_change
+
+_SYSTEM = platform.system()
 
 class DirectoryUtils():
     def __init__(self):
@@ -14,44 +17,47 @@ class DirectoryUtils():
         pass
 
     async def open_explorer(self, page: ft.Page) -> str:
-        import asyncio
-        loop = asyncio.get_event_loop()
-        future: asyncio.Future[str] = loop.create_future()
+        if _SYSTEM == "Windows":
+            return await ft.FilePicker().get_directory_path()
+        else:
+            import asyncio
+            loop = asyncio.get_event_loop()
+            future: asyncio.Future[str] = loop.create_future()
 
-        path_field = ft.TextField(
-            hint_text="/home/user/documents/my-vault",
-            autofocus=True,
-            expand=True,
-            border_color="#055b5f",
-            focused_border_color="#028268",
-            color="#D4D4D4",
-            bgcolor="#1E1E1E",
-        )
+            path_field = ft.TextField(
+                hint_text="/home/user/documents/my-vault",
+                autofocus=True,
+                expand=True,
+                border_color="#055b5f",
+                focused_border_color="#028268",
+                color="#D4D4D4",
+                bgcolor="#1E1E1E",
+            )
 
-        def on_confirm(e: ft.ControlEvent) -> None:
-            if not future.done():
-                future.set_result(path_field.value.strip() or "")
-            page.close(dialog)
+            def on_confirm(e: ft.ControlEvent) -> None:
+                if not future.done():
+                    future.set_result(path_field.value.strip() or "")
+                page.pop_dialog()
 
-        def on_cancel(e: ft.ControlEvent) -> None:
-            if not future.done():
-                future.set_result("")
-            page.close(dialog)
+            def on_cancel(e: ft.ControlEvent) -> None:
+                if not future.done():
+                    future.set_result("")
+                page.pop_dialog()
 
-        path_field.on_submit = on_confirm
+            path_field.on_submit = on_confirm
 
-        dialog = ft.AlertDialog(
-            title=ft.Text("Select Directory", color="#D4D4D4"),
-            bgcolor="#181818",
-            content=ft.Container(width=420, content=path_field),
-            actions=[
-                ft.TextButton("Cancel", on_click=on_cancel),
-                ft.TextButton("Open", on_click=on_confirm, style=ft.ButtonStyle(color="#028268")),
-            ],
-        )
+            dialog = ft.AlertDialog(
+                title=ft.Text("Select Directory", color="#D4D4D4"),
+                bgcolor="#181818",
+                content=ft.Container(width=420, content=path_field),
+                actions=[
+                    ft.TextButton("Cancel", on_click=on_cancel),
+                    ft.TextButton("Open", on_click=on_confirm, style=ft.ButtonStyle(color="#028268")),
+                ],
+            )
 
-        page.open(dialog)
-        return await future
+            page.show_dialog(dialog)
+            return await future
     
 
     def display_markdown_information(self, item: str, path: str, dir_widget: ft.Column, message_widget: ft.TextField, main_topbar: ft.Container,  main_area: ft.Container, refresh_sidebar, mic):

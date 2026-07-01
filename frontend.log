@@ -1713,3 +1713,997 @@ RuntimeError: An attempt to fetch destroyed session.
 2026-07-01 13:49:33 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
 2026-07-01 13:49:33 | INFO | [Metrics] Salvo localmente em /app/voice/data/feedback_metrics.json (9 registros)
 2026-07-01 13:49:38 | ERROR | [Metrics] Erro ao salvar no MongoDB: SSL handshake failed: ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 6a45451de16578bd7b429885, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2026-07-01 14:06:45 | INFO | Assets path configured: /app/assets
+2026-07-01 14:06:54 | INFO | Starting Flet web server on port 57933...
+2026-07-01 14:06:54 | INFO | Web renderer configured: WebRenderer.AUTO
+2026-07-01 14:06:54 | INFO | Route URL strategy configured: RouteUrlStrategy.PATH
+2026-07-01 14:06:54 | INFO | No CDN configured: False
+2026-07-01 14:06:54 | INFO | Flet app has started...
+2026-07-01 14:06:54 | INFO | Starting up Flet App Manager
+2026-07-01 14:06:54 | INFO | App URL: http://127.0.0.1:57933
+2026-07-01 15:51:33 | INFO | Shutting down Flet App Manager
+2026-07-01 15:51:33 | INFO | Closing Flet web server...
+2026-07-01 15:51:36 | INFO | Assets path configured: /app/assets
+2026-07-01 15:51:43 | INFO | Starting Flet web server on port 60147...
+2026-07-01 15:51:43 | INFO | Web renderer configured: WebRenderer.AUTO
+2026-07-01 15:51:43 | INFO | Route URL strategy configured: RouteUrlStrategy.PATH
+2026-07-01 15:51:43 | INFO | No CDN configured: False
+2026-07-01 15:51:43 | INFO | Flet app has started...
+2026-07-01 15:51:43 | INFO | Starting up Flet App Manager
+2026-07-01 15:51:43 | INFO | App URL: http://127.0.0.1:60147
+2026-07-01 15:59:38 | INFO | Assets path configured: /app/assets
+2026-07-01 15:59:38 | INFO | Starting up UDS server on /tmp/DFEpkzgDNW
+2026-07-01 15:59:38 | INFO | Flet app has started...
+2026-07-01 15:59:44 | INFO | App URL: /tmp/DFEpkzgDNW
+2026-07-01 15:59:44 | INFO | Starting Flet View app...
+2026-07-01 15:59:45 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 15:59:45 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 15:59:46 | INFO | App session started
+2026-07-01 15:59:47 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 15:59:47 | ERROR | Unhandled error in main() handler
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.12/site-packages/flet/app.py", line 260, in on_session_created
+    await main(session.page)
+  File "/app/main.py", line 177, in flet_target
+    await app.main()
+  File "/app/main.py", line 170, in main
+    await route_change()
+  File "/app/main.py", line 68, in route_change
+    from frontend.speech_menu import SpeechMenu
+  File "/app/frontend/speech_menu.py", line 6, in <module>
+    from voice.speech import SpeechToText
+  File "/app/voice/speech.py", line 23, in <module>
+    from voice.utils.metrics_storage import (
+ImportError: cannot import name 'save_metrics_local' from 'voice.utils.metrics_storage' (/app/voice/utils/metrics_storage.py)
+2026-07-01 16:00:42 | INFO | Assets path configured: /app/assets
+2026-07-01 16:00:42 | INFO | Starting up UDS server on /tmp/55KJLB40Dc
+2026-07-01 16:00:42 | INFO | Flet app has started...
+2026-07-01 16:00:49 | INFO | App URL: /tmp/55KJLB40Dc
+2026-07-01 16:00:49 | INFO | Starting Flet View app...
+2026-07-01 16:00:50 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:00:50 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 16:00:51 | INFO | App session started
+2026-07-01 16:00:52 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:00:52 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:00:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:00:57 | INFO | [Metrics] Sessão criada no Supabase: c3dfa139-0238-4440-80b1-023769f018c8
+2026-07-01 16:00:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:00:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:00:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:00:58 | INFO | [Metrics] Sync: 3 enviados, 0 na fila.
+2026-07-01 16:00:58 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:01:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:01:00 | INFO | [Metrics] Sessão criada no Supabase: 23c71b6b-e3e3-4e33-b209-7057f811162b
+2026-07-01 16:01:00 | INFO | Pre-warm concluído.
+2026-07-01 16:01:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:01:18 | INFO | [Metrics] Sessão criada no Supabase: c5ce915d-2631-4d11-acfa-60e00780c508
+2026-07-01 16:01:19 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:01:22 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x794cc075fb60>
+2026-07-01 16:01:22 | INFO | Processing audio with duration 00:02.206
+2026-07-01 16:01:24 | INFO | Recognized: Abre o Google Chrome.
+2026-07-01 16:01:24 | INFO | [ASR Metrics] latency=1618ms | RTF=0.733 | conf=74.87%
+2026-07-01 16:01:24 | INFO | Command identified! Trying to open: google chrome....
+2026-07-01 16:01:24 | INFO | Opening: google chrome.
+2026-07-01 16:01:30 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 16:01:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:01:31 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:09:59 | INFO | Assets path configured: /app/assets
+2026-07-01 16:09:59 | INFO | Starting up UDS server on /tmp/fxkRf8Eho7
+2026-07-01 16:09:59 | INFO | Flet app has started...
+2026-07-01 16:10:07 | INFO | App URL: /tmp/fxkRf8Eho7
+2026-07-01 16:10:07 | INFO | Starting Flet View app...
+2026-07-01 16:10:08 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:10:08 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 16:10:09 | INFO | App session started
+2026-07-01 16:10:10 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:10:10 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:10:13 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:10:13 | INFO | [Metrics] Sessão criada no Supabase: 7367c9ee-20e8-4eed-8b56-8ff535c337c0
+2026-07-01 16:10:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:10:14 | INFO | [Metrics] Sessão criada no Supabase: fdb3abb3-b2a6-4734-ac30-b12e11654d19
+2026-07-01 16:10:14 | INFO | Pre-warm concluído.
+2026-07-01 16:10:18 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:10:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:10:18 | INFO | [Metrics] Sessão criada no Supabase: 577c10a1-8a78-43b7-983d-2e1a05019014
+2026-07-01 16:10:20 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:10:22 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7015190311f0>
+2026-07-01 16:10:22 | INFO | Processing audio with duration 00:01.556
+2026-07-01 16:10:23 | INFO | Recognized: Abra o Google
+2026-07-01 16:10:23 | INFO | [ASR Metrics] latency=1138ms | RTF=0.731 | conf=80.55%
+2026-07-01 16:10:23 | INFO | Command identified! Trying to open: google...
+2026-07-01 16:10:23 | INFO | Opening: google
+2026-07-01 16:10:25 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 16:10:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:10:26 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:10:40 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:10:43 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7015184dfc50>
+2026-07-01 16:10:43 | INFO | Processing audio with duration 00:02.159
+2026-07-01 16:10:44 | INFO | Recognized: Abra o Discord
+2026-07-01 16:10:44 | INFO | [ASR Metrics] latency=691ms | RTF=0.320 | conf=76.97%
+2026-07-01 16:10:44 | INFO | Command identified! Trying to open: discord...
+2026-07-01 16:10:44 | INFO | Opening: discord
+2026-07-01 16:10:47 | INFO | [Feedback] ✓ | Session success rate: 100.0% (2/2)
+2026-07-01 16:10:47 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:10:47 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:10:51 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:10:54 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7015184f84d0>
+2026-07-01 16:10:54 | INFO | Processing audio with duration 00:02.763
+2026-07-01 16:10:55 | INFO | Recognized: Fecha o firefark!
+2026-07-01 16:10:55 | INFO | [ASR Metrics] latency=649ms | RTF=0.235 | conf=40.85%
+2026-07-01 16:10:55 | INFO | Command identified! Trying to close: firefark!...
+2026-07-01 16:10:55 | INFO | Closing: firefark!
+2026-07-01 16:10:58 | INFO | [Feedback] ✓ | Session success rate: 100.0% (3/3)
+2026-07-01 16:10:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:10:59 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:11:02 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:11:05 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7015184df4d0>
+2026-07-01 16:11:05 | INFO | Processing audio with duration 00:02.879
+2026-07-01 16:11:06 | INFO | Recognized: Execute o One Desk.
+2026-07-01 16:11:06 | INFO | [ASR Metrics] latency=747ms | RTF=0.259 | conf=76.34%
+2026-07-01 16:11:06 | INFO | Command identified! Trying to open: one desk....
+2026-07-01 16:11:06 | INFO | Opening: one desk.
+2026-07-01 16:11:09 | INFO | [Feedback] ✓ | Session success rate: 100.0% (4/4)
+2026-07-01 16:11:10 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:11:10 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:11:13 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:11:17 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x70151bfbeea0>
+2026-07-01 16:11:17 | INFO | Processing audio with duration 00:03.390
+2026-07-01 16:11:18 | INFO | Recognized: Abra System Manager.
+2026-07-01 16:11:18 | INFO | [ASR Metrics] latency=694ms | RTF=0.205 | conf=81.03%
+2026-07-01 16:11:18 | INFO | Command identified! Trying to open: system manager....
+2026-07-01 16:11:18 | INFO | Opening: system manager.
+2026-07-01 16:11:21 | INFO | [Feedback] ✓ | Session success rate: 100.0% (5/5)
+2026-07-01 16:11:21 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:11:21 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:11:23 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:11:28 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7015184df7a0>
+2026-07-01 16:11:28 | INFO | Processing audio with duration 00:04.598
+2026-07-01 16:11:29 | INFO | Recognized: Abra Devil May Cry Collection
+2026-07-01 16:11:29 | INFO | [ASR Metrics] latency=736ms | RTF=0.160 | conf=85.66%
+2026-07-01 16:11:29 | INFO | Command identified! Trying to open: devil may cry collection...
+2026-07-01 16:11:29 | INFO | Opening: devil may cry collection
+2026-07-01 16:11:33 | INFO | [Feedback] ✓ | Session success rate: 100.0% (6/6)
+2026-07-01 16:11:33 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:11:33 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:11:45 | ERROR | Unhandled error in 'on_route_change' handler
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.12/site-packages/flet/messaging/session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "/opt/venv/lib/python3.12/site-packages/flet/controls/base_control.py", line 318, in _trigger_event
+    await event_handler()
+  File "/app/main.py", line 84, in route_change
+    self.menu_instance = MainEditorMenu(self.page)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/frontend/main_menu.py", line 21, in __init__
+    self.editor_menu = EditorMenu(page)
+                       ^^^^^^^^^^^^^^^^
+  File "/app/frontend/editor_menu.py", line 20, in __init__
+    keyboard.add_hotkey("ctrl+p", self.create_and_open_new_markdown)
+  File "/opt/venv/lib/python3.12/site-packages/keyboard/__init__.py", line 639, in add_hotkey
+    _listener.start_if_necessary()
+  File "/opt/venv/lib/python3.12/site-packages/keyboard/_generic.py", line 35, in start_if_necessary
+    self.init()
+  File "/opt/venv/lib/python3.12/site-packages/keyboard/__init__.py", line 196, in init
+    _os_keyboard.init()
+  File "/opt/venv/lib/python3.12/site-packages/keyboard/_nixkeyboard.py", line 113, in init
+    build_device()
+  File "/opt/venv/lib/python3.12/site-packages/keyboard/_nixkeyboard.py", line 110, in build_device
+    device = aggregate_devices('kbd')
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/keyboard/_nixcommon.py", line 168, in aggregate_devices
+    assert fake_device
+           ^^^^^^^^^^^
+AssertionError
+2026-07-01 16:16:14 | INFO | Assets path configured: /app/assets
+2026-07-01 16:16:14 | INFO | Starting up UDS server on /tmp/hSuLIVgtf1
+2026-07-01 16:16:14 | INFO | Flet app has started...
+2026-07-01 16:16:21 | INFO | App URL: /tmp/hSuLIVgtf1
+2026-07-01 16:16:21 | INFO | Starting Flet View app...
+2026-07-01 16:16:22 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:16:22 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 16:16:24 | INFO | App session started
+2026-07-01 16:16:24 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:16:24 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:16:27 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:16:27 | INFO | [Metrics] Sessão criada no Supabase: d01cb89f-b8bc-4b06-adae-b04ce4b29576
+2026-07-01 16:16:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:16:28 | INFO | [Metrics] Sessão criada no Supabase: 09d519aa-2e94-4d11-b11b-13e73a3f2f7b
+2026-07-01 16:16:28 | INFO | Pre-warm concluído.
+2026-07-01 16:16:30 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:16:48 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:16:48 | INFO | [Metrics] Sessão criada no Supabase: 1cac9fb8-5ca9-4c67-8f3b-ea58cce2d7ee
+2026-07-01 16:16:49 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:16:54 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7448cf3e6a50>
+2026-07-01 16:16:54 | INFO | Processing audio with duration 00:03.878
+2026-07-01 16:16:55 | INFO | Recognized: Está funcionando pra abrir o Google Chrome.
+2026-07-01 16:16:55 | INFO | [ASR Metrics] latency=1571ms | RTF=0.405 | conf=72.07%
+2026-07-01 16:16:55 | INFO | Command identified! Trying to open: google chrome....
+2026-07-01 16:16:55 | INFO | Opening: google chrome.
+2026-07-01 16:16:59 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 16:17:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:17:00 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:19:25 | INFO | Assets path configured: /app/assets
+2026-07-01 16:19:25 | INFO | Starting up UDS server on /tmp/0uLFDcdX0E
+2026-07-01 16:19:25 | INFO | Flet app has started...
+2026-07-01 16:19:32 | INFO | App URL: /tmp/0uLFDcdX0E
+2026-07-01 16:19:32 | INFO | Starting Flet View app...
+2026-07-01 16:19:33 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:19:33 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 16:19:34 | INFO | App session started
+2026-07-01 16:19:34 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:19:35 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:19:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:19:37 | INFO | [Metrics] Sessão criada no Supabase: 557ca503-29c2-4acc-a11c-c5a2e084ee11
+2026-07-01 16:19:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:19:38 | INFO | [Metrics] Sessão criada no Supabase: 7ba64a2d-11e9-41b1-958c-944e747ed061
+2026-07-01 16:19:38 | INFO | Pre-warm concluído.
+2026-07-01 16:19:41 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:19:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:19:49 | INFO | [Metrics] Sessão criada no Supabase: 2b88b94c-83f3-408a-8ac0-79c3a51aa307
+2026-07-01 16:19:51 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:19:55 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7e1448a75250>
+2026-07-01 16:19:55 | INFO | Processing audio with duration 00:02.810
+2026-07-01 16:19:57 | INFO | Recognized: Começou a detecção para a trilha de...
+2026-07-01 16:19:57 | INFO | [ASR Metrics] latency=1613ms | RTF=0.574 | conf=61.08%
+2026-07-01 16:19:57 | INFO | No command recognized in this phrase.
+2026-07-01 16:20:03 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/1)
+2026-07-01 16:20:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-01 16:20:03 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-01 16:20:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:20:14 | INFO | [Metrics] Sessão criada no Supabase: 6e936060-d955-45fa-8e53-f82b9fc00c0b
+2026-07-01 16:20:21 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.12/site-packages/flet/messaging/session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "/opt/venv/lib/python3.12/site-packages/flet/controls/base_control.py", line 320, in _trigger_event
+    await event_handler(e)
+  File "/app/frontend/main_menu.py", line 60, in select_editor_path
+    self.path_editor = await self.explorer.open_explorer(self.page)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/frontend/utils/file_handler.py", line 53, in open_explorer
+    page.open(dialog)
+    ^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'open'
+2026-07-01 16:27:11 | INFO | Assets path configured: /app/assets
+2026-07-01 16:27:11 | INFO | Starting up UDS server on /tmp/0Upl2dZuGj
+2026-07-01 16:27:11 | INFO | Flet app has started...
+2026-07-01 16:27:18 | INFO | App URL: /tmp/0Upl2dZuGj
+2026-07-01 16:27:18 | INFO | Starting Flet View app...
+2026-07-01 16:27:20 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:27:20 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 16:27:21 | INFO | App session started
+2026-07-01 16:27:21 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:27:22 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:27:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:27:25 | INFO | [Metrics] Sessão criada no Supabase: 6e47c2c4-7428-47c7-8c42-49aeb90e7529
+2026-07-01 16:27:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:27:26 | INFO | [Metrics] Sessão criada no Supabase: 84133fc3-ca11-45c8-b26d-feddd3fd6be2
+2026-07-01 16:27:26 | INFO | Pre-warm concluído.
+2026-07-01 16:27:27 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:29:13 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:29:13 | INFO | [Metrics] Sessão criada no Supabase: 5a6f0167-8555-4a91-9809-1e3d76246487
+2026-07-01 16:31:18 | INFO | Not all information was put
+2026-07-01 16:31:23 | INFO | Not all information was put
+2026-07-01 16:31:30 | INFO | Path inválido ou não fornecido, voltando para Home.
+2026-07-01 16:31:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:31:31 | INFO | [Metrics] Sessão criada no Supabase: 3e53c71f-8eec-40ba-8ed0-72c590c1e63c
+2026-07-01 16:38:10 | INFO | Assets path configured: /app/assets
+2026-07-01 16:38:10 | INFO | Starting up UDS server on /tmp/YuTMMPTIS8
+2026-07-01 16:38:10 | INFO | Flet app has started...
+2026-07-01 16:38:16 | INFO | App URL: /tmp/YuTMMPTIS8
+2026-07-01 16:38:16 | INFO | Starting Flet View app...
+2026-07-01 16:38:17 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:38:17 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 16:38:18 | INFO | App session started
+2026-07-01 16:38:19 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:38:19 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:38:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:38:22 | INFO | [Metrics] Sessão criada no Supabase: 876469a9-a580-4ba5-a16b-1e4c5a9fcbac
+2026-07-01 16:38:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:38:23 | INFO | [Metrics] Sessão criada no Supabase: a2eea937-0632-4706-8b54-7b5ead862fbe
+2026-07-01 16:38:23 | INFO | Pre-warm concluído.
+2026-07-01 16:38:24 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:38:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:38:49 | INFO | [Metrics] Sessão criada no Supabase: e25e44f4-42e7-43d8-9aa2-6a49264bc8d6
+2026-07-01 16:38:51 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:38:52 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x758b8ecea840>
+2026-07-01 16:38:53 | INFO | Processing audio with duration 00:01.579
+2026-07-01 16:38:54 | INFO | Recognized: O que você acha disso?
+2026-07-01 16:38:54 | INFO | [ASR Metrics] latency=1244ms | RTF=0.788 | conf=84.38%
+2026-07-01 16:38:54 | INFO | No command recognized in this phrase.
+2026-07-01 16:38:57 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 16:38:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:38:57 | ERROR | [Metrics] Falha no Supabase, salvando offline: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:38:57 | INFO | [Metrics] Salvo offline (1 na fila).
+2026-07-01 16:48:00 | INFO | Assets path configured: /app/assets
+2026-07-01 16:48:00 | INFO | Starting up UDS server on /tmp/k4SW3ZGLmB
+2026-07-01 16:48:00 | INFO | Flet app has started...
+2026-07-01 16:48:07 | INFO | App URL: /tmp/k4SW3ZGLmB
+2026-07-01 16:48:07 | INFO | Starting Flet View app...
+2026-07-01 16:48:08 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:48:08 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 16:48:10 | INFO | App session started
+2026-07-01 16:48:10 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:48:10 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:48:13 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:48:13 | INFO | [Metrics] Sessão criada no Supabase: 508f764c-ed00-422b-8a51-ac21fddcc358
+2026-07-01 16:48:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:48:14 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:48:14 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:48:15 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:48:15 | INFO | [Metrics] Sessão criada no Supabase: 912b62b7-a88a-464a-9beb-a6f9328bb766
+2026-07-01 16:48:16 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:48:16 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:48:16 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:48:16 | INFO | Pre-warm concluído.
+2026-07-01 16:48:16 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:49:08 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:49:08 | INFO | [Metrics] Sessão criada no Supabase: e99a7b83-af80-45c0-ab42-52341d54ffbb
+2026-07-01 16:49:09 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:49:09 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:49:09 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:49:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:49:22 | INFO | [Metrics] Sessão criada no Supabase: cb850833-a15d-4cc1-877c-cae69efe92df
+2026-07-01 16:49:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:49:23 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:49:23 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:49:23 | ERROR | Unhandled error in 'on_route_change' handler
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.12/site-packages/flet/messaging/session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "/opt/venv/lib/python3.12/site-packages/flet/controls/base_control.py", line 318, in _trigger_event
+    await event_handler()
+  File "/app/main.py", line 113, in route_change
+    editor_layout.controls.append(self.menu_instance.build_ui(current_path))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/frontend/editor_menu.py", line 221, in build_ui
+    self.mic_button = self.container.generic_container_with_mic_button(width=80, height=80, mic_size=36, on_click=self.handle_mic_click)
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EditorMenu' object has no attribute 'handle_mic_click'
+2026-07-01 16:51:00 | INFO | Assets path configured: /app/assets
+2026-07-01 16:51:00 | INFO | Starting up UDS server on /tmp/aKnJVVOhU4
+2026-07-01 16:51:00 | INFO | Flet app has started...
+2026-07-01 16:51:00 | INFO | App URL: /tmp/aKnJVVOhU4
+2026-07-01 16:51:00 | INFO | Starting Flet View app...
+2026-07-01 16:51:00 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 16:51:00 | INFO | Extracting Flet from archive to /root/.flet/bin/flet-
+2026-07-01 16:51:01 | INFO | App session started
+2026-07-01 16:51:01 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:51:02 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:51:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:51:04 | INFO | [Metrics] Sessão criada no Supabase: 396a53b1-630f-4980-92f0-032816efd335
+2026-07-01 16:51:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:51:04 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:51:04 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:51:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:51:05 | INFO | [Metrics] Sessão criada no Supabase: ebe0dc2f-588d-4f86-b561-ef725ad8e0d2
+2026-07-01 16:51:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:51:05 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:51:05 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:51:05 | INFO | Pre-warm concluído.
+2026-07-01 16:51:07 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:51:07 | INFO | [Metrics] Sessão criada no Supabase: c1493d89-b8ac-41de-b0dc-ddf60925f569
+2026-07-01 16:51:07 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:51:07 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:51:07 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:51:08 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:51:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:51:12 | INFO | [Metrics] Sessão criada no Supabase: 370cf4c0-c205-4765-a2cc-3762613d0311
+2026-07-01 16:51:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:51:12 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:51:12 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:51:17 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.12/site-packages/flet/messaging/session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "/opt/venv/lib/python3.12/site-packages/flet/controls/base_control.py", line 344, in _trigger_event
+    event_handler(e)
+  File "/app/frontend/widgets/containers_generic.py", line 142, in <lambda>
+    on_click=lambda e: on_click(mic_button=container, e=e)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EditorMenu.run_speech_recognition() got an unexpected keyword argument 'mic_button'
+2026-07-01 16:52:02 | INFO | Assets path configured: /app/assets
+2026-07-01 16:52:02 | INFO | Starting up UDS server on /tmp/6vRU5JGRvT
+2026-07-01 16:52:02 | INFO | Flet app has started...
+2026-07-01 16:52:02 | INFO | App URL: /tmp/6vRU5JGRvT
+2026-07-01 16:52:02 | INFO | Starting Flet View app...
+2026-07-01 16:52:02 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 16:52:03 | INFO | App session started
+2026-07-01 16:52:03 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:52:03 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:52:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:52:05 | INFO | [Metrics] Sessão criada no Supabase: ba6b4855-14ef-48d3-934e-769d7db51731
+2026-07-01 16:52:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:52:05 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:52:05 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:52:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:52:06 | INFO | [Metrics] Sessão criada no Supabase: 40aadfad-37a8-495b-a980-3a8a973d2a1c
+2026-07-01 16:52:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:52:06 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:52:06 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:52:06 | INFO | Pre-warm concluído.
+2026-07-01 16:52:07 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:52:07 | INFO | [Metrics] Sessão criada no Supabase: 35098148-5806-4d3f-8223-f682678478dd
+2026-07-01 16:52:08 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:52:08 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:52:08 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:52:08 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:52:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:52:40 | INFO | [Metrics] Sessão criada no Supabase: 50504c7b-0db5-4776-85d8-189ddb61a784
+2026-07-01 16:52:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:52:40 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:52:40 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:55:34 | INFO | Assets path configured: /app/assets
+2026-07-01 16:55:34 | INFO | Starting up UDS server on /tmp/fZbA7TtqoB
+2026-07-01 16:55:34 | INFO | Flet app has started...
+2026-07-01 16:55:34 | INFO | App URL: /tmp/fZbA7TtqoB
+2026-07-01 16:55:34 | INFO | Starting Flet View app...
+2026-07-01 16:55:34 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 16:55:35 | INFO | App session started
+2026-07-01 16:55:35 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:55:35 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:55:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:55:38 | INFO | [Metrics] Sessão criada no Supabase: 27249234-a41d-4a08-aeab-a7661e4e8102
+2026-07-01 16:55:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:55:38 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:55:38 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:55:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:55:39 | INFO | [Metrics] Sessão criada no Supabase: 406afe68-d619-4d3a-8c4a-68843527ce4d
+2026-07-01 16:55:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:55:39 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:55:39 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:55:39 | INFO | Pre-warm concluído.
+2026-07-01 16:55:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:55:40 | INFO | [Metrics] Sessão criada no Supabase: da0bee8a-08b1-4055-9d56-f0655d1aef19
+2026-07-01 16:55:41 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:55:41 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:55:41 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:55:41 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:55:43 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:55:43 | INFO | [Metrics] Sessão criada no Supabase: 1c490093-e287-45d9-88cf-2b4bfb1a896a
+2026-07-01 16:55:44 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:55:44 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:55:44 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:55:48 | ERROR | Unhandled error in 'on_click' handler
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.12/site-packages/flet/messaging/session.py", line 194, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+  File "/opt/venv/lib/python3.12/site-packages/flet/controls/base_control.py", line 344, in _trigger_event
+    event_handler(e)
+  File "/app/frontend/widgets/containers_generic.py", line 142, in <lambda>
+    on_click=lambda e: on_click()
+                       ^^^^^^^^^^
+TypeError: EditorMenu.build_ui.<locals>.<lambda>() missing 1 required positional argument: 'e'
+2026-07-01 16:56:26 | INFO | Assets path configured: /app/assets
+2026-07-01 16:56:26 | INFO | Starting up UDS server on /tmp/VMPhWoMjS0
+2026-07-01 16:56:26 | INFO | Flet app has started...
+2026-07-01 16:56:26 | INFO | App URL: /tmp/VMPhWoMjS0
+2026-07-01 16:56:26 | INFO | Starting Flet View app...
+2026-07-01 16:56:26 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 16:56:28 | INFO | App session started
+2026-07-01 16:56:28 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 16:56:28 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 16:56:30 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:56:30 | INFO | [Metrics] Sessão criada no Supabase: a2640912-6bb4-4639-86f7-1442ec647a30
+2026-07-01 16:56:30 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:56:30 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:56:30 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:56:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:56:31 | INFO | [Metrics] Sessão criada no Supabase: d61ad640-6947-4949-a63c-7e250da40b9c
+2026-07-01 16:56:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:56:31 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:56:31 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:56:31 | INFO | Pre-warm concluído.
+2026-07-01 16:56:32 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:56:32 | INFO | [Metrics] Sessão criada no Supabase: 04794ef4-6fe3-4c9e-bd38-d83c78fa287f
+2026-07-01 16:56:32 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:56:32 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:56:32 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:56:34 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 16:56:34 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 16:56:34 | INFO | [Metrics] Sessão criada no Supabase: 3168419d-79df-4472-aa73-749cd6b18bc4
+2026-07-01 16:56:34 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 16:56:34 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 16:56:34 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 16:56:38 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:56:44 | INFO | Processing audio with duration 00:04.505
+2026-07-01 16:56:45 | INFO | Recognized: 
+2026-07-01 16:56:45 | INFO | [ASR Metrics] latency=1092ms | RTF=0.242
+2026-07-01 16:56:53 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 16:56:58 | INFO | Processing audio with duration 00:03.715
+2026-07-01 16:56:58 | INFO | Recognized: tá reconhecendo o áudio? mais animação
+2026-07-01 16:56:58 | INFO | [ASR Metrics] latency=667ms | RTF=0.180 | conf=69.78%
+2026-07-01 16:57:18 | INFO | Silence timeout (20s) — ending transcription.
+2026-07-01 17:03:32 | INFO | Assets path configured: /app/assets
+2026-07-01 17:03:32 | INFO | Starting up UDS server on /tmp/AOSPuf0YlN
+2026-07-01 17:03:32 | INFO | Flet app has started...
+2026-07-01 17:03:32 | INFO | App URL: /tmp/AOSPuf0YlN
+2026-07-01 17:03:32 | INFO | Starting Flet View app...
+2026-07-01 17:03:32 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:03:33 | INFO | App session started
+2026-07-01 17:03:33 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:03:33 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 17:03:35 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:03:35 | INFO | [Metrics] Sessão criada no Supabase: 89ecbb86-7189-4027-9809-30cbe9ba8aa9
+2026-07-01 17:03:36 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:03:36 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:03:36 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 17:03:36 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:03:36 | INFO | [Metrics] Sessão criada no Supabase: 70e19151-49f3-4464-b021-6977dfa4f7de
+2026-07-01 17:03:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:03:37 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:03:37 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 17:03:37 | INFO | Pre-warm concluído.
+2026-07-01 17:03:38 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 17:03:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:03:39 | INFO | [Metrics] Sessão criada no Supabase: 63468a52-1fe7-482d-a513-dca74a12bbce
+2026-07-01 17:03:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:03:39 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:03:39 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 17:03:40 | ERROR | exception calling callback for <Future at 0x715fa896c0e0 state=finished raised AttributeError>
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/opt/venv/lib/python3.12/site-packages/flet/controls/page.py", line 504, in _on_completion
+    raise exception
+  File "/app/frontend/widgets/mic.py", line 41, in pulse_animation
+    container_button.shadow.color = ft.Colors.with_opacity(0.6, "#028268")
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Event' object has no attribute 'shadow'
+2026-07-01 17:03:41 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:03:46 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x715ea20d58e0>
+2026-07-01 17:03:47 | INFO | Processing audio with duration 00:02.508
+2026-07-01 17:03:48 | INFO | Recognized: 
+2026-07-01 17:03:48 | INFO | [ASR Metrics] latency=1118ms | RTF=0.446
+2026-07-01 17:04:45 | INFO | Assets path configured: /app/assets
+2026-07-01 17:04:45 | INFO | Starting up UDS server on /tmp/mT72BSm0Qk
+2026-07-01 17:04:45 | INFO | Flet app has started...
+2026-07-01 17:04:45 | INFO | App URL: /tmp/mT72BSm0Qk
+2026-07-01 17:04:45 | INFO | Starting Flet View app...
+2026-07-01 17:04:45 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:04:46 | INFO | App session started
+2026-07-01 17:04:46 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:04:46 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 17:04:48 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:04:48 | INFO | [Metrics] Sessão criada no Supabase: c9084b70-cfc2-494a-8348-05f73e24dadf
+2026-07-01 17:04:48 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:04:48 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:04:48 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 17:04:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:04:49 | INFO | [Metrics] Sessão criada no Supabase: fdc0e38e-5ac5-4298-a7e9-90b9932cb77a
+2026-07-01 17:04:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:04:49 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:04:49 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 17:04:49 | INFO | Pre-warm concluído.
+2026-07-01 17:04:50 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:04:50 | INFO | [Metrics] Sessão criada no Supabase: a1189c48-f8a5-4fc9-be9c-aab5b7836f9d
+2026-07-01 17:04:50 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:04:50 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:04:50 | INFO | [Metrics] Sync: 0 enviados, 1 na fila.
+2026-07-01 17:04:51 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 17:04:52 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:04:56 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7850b1e4bdd0>
+2026-07-01 17:04:56 | INFO | Processing audio with duration 00:03.460
+2026-07-01 17:04:57 | INFO | Recognized: Vamos testar a transcrição.
+2026-07-01 17:04:57 | INFO | [ASR Metrics] latency=963ms | RTF=0.278 | conf=89.22%
+2026-07-01 17:04:57 | INFO | No command recognized in this phrase.
+2026-07-01 17:05:02 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/1)
+2026-07-01 17:05:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:05:03 | ERROR | [Metrics] Falha no Supabase, salvando offline: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:05:03 | INFO | [Metrics] Salvo offline (2 na fila).
+2026-07-01 17:05:05 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:05:06 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x784fa7532f30>
+2026-07-01 17:05:07 | INFO | Processing audio with duration 00:00.882
+2026-07-01 17:05:08 | INFO | Recognized: Boa!
+2026-07-01 17:05:08 | INFO | [ASR Metrics] latency=1389ms | RTF=1.575 | conf=44.90%
+2026-07-01 17:05:08 | INFO | No command recognized in this phrase.
+2026-07-01 17:05:11 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/2)
+2026-07-01 17:05:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:05:12 | ERROR | [Metrics] Falha no Supabase, salvando offline: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:05:12 | INFO | [Metrics] Salvo offline (3 na fila).
+2026-07-01 17:05:14 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:05:17 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x784f8c2c4110>
+2026-07-01 17:05:17 | INFO | Processing audio with duration 00:02.601
+2026-07-01 17:05:17 | INFO | Recognized: Vou focar somente...
+2026-07-01 17:05:17 | INFO | [ASR Metrics] latency=835ms | RTF=0.321 | conf=71.00%
+2026-07-01 17:05:17 | INFO | No command recognized in this phrase.
+2026-07-01 17:05:21 | INFO | [Feedback] ✓ | Session success rate: 33.3% (1/3)
+2026-07-01 17:05:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:05:22 | ERROR | [Metrics] Falha no Supabase, salvando offline: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:05:22 | INFO | [Metrics] Salvo offline (4 na fila).
+2026-07-01 17:21:52 | INFO | Assets path configured: /app/assets
+2026-07-01 17:21:52 | INFO | Starting up UDS server on /tmp/Hi7OJs1qZW
+2026-07-01 17:21:52 | INFO | Flet app has started...
+2026-07-01 17:21:52 | INFO | App URL: /tmp/Hi7OJs1qZW
+2026-07-01 17:21:52 | INFO | Starting Flet View app...
+2026-07-01 17:21:52 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:21:53 | INFO | App session started
+2026-07-01 17:21:53 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:21:53 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 17:21:56 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:21:56 | INFO | [Metrics] Sessão criada no Supabase: 55109b44-cbab-4ba2-8832-2599348b7d52
+2026-07-01 17:21:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:21:58 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:21:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:21:58 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:21:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:21:59 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:21:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:21:59 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:21:59 | INFO | [Metrics] Sync: 0 enviados, 4 na fila.
+2026-07-01 17:21:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:21:59 | INFO | [Metrics] Sessão criada no Supabase: 190cd75f-7348-4551-a147-0a015dda9b85
+2026-07-01 17:22:00 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 17:22:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:22:00 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:22:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:22:00 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:22:01 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:22:01 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:22:01 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:22:01 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:22:01 | INFO | [Metrics] Sync: 0 enviados, 4 na fila.
+2026-07-01 17:22:01 | INFO | Pre-warm concluído.
+2026-07-01 17:23:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:23:14 | INFO | [Metrics] Sessão criada no Supabase: 6b130e45-3e41-49ef-a038-606c7d50bf50
+2026-07-01 17:23:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:23:14 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:23:15 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:23:15 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:23:16 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:23:16 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:23:16 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:23:16 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:23:16 | INFO | [Metrics] Sync: 0 enviados, 4 na fila.
+2026-07-01 17:23:17 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:23:20 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x71fea41c2990>
+2026-07-01 17:23:21 | INFO | Processing audio with duration 00:02.531
+2026-07-01 17:23:22 | INFO | Recognized: estando a transcrição, testando o transcrição
+2026-07-01 17:23:22 | INFO | [ASR Metrics] Statup latency=7203ms | Inference latency=1398ms | RTF=0.552 | conf=70.20%
+2026-07-01 17:23:22 | INFO | No command recognized in this phrase.
+2026-07-01 17:23:25 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 17:23:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:23:26 | ERROR | [Metrics] Falha no Supabase, salvando offline: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:23:26 | INFO | [Metrics] Salvo offline (5 na fila).
+2026-07-01 17:25:18 | INFO | Assets path configured: /app/assets
+2026-07-01 17:25:18 | INFO | Starting up UDS server on /tmp/CrqgwRdsuq
+2026-07-01 17:25:18 | INFO | Flet app has started...
+2026-07-01 17:25:18 | INFO | App URL: /tmp/CrqgwRdsuq
+2026-07-01 17:25:18 | INFO | Starting Flet View app...
+2026-07-01 17:25:18 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:25:19 | INFO | App session started
+2026-07-01 17:25:19 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:25:19 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 17:25:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:25:22 | INFO | [Metrics] Sessão criada no Supabase: 33091d79-f878-4d8e-b512-30aaca063dba
+2026-07-01 17:25:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:22 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:23 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:23 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:24 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:25 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:25 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:25:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:25:25 | INFO | [Metrics] Sessão criada no Supabase: e1dd287e-4a52-4952-a07b-c7e6417058c2
+2026-07-01 17:25:25 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 17:25:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:26 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:26 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:26 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:27 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:27 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:27 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:27 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:27 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:25:27 | INFO | Pre-warm concluído.
+2026-07-01 17:25:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:25:28 | INFO | [Metrics] Sessão criada no Supabase: 007f36c7-faa1-429f-b54b-284166974bfc
+2026-07-01 17:25:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:28 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:28 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:29 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:29 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:29 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:29 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:30 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:30 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:30 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:25:31 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:25:35 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7d76bbdc0b60>
+2026-07-01 17:25:35 | INFO | Processing audio with duration 00:01.811
+2026-07-01 17:25:36 | INFO | Recognized: testando, testando
+2026-07-01 17:25:36 | INFO | [ASR Metrics] Statup latency=7978ms | Inference latency=1247ms | RTF=0.689 | conf=82.06%
+2026-07-01 17:25:36 | INFO | No command recognized in this phrase.
+2026-07-01 17:25:38 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 17:25:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:25:39 | ERROR | [Metrics] Falha no Supabase, salvando offline: {'message': "Could not find the 'avg_confidence' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:25:39 | INFO | [Metrics] Salvo offline (6 na fila).
+2026-07-01 17:31:51 | INFO | Assets path configured: /app/assets
+2026-07-01 17:31:51 | INFO | Starting up UDS server on /tmp/roUEoGSwJt
+2026-07-01 17:31:51 | INFO | Flet app has started...
+2026-07-01 17:31:51 | INFO | App URL: /tmp/roUEoGSwJt
+2026-07-01 17:31:51 | INFO | Starting Flet View app...
+2026-07-01 17:31:51 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:31:52 | INFO | App session started
+2026-07-01 17:31:52 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:31:52 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 17:31:55 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:31:55 | INFO | [Metrics] Sessão criada no Supabase: 37bda0cf-f9c7-4de1-90cc-5bdab696c9de
+2026-07-01 17:31:56 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:31:56 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:31:56 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:31:56 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:31:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:31:57 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:31:57 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 17:31:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:31:57 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:31:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:31:57 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:31:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:31:57 | INFO | [Metrics] Sync: 1 enviados, 5 na fila.
+2026-07-01 17:31:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:31:58 | INFO | [Metrics] Sessão criada no Supabase: dc47752a-831a-47a7-aba4-218ea57cea22
+2026-07-01 17:31:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:31:59 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:31:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:31:59 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:00 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:00 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:00 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:00 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:32:00 | INFO | Pre-warm concluído.
+2026-07-01 17:32:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:32:03 | INFO | [Metrics] Sessão criada no Supabase: 9e16616f-e674-43ad-a2c1-08a730507b9c
+2026-07-01 17:32:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:04 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:04 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:04 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:05 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:05 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:05 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:32:07 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:32:11 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7c17894bcaa0>
+2026-07-01 17:32:12 | INFO | Processing audio with duration 00:03.390
+2026-07-01 17:32:13 | INFO | Recognized: demora um pouquinho para inicializar mas
+2026-07-01 17:32:13 | INFO | [ASR Metrics] Statup latency=9253ms | Inference latency=1336ms | RTF=0.394 | conf=70.78%
+2026-07-01 17:32:13 | INFO | No command recognized in this phrase.
+2026-07-01 17:32:19 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 17:32:19 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:32:19 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:32:51 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:32:51 | INFO | [Metrics] Sessão criada no Supabase: 694dfe07-c5dc-416e-9da0-d4c85e15329c
+2026-07-01 17:32:52 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:52 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:53 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:53 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:53 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:53 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:53 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:53 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:54 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:32:54 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:32:54 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:32:55 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:32:58 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7c1774913410>
+2026-07-01 17:32:58 | INFO | Processing audio with duration 00:02.508
+2026-07-01 17:32:59 | INFO | Recognized: fazendo testes para verificar
+2026-07-01 17:32:59 | INFO | [ASR Metrics] Statup latency=7932ms | Inference latency=826ms | RTF=0.330 | conf=85.17%
+2026-07-01 17:32:59 | INFO | No command recognized in this phrase.
+2026-07-01 17:33:04 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 17:33:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:33:04 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:35:13 | INFO | Assets path configured: /app/assets
+2026-07-01 17:35:13 | INFO | Starting up UDS server on /tmp/ZoeCHg7oX0
+2026-07-01 17:35:13 | INFO | Flet app has started...
+2026-07-01 17:35:13 | INFO | App URL: /tmp/ZoeCHg7oX0
+2026-07-01 17:35:13 | INFO | Starting Flet View app...
+2026-07-01 17:35:13 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:35:14 | INFO | App session started
+2026-07-01 17:35:14 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:35:14 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 17:35:16 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:35:16 | INFO | [Metrics] Sessão criada no Supabase: 6fe89058-e635-49b5-97af-9a5824ce37f0
+2026-07-01 17:35:17 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:17 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:17 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:17 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:18 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:18 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:18 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:18 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:35:19 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:35:19 | INFO | [Metrics] Sessão criada no Supabase: b33115cc-cc58-40bd-9ca3-ea4ec2b3f284
+2026-07-01 17:35:19 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 17:35:19 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:19 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:20 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:20 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:20 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:20 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:20 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:20 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:20 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:20 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:20 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:35:20 | INFO | Pre-warm concluído.
+2026-07-01 17:35:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:35:24 | INFO | [Metrics] Sessão criada no Supabase: 049fd7c6-520f-43eb-adc1-0ab486b569a3
+2026-07-01 17:35:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:24 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:25 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:26 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:26 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:35:26 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:35:26 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:35:28 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:35:30 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x719ac2ae2ae0>
+2026-07-01 17:35:31 | INFO | Processing audio with duration 00:01.649
+2026-07-01 17:35:31 | INFO | Recognized: Abra o Google
+2026-07-01 17:35:31 | INFO | [ASR Metrics] Statup latency=6605ms | Inference latency=1097ms | RTF=0.665 | conf=65.19%
+2026-07-01 17:35:31 | INFO | Command identified! Trying to open: google...
+2026-07-01 17:35:31 | INFO | Opening: google
+2026-07-01 17:35:33 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 17:35:34 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:35:34 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:35:36 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:35:39 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x719ac5632a20>
+2026-07-01 17:35:39 | INFO | Processing audio with duration 00:02.392
+2026-07-01 17:35:40 | INFO | Recognized: abro o discord
+2026-07-01 17:35:40 | INFO | [ASR Metrics] Statup latency=4074ms | Inference latency=609ms | RTF=0.254 | conf=53.85%
+2026-07-01 17:35:40 | INFO | Command identified! Trying to open: discord...
+2026-07-01 17:35:40 | INFO | Opening: discord
+2026-07-01 17:35:41 | INFO | [Feedback] ✓ | Session success rate: 100.0% (2/2)
+2026-07-01 17:35:41 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:35:41 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:35:44 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:35:46 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x719ac5632630>
+2026-07-01 17:35:47 | INFO | Processing audio with duration 00:02.020
+2026-07-01 17:35:47 | INFO | Recognized: Fecho far fuck
+2026-07-01 17:35:47 | INFO | [ASR Metrics] Statup latency=3578ms | Inference latency=659ms | RTF=0.326 | conf=29.79%
+2026-07-01 17:35:47 | INFO | Command identified! Trying to close: far fuck...
+2026-07-01 17:35:47 | INFO | Closing: far fuck
+2026-07-01 17:35:51 | INFO | [Feedback] ✗ | Session success rate: 66.7% (2/3)
+2026-07-01 17:35:51 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:35:51 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:35:54 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:35:57 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x719ac2b459d0>
+2026-07-01 17:35:57 | INFO | Processing audio with duration 00:02.392
+2026-07-01 17:35:59 | INFO | Recognized: e decau-te-o-a-n-e-da.
+2026-07-01 17:35:59 | INFO | [ASR Metrics] Statup latency=4509ms | Inference latency=1757ms | RTF=0.735 | conf=44.09%
+2026-07-01 17:35:59 | INFO | No command recognized in this phrase.
+2026-07-01 17:36:02 | INFO | [Feedback] ✗ | Session success rate: 50.0% (2/4)
+2026-07-01 17:36:02 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:36:02 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:36:05 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:36:09 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x719ac2ac5190>
+2026-07-01 17:36:09 | INFO | Processing audio with duration 00:03.483
+2026-07-01 17:36:10 | INFO | Recognized: Abra o System Manager.
+2026-07-01 17:36:10 | INFO | [ASR Metrics] Statup latency=5164ms | Inference latency=751ms | RTF=0.216 | conf=77.58%
+2026-07-01 17:36:10 | INFO | Command identified! Trying to open: system manager....
+2026-07-01 17:36:10 | INFO | Opening: system manager.
+2026-07-01 17:36:12 | INFO | [Feedback] ✓ | Session success rate: 60.0% (3/5)
+2026-07-01 17:36:13 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:36:13 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:36:15 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:36:20 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x719ac2b0c260>
+2026-07-01 17:36:20 | INFO | Processing audio with duration 00:03.971
+2026-07-01 17:36:21 | INFO | Recognized: Abra Devil May Cry Collection
+2026-07-01 17:36:21 | INFO | [ASR Metrics] Statup latency=6010ms | Inference latency=737ms | RTF=0.186 | conf=87.61%
+2026-07-01 17:36:21 | INFO | Command identified! Trying to open: devil may cry collection...
+2026-07-01 17:36:21 | INFO | Opening: devil may cry collection
+2026-07-01 17:36:23 | INFO | [Feedback] ✓ | Session success rate: 66.7% (4/6)
+2026-07-01 17:36:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-01 17:36:24 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-01 17:38:33 | INFO | Assets path configured: /app/assets
+2026-07-01 17:38:33 | INFO | Starting up UDS server on /tmp/c6O954vADw
+2026-07-01 17:38:33 | INFO | Flet app has started...
+2026-07-01 17:38:33 | INFO | App URL: /tmp/c6O954vADw
+2026-07-01 17:38:33 | INFO | Starting Flet View app...
+2026-07-01 17:38:33 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:38:34 | INFO | App session started
+2026-07-01 17:38:34 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:38:34 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 17:38:36 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:38:36 | INFO | [Metrics] Sessão criada no Supabase: e6688a5b-4b46-4e4c-8f4a-d277c864314e
+2026-07-01 17:38:36 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:36 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:37 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:37 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:37 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:38 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:38 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:38:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:38:38 | INFO | [Metrics] Sessão criada no Supabase: 44fdf672-a0bf-4497-90bb-b2b810f00116
+2026-07-01 17:38:38 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 17:38:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:39 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:39 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:40 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:40 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:38:40 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:38:40 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:38:40 | INFO | Pre-warm concluído.
+2026-07-01 17:40:52 | INFO | Assets path configured: /app/assets
+2026-07-01 17:40:52 | INFO | Starting up UDS server on /tmp/jyWKvTc4AF
+2026-07-01 17:40:52 | INFO | Flet app has started...
+2026-07-01 17:40:52 | INFO | App URL: /tmp/jyWKvTc4AF
+2026-07-01 17:40:52 | INFO | Starting Flet View app...
+2026-07-01 17:40:52 | INFO | Flet View found in: /root/.flet/bin/flet-
+2026-07-01 17:40:52 | INFO | App session started
+2026-07-01 17:40:53 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-01 17:40:53 | INFO | Carregando modelo ASR [canary-v2]: small
+2026-07-01 17:40:55 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:40:55 | INFO | [Metrics] Sessão criada no Supabase: 88fb0300-4892-4469-b48e-3218da035718
+2026-07-01 17:40:56 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:56 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:40:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:57 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:40:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:57 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:40:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:57 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:40:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:57 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:40:57 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:40:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:40:58 | INFO | [Metrics] Sessão criada no Supabase: e5028ba4-b797-462b-beee-f1f8d43607f6
+2026-07-01 17:40:58 | INFO | generated new fontManager
+2026-07-01 17:40:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:58 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:40:59 | ERROR | Falha ao carregar modelo 'canary-v2:small': operator torchvision::nms does not exist
+2026-07-01 17:40:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:59 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:40:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:40:59 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:41:00 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:41:00 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:00 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:41:00 | INFO | Pre-warm concluído.
+2026-07-01 17:41:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-01 17:41:03 | INFO | [Metrics] Sessão criada no Supabase: 9cbc8cfc-0e57-4464-b1e7-d4948cbd09da
+2026-07-01 17:41:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 400 Bad Request"
+2026-07-01 17:41:03 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'model' column of 'transcription_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:41:03 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:41:04 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:41:04 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 400 Bad Request"
+2026-07-01 17:41:04 | ERROR | [Metrics] Falha ao sincronizar registro: {'message': "Could not find the 'latency_ms' column of 'command_results' in the schema cache", 'code': 'PGRST204', 'hint': None, 'details': None}
+2026-07-01 17:41:04 | INFO | [Metrics] Sync: 0 enviados, 5 na fila.
+2026-07-01 17:41:06 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 17:41:08 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7aaba63b2300>
+2026-07-01 17:41:08 | ERROR | Error during recognition: Modelo 'canary-v2:small' não foi carregado corretamente.

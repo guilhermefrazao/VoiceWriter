@@ -15,8 +15,6 @@ services:
       - PULSE_SERVER=tcp:host.docker.internal:4713
       # Variáveis do projeto (copie .env.example → .env e preencha)
       - HF_TOKEN=${HF_TOKEN}
-      - MONGODB_URI=${MONGODB_URI}
-      - MONGODB_DB=${MONGODB_DB:-voicewriter}
       # ── Limite de memória GPU (nível de aplicação) ───────────────────────────
       # Descomente para simular GPU com menos VRAM disponível:
       # - PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:2048

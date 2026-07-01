@@ -1,6 +1,6 @@
 import flet as ft
 import asyncio
-import keyboard
+import time
 import logging
 
 from frontend.widgets.containers_generic import Containers
@@ -22,6 +22,7 @@ class MicMenu():
 
 
     def handle_mic_click(self, mic_button, e=None):
+        self.speech._startup_start_time = time.time()
         if self.is_listening:
             self.is_listening = False
             self.speech.stop_listen()

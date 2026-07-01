@@ -1,3 +1,4 @@
+import csv
 import json
 import logging
 import os
@@ -5,7 +6,19 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-_OFFLINE_QUEUE = Path(__file__).parent.parent / "data" / "offline_queue.json"
+_DATA_DIR     = Path(__file__).parent.parent / "data"
+_OFFLINE_QUEUE = _DATA_DIR / "offline_queue.json"
+_CSV_PATH      = _DATA_DIR / "metrics.csv"
+
+_CSV_COLUMNS = [
+    "timestamp", "session_id", "model",
+    "transcribed_text", "reference_text",
+    "startup_latency_ms", "inference_latency_ms", "rtf", "avg_confidence",
+    "wer", "cer", "wer_normalized",
+    "wer_substitutions", "wer_deletions", "wer_insertions",
+    "bleu_score", "user_success", "cold_start",
+    "peak_memory_mb", "is_benchmark",
+]
 
 
 def _get_client():
@@ -20,6 +33,16 @@ def _get_client():
     except ImportError:
         logging.warning("[Metrics] supabase-py não instalado — instale com: pip install supabase")
         return None
+
+
+def _save_to_csv(entry: dict) -> None:
+    _DATA_DIR.mkdir(exist_ok=True)
+    write_header = not _CSV_PATH.exists()
+    with _CSV_PATH.open("a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=_CSV_COLUMNS, extrasaction="ignore")
+        if write_header:
+            writer.writeheader()
+        writer.writerow(entry)
 
 
 def _queue_offline(entry: dict) -> None:
@@ -77,6 +100,12 @@ def create_session(
     return session_id
 
 
+def _log_metrics(entry: dict) -> None:
+    print("[Metrics]", flush=True)
+    for k, v in entry.items():
+        print(f"  {k}: {v}", flush=True)
+
+
 def save_transcription_result(session_id: str, data: dict) -> None:
     """
     Salva o resultado de uma transcrição.
@@ -85,7 +114,10 @@ def save_transcription_result(session_id: str, data: dict) -> None:
     O dict `data` deve conter os campos retornados por analyze_transcription()
     mais quaisquer campos adicionais (ex: user_success, audio_duration_ms).
     """
+    
     entry = {"session_id": session_id, **data}
+    _save_to_csv(entry)
+    #_log_metrics(entry)
     client = _get_client()
     if client:
         try:
@@ -95,6 +127,7 @@ def save_transcription_result(session_id: str, data: dict) -> None:
         except Exception as e:
             logging.error(f"[Metrics] Falha no Supabase, salvando offline: {e}")
     _queue_offline({"_type": "transcription_result", **entry})
+    
 
 
 def save_command_result(session_id: str, data: dict) -> None:
@@ -105,6 +138,8 @@ def save_command_result(session_id: str, data: dict) -> None:
     """
     entry = {"session_id": session_id, **data}
     client = _get_client()
+    _save_to_csv(entry)
+    #_log_metrics(entry)
     if client:
         try:
             client.table("command_results").insert(entry).execute()
