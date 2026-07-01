@@ -66,7 +66,7 @@ class MicMenu():
 
     async def run_speech_recognition(self):
         try:
-            text = await asyncio.to_thread(self.speech.main_commands)
+            text = await asyncio.to_thread(self.speech.listen_for_command)
 
             if text:
                 sr = await self._ask_command_feedback(text)

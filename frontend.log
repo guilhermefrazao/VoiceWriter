@@ -1627,3 +1627,89 @@ RuntimeError: An attempt to fetch destroyed session.
 2026-06-21 16:09:10 | INFO | Pre-warm concluído.
 2026-06-21 16:09:11 | INFO | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
 2026-06-21 16:09:12 | INFO | Whisper Model 'small' pronto.
+2026-06-24 10:49:07 | INFO | Assets path configured: /app/assets
+2026-06-24 10:49:07 | INFO | Starting up UDS server on /tmp/mqRnrDDzUH
+2026-06-24 10:49:07 | INFO | Flet app has started...
+2026-06-24 10:49:14 | INFO | App URL: /tmp/mqRnrDDzUH
+2026-06-24 10:49:14 | INFO | Starting Flet View app...
+2026-06-24 10:49:16 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-06-24 10:49:16 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 12:01:24 | INFO | Assets path configured: /app/assets
+2026-07-01 12:01:24 | INFO | Starting up UDS server on /tmp/FRbv4hpgBg
+2026-07-01 12:01:24 | INFO | Flet app has started...
+2026-07-01 12:01:31 | INFO | App URL: /tmp/FRbv4hpgBg
+2026-07-01 12:01:31 | INFO | Starting Flet View app...
+2026-07-01 12:01:34 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 12:01:34 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 12:02:08 | INFO | Assets path configured: /app/assets
+2026-07-01 12:02:08 | INFO | Starting up UDS server on /tmp/h92oqzOSp3
+2026-07-01 12:02:08 | INFO | Flet app has started...
+2026-07-01 12:02:08 | INFO | App URL: /tmp/h92oqzOSp3
+2026-07-01 12:02:08 | INFO | Starting Flet View app...
+2026-07-01 12:02:08 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 12:02:08 | INFO | Extracting Flet from archive to /root/.flet/bin/flet-
+2026-07-01 12:40:40 | INFO | Assets path configured: /app/assets
+2026-07-01 12:40:40 | INFO | Starting up UDS server on /tmp/UKaTEW6tT9
+2026-07-01 12:40:40 | INFO | Flet app has started...
+2026-07-01 12:40:53 | INFO | App URL: /tmp/UKaTEW6tT9
+2026-07-01 12:40:53 | INFO | Starting Flet View app...
+2026-07-01 12:40:55 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 12:40:55 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 12:40:57 | INFO | App session started
+2026-07-01 12:40:57 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 12:40:57 | INFO | Pre-warm concluído.
+2026-07-01 12:41:10 | ERROR | Erro no reconhecimento: No Default Input Device Available
+2026-07-01 12:43:00 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 13:22:15 | INFO | Assets path configured: /app/assets
+2026-07-01 13:22:15 | INFO | Starting up UDS server on /tmp/NeYH3MdL3b
+2026-07-01 13:22:15 | INFO | Flet app has started...
+2026-07-01 13:22:21 | INFO | App URL: /tmp/NeYH3MdL3b
+2026-07-01 13:22:21 | INFO | Starting Flet View app...
+2026-07-01 13:22:22 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 13:22:22 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 13:22:23 | INFO | App session started
+2026-07-01 13:22:24 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 13:22:24 | INFO | Pre-warm concluído.
+2026-07-01 13:22:30 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 13:23:20 | ERROR | Erro no reconhecimento: 'SpeechToText' object has no attribute 'recognizer'
+2026-07-01 13:23:22 | ERROR | Erro no reconhecimento: 'SpeechToText' object has no attribute 'recognizer'
+2026-07-01 13:26:02 | INFO | Assets path configured: /app/assets
+2026-07-01 13:26:02 | INFO | Starting up UDS server on /tmp/FfvSSnz6vx
+2026-07-01 13:26:02 | INFO | Flet app has started...
+2026-07-01 13:26:10 | INFO | App URL: /tmp/FfvSSnz6vx
+2026-07-01 13:26:10 | INFO | Starting Flet View app...
+2026-07-01 13:26:11 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 13:26:11 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 13:26:12 | INFO | App session started
+2026-07-01 13:26:13 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 13:26:13 | INFO | Pre-warm concluído.
+2026-07-01 13:26:18 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 13:26:31 | INFO | Adjusted for ambient noise. Linstening...
+2026-07-01 13:26:33 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7802c03a7ad0>
+2026-07-01 13:26:33 | INFO | Processing audio with duration 00:02.159
+2026-07-01 13:26:35 | INFO | Recognizing speech: Alô, alô, alô, alô...
+2026-07-01 13:26:35 | INFO | [ASR Metrics] latency=1434ms | RTF=0.664 | confidence=84.17%
+2026-07-01 13:26:35 | INFO | Nenhum comando reconhecido nesta frase.
+2026-07-01 13:26:43 | INFO | [Feedback] ✗ | Session success rate: 0.0% (0/1)
+2026-07-01 13:26:43 | INFO | [Metrics] Salvo localmente em /app/voice/data/feedback_metrics.json (8 registros)
+2026-07-01 13:26:49 | ERROR | [Metrics] Erro ao salvar no MongoDB: SSL handshake failed: ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 6a453fc34c0d5827ff12524f, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2026-07-01 13:49:08 | INFO | Assets path configured: /app/assets
+2026-07-01 13:49:08 | INFO | Starting up UDS server on /tmp/XEgeNBJJTv
+2026-07-01 13:49:08 | INFO | Flet app has started...
+2026-07-01 13:49:15 | INFO | App URL: /tmp/XEgeNBJJTv
+2026-07-01 13:49:15 | INFO | Starting Flet View app...
+2026-07-01 13:49:16 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-01 13:49:16 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-01 13:49:17 | INFO | App session started
+2026-07-01 13:49:18 | INFO | Carregando modelo ASR [faster-whisper]: small
+2026-07-01 13:49:18 | INFO | Pre-warm concluído.
+2026-07-01 13:49:23 | INFO | Modelo 'faster-whisper:small' pronto.
+2026-07-01 13:49:24 | INFO | Adjusted for ambient noise. Listening...
+2026-07-01 13:49:28 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x7e2892d7c860>
+2026-07-01 13:49:28 | INFO | Processing audio with duration 00:03.158
+2026-07-01 13:49:29 | INFO | Recognized: verificando se está tudo funcionando
+2026-07-01 13:49:29 | INFO | [ASR Metrics] latency=1166ms | RTF=0.369 | confidence=93.95%
+2026-07-01 13:49:29 | INFO | Nenhum comando reconhecido nesta frase.
+2026-07-01 13:49:33 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-01 13:49:33 | INFO | [Metrics] Salvo localmente em /app/voice/data/feedback_metrics.json (9 registros)
+2026-07-01 13:49:38 | ERROR | [Metrics] Erro ao salvar no MongoDB: SSL handshake failed: ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 6a45451de16578bd7b429885, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-00.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-01.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-egmqhpt-shard-00-02.hs9bw1c.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>

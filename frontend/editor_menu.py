@@ -182,7 +182,7 @@ class EditorMenu(MicMenu):
                 self.new_message.update()
                 self.handler.schedule_save(self.open_file_path, self.new_message)
 
-            await asyncio.to_thread(self.speech.main_transcription, on_text_chunk)
+            await asyncio.to_thread(self.speech.transcribe_continuously, on_text_chunk)
 
         except Exception as e:
             logging.error(f"Erro no reconhecimento: {e}")
