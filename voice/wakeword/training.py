@@ -121,3 +121,8 @@ def generate_voice_clips(
                     os.path.join(output_dir, f"phrase{phrase_idx}_{wav_name}"),
                 )
             os.rmdir(phrase_dir)
+
+
+def copy_trained_model(source_onnx_path: str, dest_path: str) -> None:
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    shutil.copyfile(source_onnx_path, dest_path)
