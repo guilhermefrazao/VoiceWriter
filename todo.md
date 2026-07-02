@@ -37,7 +37,7 @@
 3- Feche o Fire Fox
 4- Execute o Any Desk
 5- Abra System Manager
-6- Abra Devil may Cry collection
+6- Abra Devil may Cry
 
 
 ### Secundária

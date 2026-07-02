@@ -157,6 +157,7 @@ def avg_word_confidence(segments) -> float | None:
 def analyze_transcription(
     hypothesis: str | None,
     reference: str | None = None,
+    loading_model_time: float | None = None,
     statup_start_time: float | None = None,
     statup_end_time: float | None = None,
     start_time: float | None = None,
@@ -193,6 +194,7 @@ def analyze_transcription(
     result = {
         "transcribed_text":   hypothesis,
         "reference_text":     reference,
+        "loading_model_time": round(loading_model_time, 2) if loading_model_time is not None else None,
         "startup_latency_ms":    round(statup_lat_ms, 2) if statup_lat_ms is not None else None,
         "inference_latency_ms":    round(inference_lat_ms, 2) if inference_lat_ms is not None else None,
         "wer":                round(wer, 4) if wer is not None else None,
@@ -210,6 +212,8 @@ def analyze_transcription(
     }
 
     parts = []
+    if loading_model_time is not None:
+        parts.append(f"Loading Model latency={loading_model_time:.0f}ms")
     if statup_lat_ms is not None:
         parts.append(f"Statup latency={statup_lat_ms:.0f}ms")
     if inference_lat_ms is not None:

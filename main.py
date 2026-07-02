@@ -2,7 +2,7 @@ import flet as ft
 import argparse
 import logging
 import os
-import platform
+from pathlib import Path
 import sys
 import threading
 
@@ -11,11 +11,8 @@ load_dotenv()
 
 from frontend.utils.recent_manager import RecentManager
 from frontend.widgets.mic import MicMenu
+from constant import ASR_MODEL_KEY
 
-#ASR_MODEL_KEY = "faster-whisper:small"
-ASR_MODEL_KEY = "canary-v2:small"
-#ASR_MODEL_KEY = "parakeet-v3:small"
-#ASR_MODEL_KEY = "voxtral-mini:small"
 
 
 
@@ -24,9 +21,9 @@ def _prewarm_speech():
         from voice.speech import SpeechToText
         stt = SpeechToText()
         stt.load_model(ASR_MODEL_KEY)
-        logging.info("Pre-warm concluído.")
+        logging.info("Loading Model - (Pre-warm).")
     except Exception as e:
-        logging.warning(f"Pre-warm falhou: {e}")
+        logging.warning(f"Pre-warm failed: {e}")
 
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", 
@@ -43,6 +40,71 @@ class MainPage():
         self.page = page
         self.mic_menu = MicMenu(page)
         self.menu_instance = None
+
+
+    def execute_benchmark_pipeline(self):
+        from voice.speech import SpeechToText
+        pasta_audios = Path(r"voice/benchmark_wav")
+
+        dataset_benchmark = {
+            "1.wav": "Abra o Google",
+            "2.wav": "Abra o Discord",
+            "3.wav": "Feche o Fire Fox",
+            "4.wav": "Execute o Any Desk",
+            "5.wav": "Inicia o System Manager",
+            "6.wav": "Abra Devil may Cry",
+            "7.wav": "Abre o Intagram",
+            "8.wav": "Abrir Obsidian",
+            "9.wav": "Pode abrir o File Explorer",
+            "10.wav": "Pare o Blender",
+        }
+        speech_app = SpeechToText()
+
+        logging.info(f"=== Iniciando Benchmark para {len(dataset_benchmark)} arquivos ===")
+        for nome_arquivo, texto_referencia in dataset_benchmark.items():
+            
+            caminho_audio_completo = pasta_audios / nome_arquivo
+            
+            if caminho_audio_completo.exists():
+                logging.info(f"\n🎧 Processando: {nome_arquivo}")
+                logging.info(f"📝 Referência  : '{texto_referencia}'")
+                
+                speech_app.run_benchmark(
+                    audio=str(caminho_audio_completo), 
+                    reference=texto_referencia
+                )
+            else:
+                logging.info(f"\n ERRO: O arquivo '{nome_arquivo}' não foi encontrado na pasta.")
+
+
+    def execute_benchmark_transcription_pipeline(self):
+        from voice.speech import SpeechToText
+        pasta_audios = Path(r"voice/benchmark_wav")
+
+        dataset_benchmark = {
+            "1_transcription.wav": "APIs e Arquitetura REST Resumo sobre APIs e arquitetura REST para a prova de back-end. Uma API, ou Interface de Programação de Aplicações, atua como uma ponte de comunicação padronizada entre diferentes sistemas de software. No padrão REST, utilizamos os métodos nativos do protocolo HTTP, como os verbos GET, POST, PUT e DELETE, para consultar e manipular recursos no servidor.É importante notar que, na arquitetura moderna, as respostas do servidor quase sempre retornam no formato JSON. Isso substituiu o antigo padrão XML porque o JSON é mais leve e facilita imensamente o parsing dos dados no lado do front-end da aplicação.",
+            "2_transcription.wav": "Modelos de Computação em Nuvem Anotações da aula de hoje sobre computação em nuvem. Basicamente, precisamos memorizar as diferenças entre os três modelos principais de serviço: IaaS, PaaS e SaaS. Quando fazemos o deploy de uma aplicação usando PaaS, ou Plataforma como Serviço, a nuvem abstrai toda a infraestrutura subjacente, o que permite que a equipe de desenvolvimento foque exclusivamente na escrita do código. Um ponto crucial para sistemas corporativos é o contrato de nível de serviço, conhecido como SLA. Os grandes provedores garantem uma disponibilidade de 99,9% de uptime anual. Isso reduz drasticamente o tempo de inatividade quando comparamos com a manutenção dos antigos servidores on-premise locais.",
+            "3_transcription.wav": "Evolução do Armazenamento: HDD vs SSD Comparativo rápido de hardware de armazenamento para o guia de montagem. A principal diferença estrutural entre um HDD e um SSD é a total ausência de partes mecânicas móveis no disco de estado sólido. Enquanto um disco rígido magnético tradicional opera girando a 7200 RPM e atinge taxas de transferência na faixa de 150 megabytes por segundo, a tecnologia flash mudou tudo. Hoje, um SSD com protocolo NVMe moderno, conectado diretamente no barramento PCIe da placa-mãe, ultrapassa com extrema facilidade a marca de 3500 megabytes por segundo. Essa transição, que ganhou muita força a partir de 2012, revolucionou o tempo de boot dos sistemas operacionais de desktop.Feche o Fire Fox",
+            "4_transcription.wav": "Segurança da Informação e LGPD Revisão para o exame de segurança cibernética. O foco do capítulo 4 foi entender os vetores de ataque modernos, principalmente os ataques de negação de serviço distribuída, a sigla DDoS, e as táticas de engenharia social focadas em phishing. Para tentar mitigar o risco de invasão de contas corporativas, a implementação do 2FA, a autenticação de dois fatores, deixou de ser um diferencial e se tornou uma exigência básica. Além da parte técnica, existe a questão legal. As empresas no Brasil precisam se adequar rigorosamente às diretrizes da LGPD, a Lei Geral de Proteção de Dados, que foi sancionada em agosto de 2018. O não cumprimento dessas regras de privacidade pode resultar em multas que chegam a 2% do faturamento da empresa.",
+            "5_transcription.wav": "Fundamentos de Inteligência Artificial Conceitos iniciais do módulo de inteligência artificial. O primeiro passo é saber diferenciar os termos Machine Learning e Deep Learning. O Deep Learning é uma subcategoria que utiliza redes neurais artificiais complexas, estruturadas com múltiplas camadas ocultas, para conseguir extrair padrões de datasets gigantescos, como milhões de imagens ou horas de áudio. Ontem à noite, durante o treinamento prático do nosso modelo de visão computacional, enfrentei um clássico problema de overfitting. A precisão do modelo no conjunto de dados de treino chegou a impressionantes 98%, mas, quando fui rodar a inferência nos dados de validação, a taxa de acerto despencou para apenas 65%. Preciso ajustar os hiperparâmetros amanhã.",
+        }
+        speech_app = SpeechToText()
+
+        logging.info(f"=== Iniciando Benchmark para {len(dataset_benchmark)} arquivos ===")
+        for nome_arquivo, texto_referencia in dataset_benchmark.items():
+            
+            caminho_audio_completo = pasta_audios / nome_arquivo
+            
+            if caminho_audio_completo.exists():
+                logging.info(f"\n🎧 Processando: {nome_arquivo}")
+                logging.info(f"📝 Referência  : '{texto_referencia}'")
+                
+                speech_app.run_benchmark_transcription(
+                    audio=str(caminho_audio_completo), 
+                    reference=texto_referencia
+                )
+            else:
+                logging.info(f"\n ERRO: O arquivo '{nome_arquivo}' não foi encontrado na pasta.")
 
 
     async def main(self):
@@ -154,6 +216,12 @@ class MainPage():
             if e.key == "F7":
                 if hasattr(self.menu_instance, "speech"):
                     self.menu_instance.speech.stop_listen()
+
+            if e.key == "F12":
+                self.execute_benchmark_pipeline()
+
+            if e.ctrl and e.key == "B":
+                self.execute_benchmark_transcription_pipeline()
 
             if e.ctrl and e.key == "P":
                 if hasattr(self.menu_instance, "create_and_open_new_markdown"):

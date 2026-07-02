@@ -4,6 +4,7 @@ import time
 import logging
 
 from frontend.widgets.containers_generic import Containers
+from constant import ASR_MODEL_KEY
 
 
 class MicMenu():
@@ -107,18 +108,38 @@ class MicMenu():
         await answered.wait()
         return result.get("ok", False)
 
+    async def wait_for_model_load(self):
+        speech_instance = self.speech 
+        model_key = speech_instance._current_model_key
+        
+        event = speech_instance._model_events.get(model_key)
+        
+        if event and not event.is_set():
+            await asyncio.to_thread(event.wait)
+        
+        self.mic_button.disabled = False
+        self.mic_button.opacity = 1.0 
+        self.status_text.value = "Detect Voice"
+        self.status_text.color = "#858585"
+        self.page.update()
+
 
     def build_ui(self):
         self.page.padding = 0
         self.page.title = "Mic Menu"
 
-        mic_button = self.container.generic_container_with_mic_button(on_click=self.handle_mic_click)
+        self.mic_button = self.container.generic_container_with_mic_button(on_click=self.handle_mic_click)
+        self.status_text = ft.Text(f"Waiting for {ASR_MODEL_KEY} to load...", size=18, color="#555555", italic=True)
+
+
+        self.mic_button.disabled = True
+        self.mic_button.opacity = 0.3
 
         mic_card = ft.Container(
             content=ft.Column(
                 controls=[
-                    mic_button,
-                    ft.Text("Detect Voice", size=18, color="#858585")
+                    self.mic_button,
+                    self.status_text
                 ],
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 alignment=ft.MainAxisAlignment.CENTER,
@@ -130,6 +151,8 @@ class MicMenu():
             border_radius=20,
             border=ft.border.all(1, "#028268") 
         )
+
+        self.page.run_task(self.wait_for_model_load)
 
         return mic_card
     

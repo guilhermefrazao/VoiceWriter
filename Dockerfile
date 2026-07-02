@@ -92,23 +92,26 @@ WORKDIR /app
 # Instala dependências Python em camadas separadas para aproveitar o cache Docker
 COPY requirements.txt .
 
-# 1. PyTorch com CUDA 12.x — deve vir ANTES de qualquer outro pacote ML.
-#    Garante que openai-whisper, NeMo e transformers usem a versão GPU,
-#    não a versão CPU que o PyPI instala por padrão.
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir \
-        torch torchvision torchaudio \
-        --index-url https://download.pytorch.org/whl/cu121
+# 1. pip atualizado antes de qualquer instalação
+RUN pip install --no-cache-dir --upgrade pip
 
 # 2. NeMo ASR — Canary e Parakeet (camada separada: ~2 GB, muda raramente)
+#    Instalado ANTES do torch para que suas dependências não sobrescrevam a versão GPU.
 RUN pip install --no-cache-dir "nemo_toolkit[asr]"
 
-# 3. Mistral Voxtral: mistral-common[audio] + transformers atualizado
+# 3. PyTorch com CUDA 12.6 — instalado DEPOIS do NeMo para garantir versão GPU.
+#    NeMo instala torch/torchvision do PyPI (CPU); este passo sobrescreve com cu126.
+#    Requisito oficial NeMo Speech: torch>=2.7, combinação testada CUDA 12.6.
+RUN pip install --no-cache-dir \
+    "torch==2.7.0" "torchvision==0.22.0" "torchaudio==2.7.0" \
+    --index-url https://download.pytorch.org/whl/cu126
+
+# 4. Mistral Voxtral: mistral-common[audio] + transformers atualizado
 RUN pip install --no-cache-dir \
     "mistral-common[audio]" \
     "transformers>=4.40.0"
 
-# 4. Demais dependências do projeto
+# 5. Demais dependências do projeto
 RUN pip install --no-cache-dir python-dotenv && \
     pip install --no-cache-dir -r requirements.txt
 
@@ -121,5 +124,12 @@ ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
 # Permite controle de memória GPU pela aplicação via env (ver compose)
 ENV CUDA_VISIBLE_DEVICES=0
+# NeMo: alguns checkpoints exigem weights_only=False no torch.load.
+# Usar somente com arquivos confiáveis (modelos oficiais NVIDIA/HuggingFace).
+ENV TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
+# DEBUG (temporário): força execução síncrona de kernels CUDA para obter
+# stacktraces corretos ao investigar illegal memory access no Parakeet.
+# Remover depois de identificada a causa raiz — reduz performance.
+ENV CUDA_LAUNCH_BLOCKING=1
 
 CMD ["python3", "main.py"]

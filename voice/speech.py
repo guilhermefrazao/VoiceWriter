@@ -6,6 +6,8 @@ import sys
 import io
 import numpy as np
 import threading
+import flet as ft
+from pathlib import Path
 import uuid
 from datetime import datetime, timezone
 from typing import Callable
@@ -22,7 +24,7 @@ from voice.utils.metrics_storage import (
     save_command_result,
     flush_offline_queue,
 )
-from main import ASR_MODEL_KEY
+from constant import ASR_MODEL_KEY
 
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s",
@@ -35,6 +37,23 @@ logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s",
 
 _Transcriber = Callable[[bytes], tuple[str, list, float | None]]
 
+def ask_user_feedback() -> bool:
+        """
+        Pede o input do usuário via terminal e retorna True para 'sim' e False para 'não'.
+        """
+        while True:
+            # Pega o input, remove espaços em branco nas pontas e joga para minúsculas
+            resposta = input("O reconhecimento foi correto? (sim/não): ").strip().lower()
+            
+            # Aceita variações comuns de "sim"
+            if resposta in ['sim', 's', 'yes', 'y']:
+                return True
+            # Aceita variações comuns de "não"
+            elif resposta in ['não', 'nao', 'n', 'no']:
+                return False
+            else:
+                # Se digitar algo diferente, o loop repete a pergunta
+                print("⚠️ Entrada inválida. Por favor, responda apenas com 'sim' ou 'não'.")
 
 def _parse_model_key(model_key: str) -> tuple[str, str]:
     """Separa 'backend:model_name' → ('backend', 'model_name')."""
@@ -63,12 +82,13 @@ def _load_faster_whisper(model_name: str) -> _Transcriber:
     return _transcribe
 
 
-def _make_nemo_transcriber(model) -> _Transcriber:
+def _make_nemo_transcriber(model: str) -> _Transcriber:
     """Factory compartilhada pelos backends NeMo (Canary, Parakeet).
     NeMo.transcribe() exige caminhos de arquivo; áudio é salvo em temp file.
     """
     import os
     import tempfile
+    import torch
     import soundfile as sf
 
     def _transcribe(wav_bytes: bytes) -> tuple[str, list, float | None]:
@@ -80,16 +100,59 @@ def _make_nemo_transcriber(model) -> _Transcriber:
             tmp_path = f.name
 
         try:
-            output = model.transcribe([tmp_path])
+            with torch.autocast("cuda", dtype=torch.float16):
+                output = model.transcribe([tmp_path], source_lang="pt", target_lang="pt", num_workers=0, batch_size=1)
             result = output[0] if output else ""
             # NeMo pode retornar str ou Hypothesis (com atributo .text)
-            text = result.text if hasattr(result, "text") else str(result)
+            text = (result.text if hasattr(result, "text") else str(result)).strip()
+            # Hypothesis contém tensores GPU (logprobs, scores). Se o GC liberar
+            # esses tensores durante a próxima inferência → illegal memory access.
+            # Forçar liberação imediata e sincronizar antes de retornar.
+            del output, result
+            torch.cuda.synchronize()
+            torch.cuda.empty_cache()
         finally:
             os.unlink(tmp_path)
 
-        return text.strip(), [], duration
+        return text, [], duration
 
     return _transcribe
+
+
+def _log_decoding_diagnostics(model, label: str) -> None:
+    """DEBUG temporário: revela se a decodificação greedy usa CUDA Graphs.
+    Necessário para investigar illegal memory access no Parakeet (crash na 2ª
+    inferência) — modelos RNNT/TDT capturam o decoder greedy como CUDA Graph
+    em versões recentes do NeMo, o que pode quebrar ao trocar o shape do input
+    entre chamadas. Remover após identificar a causa raiz.
+    """
+    try:
+        logging.info(f"[{label}] decoding cfg: {getattr(model.cfg, 'decoding', None)}")
+    except Exception:
+        logging.exception(f"[{label}] Falha ao ler model.cfg.decoding")
+
+    decoding_obj = getattr(model, "decoding", None)
+    inner = getattr(decoding_obj, "decoding", None) if decoding_obj is not None else None
+    for obj, obj_name in ((decoding_obj, "decoding"), (inner, "decoding.decoding")):
+        if obj is None:
+            continue
+        graph_attrs = [a for a in dir(obj) if "graph" in a.lower() and not a.startswith("__")]
+        logging.info(f"[{label}] {obj_name} class={type(obj).__name__} atributos-cuda-graph={graph_attrs}")
+        for attr in graph_attrs:
+            try:
+                logging.info(f"[{label}] {obj_name}.{attr} = {getattr(obj, attr)}")
+            except Exception:
+                logging.info(f"[{label}] {obj_name}.{attr} = <erro ao ler>")
+
+
+def _apply_gpu_optimizations() -> None:
+    import torch
+    # TF32: Ampere (RTX 30xx) executa matmuls em TF32 internamente mantendo float32 na API.
+    # Reduz precisão de 23 para 10 bits mantendo a mesma velocidade de float16.
+    torch.backends.cuda.matmul.allow_tf32 = True
+    torch.backends.cudnn.allow_tf32 = True
+    # cuDNN escolhe automaticamente o algoritmo mais rápido para cada shape de input.
+    torch.backends.cudnn.benchmark = True
 
 
 def _load_canary(model_name: str) -> _Transcriber:
@@ -98,8 +161,10 @@ def _load_canary(model_name: str) -> _Transcriber:
     """
     import nemo.collections.asr as nemo_asr
 
+    _apply_gpu_optimizations()
     model = nemo_asr.models.ASRModel.from_pretrained(model_name="nvidia/canary-1b-v2")
-    model.eval()
+    model = model.cuda()
+    _log_decoding_diagnostics(model, "canary-v2")
     return _make_nemo_transcriber(model)
 
 
@@ -109,8 +174,10 @@ def _load_parakeet(model_name: str) -> _Transcriber:
     """
     from nemo.collections.asr.models import ASRModel
 
+    _apply_gpu_optimizations()
     model = ASRModel.from_pretrained(model_name="nvidia/parakeet-tdt-0.6b-v3")
-    model.eval()
+    model = model.cuda()
+    _log_decoding_diagnostics(model, "parakeet-v3")
     return _make_nemo_transcriber(model)
 
 
@@ -162,6 +229,7 @@ _BACKEND_LOADERS: dict[str, Callable[[str], _Transcriber]] = {
 class SpeechToText:
     _model_cache: dict[str, _Transcriber] = {}
     _model_events: dict[str, threading.Event] = {}
+    _model_load_times: dict[str, float] = {}
     _model_load_lock = threading.Lock()
 
     def __init__(self):
@@ -190,6 +258,18 @@ class SpeechToText:
             scenario="dictation",
         )
         flush_offline_queue()
+
+    # Benchmark
+
+    def run_benchmark(self, audio, reference):
+        self._recognize_and_measure(audio, reference)
+        #sr = ask_user_feedback()
+        self.record_feedback(True)
+
+    def run_benchmark_transcription(self, audio, reference):
+        self._recognize_and_measure(audio, reference)
+        entry = self._build_metrics_entry(ok=False)
+        save_transcription_result(entry)
 
     # ── Feedback ────────────────────────────────────────────────────────────────
 
@@ -221,7 +301,7 @@ class SpeechToText:
 
     # ── Carregamento de modelo ───────────────────────────────────────────────────
 
-    def load_model(self, model_key: str) -> None:
+    def load_model(self, model_key: str, model_change: str="small") -> None:
         """Carrega o modelo ASR em background.
         Idempotente — não recarrega se o modelo já estiver em cache ou carregando.
         """
@@ -232,8 +312,10 @@ class SpeechToText:
             SpeechToText._model_events[model_key] = event
 
         def _load_async():
+            loading_start_time = time.time()
             try:
                 backend, model_name = _parse_model_key(model_key)
+                if model_change == "large": model_name = model_change
                 loader = _BACKEND_LOADERS.get(backend)
 
                 if loader is None:
@@ -244,10 +326,13 @@ class SpeechToText:
 
                 logging.info(f"Carregando modelo ASR [{backend}]: {model_name}")
                 SpeechToText._model_cache[model_key] = loader(model_name)
-                logging.info(f"Modelo '{model_key}' pronto.")
+                loading_end_time = time.time()
+                SpeechToText._model_load_times[model_key] = loading_end_time - loading_start_time
 
-            except Exception as e:
-                logging.error(f"Falha ao carregar modelo '{model_key}': {e}")
+                logging.info(f"Modelo '{model_key}' pronto. Tempo de carregamento: {SpeechToText._model_load_times[model_key]:.2f} segundos.")
+
+            except Exception:
+                logging.exception(f"Falha ao carregar modelo '{model_key}'")
             finally:
                 event.set()
 
@@ -263,10 +348,6 @@ class SpeechToText:
     # ── API pública de escuta ────────────────────────────────────────────────────
 
     def listen_for_command(self) -> str | None:
-        self._current_model_key = ASR_MODEL_KEY
-        self._stop_requested = False
-        self.load_model(ASR_MODEL_KEY)
-
         text = self._listen_and_transcribe()
 
         if not self._stop_requested and text:
@@ -275,9 +356,6 @@ class SpeechToText:
         return text
 
     def transcribe_continuously(self, text_callback=None) -> str:
-        self._current_model_key = ASR_MODEL_KEY
-        self.load_model(ASR_MODEL_KEY)
-
         self.recognizer.pause_threshold = 3.0
 
         return self._listen_and_transcribe_background(text_callback=text_callback)
@@ -335,7 +413,8 @@ class SpeechToText:
             result = self._recognize_and_measure(audio)
             if result:
                 metrics, text = result
-                save_transcription_result(self.metrics_session_id, metrics)
+                entry = self._build_metrics_entry(ok=False)
+                save_transcription_result(self.metrics_session_id, entry)
                 if text:
                     self._collected_texts.append(text)
                     save_text(f"{time.strftime('%H:%M:%S')} - {text}")
@@ -371,7 +450,12 @@ class SpeechToText:
 
     def _transcribe_audio(self, audio) -> tuple[str, list, float | None]:
         self._ensure_model()
-        wav_bytes = audio.get_wav_data(convert_rate=16000, convert_width=2)
+        if isinstance(audio, (str, Path)):
+            with sr.AudioFile(str(audio)) as source:
+                audio_obj = self.recognizer.record(source)
+        else:
+            audio_obj = audio
+        wav_bytes = audio_obj.get_wav_data(convert_rate=16000, convert_width=2)
         return self._transcriber(wav_bytes)
 
     def _recognize_and_measure(self, audio, reference: str | None = None) -> tuple[dict, str] | None:
@@ -389,6 +473,7 @@ class SpeechToText:
             self._last_metrics = analyze_transcription(
                 hypothesis=recognized_text,
                 reference=reference,
+                loading_model_time=SpeechToText._model_load_times.get(self._current_model_key),
                 statup_start_time=statup_start_time,
                 statup_end_time=statup_end_time,
                 start_time=start_time,

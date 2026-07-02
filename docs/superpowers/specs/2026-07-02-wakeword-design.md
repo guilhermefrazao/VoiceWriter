@@ -92,6 +92,8 @@ um novo sistema de configuração):
   **mesmo método**, agendado de forma thread-safe no loop do Flet (a wakeword roda em thread própria,
   fora do event loop assíncrono do Flet — a forma exata de despachar essa chamada com segurança será
   resolvida na fase de implementação).
+- Deve haver algum elemento visual mostrando para o usuário que o app está "ouvindo" a wakeword (ex: ícone de microfone na bandeja, ou um
+  toast temporário). A implementação exata será decidida na fase de implementação.
 - Resultado: nenhuma lógica de comando é duplicada. `listen_for_command()` →
   `translation_tasks()` → abrir/fechar app/desligar PC, diálogo de feedback Sim/Não e métricas
   continuam exatamente como hoje — a wakeword é só um gatilho alternativo para o mesmo caminho.

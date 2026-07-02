@@ -12,13 +12,38 @@ _CSV_PATH      = _DATA_DIR / "metrics.csv"
 
 _CSV_COLUMNS = [
     "timestamp", "session_id", "model",
-    "transcribed_text", "reference_text",
+    "transcribed_text", "reference_text", "loading_model_time",
     "startup_latency_ms", "inference_latency_ms", "rtf", "avg_confidence",
     "wer", "cer", "wer_normalized",
     "wer_substitutions", "wer_deletions", "wer_insertions",
     "bleu_score", "user_success", "cold_start",
     "peak_memory_mb", "is_benchmark",
 ]
+
+# Colunas aceitas por cada tabela no Supabase.
+# Ajuste aqui sempre que adicionar/renomear colunas no banco.
+_SB_TRANSCRIPTION = {
+    "session_id", "model", "transcribed_text", "reference_text",
+    "startup_latency_ms", "inference_latency_ms", "rtf", "avg_confidence",
+    "wer", "cer", "wer_normalized", "wer_substitutions", "wer_deletions",
+    "wer_insertions", "bleu_score", "user_success", "cold_start",
+    "peak_memory_mb", "is_benchmark", "timestamp",
+}
+_SB_COMMAND = {
+    "session_id", "model", "transcribed_text", "reference_text",
+    "startup_latency_ms", "inference_latency_ms", "rtf", "avg_confidence",
+    "wer", "cer", "wer_normalized", "wer_substitutions", "wer_deletions",
+    "wer_insertions", "bleu_score", "user_success", "cold_start",
+    "peak_memory_mb", "is_benchmark", "timestamp",
+}
+_SB_SESSION = {
+    "id", "member_name", "model_name", "model_source",
+    "scenario", "hardware_info", "started_at",
+}
+
+
+def _sb_filter(entry: dict, allowed: set) -> dict:
+    return {k: v for k, v in entry.items() if k in allowed}
 
 
 def _get_client():
@@ -35,8 +60,28 @@ def _get_client():
         return None
 
 
+def _migrate_csv_columns() -> None:
+    """Reescreve metrics.csv com o header atual quando _CSV_COLUMNS muda.
+
+    Sem isso, um CSV existente mantém o header antigo (write_header só roda
+    para arquivo novo), então colunas novas/reordenadas ficam desalinhadas
+    ou o DictReader nunca encontra a chave nova.
+    """
+    with _CSV_PATH.open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    with _CSV_PATH.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=_CSV_COLUMNS, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def _save_to_csv(entry: dict) -> None:
     _DATA_DIR.mkdir(exist_ok=True)
+    if _CSV_PATH.exists():
+        with _CSV_PATH.open(encoding="utf-8") as f:
+            current_header = next(csv.reader(f), [])
+        if current_header != _CSV_COLUMNS:
+            _migrate_csv_columns()
     write_header = not _CSV_PATH.exists()
     with _CSV_PATH.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=_CSV_COLUMNS, extrasaction="ignore")
@@ -121,7 +166,7 @@ def save_transcription_result(session_id: str, data: dict) -> None:
     client = _get_client()
     if client:
         try:
-            client.table("transcription_results").insert(entry).execute()
+            client.table("transcription_results").insert(_sb_filter(entry, _SB_TRANSCRIPTION)).execute()
             logging.info("[Metrics] Resultado de transcrição salvo no Supabase.")
             return
         except Exception as e:
@@ -142,7 +187,7 @@ def save_command_result(session_id: str, data: dict) -> None:
     #_log_metrics(entry)
     if client:
         try:
-            client.table("command_results").insert(entry).execute()
+            client.table("command_results").insert(_sb_filter(entry, _SB_COMMAND)).execute()
             logging.info("[Metrics] Resultado de comando salvo no Supabase.")
             return
         except Exception as e:
@@ -181,11 +226,11 @@ def flush_offline_queue() -> int:
         record_type = record.pop("_type", None)
         try:
             if record_type == "session":
-                client.table("sessions").insert(record).execute()
+                client.table("sessions").insert(_sb_filter(record, _SB_SESSION)).execute()
             elif record_type == "transcription_result":
-                client.table("transcription_results").insert(record).execute()
+                client.table("transcription_results").insert(_sb_filter(record, _SB_TRANSCRIPTION)).execute()
             elif record_type == "command_result":
-                client.table("command_results").insert(record).execute()
+                client.table("command_results").insert(_sb_filter(record, _SB_COMMAND)).execute()
             synced += 1
         except Exception as e:
             record["_type"] = record_type

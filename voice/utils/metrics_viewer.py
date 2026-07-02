@@ -66,11 +66,12 @@ def summary_by_model(rows: list[dict]) -> None:
     for row in rows:
         groups[row.get("model", "unknown")].append(row)
 
-    headers = ["model", "registros", "startup_ms (avg)", "inference_ms (avg)", "rtf (avg)", "confidence (avg)", "wer (avg)", "sucesso"]
+    headers = ["model", "registros", "load_model_ms (avg)", "startup_ms (avg)", "inference_ms (avg)", "rtf (avg)", "confidence (avg)", "wer (avg)", "sucesso"]
     table_rows = [
         [
             model,
             len(entries),
+            _avg(entries, "loading_model_time"),
             _avg(entries, "startup_latency_ms"),
             _avg(entries, "inference_latency_ms"),
             _avg(entries, "rtf"),
