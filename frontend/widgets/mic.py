@@ -71,7 +71,7 @@ class MicMenu():
             text = await asyncio.to_thread(self.speech.listen_for_command)
 
             if text:
-                sr = await self._ask_command_feedback(text)
+                sr = await self.ask_feedback("Comando executado com sucesso?", f'"{text}"')
                 self.speech.record_feedback(sr)
 
         except Exception as e:
@@ -79,7 +79,7 @@ class MicMenu():
         finally:
             self.is_listening = False
 
-    async def _ask_command_feedback(self, command_text: str) -> bool:
+    async def ask_feedback(self, title: str, content: str) -> bool:
         answered = asyncio.Event()
         result: dict[str, bool] = {}
 
@@ -95,8 +95,8 @@ class MicMenu():
 
         dialog = ft.AlertDialog(
             modal=True,
-            title=ft.Text("Comando executado com sucesso?"),
-            content=ft.Text(f'"{command_text}"', italic=True),
+            title=ft.Text(title),
+            content=ft.Text(content, italic=True),
             actions=[
                 ft.Button("Sim", bgcolor="#055b5f", on_click=on_sim),
                 ft.Button("Não", bgcolor="#FF2C2C", on_click=on_nao),
