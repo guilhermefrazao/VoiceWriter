@@ -12,3 +12,4 @@ voice/data/offline_queue.json
 /main.dist
 /Installation_folder
 main.exe
+.worktrees/
