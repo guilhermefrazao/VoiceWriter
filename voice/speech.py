@@ -6,7 +6,6 @@ import sys
 import io
 import numpy as np
 import threading
-import flet as ft
 from pathlib import Path
 import uuid
 from datetime import datetime, timezone
@@ -36,24 +35,6 @@ logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s",
 
 
 _Transcriber = Callable[[bytes], tuple[str, list, float | None]]
-
-def ask_user_feedback() -> bool:
-        """
-        Pede o input do usuário via terminal e retorna True para 'sim' e False para 'não'.
-        """
-        while True:
-            # Pega o input, remove espaços em branco nas pontas e joga para minúsculas
-            resposta = input("O reconhecimento foi correto? (sim/não): ").strip().lower()
-            
-            # Aceita variações comuns de "sim"
-            if resposta in ['sim', 's', 'yes', 'y']:
-                return True
-            # Aceita variações comuns de "não"
-            elif resposta in ['não', 'nao', 'n', 'no']:
-                return False
-            else:
-                # Se digitar algo diferente, o loop repete a pergunta
-                print("⚠️ Entrada inválida. Por favor, responda apenas com 'sim' ou 'não'.")
 
 def _parse_model_key(model_key: str) -> tuple[str, str]:
     """Separa 'backend:model_name' → ('backend', 'model_name')."""
@@ -260,11 +241,6 @@ class SpeechToText:
         flush_offline_queue()
 
     # Benchmark
-
-    def run_benchmark(self, audio, reference):
-        self.recognize_and_measure(audio, reference)
-        #sr = ask_user_feedback()
-        self.record_feedback(True)
 
     def run_benchmark_transcription(self, audio, reference):
         self.recognize_and_measure(audio, reference)

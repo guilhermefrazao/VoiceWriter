@@ -1,5 +1,6 @@
 import flet as ft
 import argparse
+import asyncio
 import logging
 import os
 from pathlib import Path
@@ -42,7 +43,7 @@ class MainPage():
         self.menu_instance = None
 
 
-    def execute_benchmark_pipeline(self):
+    async def execute_benchmark_pipeline(self):
         from voice.speech import SpeechToText
         pasta_audios = Path(r"voice/benchmark_wav")
 
@@ -62,17 +63,28 @@ class MainPage():
 
         logging.info(f"=== Iniciando Benchmark para {len(dataset_benchmark)} arquivos ===")
         for nome_arquivo, texto_referencia in dataset_benchmark.items():
-            
+
             caminho_audio_completo = pasta_audios / nome_arquivo
-            
+
             if caminho_audio_completo.exists():
                 logging.info(f"\n🎧 Processando: {nome_arquivo}")
                 logging.info(f"📝 Referência  : '{texto_referencia}'")
-                
-                speech_app.run_benchmark(
-                    audio=str(caminho_audio_completo), 
-                    reference=texto_referencia
+
+                result = await asyncio.to_thread(
+                    speech_app.recognize_and_measure,
+                    str(caminho_audio_completo),
+                    texto_referencia,
                 )
+
+                if result is None:
+                    logging.warning(f"Reconhecimento falhou para '{nome_arquivo}' — pulando feedback.")
+                    continue
+
+                ok = await self.mic_menu.ask_feedback(
+                    "O reconhecimento foi correto?",
+                    f'"{texto_referencia}"',
+                )
+                speech_app.record_feedback(ok)
             else:
                 logging.info(f"\n ERRO: O arquivo '{nome_arquivo}' não foi encontrado na pasta.")
 
@@ -218,7 +230,7 @@ class MainPage():
                     self.menu_instance.speech.stop_listen()
 
             if e.key == "F12":
-                self.execute_benchmark_pipeline()
+                self.page.run_task(self.execute_benchmark_pipeline)
 
             if e.ctrl and e.key == "B":
                 self.execute_benchmark_transcription_pipeline()
