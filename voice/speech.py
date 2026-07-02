@@ -262,12 +262,12 @@ class SpeechToText:
     # Benchmark
 
     def run_benchmark(self, audio, reference):
-        self._recognize_and_measure(audio, reference)
+        self.recognize_and_measure(audio, reference)
         #sr = ask_user_feedback()
         self.record_feedback(True)
 
     def run_benchmark_transcription(self, audio, reference):
-        self._recognize_and_measure(audio, reference)
+        self.recognize_and_measure(audio, reference)
         entry = self._build_metrics_entry(ok=False)
         save_transcription_result(entry)
 
@@ -389,7 +389,7 @@ class SpeechToText:
                 )
                 logging.info(f"Listen end: {audio}")
 
-                result = self._recognize_and_measure(audio)
+                result = self.recognize_and_measure(audio)
                 if result:
                     _, text = result
                     return text
@@ -410,7 +410,7 @@ class SpeechToText:
 
         def _on_audio(recognizer, audio):
             self._last_audio_time = time.time()
-            result = self._recognize_and_measure(audio)
+            result = self.recognize_and_measure(audio)
             if result:
                 metrics, text = result
                 entry = self._build_metrics_entry(ok=False)
@@ -458,7 +458,7 @@ class SpeechToText:
         wav_bytes = audio_obj.get_wav_data(convert_rate=16000, convert_width=2)
         return self._transcriber(wav_bytes)
 
-    def _recognize_and_measure(self, audio, reference: str | None = None) -> tuple[dict, str] | None:
+    def recognize_and_measure(self, audio, reference: str | None = None) -> tuple[dict, str] | None:
         try:
             statup_end_time = time.time()
             statup_start_time = self._startup_start_time
