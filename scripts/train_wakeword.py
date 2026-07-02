@@ -36,6 +36,17 @@ FINAL_MODEL_DEST = os.path.join(
 )
 
 
+def _download_to(url: str, dest_path: str) -> None:
+    """Baixa `url` para um arquivo temporário e só promove para `dest_path`
+    (via rename atômico) depois que o download termina com sucesso, para que
+    uma interrupção (Ctrl-C, queda de conexão) nunca deixe um arquivo parcial
+    que uma próxima execução aceitaria como completo.
+    """
+    tmp_path = dest_path + ".part"
+    urllib.request.urlretrieve(url, tmp_path)
+    os.replace(tmp_path, dest_path)
+
+
 def download_voices() -> list[str]:
     os.makedirs(VOICES_DIR, exist_ok=True)
     paths = []
@@ -44,26 +55,35 @@ def download_voices() -> list[str]:
         json_path = onnx_path + ".json"
         if not os.path.exists(onnx_path):
             logger.info("Baixando voz '%s'...", name)
-            urllib.request.urlretrieve(url, onnx_path)
-            urllib.request.urlretrieve(url + ".json", json_path)
+            _download_to(url, onnx_path)
+        if not os.path.exists(json_path):
+            logger.info("Baixando metadata da voz '%s'...", name)
+            _download_to(url + ".json", json_path)
         paths.append(onnx_path)
     return paths
 
 
-def download_negative_datasets() -> tuple[list[str], dict[str, str], str]:
+def download_negative_datasets() -> tuple[list[str], list[str], dict[str, str], str]:
     """Baixa RIRs, ruído de fundo e features negativas pré-computadas.
     Reaproveita as mesmas fontes do notebook oficial do openWakeWord
-    (dscripka/MIT_environmental_impulse_responses, features ACAV100M e o
-    dataset de validação, ambos hospedados no Hugging Face por davidscripka).
-    Idempotente: pula qualquer etapa cujo diretório/arquivo já exista.
+    (dscripka/MIT_environmental_impulse_responses, rudraml/fma para ruído de
+    fundo, e features ACAV100M + dataset de validação, hospedados no Hugging
+    Face por davidscripka).
+    Idempotente: pula qualquer etapa cujo diretório/arquivo já esteja
+    completo (diretórios de streaming usam um marker ".complete" gravado só
+    ao final do loop; arquivos únicos são baixados para ".part" e promovidos
+    via rename atômico só após o download terminar).
+
+    Retorna (rir_paths, background_paths, feature_data_files, validation_path).
     """
     import numpy as np
     import scipy.io.wavfile
     import datasets
 
     rir_dir = os.path.join(WORKSPACE, "mit_rirs")
-    if not os.path.exists(rir_dir):
-        os.makedirs(rir_dir)
+    rir_marker = os.path.join(rir_dir, ".complete")
+    if not os.path.exists(rir_marker):
+        os.makedirs(rir_dir, exist_ok=True)
         logger.info("Baixando Room Impulse Responses...")
         rir_dataset = datasets.load_dataset(
             "davidscripka/MIT_environmental_impulse_responses", split="train", streaming=True
@@ -73,11 +93,33 @@ def download_negative_datasets() -> tuple[list[str], dict[str, str], str]:
             scipy.io.wavfile.write(
                 os.path.join(rir_dir, name), 16000, (row["audio"]["array"] * 32767).astype(np.int16)
             )
+        with open(rir_marker, "w") as f:
+            f.write("done")
+
+    background_dir = os.path.join(WORKSPACE, "background_noise")
+    background_marker = os.path.join(background_dir, ".complete")
+    if not os.path.exists(background_marker):
+        os.makedirs(background_dir, exist_ok=True)
+        logger.info("Baixando ruído de fundo (FMA, ~1h)...")
+        fma_dataset = datasets.load_dataset("rudraml/fma", name="small", split="train", streaming=True)
+        fma_dataset = iter(fma_dataset.cast_column("audio", datasets.Audio(sampling_rate=16000)))
+        n_hours = 1
+        for _ in range(n_hours * 3600 // 30):
+            try:
+                row = next(fma_dataset)
+            except StopIteration:
+                break
+            name = row["audio"]["path"].split("/")[-1].replace(".mp3", ".wav")
+            scipy.io.wavfile.write(
+                os.path.join(background_dir, name), 16000, (row["audio"]["array"] * 32767).astype(np.int16)
+            )
+        with open(background_marker, "w") as f:
+            f.write("done")
 
     features_path = os.path.join(WORKSPACE, "openwakeword_features_ACAV100M_2000_hrs_16bit.npy")
     if not os.path.exists(features_path):
         logger.info("Baixando features negativas pré-computadas (ACAV100M, vários GB)...")
-        urllib.request.urlretrieve(
+        _download_to(
             "https://huggingface.co/datasets/davidscripka/openwakeword_features/resolve/main/"
             "openwakeword_features_ACAV100M_2000_hrs_16bit.npy",
             features_path,
@@ -86,13 +128,13 @@ def download_negative_datasets() -> tuple[list[str], dict[str, str], str]:
     validation_path = os.path.join(WORKSPACE, "validation_set_features.npy")
     if not os.path.exists(validation_path):
         logger.info("Baixando dataset de validação de falsos-positivos...")
-        urllib.request.urlretrieve(
+        _download_to(
             "https://huggingface.co/datasets/davidscripka/openwakeword_features/resolve/main/"
             "validation_set_features.npy",
             validation_path,
         )
 
-    return [rir_dir], {"ACAV100M_sample": features_path}, validation_path
+    return [rir_dir], [background_dir], {"ACAV100M_sample": features_path}, validation_path
 
 
 def generate_positive_clips(voice_paths: list[str]) -> None:
@@ -142,9 +184,11 @@ def main() -> None:
     if args.generate_negative or args.all:
         generate_negative_clips(voice_paths)
 
-    rir_paths, feature_data_files, validation_path = (
-        download_negative_datasets() if (args.download_datasets or args.all) else ([], {}, "")
-    )
+    # Idempotente (pula qualquer artefato já baixado), então é seguro chamar
+    # incondicionalmente: --augment/--train standalone (ex.: re-treinar depois
+    # que os datasets já foram baixados uma vez) precisam desses caminhos no
+    # config tanto quanto --download-datasets/--all.
+    rir_paths, background_paths, feature_data_files, validation_path = download_negative_datasets()
 
     stub_dir = os.path.join(WORKSPACE, "piper_sample_generator_stub")
     ensure_piper_sample_generator_stub(stub_dir)
@@ -154,7 +198,7 @@ def main() -> None:
         model_name=MODEL_NAME,
         output_dir=OUTPUT_DIR,
         piper_sample_generator_stub_dir=stub_dir,
-        background_paths=[os.path.join(WORKSPACE, "mit_rirs")] if rir_paths else [],
+        background_paths=background_paths,
         rir_paths=rir_paths,
         feature_data_files=feature_data_files,
         false_positive_validation_data_path=validation_path,

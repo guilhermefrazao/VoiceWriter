@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 
 from voice.wakeword.training import generate_voice_clips
@@ -25,7 +26,7 @@ def test_generate_voice_clips_moves_and_renames_to_avoid_collisions(tmp_path):
     produced = sorted(os.listdir(output_dir))
     assert produced == ["phrase0_0.wav", "phrase1_0.wav"]
     assert len(calls) == 2
-    assert calls[0][:3] == ["python", "-m", "piper_sample_generator"]
+    assert calls[0][:3] == [sys.executable, "-m", "piper_sample_generator"]
     assert "--model" in calls[0]
     assert "voices/pt_BR-faber-medium.onnx" in calls[0]
 

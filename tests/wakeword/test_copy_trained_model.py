@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from voice.wakeword.training import copy_trained_model
 
 

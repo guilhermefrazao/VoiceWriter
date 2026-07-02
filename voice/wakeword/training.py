@@ -1,6 +1,7 @@
 import os
 import shutil
 import subprocess
+import sys
 from typing import Callable
 
 import yaml
@@ -97,8 +98,9 @@ def generate_voice_clips(
     samples_per_phrase: int,
     runner: Callable = subprocess.run,
 ) -> None:
-    """Gera clipes WAV para cada frase, ciclando entre as vozes pt-BR fornecidas,
-    via `python -m piper_sample_generator`. Cada frase é gerada num subdiretório
+    """Gera clipes WAV para cada frase, usando todas as vozes pt-BR fornecidas
+    em cada chamada (via múltiplas flags --model), via
+    `python -m piper_sample_generator`. Cada frase é gerada num subdiretório
     temporário (o CLI sempre nomeia os arquivos 0.wav, 1.wav, ...) e depois
     movida para `output_dir` com um prefixo único para evitar colisão de nomes.
     """
@@ -106,7 +108,7 @@ def generate_voice_clips(
     for phrase_idx, phrase in enumerate(phrases):
         phrase_dir = os.path.join(output_dir, f"_phrase_{phrase_idx}")
         cmd = [
-            "python", "-m", "piper_sample_generator", phrase,
+            sys.executable, "-m", "piper_sample_generator", phrase,
             "--max-samples", str(samples_per_phrase),
             "--output-dir", phrase_dir,
         ]
