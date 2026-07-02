@@ -49,3 +49,23 @@ def write_training_config(config: dict, path: str) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True)
+
+
+def ensure_piper_sample_generator_stub(stub_dir: str) -> None:
+    """openwakeword.train importa incondicionalmente `generate_samples` de
+    `piper_sample_generator_path`, mesmo quando só usamos --augment_clips e
+    --train_model. Como a ferramenta original só gera fala em inglês, os
+    clipes pt-BR são gerados separadamente (generate_voice_clips, abaixo) e
+    este stub só existe para satisfazer o import — nunca é chamado de fato.
+    """
+    os.makedirs(stub_dir, exist_ok=True)
+    stub_path = os.path.join(stub_dir, "generate_samples.py")
+    if not os.path.exists(stub_path):
+        with open(stub_path, "w", encoding="utf-8") as f:
+            f.write(
+                "def generate_samples(*args, **kwargs):\n"
+                "    raise NotImplementedError(\n"
+                '        "Geracao via TTS em ingles desabilitada; os clipes pt-BR ja "\n'
+                '        "foram gerados por generate_voice_clips()."\n'
+                "    )\n"
+            )
