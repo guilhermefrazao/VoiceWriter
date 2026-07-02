@@ -25,7 +25,12 @@ dependencies = [
 package = false
 dev-dependencies = [
     "pip",
+    "pytest==9.1.1",
 ]
 override-dependencies = [
     "pywin32 ; sys_platform == 'win32'",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
