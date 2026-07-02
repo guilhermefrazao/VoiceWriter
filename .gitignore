@@ -13,3 +13,4 @@ voice/data/offline_queue.json
 /Installation_folder
 main.exe
 .worktrees/
+.wakeword_training/
