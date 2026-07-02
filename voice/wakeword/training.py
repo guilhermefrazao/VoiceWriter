@@ -1,6 +1,25 @@
 import os
+import shutil
+import subprocess
+from typing import Callable
 
 import yaml
+
+
+PT_BR_VOICES: dict[str, str] = {
+    "faber": "https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx",
+    "edresson": "https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/edresson/low/pt_BR-edresson-low.onnx",
+    "jeff": "https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx",
+    "cadu": "https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx",
+}
+
+NEGATIVE_PHRASES: list[str] = [
+    "bom dia", "boa tarde", "boa noite", "obrigado", "computador", "internet",
+    "arquivo", "documento", "programa", "código", "reunião", "mensagem",
+    "abrir chrome", "fechar notepad", "desligar computador", "editor de texto",
+    "inteligência artificial", "assistente virtual", "gravação de áudio",
+    "transcreva isso", "escreva aqui", "ligar o som",
+]
 
 
 def build_training_config(
@@ -69,3 +88,36 @@ def ensure_piper_sample_generator_stub(stub_dir: str) -> None:
                 '        "foram gerados por generate_voice_clips()."\n'
                 "    )\n"
             )
+
+
+def generate_voice_clips(
+    phrases: list[str],
+    voice_model_paths: list[str],
+    output_dir: str,
+    samples_per_phrase: int,
+    runner: Callable = subprocess.run,
+) -> None:
+    """Gera clipes WAV para cada frase, ciclando entre as vozes pt-BR fornecidas,
+    via `python -m piper_sample_generator`. Cada frase é gerada num subdiretório
+    temporário (o CLI sempre nomeia os arquivos 0.wav, 1.wav, ...) e depois
+    movida para `output_dir` com um prefixo único para evitar colisão de nomes.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    for phrase_idx, phrase in enumerate(phrases):
+        phrase_dir = os.path.join(output_dir, f"_phrase_{phrase_idx}")
+        cmd = [
+            "python", "-m", "piper_sample_generator", phrase,
+            "--max-samples", str(samples_per_phrase),
+            "--output-dir", phrase_dir,
+        ]
+        for voice_path in voice_model_paths:
+            cmd.extend(["--model", voice_path])
+        runner(cmd, check=True)
+
+        if os.path.isdir(phrase_dir):
+            for wav_name in os.listdir(phrase_dir):
+                shutil.move(
+                    os.path.join(phrase_dir, wav_name),
+                    os.path.join(output_dir, f"phrase{phrase_idx}_{wav_name}"),
+                )
+            os.rmdir(phrase_dir)
