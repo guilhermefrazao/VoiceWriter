@@ -11,7 +11,12 @@ from __future__ import annotations
 
 import argparse
 import os
+import sys
 from pathlib import Path
+
+# Permite rodar diretamente (uv run scripts/record_benchmark.py): garante que
+# a raiz do projeto esteja no sys.path para importar o pacote `voice`.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import speech_recognition as sr
 from dotenv import load_dotenv
