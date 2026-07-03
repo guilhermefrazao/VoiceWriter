@@ -41,9 +41,14 @@ def record_pending(
     recognizer,
     mic_factory,
     prompt_fn=_default_prompt,
+    pause_threshold: float = 0.8,
+    phrase_time_limit: int = 30,
 ) -> int:
     samples = bm.load_manifest(dataset)
     recorded = 0
+    # Quanto silêncio encerra a captura: alto o bastante para tolerar pausas
+    # naturais entre frases em textos longos.
+    recognizer.pause_threshold = pause_threshold
     for sample in bm.pending_samples(samples):
         choice = prompt_fn(sample.reference)
         if choice == "q":
@@ -53,14 +58,24 @@ def record_pending(
         with mic_factory() as source:
             print("… calibrando ruído ambiente")
             recognizer.adjust_for_ambient_noise(source, duration=1)
-            print("🎤 Pode falar agora...")
-            audio = recognizer.listen(source, timeout=10, phrase_time_limit=30)
+            print(f"🎤 Pode falar agora... (pare por {pause_threshold:g}s ao terminar)")
+            audio = recognizer.listen(
+                source, timeout=10, phrase_time_limit=phrase_time_limit
+            )
             print("✔ Gravado.")
         save_audio_wav(audio, bm.audio_path(dataset, sample))
         bm.mark_recorded(samples, sample.id, member)
         bm.save_manifest(dataset, samples)
         recorded += 1
     return recorded
+
+
+# Ajustes de captura por dataset: comandos são curtos; transcrições são
+# parágrafos longos com pausas naturais entre frases.
+DATASET_TUNING = {
+    "commands": {"pause_threshold": 0.8, "phrase_time_limit": 30},
+    "transcriptions": {"pause_threshold": 3.0, "phrase_time_limit": 180},
+}
 
 
 def main() -> None:
@@ -76,6 +91,7 @@ def main() -> None:
         member=member,
         recognizer=recognizer,
         mic_factory=sr.Microphone,
+        **DATASET_TUNING[args.dataset],
     )
     print(f"\n✅ {recorded} amostra(s) gravada(s) em '{args.dataset}'.")
 
