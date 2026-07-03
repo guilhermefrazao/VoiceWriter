@@ -46,8 +46,11 @@ def record_pending(
         if choice == "s":
             continue
         with mic_factory() as source:
+            print("… calibrando ruído ambiente")
             recognizer.adjust_for_ambient_noise(source, duration=1)
+            print("🎤 Pode falar agora...")
             audio = recognizer.listen(source, timeout=10, phrase_time_limit=30)
+            print("✔ Gravado.")
         save_audio_wav(audio, bm.audio_path(dataset, sample))
         bm.mark_recorded(samples, sample.id, member)
         bm.save_manifest(dataset, samples)
