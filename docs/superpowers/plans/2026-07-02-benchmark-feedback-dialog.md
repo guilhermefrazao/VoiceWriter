@@ -23,6 +23,8 @@ Spec: `docs/superpowers/specs/2026-07-02-benchmark-feedback-dialog-design.md`
 ### Task 1: Rename `_recognize_and_measure` to `recognize_and_measure` in `voice/speech.py`
 
 **Files:**
+- Modify: `voice/speech.py:265` (call site in `run_benchmark`, removed itself in Task 3 but still present now)
+- Modify: `voice/speech.py:270` (call site in `run_benchmark_transcription`)
 - Modify: `voice/speech.py:392` (call site in `_listen_and_transcribe`)
 - Modify: `voice/speech.py:413` (call site in `_listen_and_transcribe_background`)
 - Modify: `voice/speech.py:461` (method definition)
@@ -89,7 +91,27 @@ Replace with:
         self.recognize_and_measure(audio, reference)
 ```
 
-- [ ] **Step 4: Verify no stale references remain and the module still compiles**
+- [ ] **Step 4: Update the `run_benchmark` call site**
+
+`run_benchmark()` itself is removed later, in Task 3 — but it still exists right now and still calls the old name, so it must be updated too or Step 5's verification below will find a stale reference. In `voice/speech.py`, find:
+
+```python
+    def run_benchmark(self, audio, reference):
+        self._recognize_and_measure(audio, reference)
+        #sr = ask_user_feedback()
+        self.record_feedback(True)
+```
+
+Replace with:
+
+```python
+    def run_benchmark(self, audio, reference):
+        self.recognize_and_measure(audio, reference)
+        #sr = ask_user_feedback()
+        self.record_feedback(True)
+```
+
+- [ ] **Step 5: Verify no stale references remain and the module still compiles**
 
 Run: `grep -n "_recognize_and_measure" voice/speech.py`
 Expected: no output (empty — every reference has been renamed).
@@ -97,7 +119,7 @@ Expected: no output (empty — every reference has been renamed).
 Run: `python -m py_compile voice/speech.py && echo OK`
 Expected: `OK`
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
 git add voice/speech.py

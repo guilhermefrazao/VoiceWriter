@@ -60,7 +60,7 @@ class DirectoryUtils():
             return await future
     
 
-    def display_markdown_information(self, item: str, path: str, dir_widget: ft.Column, message_widget: ft.TextField, main_topbar: ft.Container,  main_area: ft.Container, refresh_sidebar, mic):
+    def display_markdown_information(self, item: str, path: str, dir_widget: ft.Column, message_widget: ft.TextField, main_topbar: ft.Container,  main_area: ft.Container, refresh_sidebar):
         with open(path, "r", encoding="utf-8") as f:
             content = f.read()
 
@@ -82,14 +82,10 @@ class DirectoryUtils():
             for i in main_area.content.controls: 
                 if type(i) == ft.Container:
                     i.padding = ft.padding.symmetric(horizontal=10) 
-                
-            main_area.content.controls.append(mic)
 
             main_area.content.horizontal_alignment = ft.CrossAxisAlignment.END
             
             self._layout_mic_configurado = True
-
-        main_topbar.content.controls[1].controls[0].value = path
         
         main_area.update()
 

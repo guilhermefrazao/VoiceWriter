@@ -82,7 +82,7 @@ class MainPage():
 
                 ok = await self.mic_menu.ask_feedback(
                     "O reconhecimento foi correto?",
-                    f'"{texto_referencia}"',
+                    f'"{result[1]}"',
                 )
                 speech_app.record_feedback(ok)
             else:
