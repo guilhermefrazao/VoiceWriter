@@ -13,3 +13,10 @@ pyautogui==0.9.54
 pillow==11.2.1
 supabase>=2.0.0
 nltk>=3.8
+
+# Análise / dashboard de métricas (notebooks/analysis.ipynb)
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.13
+notebook>=7.0
+ipykernel>=6.0

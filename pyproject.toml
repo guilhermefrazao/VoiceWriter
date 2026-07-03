@@ -19,6 +19,11 @@ dependencies = [
     "supabase>=2.0.0",
     "nltk>=3.8",
     "python-dotenv>=1.0.0",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "seaborn>=0.13",
+    "notebook>=7.0",
+    "ipykernel>=6.0",
 ]
 
 [tool.uv]
