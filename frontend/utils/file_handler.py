@@ -31,12 +31,12 @@ class DirectoryUtils():
         def on_confirm(e: ft.ControlEvent) -> None:
             if not future.done():
                 future.set_result(path_field.value.strip() or "")
-            page.close(dialog)
+            page.pop_dialog()
 
         def on_cancel(e: ft.ControlEvent) -> None:
             if not future.done():
                 future.set_result("")
-            page.close(dialog)
+            page.pop_dialog()
 
         path_field.on_submit = on_confirm
 
@@ -50,7 +50,7 @@ class DirectoryUtils():
             ],
         )
 
-        page.open(dialog)
+        page.show_dialog(dialog)
         return await future
     
 

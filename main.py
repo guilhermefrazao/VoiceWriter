@@ -44,7 +44,7 @@ class MainPage():
         self.page.title = "Voice Writter"
         self.page.theme_mode = ft.ThemeMode.DARK
         self.page.padding = 0
-        self.page.window.icon = "frontend/images/icon.png"
+        self.page.window.icon = "images/icon.png"
 
 
         parser = argparse.ArgumentParser(description='Voice Writter App')
@@ -183,4 +183,4 @@ if __name__ == "__main__":
         TypeAtCursorMode().run()
         sys.exit(0)
     view = ft.AppView.FLET_APP if platform.system() == "Windows" else ft.AppView.WEB_BROWSER
-    ft.run(flet_target, view=view)
+    ft.run(flet_target, view=view, assets_dir="assets")

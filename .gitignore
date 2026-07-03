@@ -11,3 +11,5 @@ recent_folders.json
 /Installation_folder
 main.exe
 .venv
+.specs
+.playwright-mcp

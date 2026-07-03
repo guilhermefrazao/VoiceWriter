@@ -142,7 +142,7 @@ class MainEditorMenu():
             content=ft.Column(
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 spacing=15,
-                controls=[ft.Image(src="frontend/images/Aura.webp", width=100, height=100),
+                controls=[ft.Image(src="images/Aura.webp", width=100, height=100),
                         ft.Text(value="VoiceWritter", size=30, weight="bold"),
                         animation_switcher,
                         ]

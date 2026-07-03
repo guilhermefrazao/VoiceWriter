@@ -1,4 +1,4 @@
-"""Generate the VoiceWriter app icon and save it to frontend/images/icon.png."""
+"""Generate the VoiceWriter app icon and save it to assets/images/icon.png."""
 
 from pathlib import Path
 
@@ -48,5 +48,5 @@ def generate_icon(output_path: Path, size: int = 256) -> None:
 
 if __name__ == "__main__":
     repo_root = Path(__file__).parent.parent
-    output = repo_root / "frontend" / "images" / "icon.png"
+    output = repo_root / "assets" / "images" / "icon.png"
     generate_icon(output)
