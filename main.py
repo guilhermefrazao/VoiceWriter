@@ -23,6 +23,18 @@ def _prewarm_speech():
     except Exception as e:
         logging.warning(f"Pre-warm falhou: {e}")
 
+    try:
+        # Fase 3 do casamento fonético (.specs/research-command-phonetics.md
+        # §5.4): g2p_en + epitran + panphon levam ~2.5s pra carregar na
+        # primeira chamada. Adianta esse custo aqui (mesma thread de
+        # background do pre-warm do ASR) pra não atrasar o primeiro comando
+        # de voz do usuário.
+        from voice.utils.phonetic_match_g2p import prewarm as prewarm_g2p
+        prewarm_g2p()
+        logging.info("Pre-warm do casamento fonético (Fase 3) concluído.")
+    except Exception as e:
+        logging.warning(f"Pre-warm do casamento fonético falhou: {e}")
+
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", 
         level=logging.INFO, 

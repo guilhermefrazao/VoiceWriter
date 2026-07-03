@@ -58,12 +58,22 @@ def _load_faster_whisper(model_name: str) -> _Transcriber:
     Único backend com word-level timestamps → métrica avg_confidence disponível.
     """
     from faster_whisper import WhisperModel
+    from voice.utils.app_catalog import get_installed_apps
 
     model = WhisperModel(model_name, device="cuda", compute_type="float16")
 
+    # Fase 1 do casamento fonético (.specs/research-command-phonetics.md, §3,
+    # linha A): nomes de apps instalados como hotwords enviesam levemente a
+    # decodificação a favor de vocabulário conhecido. É um bias suave (não
+    # força o vocabulário) — complementa, não substitui, o casamento fonético
+    # de voice/utils/phonetic_match.py. Vazio no Windows (catálogo não
+    # implementado lá), degradando graciosamente para nenhum hotword.
+    hotwords = ", ".join(sorted(get_installed_apps())) or None
+
     def _transcribe(wav_bytes: bytes) -> tuple[str, list, float | None]:
         segments, info = model.transcribe(
-            io.BytesIO(wav_bytes), beam_size=5, language="pt", word_timestamps=True
+            io.BytesIO(wav_bytes), beam_size=5, language="pt", word_timestamps=True,
+            hotwords=hotwords,
         )
         segments = list(segments)
         text = "".join(s.text for s in segments).strip()
