@@ -7791,3 +7791,227 @@ ValueError: Unrecognized processing class in mistralai/Voxtral-Mini-4B-Realtime-
 2026-07-02 21:01:30 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
 2026-07-02 21:01:30 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/config.json "HTTP/1.1 200 OK"
 2026-07-02 21:01:30 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-07-02 21:32:21 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 21:32:21 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/generation_config.json "HTTP/1.1 200 OK"
+2026-07-02 21:32:21 | INFO | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/generation_config.json "HTTP/1.1 200 OK"
+2026-07-02 21:32:21 | WARNING | Some parameters are on the meta device because they were offloaded to the cpu.
+2026-07-02 21:32:21 | INFO | Modelo 'voxtral:mistralai/Voxtral-Mini-4B-Realtime-2602' pronto. Tempo de carregamento: 1868.67 segundos.
+2026-07-02 21:33:17 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 21:33:17 | INFO | [Metrics] Sessão criada no Supabase: 793f9d86-e485-4f9d-8f02-968713c8ae1e
+2026-07-02 21:33:17 | INFO | === Iniciando Benchmark para 5 arquivos ===
+2026-07-02 21:33:17 | INFO | 
+🎧 Processando: 1_transcription.wav
+2026-07-02 21:33:17 | INFO | 📝 Referência  : 'APIs e Arquitetura REST Resumo sobre APIs e arquitetura REST para a prova de back-end. Uma API, ou Interface de Programação de Aplicações, atua como uma ponte de comunicação padronizada entre diferentes sistemas de software. No padrão REST, utilizamos os métodos nativos do protocolo HTTP, como os verbos GET, POST, PUT e DELETE, para consultar e manipular recursos no servidor.É importante notar que, na arquitetura moderna, as respostas do servidor quase sempre retornam no formato JSON. Isso substituiu o antigo padrão XML porque o JSON é mais leve e facilita imensamente o parsing dos dados no lado do front-end da aplicação.'
+2026-07-02 21:41:56 | INFO | Recognized: APIs e arquitetura REST. Resumo sobre APIs e arquitetura REST para a prova de back-end. Uma API ou interface de programação de aplicações atua como uma ponte de comunicação padronizada entre diferentes sistemas de software. No padrão REST, ele utilizamos os métodos nativos do protocolo HTTP, como os verbos GET, POST, PUT e DELETE, para consultar, manipular recursos no servidor. É importante notar que na arquitetura moderna, as respostas do servidor quase sempre retornam no formato JSON. Isso substitui o antigo padrão XML, porque o JSON é mais leve e facilita imensamente o parsing dos dados no lado do front-end da aplicação.
+2026-07-02 21:41:56 | INFO | [ASR Metrics] Loading Model latency=1869ms | Inference latency=519107ms | WER=4.95% | CER=1.89% | BLEU=0.899 | RTF=10.127
+2026-07-02 21:41:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 21:41:58 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 21:41:58 | INFO | 
+🎧 Processando: 2_transcription.wav
+2026-07-02 21:41:58 | INFO | 📝 Referência  : 'Modelos de Computação em Nuvem Anotações da aula de hoje sobre computação em nuvem. Basicamente, precisamos memorizar as diferenças entre os três modelos principais de serviço: IaaS, PaaS e SaaS. Quando fazemos o deploy de uma aplicação usando PaaS, ou Plataforma como Serviço, a nuvem abstrai toda a infraestrutura subjacente, o que permite que a equipe de desenvolvimento foque exclusivamente na escrita do código. Um ponto crucial para sistemas corporativos é o contrato de nível de serviço, conhecido como SLA. Os grandes provedores garantem uma disponibilidade de 99,9% de uptime anual. Isso reduz drasticamente o tempo de inatividade quando comparamos com a manutenção dos antigos servidores on-premise locais.'
+2026-07-02 21:50:48 | INFO | Recognized: Modelos de computação em nuvem. Anotações da aula de hoje sobre computação em nuvem. Basicamente, precisamos memorizar as diferenças entre os três modelos principais de serviço IaaS, PaaS e SaaS. Quando fazemos o deploy de uma aplicação usando PaaS, ou plataforma como serviço, A nuvem abstrai toda a infraestrutura subjacente, o que permite que a equipe de desenvolvimento foque exclusivamente na escrita de código. Um ponto crucial para sistemas corporativos é o contrato de nível de serviço, conhecido como SLA. Os grandes provedores garantem uma disponibilidade de 29,9% de uptime anual e isso reduz drasticamente o tempo de inatividade quando comparamos com a manutenção nos antigos serviços on-premise locais.
+2026-07-02 21:50:48 | INFO | [ASR Metrics] Loading Model latency=1869ms | Inference latency=530607ms | WER=4.63% | CER=1.48% | BLEU=0.892 | RTF=10.003
+2026-07-02 21:50:51 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 21:50:51 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 21:50:51 | INFO | 
+🎧 Processando: 3_transcription.wav
+2026-07-02 21:50:51 | INFO | 📝 Referência  : 'Evolução do Armazenamento: HDD vs SSD Comparativo rápido de hardware de armazenamento para o guia de montagem. A principal diferença estrutural entre um HDD e um SSD é a total ausência de partes mecânicas móveis no disco de estado sólido. Enquanto um disco rígido magnético tradicional opera girando a 7200 RPM e atinge taxas de transferência na faixa de 150 megabytes por segundo, a tecnologia flash mudou tudo. Hoje, um SSD com protocolo NVMe moderno, conectado diretamente no barramento PCIe da placa-mãe, ultrapassa com extrema facilidade a marca de 3500 megabytes por segundo. Essa transição, que ganhou muita força a partir de 2012, revolucionou o tempo de boot dos sistemas operacionais de desktop.Feche o Fire Fox'
+2026-07-02 22:00:05 | INFO | Recognized: Evolução do armazenamento de HDD para SSD. Comparativo rápido de hardware de armazenamento para o guia de montagem. A principal diferença estrutural entre um HDD e um SSD é a total ausência de partes mecânicas móveis no disco de estado sólido. Enquanto o disco rígido magnético tradicional opera a 7200 RPM e atinge taxas de transferência de 150 MB por segundo, a tecnologia Flash mudou. Isso porque hoje um SSD com protocolo NVMe moderno conectado diretamente ao barramento PCE. E da placa-mãe ultrapassa com facilidade a marca de 3.500 MB por segundo. Essa transição que ganhou muita força a partir de 2012 revolucionou o tempo de boot dos sistemas operacionais de desktop.
+2026-07-02 22:00:05 | INFO | [ASR Metrics] Loading Model latency=1869ms | Inference latency=553844ms | WER=15.52% | CER=12.54% | BLEU=0.735 | RTF=9.995
+2026-07-02 22:00:07 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 22:00:07 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 22:00:07 | INFO | 
+🎧 Processando: 4_transcription.wav
+2026-07-02 22:00:07 | INFO | 📝 Referência  : 'Segurança da Informação e LGPD Revisão para o exame de segurança cibernética. O foco do capítulo 4 foi entender os vetores de ataque modernos, principalmente os ataques de negação de serviço distribuída, a sigla DDoS, e as táticas de engenharia social focadas em phishing. Para tentar mitigar o risco de invasão de contas corporativas, a implementação do 2FA, a autenticação de dois fatores, deixou de ser um diferencial e se tornou uma exigência básica. Além da parte técnica, existe a questão legal. As empresas no Brasil precisam se adequar rigorosamente às diretrizes da LGPD, a Lei Geral de Proteção de Dados, que foi sancionada em agosto de 2018. O não cumprimento dessas regras de privacidade pode resultar em multas que chegam a 2% do faturamento da empresa.'
+2026-07-02 22:09:16 | INFO | Recognized: Segurança da informação em LGPD. Revisão para o exame de segurança cibernética foco do capítulo 4. Foi entender os vetores de ataques modernos, principalmente os ataques de negação de serviço distribuído. A sigla DDoS e as táticas de engenharia social focadas em Pichin. Para tentar mitigar o risco de invasão de contas corporativas, a implementação do 2FA, autenticação de dois fatores, deixou de ser um diferencial e tornou-se um exigência básica. Além da parte técnica, existe a questão legal. As empresas do Brasil precisam se adequar rigorosamente às diretrizes da LGPD, a Lei Geral de Proteção dos Dados, que foi sancionada em agosto de 2018. O não cumprimento dessas regras de privacidade pode resultar em mudanças que multas que chegam a 2% do faturamento da empresa.
+2026-07-02 22:09:16 | INFO | [ASR Metrics] Loading Model latency=1869ms | Inference latency=548687ms | WER=10.24% | CER=5.16% | BLEU=0.787 | RTF=10.007
+2026-07-02 22:09:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 22:09:18 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 22:09:18 | INFO | 
+🎧 Processando: 5_transcription.wav
+2026-07-02 22:09:18 | INFO | 📝 Referência  : 'Fundamentos de Inteligência Artificial Conceitos iniciais do módulo de inteligência artificial. O primeiro passo é saber diferenciar os termos Machine Learning e Deep Learning. O Deep Learning é uma subcategoria que utiliza redes neurais artificiais complexas, estruturadas com múltiplas camadas ocultas, para conseguir extrair padrões de datasets gigantescos, como milhões de imagens ou horas de áudio. Ontem à noite, durante o treinamento prático do nosso modelo de visão computacional, enfrentei um clássico problema de overfitting. A precisão do modelo no conjunto de dados de treino chegou a impressionantes 98%, mas, quando fui rodar a inferência nos dados de validação, a taxa de acerto despencou para apenas 65%. Preciso ajustar os hiperparâmetros amanhã.'
+2026-07-02 22:12:49 | INFO | Assets path configured: /app/assets
+2026-07-02 22:12:49 | INFO | Starting up UDS server on /tmp/rVDJhOzoHM
+2026-07-02 22:12:49 | INFO | Flet app has started...
+2026-07-02 22:12:56 | INFO | App URL: /tmp/rVDJhOzoHM
+2026-07-02 22:12:56 | INFO | Starting Flet View app...
+2026-07-02 22:12:57 | INFO | Looking for Flet bundle archive at: /opt/venv/lib/python3.12/site-packages/flet_desktop/app/flet-linux-amd64.tar.gz
+2026-07-02 22:12:57 | INFO | Extracting Flet from archive to /root/.flet/client/flet-desktop-0.81.0
+2026-07-02 22:12:59 | INFO | App session started
+2026-07-02 22:12:59 | WARNING | AppOpener unavailable (Windows-only). Using subprocess fallback for open/close.
+2026-07-02 22:12:59 | INFO | Carregando modelo ASR [voxtral]: mistralai/Voxtral-Mini-4B-Realtime-2602
+2026-07-02 22:13:01 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 22:13:01 | INFO | [Metrics] Sessão criada no Supabase: 71d714f2-bdf7-49c6-be13-7e6889a15548
+2026-07-02 22:13:01 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 22:13:01 | INFO | [Metrics] Sessão criada no Supabase: 8c82cd32-ff70-4914-b776-b4211ebaedfc
+2026-07-02 22:13:01 | INFO | Loading Model - (Pre-warm).
+2026-07-02 22:13:02 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 22:13:02 | INFO | [Metrics] Sessão criada no Supabase: d9a1524d-2873-448c-bd0e-049614aaa1a2
+2026-07-02 22:13:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 22:13:03 | INFO | [Metrics] Sessão criada no Supabase: 93289f1b-a23e-4d0d-95a8-4ef9872ab7c9
+2026-07-02 22:13:06 | INFO | NumExpr defaulting to 12 threads.
+2026-07-02 22:13:07 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/processor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:07 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/processor_config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:07 | INFO | HTTP Request: GET https://huggingface.co/api/models/mistralai/Voxtral-Mini-4B-Realtime-2602/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:07 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/processor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:07 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/processor_config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:07 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/chat_template.json "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:07 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:07 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/audio_tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:08 | INFO | HTTP Request: GET https://huggingface.co/api/models/mistralai/Voxtral-Mini-4B-Realtime-2602/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:08 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/processor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:08 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/processor_config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:08 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/chat_template.json "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:08 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:08 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/audio_tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/processor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/processor_config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/processor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/processor_config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:09 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-07-02 22:13:10 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/tekken.json "HTTP/1.1 302 Found"
+2026-07-02 22:13:10 | INFO | HTTP Request: GET https://huggingface.co/api/models/mistralai/Voxtral-Mini-4B-Realtime-2602/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-02 22:13:10 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/tekken.json "HTTP/1.1 302 Found"
+2026-07-02 22:13:10 | INFO | Non special vocabulary size is 130072 with 1000 special tokens.
+2026-07-02 22:13:10 | INFO | Cutting non special vocabulary to first 130072 tokens.
+2026-07-02 22:13:11 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:11 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:11 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:11 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:11 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-07-02 22:13:18 | INFO | HTTP Request: HEAD https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-02 22:13:18 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Voxtral-Mini-4B-Realtime-2602/2769294da9567371363522aac9bbcfdd19447add/generation_config.json "HTTP/1.1 200 OK"
+2026-07-02 22:13:18 | WARNING | Some parameters are on the meta device because they were offloaded to the cpu.
+2026-07-02 22:13:18 | INFO | Modelo 'voxtral:mistralai/Voxtral-Mini-4B-Realtime-2602' pronto. Tempo de carregamento: 19.43 segundos.
+2026-07-02 22:20:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 22:20:26 | INFO | [Metrics] Sessão criada no Supabase: 65b33959-3251-44c0-9f5f-eb81145df78f
+2026-07-02 22:20:26 | INFO | === Iniciando Benchmark para 5 arquivos ===
+2026-07-02 22:20:26 | INFO | 
+🎧 Processando: 1_transcription.wav
+2026-07-02 22:20:26 | INFO | 📝 Referência  : 'APIs e Arquitetura REST Resumo sobre APIs e arquitetura REST para a prova de back-end. Uma API, ou Interface de Programação de Aplicações, atua como uma ponte de comunicação padronizada entre diferentes sistemas de software. No padrão REST, utilizamos os métodos nativos do protocolo HTTP, como os verbos GET, POST, PUT e DELETE, para consultar e manipular recursos no servidor.É importante notar que, na arquitetura moderna, as respostas do servidor quase sempre retornam no formato JSON. Isso substituiu o antigo padrão XML porque o JSON é mais leve e facilita imensamente o parsing dos dados no lado do front-end da aplicação.'
+2026-07-02 22:30:55 | INFO | Recognized: APIs e arquitetura REST. Resumo sobre APIs e arquitetura REST para a prova de back-end. Uma API ou interface de programação de aplicações atua como uma ponte de comunicação padronizada entre diferentes sistemas de software. No padrão REST, ele utilizamos os métodos nativos do protocolo HTTP, como os verbos GET, POST, PUT e DELETE, para consultar, manipular recursos no servidor. É importante notar que na arquitetura moderna, as respostas do servidor quase sempre retornam no formato JSON. Isso substitui o antigo padrão XML, porque o JSON é mais leve e facilita imensamente o parsing dos dados no lado do front-end da aplicação.
+2026-07-02 22:30:56 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=629643ms | WER=4.95% | CER=1.89% | BLEU=0.899 | RTF=12.283
+2026-07-02 22:30:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 22:30:57 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 22:30:57 | INFO | 
+🎧 Processando: 2_transcription.wav
+2026-07-02 22:30:57 | INFO | 📝 Referência  : 'Modelos de Computação em Nuvem Anotações da aula de hoje sobre computação em nuvem. Basicamente, precisamos memorizar as diferenças entre os três modelos principais de serviço: IaaS, PaaS e SaaS. Quando fazemos o deploy de uma aplicação usando PaaS, ou Plataforma como Serviço, a nuvem abstrai toda a infraestrutura subjacente, o que permite que a equipe de desenvolvimento foque exclusivamente na escrita do código. Um ponto crucial para sistemas corporativos é o contrato de nível de serviço, conhecido como SLA. Os grandes provedores garantem uma disponibilidade de 99,9% de uptime anual. Isso reduz drasticamente o tempo de inatividade quando comparamos com a manutenção dos antigos servidores on-premise locais.'
+2026-07-02 22:44:51 | INFO | Recognized: Modelos de computação em nuvem. Anotações da aula de hoje sobre computação em nuvem. Basicamente, precisamos memorizar as diferenças entre os três modelos principais de serviço IaaS, PaaS e SaaS. Quando fazemos o deploy de uma aplicação usando PaaS, ou plataforma como serviço, A nuvem abstrai toda a infraestrutura subjacente, o que permite que a equipe de desenvolvimento foque exclusivamente na escrita de código. Um ponto crucial para sistemas corporativos é o contrato de nível de serviço, conhecido como SLA. Os grandes provedores garantem uma disponibilidade de 29,9% de uptime anual e isso reduz drasticamente o tempo de inatividade quando comparamos com a manutenção nos antigos serviços on-premise locais.
+2026-07-02 22:44:51 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=833995ms | WER=4.63% | CER=1.48% | BLEU=0.892 | RTF=15.722
+2026-07-02 22:44:52 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 22:44:52 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 22:44:52 | INFO | 
+🎧 Processando: 3_transcription.wav
+2026-07-02 22:44:52 | INFO | 📝 Referência  : 'Evolução do Armazenamento: HDD vs SSD Comparativo rápido de hardware de armazenamento para o guia de montagem. A principal diferença estrutural entre um HDD e um SSD é a total ausência de partes mecânicas móveis no disco de estado sólido. Enquanto um disco rígido magnético tradicional opera girando a 7200 RPM e atinge taxas de transferência na faixa de 150 megabytes por segundo, a tecnologia flash mudou tudo. Hoje, um SSD com protocolo NVMe moderno, conectado diretamente no barramento PCIe da placa-mãe, ultrapassa com extrema facilidade a marca de 3500 megabytes por segundo. Essa transição, que ganhou muita força a partir de 2012, revolucionou o tempo de boot dos sistemas operacionais de desktop.Feche o Fire Fox'
+2026-07-02 23:02:53 | INFO | Recognized: Evolução do armazenamento de HDD para SSD. Comparativo rápido de hardware de armazenamento para o guia de montagem. A principal diferença estrutural entre um HDD e um SSD é a total ausência de partes mecânicas móveis no disco de estado sólido. Enquanto o disco rígido magnético tradicional opera a 7200 RPM e atinge taxas de transferência de 150 MB por segundo, a tecnologia Flash mudou. Isso porque hoje um SSD com protocolo NVMe moderno conectado diretamente ao barramento PCE. E da placa-mãe ultrapassa com facilidade a marca de 3.500 MB por segundo. Essa transição que ganhou muita força a partir de 2012 revolucionou o tempo de boot dos sistemas operacionais de desktop.
+2026-07-02 23:02:53 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=1080720ms | WER=15.52% | CER=12.54% | BLEU=0.735 | RTF=19.504
+2026-07-02 23:02:54 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 23:02:54 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 23:02:54 | INFO | 
+🎧 Processando: 4_transcription.wav
+2026-07-02 23:02:54 | INFO | 📝 Referência  : 'Segurança da Informação e LGPD Revisão para o exame de segurança cibernética. O foco do capítulo 4 foi entender os vetores de ataque modernos, principalmente os ataques de negação de serviço distribuída, a sigla DDoS, e as táticas de engenharia social focadas em phishing. Para tentar mitigar o risco de invasão de contas corporativas, a implementação do 2FA, a autenticação de dois fatores, deixou de ser um diferencial e se tornou uma exigência básica. Além da parte técnica, existe a questão legal. As empresas no Brasil precisam se adequar rigorosamente às diretrizes da LGPD, a Lei Geral de Proteção de Dados, que foi sancionada em agosto de 2018. O não cumprimento dessas regras de privacidade pode resultar em multas que chegam a 2% do faturamento da empresa.'
+2026-07-02 23:18:46 | INFO | Recognized: Segurança da informação em LGPD. Revisão para o exame de segurança cibernética foco do capítulo 4. Foi entender os vetores de ataques modernos, principalmente os ataques de negação de serviço distribuído. A sigla DDoS e as táticas de engenharia social focadas em Pichin. Para tentar mitigar o risco de invasão de contas corporativas, a implementação do 2FA, autenticação de dois fatores, deixou de ser um diferencial e tornou-se um exigência básica. Além da parte técnica, existe a questão legal. As empresas do Brasil precisam se adequar rigorosamente às diretrizes da LGPD, a Lei Geral de Proteção dos Dados, que foi sancionada em agosto de 2018. O não cumprimento dessas regras de privacidade pode resultar em mudanças que multas que chegam a 2% do faturamento da empresa.
+2026-07-02 23:18:46 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=951483ms | WER=10.24% | CER=5.16% | BLEU=0.787 | RTF=17.353
+2026-07-02 23:18:47 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 23:18:47 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 23:18:47 | INFO | 
+🎧 Processando: 5_transcription.wav
+2026-07-02 23:18:47 | INFO | 📝 Referência  : 'Fundamentos de Inteligência Artificial Conceitos iniciais do módulo de inteligência artificial. O primeiro passo é saber diferenciar os termos Machine Learning e Deep Learning. O Deep Learning é uma subcategoria que utiliza redes neurais artificiais complexas, estruturadas com múltiplas camadas ocultas, para conseguir extrair padrões de datasets gigantescos, como milhões de imagens ou horas de áudio. Ontem à noite, durante o treinamento prático do nosso modelo de visão computacional, enfrentei um clássico problema de overfitting. A precisão do modelo no conjunto de dados de treino chegou a impressionantes 98%, mas, quando fui rodar a inferência nos dados de validação, a taxa de acerto despencou para apenas 65%. Preciso ajustar os hiperparâmetros amanhã.'
+2026-07-02 23:28:33 | INFO | Recognized: Fundamentos da Inteligência Artificial. Conceitos iniciais do módulo de Inteligência Artificial. O primeiro passo é saber os diferentes diferenciar deep learning e machine learning. Deep learning é uma subcategoria que utiliza redes neurais complexas, estruturadas com múltiplas camadas ocultas, para conseguir extrair padrões gigantescos de datasets, como milhões de imagens ou horas de áudio. Ontem à noite, durante o treinamento prático do nosso modelo de visão computacional, encontrei o problema clássico de overfitting. A precisão do modelo no conjunto de dados de treino chegou a impressionantes 98%, mas quando fui rodar referência nos dados de validação, a taxa de acerto despencou para 65%. Preciso ajustar os hiperparâmetros amanhã.
+2026-07-02 23:28:33 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=586403ms | WER=15.18% | CER=12.73% | BLEU=0.751 | RTF=11.705
+2026-07-02 23:28:34 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-02 23:28:34 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-02 23:28:36 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 23:28:36 | INFO | [Metrics] Sessão criada no Supabase: cb6ca473-9a37-41ed-a8c5-b607216aec56
+2026-07-02 23:30:22 | INFO | Path inválido ou não fornecido, voltando para Home.
+2026-07-02 23:30:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 23:30:22 | INFO | [Metrics] Sessão criada no Supabase: 62922e7a-d4a0-4736-8775-601ca70bb89e
+2026-07-02 23:30:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 23:30:23 | INFO | [Metrics] Sessão criada no Supabase: aa80c1c4-90df-4a6f-b099-8fe3623e979a
+2026-07-02 23:30:27 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-02 23:30:27 | INFO | [Metrics] Sessão criada no Supabase: 7d3f9d91-1872-47af-916d-8835758a8227
+2026-07-02 23:30:27 | INFO | === Iniciando Benchmark para 10 arquivos ===
+2026-07-02 23:30:27 | INFO | 
+🎧 Processando: 1.wav
+2026-07-02 23:30:27 | INFO | 📝 Referência  : 'Abra o Google'
+2026-07-02 23:31:07 | INFO | Recognized: Abra o Google.
+2026-07-02 23:31:07 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=40424ms | WER=0.00% | CER=9.09% | BLEU=0.562 | RTF=14.322
+2026-07-02 23:31:10 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-02 23:31:11 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:31:11 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:31:11 | INFO | 
+🎧 Processando: 2.wav
+2026-07-02 23:31:11 | INFO | 📝 Referência  : 'Abra o Discord'
+2026-07-02 23:32:12 | INFO | Recognized: Abra o Discord.
+2026-07-02 23:32:12 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=61183ms | WER=0.00% | CER=8.33% | BLEU=0.562 | RTF=20.960
+2026-07-02 23:35:23 | INFO | [Feedback] ✓ | Session success rate: 100.0% (2/2)
+2026-07-02 23:35:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:35:24 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:35:24 | INFO | 
+🎧 Processando: 3.wav
+2026-07-02 23:35:24 | INFO | 📝 Referência  : 'Feche o Fire Fox'
+2026-07-02 23:36:58 | INFO | Recognized: FaceSheet or Firefox?
+2026-07-02 23:36:58 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=93546ms | WER=100.00% | CER=53.85% | BLEU=0.000 | RTF=20.390
+2026-07-02 23:37:21 | INFO | [Feedback] ✗ | Session success rate: 66.7% (2/3)
+2026-07-02 23:37:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:37:22 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:37:22 | INFO | 
+🎧 Processando: 4.wav
+2026-07-02 23:37:22 | INFO | 📝 Referência  : 'Execute o Any Desk'
+2026-07-02 23:38:15 | INFO | Recognized: Execute o Onidesk.
+2026-07-02 23:38:15 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=52929ms | WER=50.00% | CER=20.00% | BLEU=0.172 | RTF=19.915
+2026-07-02 23:39:30 | INFO | [Feedback] ✗ | Session success rate: 50.0% (2/4)
+2026-07-02 23:39:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:39:31 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:39:31 | INFO | 
+🎧 Processando: 5.wav
+2026-07-02 23:39:31 | INFO | 📝 Referência  : 'Inicia o System Manager'
+2026-07-02 23:41:03 | INFO | Recognized: Inicie o System Manager.
+2026-07-02 23:41:03 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=92002ms | WER=25.00% | CER=10.00% | BLEU=0.398 | RTF=21.193
+2026-07-02 23:41:05 | INFO | [Feedback] ✓ | Session success rate: 60.0% (3/5)
+2026-07-02 23:41:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:41:06 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:41:06 | INFO | 
+🎧 Processando: 6.wav
+2026-07-02 23:41:06 | INFO | 📝 Referência  : 'Abra Devil may Cry'
+2026-07-02 23:42:06 | INFO | Recognized: Abra o Devil May Cry.
+2026-07-02 23:42:06 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=59145ms | WER=25.00% | CER=13.33% | BLEU=0.286 | RTF=15.488
+2026-07-02 23:42:16 | INFO | [Feedback] ✓ | Session success rate: 66.7% (4/6)
+2026-07-02 23:42:17 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:42:17 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:42:17 | INFO | 
+🎧 Processando: 7.wav
+2026-07-02 23:42:17 | INFO | 📝 Referência  : 'Abre o Intagram'
+2026-07-02 23:43:05 | INFO | Recognized: Abre o Instagram.
+2026-07-02 23:43:05 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=48289ms | WER=33.33% | CER=15.38% | BLEU=0.240 | RTF=18.784
+2026-07-02 23:43:12 | INFO | [Feedback] ✓ | Session success rate: 71.4% (5/7)
+2026-07-02 23:43:13 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:43:13 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:43:13 | INFO | 
+🎧 Processando: 8.wav
+2026-07-02 23:43:13 | INFO | 📝 Referência  : 'Abrir Obsidian'
+2026-07-02 23:44:20 | INFO | Recognized: abrir obsidian
+2026-07-02 23:44:20 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=67706ms | WER=0.00% | CER=0.00% | BLEU=0.316 | RTF=23.428
+2026-07-02 23:44:24 | INFO | [Feedback] ✓ | Session success rate: 75.0% (6/8)
+2026-07-02 23:44:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:44:25 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:44:25 | INFO | 
+🎧 Processando: 9.wav
+2026-07-02 23:44:25 | INFO | 📝 Referência  : 'Pode abrir o File Explorer'
+2026-07-02 23:45:41 | INFO | Recognized: Pode abrir o File Explorer.
+2026-07-02 23:45:41 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=75485ms | WER=0.00% | CER=4.55% | BLEU=1.000 | RTF=17.046
+2026-07-02 23:45:59 | INFO | [Feedback] ✓ | Session success rate: 77.8% (7/9)
+2026-07-02 23:46:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:46:00 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-02 23:46:00 | INFO | 
+🎧 Processando: 10.wav
+2026-07-02 23:46:00 | INFO | 📝 Referência  : 'Pare o Blender'
+2026-07-02 23:47:08 | INFO | Recognized: Pario Blender.
+2026-07-02 23:47:08 | INFO | [ASR Metrics] Loading Model latency=19ms | Inference latency=68176ms | WER=66.67% | CER=16.67% | BLEU=0.091 | RTF=30.477
+2026-07-02 23:47:14 | INFO | [Feedback] ✗ | Session success rate: 70.0% (7/10)
+2026-07-02 23:47:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-02 23:47:14 | INFO | [Metrics] Resultado de comando salvo no Supabase.
