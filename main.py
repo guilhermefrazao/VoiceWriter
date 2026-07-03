@@ -29,6 +29,14 @@ def _prewarm_speech():
         logging.warning(f"Pre-warm falhou: {e}")
 
 
+def _run_wakeword_listener():
+    try:
+        from voice.run_wakeword import wakeword_loop
+        wakeword_loop()
+    except Exception as e:
+        logging.warning(f"Wakeword listener falhou: {e}")
+
+
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", 
         level=logging.INFO, 
         encoding="utf-8", 
@@ -155,6 +163,9 @@ class MainPage():
                 if hasattr(self.menu_instance, "speech"):
                     self.menu_instance.speech.stop_listen()
 
+            if e.key == "F6":
+                pass
+
             if e.ctrl and e.key == "P":
                 if hasattr(self.menu_instance, "create_and_open_new_markdown"):
                     self.menu_instance.create_and_open_new_markdown()
@@ -186,6 +197,7 @@ class MainPage():
             await route_change()
 
         threading.Thread(target=_prewarm_speech, daemon=True).start()
+        threading.Thread(target=_run_wakeword_listener, daemon=True).start()
 
 async def flet_target(page:ft.Page):
     app = MainPage(page)

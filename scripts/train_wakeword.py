@@ -88,8 +88,8 @@ def download_negative_datasets() -> tuple[list[str], list[str], dict[str, str], 
         rir_dataset = datasets.load_dataset(
             "davidscripka/MIT_environmental_impulse_responses", split="train", streaming=True
         )
-        for row in rir_dataset:
-            name = row["audio"]["path"].split("/")[-1]
+        for i, row in enumerate(rir_dataset):
+            name = f"rir_{i:05d}.wav"
             scipy.io.wavfile.write(
                 os.path.join(rir_dir, name), 16000, (row["audio"]["array"] * 32767).astype(np.int16)
             )
@@ -100,16 +100,17 @@ def download_negative_datasets() -> tuple[list[str], list[str], dict[str, str], 
     background_marker = os.path.join(background_dir, ".complete")
     if not os.path.exists(background_marker):
         os.makedirs(background_dir, exist_ok=True)
-        logger.info("Baixando ruído de fundo (FMA, ~1h)...")
-        fma_dataset = datasets.load_dataset("rudraml/fma", name="small", split="train", streaming=True)
+        logger.info("Baixando ruído de fundo (AudioSet, ~1h)...")
+        # rudraml/fma usa script fma.py incompatível com streaming; AudioSet é equivalente
+        fma_dataset = datasets.load_dataset("agkphysics/AudioSet", "unbalanced", split="train", streaming=True, trust_remote_code=True)
         fma_dataset = iter(fma_dataset.cast_column("audio", datasets.Audio(sampling_rate=16000)))
         n_hours = 1
-        for _ in range(n_hours * 3600 // 30):
+        for i in range(n_hours * 3600 // 30):
             try:
                 row = next(fma_dataset)
             except StopIteration:
                 break
-            name = row["audio"]["path"].split("/")[-1].replace(".mp3", ".wav")
+            name = f"fma_{i:05d}.wav"
             scipy.io.wavfile.write(
                 os.path.join(background_dir, name), 16000, (row["audio"]["array"] * 32767).astype(np.int16)
             )
