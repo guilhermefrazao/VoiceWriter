@@ -99,9 +99,20 @@ def save_transcription_result(session_id: str, data: dict) -> None:
 
 def save_command_result(session_id: str, data: dict) -> None:
     """
-    Salva o resultado de um comando de voz.
-    Campos esperados em data: spoken_text, recognized_command, success, latency_ms.
-    Campos opcionais: expected_command (para benchmark).
+    Salva o resultado de uma transcrição em cenário de comando.
+
+    Schema real da tabela `command_results` no Supabase (verificado em
+    2026-07-03 via inspeção direta — diverge do documentado em
+    scripts/setup_supabase.sql, que ficou desatualizado depois que o time
+    evoluiu o schema na branch feat/models sem atualizar o arquivo):
+    transcribed_text, reference_text, recognized_command, model,
+    user_success, wer, cer, wer_normalized, wer_substitutions,
+    wer_deletions, wer_insertions, bleu_score, rtf, avg_confidence,
+    cold_start, peak_memory_mb, inference_latency_ms, startup_latency_ms,
+    loading_model_time, is_benchmark, timestamp. Nenhum campo é obrigatório
+    além do session_id (passado à parte). NÃO usar spoken_text/success/
+    latency_ms/expected_command — não existem na tabela real e a inserção
+    cai silenciosamente na fila offline.
     """
     entry = {"session_id": session_id, **data}
     client = _get_client()

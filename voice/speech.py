@@ -11,7 +11,6 @@ import threading
 import math
 import asyncio
 import uuid
-from datetime import datetime, timezone
 from typing import Callable
 
 from dotenv import load_dotenv
@@ -21,10 +20,9 @@ from voice.interact_app import translation_tasks
 from voice.utils.json_utils import save_text
 from voice.utils.asr_metrics import analyze_transcription, success_rate
 from voice.utils.metrics_storage import (
-    save_metrics_local,
-    save_metrics_cloud,
     create_session,
     save_transcription_result,
+    save_command_result,
     flush_offline_queue,
 )
 from main import ASR_MODEL_KEY
@@ -221,17 +219,25 @@ class SpeechToText():
         rate = success_rate(self._feedback_history)
         logging.info(f"[Feedback] {'✓' if ok else '✗'} | Session success rate: {rate:.1%} ({sum(self._feedback_history)}/{len(self._feedback_history)})")
 
-        entry = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "session_id": self._session_id,
-            "model": self._current_model_key,
-            "transcribed_text": self._last_transcription,
-            "user_success": ok,
-            **self._last_metrics,
-        }
+        # Nomes de campo alinhados ao schema REAL da tabela command_results no
+        # Supabase (verificado em 2026-07-03, diverge de scripts/setup_supabase.sql
+        # — ver docstring de save_command_result em metrics_storage.py). A maioria
+        # dos campos de self._last_metrics já bate com o nome real da coluna
+        # (wer, cer, bleu_score, rtf, avg_confidence, transcribed_text, ...);
+        # só "latency_ms" precisa virar "inference_latency_ms".
+        metrics = dict(self._last_metrics)
+        inference_latency_ms = metrics.pop("latency_ms", None)
 
-        save_metrics_local(entry)
-        save_metrics_cloud(entry)
+        save_command_result(
+            self.metrics_session_id,
+            {
+                **metrics,
+                "model": self._current_model_key,
+                "user_success": ok,
+                "recognized_command": None,
+                "inference_latency_ms": inference_latency_ms,
+            },
+        )
 
 
     def load_model(self, model_key: str):
@@ -408,7 +414,15 @@ class SpeechToText():
             )
             self._last_transcription = texto_reconhecido
 
-            save_transcription_result(self.metrics_session_id, dict(self._last_metrics))
+            # Mesmo ajuste de nome de campo que em record_feedback() — schema
+            # real de transcription_results usa "inference_latency_ms", não
+            # "latency_ms" (ver docstring de save_command_result em
+            # metrics_storage.py; mesma tabela-irmã, mesmo desalinhamento).
+            metrics_to_save = dict(self._last_metrics)
+            metrics_to_save["inference_latency_ms"] = metrics_to_save.pop("latency_ms", None)
+            metrics_to_save["model"] = self._current_model_key
+
+            save_transcription_result(self.metrics_session_id, metrics_to_save)
 
             text_log = f"{time.strftime('{%H:%M:%S}')} + - + {texto_reconhecido}"
 
