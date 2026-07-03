@@ -107,9 +107,13 @@ RUN pip install --no-cache-dir \
     --index-url https://download.pytorch.org/whl/cu126
 
 # 4. Mistral Voxtral: mistral-common[audio] + transformers atualizado
+#    Voxtral-Mini-4B-Realtime-2602 exige VoxtralRealtimeForConditionalGeneration,
+#    disponível apenas a partir do transformers 5.2.0. ">=4.40.0" não força
+#    upgrade porque o nemo_toolkit (passo 2) já satisfaz esse piso com uma
+#    versão mais antiga — pip não reinstala uma dependência já satisfeita.
 RUN pip install --no-cache-dir \
     "mistral-common[audio]" \
-    "transformers>=4.40.0"
+    "transformers>=5.2.0"
 
 # 5. Demais dependências do projeto
 RUN pip install --no-cache-dir python-dotenv && \

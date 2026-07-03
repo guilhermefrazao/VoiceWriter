@@ -44,6 +44,14 @@ def _parse_model_key(model_key: str) -> tuple[str, str]:
     return backend.strip(), model_name.strip()
 
 
+def display_model_name(model_key: str) -> str:
+    """Nome curto para logs/UI: descarta o backend e o prefixo de empresa.
+    'parakeet:nvidia/parakeet-tdt-0.6b-v3' -> 'parakeet-tdt-0.6b-v3'
+    """
+    _, model_name = _parse_model_key(model_key)
+    return model_name.rsplit("/", 1)[-1]
+
+
 def _load_faster_whisper(model_name: str) -> _Transcriber:
     """CTranslate2 + CUDA float16.
     Único backend com word-level timestamps → métrica avg_confidence disponível.
@@ -63,14 +71,18 @@ def _load_faster_whisper(model_name: str) -> _Transcriber:
     return _transcribe
 
 
-def _make_nemo_transcriber(model: str) -> _Transcriber:
+def _make_nemo_transcriber(model, transcribe_kwargs: dict | None = None) -> _Transcriber:
     """Factory compartilhada pelos backends NeMo (Canary, Parakeet).
     NeMo.transcribe() exige caminhos de arquivo; áudio é salvo em temp file.
+    transcribe_kwargs cobre parâmetros específicos do modelo (ex.: source_lang/
+    target_lang, exigidos pelo Canary multilingual, mas não aceitos pelo Parakeet).
     """
     import os
     import tempfile
     import torch
     import soundfile as sf
+
+    extra_kwargs = transcribe_kwargs or {}
 
     def _transcribe(wav_bytes: bytes) -> tuple[str, list, float | None]:
         audio = np.frombuffer(wav_bytes, dtype=np.int16).astype(np.float32) / 32768.0
@@ -82,7 +94,7 @@ def _make_nemo_transcriber(model: str) -> _Transcriber:
 
         try:
             with torch.autocast("cuda", dtype=torch.float16):
-                output = model.transcribe([tmp_path], source_lang="pt", target_lang="pt", num_workers=0, batch_size=1)
+                output = model.transcribe([tmp_path], num_workers=0, batch_size=1, **extra_kwargs)
             result = output[0] if output else ""
             # NeMo pode retornar str ou Hypothesis (com atributo .text)
             text = (result.text if hasattr(result, "text") else str(result)).strip()
@@ -100,80 +112,74 @@ def _make_nemo_transcriber(model: str) -> _Transcriber:
     return _transcribe
 
 
-def _log_decoding_diagnostics(model, label: str) -> None:
-    """DEBUG temporário: revela se a decodificação greedy usa CUDA Graphs.
-    Necessário para investigar illegal memory access no Parakeet (crash na 2ª
-    inferência) — modelos RNNT/TDT capturam o decoder greedy como CUDA Graph
-    em versões recentes do NeMo, o que pode quebrar ao trocar o shape do input
-    entre chamadas. Remover após identificar a causa raiz.
+def _disable_rnnt_cuda_graph_decoder(model, label: str) -> None:
+    """Força o decoder greedy do RNNT/TDT a rodar em modo Python puro.
+    NeMo captura o loop de decodificação greedy como um CUDA Graph para
+    acelerar a inferência, fixando os endereços de tensor no shape de áudio
+    da 1ª chamada. Uma 2ª chamada com duração diferente reaproveita memória
+    já liberada → "CUDA error: an illegal memory access was encountered".
+    Ver scripts/repro_parakeet_crash.py para o repro isolado do bug.
     """
-    try:
-        logging.info(f"[{label}] decoding cfg: {getattr(model.cfg, 'decoding', None)}")
-    except Exception:
-        logging.exception(f"[{label}] Falha ao ler model.cfg.decoding")
+    from omegaconf import open_dict
 
-    decoding_obj = getattr(model, "decoding", None)
-    inner = getattr(decoding_obj, "decoding", None) if decoding_obj is not None else None
-    for obj, obj_name in ((decoding_obj, "decoding"), (inner, "decoding.decoding")):
-        if obj is None:
-            continue
-        graph_attrs = [a for a in dir(obj) if "graph" in a.lower() and not a.startswith("__")]
-        logging.info(f"[{label}] {obj_name} class={type(obj).__name__} atributos-cuda-graph={graph_attrs}")
-        for attr in graph_attrs:
-            try:
-                logging.info(f"[{label}] {obj_name}.{attr} = {getattr(obj, attr)}")
-            except Exception:
-                logging.info(f"[{label}] {obj_name}.{attr} = <erro ao ler>")
+    try:
+        decoding_cfg = model.cfg.decoding
+        with open_dict(decoding_cfg):
+            decoding_cfg.greedy.use_cuda_graph_decoder = False
+        model.change_decoding_strategy(decoding_cfg)
+        logging.info(f"[{label}] CUDA Graph decoder desativado (use_cuda_graph_decoder=False).")
+    except Exception:
+        logging.exception(f"[{label}] Falha ao desativar CUDA Graph decoder")
 
 
 def _apply_gpu_optimizations() -> None:
     import torch
-    # TF32: Ampere (RTX 30xx) executa matmuls em TF32 internamente mantendo float32 na API.
-    # Reduz precisão de 23 para 10 bits mantendo a mesma velocidade de float16.
     torch.backends.cuda.matmul.allow_tf32 = True
     torch.backends.cudnn.allow_tf32 = True
-    # cuDNN escolhe automaticamente o algoritmo mais rápido para cada shape de input.
     torch.backends.cudnn.benchmark = True
 
 
 def _load_canary(model_name: str) -> _Transcriber:
     """NVIDIA Canary via NeMo — encoder-decoder multilingual (en/de/fr/es).
+    model_name esperado no formato "empresa/modelo", ex.: "nvidia/canary-1b-v2".
     Requer: pip install 'nemo_toolkit[asr]'
     """
     import nemo.collections.asr as nemo_asr
 
     _apply_gpu_optimizations()
-    model = nemo_asr.models.ASRModel.from_pretrained(model_name="nvidia/canary-1b-v2")
+    model = nemo_asr.models.ASRModel.from_pretrained(model_name=model_name)
     model = model.cuda()
-    _log_decoding_diagnostics(model, "canary-v2")
-    return _make_nemo_transcriber(model)
+    return _make_nemo_transcriber(model, {"source_lang": "pt", "target_lang": "pt"})
 
 
 def _load_parakeet(model_name: str) -> _Transcriber:
     """NVIDIA Parakeet via NeMo — modelo CTC/TDT compacto (inglês).
+    model_name esperado no formato "empresa/modelo", ex.: "nvidia/parakeet-tdt-0.6b-v3".
+    Não aceita source_lang/target_lang (diferente do Canary).
     Requer: pip install 'nemo_toolkit[asr]'
     """
     from nemo.collections.asr.models import ASRModel
 
     _apply_gpu_optimizations()
-    model = ASRModel.from_pretrained(model_name="nvidia/parakeet-tdt-0.6b-v3")
+    model = ASRModel.from_pretrained(model_name=model_name)
     model = model.cuda()
-    _log_decoding_diagnostics(model, "parakeet-v3")
+    _disable_rnnt_cuda_graph_decoder(model, "parakeet-v3")
     return _make_nemo_transcriber(model)
 
 
 def _load_voxtral(model_name: str) -> _Transcriber:
-    """Mistral Voxtral via transformers — LLM causal multimodal com entrada de áudio.
-    Requer: pip install transformers 'mistral-common[audio]'
+    """Mistral Voxtral Realtime via transformers — ASR multilingual em streaming.
+    model_name esperado no formato "empresa/modelo", ex.: "mistralai/Voxtral-Mini-4B-Realtime-2602".
+    Classe própria (VoxtralRealtimeForConditionalGeneration) — AutoModelForCausalLM
+    não reconhece a classe de processamento deste checkpoint.
+    Requer: pip install 'transformers>=5.2.0' 'mistral-common[audio]'
     """
     import torch
-    from transformers import AutoProcessor, AutoModelForCausalLM
+    from transformers import AutoProcessor, VoxtralRealtimeForConditionalGeneration
 
-    repo_id = "mistralai/Voxtral-Mini-4B-Realtime-2602"
-
-    processor = AutoProcessor.from_pretrained(repo_id)
-    model = AutoModelForCausalLM.from_pretrained(
-        repo_id, device_map="auto", torch_dtype=torch.float16
+    processor = AutoProcessor.from_pretrained(model_name)
+    model = VoxtralRealtimeForConditionalGeneration.from_pretrained(
+        model_name, device_map="auto", dtype=torch.float16
     )
     model.eval()
 
@@ -181,19 +187,53 @@ def _load_voxtral(model_name: str) -> _Transcriber:
         audio = np.frombuffer(wav_bytes, dtype=np.int16).astype(np.float32) / 32768.0
         duration = len(audio) / 16000.0
 
-        inputs = processor(
-            text="Transcribe the following audio:",
-            audios=[audio],
-            sampling_rate=16000,
-            return_tensors="pt",
-        ).to("cuda")
+        inputs = processor(audio, return_tensors="pt").to(model.device, dtype=model.dtype)
+
+        with torch.no_grad():
+            output_ids = model.generate(**inputs)
+
+        text = processor.batch_decode(output_ids, skip_special_tokens=True)[0].strip()
+        return text, [], duration
+
+    return _transcribe
+
+
+def _load_granite(model_name: str) -> _Transcriber:
+    """IBM Granite Speech via transformers — LLM Granite com adapter de áudio (encoder + LoRA).
+    model_name esperado no formato "empresa/modelo", ex.: "ibm-granite/granite-4.0-1b-speech".
+    Requer: pip install transformers
+    """
+    import torch
+    from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq
+
+    processor = AutoProcessor.from_pretrained(model_name)
+    tokenizer = processor.tokenizer
+    model = AutoModelForSpeechSeq2Seq.from_pretrained(
+        model_name, device_map="cuda", dtype=torch.bfloat16
+    )
+    model.eval()
+
+    chat = [
+        {
+            "role": "system",
+            "content": "Knowledge Cutoff Date: April 2024.\nYou are Granite, developed by IBM. You are a helpful AI assistant.",
+        },
+        {"role": "user", "content": "<|audio|>can you transcribe the speech into a written format?"},
+    ]
+    prompt = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+
+    def _transcribe(wav_bytes: bytes) -> tuple[str, list, float | None]:
+        audio = np.frombuffer(wav_bytes, dtype=np.int16).astype(np.float32) / 32768.0
+        duration = len(audio) / 16000.0
+        wav = torch.from_numpy(audio).unsqueeze(0)
+
+        inputs = processor(prompt, wav, device="cuda", return_tensors="pt").to("cuda")
 
         with torch.no_grad():
             output_ids = model.generate(**inputs, max_new_tokens=512)
 
-        # Remove tokens de entrada; decodifica apenas o trecho gerado
-        input_len = inputs["input_ids"].shape[1]
-        text = processor.decode(output_ids[0, input_len:], skip_special_tokens=True).strip()
+        input_len = inputs["input_ids"].shape[-1]
+        text = tokenizer.decode(output_ids[0, input_len:], skip_special_tokens=True).strip()
         return text, [], duration
 
     return _transcribe
@@ -201,9 +241,10 @@ def _load_voxtral(model_name: str) -> _Transcriber:
 
 _BACKEND_LOADERS: dict[str, Callable[[str], _Transcriber]] = {
     "faster-whisper": _load_faster_whisper,
-    "canary-v2": _load_canary,
-    "parakeet-v3": _load_parakeet,
-    "voxtral-mini": _load_voxtral,
+    "canary": _load_canary,
+    "parakeet": _load_parakeet,
+    "voxtral": _load_voxtral,
+    "granite": _load_granite,
 }
 
 
@@ -234,7 +275,7 @@ class SpeechToText:
 
         self.metrics_session_id = create_session(
             member_name=os.getenv("MEMBER_NAME", "anonimo"),
-            model_name=self._current_model_key,
+            model_name=display_model_name(self._current_model_key),
             model_source="huggingface",
             scenario="dictation",
         )
@@ -245,7 +286,7 @@ class SpeechToText:
     def run_benchmark_transcription(self, audio, reference):
         self.recognize_and_measure(audio, reference)
         entry = self._build_metrics_entry(ok=False)
-        save_transcription_result(entry)
+        save_transcription_result(self.metrics_session_id, entry)
 
     # ── Feedback ────────────────────────────────────────────────────────────────
 
@@ -267,7 +308,7 @@ class SpeechToText:
         return {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "session_id": self.metrics_session_id,
-            "model": self._current_model_key,
+            "model": display_model_name(self._current_model_key),
             "user_success": ok,
             **self._last_metrics,
         }
