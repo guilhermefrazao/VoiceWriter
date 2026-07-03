@@ -115,8 +115,8 @@ class MainEditorMenu():
             spacing=10,
             controls=[
                 ft.Column(spacing=2, horizontal_alignment=ft.CrossAxisAlignment.START, controls=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="white", on_click=lambda e: self.animation.fade(animation_switcher, options_container_1, options_container_2)), ft.Text("Back", size=16, color="grey")]),
-                tf1 := Containers().generic_text_container_with_right_text_field("Vault name", "Pick a name to gain Aura.", "Aura name", container_color="#00302d"),
-                tf2 := Containers().generic_text_container_with_right_button("Location", "Pick a place to create the Aura + Ego", "Browse", "#028268", "#00302d",  self.select_editor_path, False),
+                tf1 := Containers().generic_text_container_with_right_text_field("Vault name", "Pick a name for your Vault.", "Chosen Name", container_color="#00302d"),
+                tf2 := Containers().generic_text_container_with_right_button("Location", "Pick a Folder to create Vault", "Browse", "#028268", "#00302d",  self.select_editor_path, False),
                 ft.Button(content="Create", color="#028268", height=40,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)), on_click=lambda e: self.create_and_open_new_vault(e))
                 ]
             )
@@ -142,7 +142,7 @@ class MainEditorMenu():
             content=ft.Column(
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 spacing=15,
-                controls=[ft.Image(src="frontend/images/Aura.webp", width=100, height=100),
+                controls=[#ft.Image(src="frontend/images/Aura.webp", width=100, height=100),
                         ft.Text(value="VoiceWritter", size=30, weight="bold"),
                         animation_switcher,
                         ]

@@ -372,10 +372,19 @@ class SpeechToText:
 
         return text
 
-    def transcribe_continuously(self, text_callback=None) -> str:
+    def transcribe_continuously(
+        self,
+        text_callback=None,
+        phrase_time_limit: float = 2.0,
+        silence_timeout: int = 7,
+    ) -> str:
         self.recognizer.pause_threshold = 3.0
 
-        return self._listen_and_transcribe_background(text_callback=text_callback)
+        return self._listen_and_transcribe_background(
+            text_callback=text_callback,
+            phrase_time_limit=phrase_time_limit,
+            silence_timeout=silence_timeout,
+        )
 
     def stop_listen(self) -> None:
         self._stop_requested = True
@@ -420,7 +429,12 @@ class SpeechToText:
 
         return None
 
-    def _listen_and_transcribe_background(self, text_callback=None, silence_timeout: int = 20) -> str:
+    def _listen_and_transcribe_background(
+        self,
+        text_callback=None,
+        phrase_time_limit: float = 4,
+        silence_timeout: int = 20,
+    ) -> str:
         self._collected_texts = []
         self._stop_event = threading.Event()
         self._last_audio_time = time.time()
@@ -451,7 +465,7 @@ class SpeechToText:
             self._calibrate_microphone(source)
 
         self.stop_listening = self.recognizer.listen_in_background(
-            microphone, _on_audio, phrase_time_limit=4
+            microphone, _on_audio, phrase_time_limit=phrase_time_limit
         )
         threading.Thread(target=_silence_watchdog, daemon=True).start()
 

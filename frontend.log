@@ -8241,3 +8241,1021 @@ ValueError: Unrecognized processing class in mistralai/Voxtral-Mini-4B-Realtime-
 2026-07-02 23:47:14 | INFO | [Feedback] ✗ | Session success rate: 70.0% (7/10)
 2026-07-02 23:47:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
 2026-07-02 23:47:14 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-03 05:26:13 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:26:13 | INFO | Starting up TCP server on localhost:21943
+2026-07-03 05:26:13 | INFO | Flet app has started...
+2026-07-03 05:26:29 | INFO | App URL: tcp://localhost:21943
+2026-07-03 05:26:29 | INFO | Starting Flet View app...
+2026-07-03 05:26:29 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:26:29 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:26:30 | INFO | App session started
+2026-07-03 05:26:31 | INFO | Carregando modelo ASR [voxtral]: mistralai/Voxtral-Mini-4B-Realtime-2602
+2026-07-03 05:26:35 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:26:35 | INFO | [Metrics] Sessão criada no Supabase: 9db02710-e7a3-4cfc-9ae2-75bd26f19fa7
+2026-07-03 05:26:36 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:26:36 | INFO | [Metrics] Sessão criada no Supabase: d92654c9-683f-456e-88a1-ef4b1b2608f3
+2026-07-03 05:26:37 | ERROR | Falha ao carregar modelo 'voxtral:mistralai/Voxtral-Mini-4B-Realtime-2602'
+Traceback (most recent call last):
+  File "C:\Users\guilh\Documents\VoiceWriter\voice\speech.py", line 345, in _load_async
+    SpeechToText._model_cache[model_key] = loader(model_name)
+                                           ~~~~~~^^^^^^^^^^^^
+  File "C:\Users\guilh\Documents\VoiceWriter\voice\speech.py", line 178, in _load_voxtral
+    from transformers import AutoProcessor, VoxtralRealtimeForConditionalGeneration
+ModuleNotFoundError: No module named 'transformers'
+2026-07-03 05:26:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:26:37 | INFO | [Metrics] Sessão criada no Supabase: 48b5e9e8-ecc6-4919-a8ac-8ee59b075a2f
+2026-07-03 05:26:37 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:26:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:26:38 | INFO | [Metrics] Sessão criada no Supabase: 77baf9cb-42db-408f-857d-065be1b30407
+2026-07-03 05:26:52 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:26:52 | INFO | Starting up TCP server on localhost:1295
+2026-07-03 05:26:52 | INFO | Flet app has started...
+2026-07-03 05:27:06 | INFO | App URL: tcp://localhost:1295
+2026-07-03 05:27:06 | INFO | Starting Flet View app...
+2026-07-03 05:27:06 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:27:06 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:27:07 | INFO | App session started
+2026-07-03 05:27:07 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:27:10 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:27:10 | INFO | [Metrics] Sessão criada no Supabase: e4169eef-1636-4bda-bbe1-4cf22c23dae2
+2026-07-03 05:27:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:27:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:27:12 | INFO | [Metrics] Sessão criada no Supabase: 6ffb0a64-430b-4dc2-ad65-5f369c5f9cee
+2026-07-03 05:27:12 | INFO | [Metrics] Sessão criada no Supabase: 3bd0f8eb-0eb0-40c6-a93a-355b052fab76
+2026-07-03 05:27:12 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:27:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:27:14 | INFO | [Metrics] Sessão criada no Supabase: e53cc1a4-59b3-4237-b494-af89d0c3aa37
+2026-07-03 05:27:14 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:27:15 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:27:18 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 10.48 segundos.
+2026-07-03 05:27:18 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:27:18 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:27:26 | INFO | Wakeword 'hey_jarvis' detectada (score=0.910)
+2026-07-03 05:27:27 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:27:27 | INFO | [Metrics] Sessão criada no Supabase: 3858447c-f35a-40b1-b3f4-d626893b20e0
+2026-07-03 05:27:27 | INFO | Type-at-cursor mode started. Press Ctrl+C to stop.
+2026-07-03 05:27:28 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:27:33 | INFO | Processing audio with duration 00:04.505
+2026-07-03 05:27:34 | INFO | Recognized: Testando a execução do Type R.
+2026-07-03 05:27:34 | INFO | [ASR Metrics] Loading Model latency=10ms | Inference latency=1053ms | RTF=0.234 | conf=72.61%
+2026-07-03 05:27:35 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:27:35 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:27:35 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:27:39 | INFO | Processing audio with duration 00:03.762
+2026-07-03 05:27:40 | INFO | Recognized: Tá fazendo a execução.
+2026-07-03 05:27:40 | INFO | [ASR Metrics] Loading Model latency=10ms | Inference latency=800ms | RTF=0.213 | conf=76.92%
+2026-07-03 05:27:41 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:27:41 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:27:41 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:27:45 | INFO | Processing audio with duration 00:04.156
+2026-07-03 05:27:46 | INFO | Recognized: é mas não tá tá hipando é
+2026-07-03 05:27:46 | INFO | [ASR Metrics] Loading Model latency=10ms | Inference latency=764ms | RTF=0.184 | conf=56.91%
+2026-07-03 05:27:47 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:27:47 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:27:47 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:31:08 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:31:08 | INFO | Starting up TCP server on localhost:1970
+2026-07-03 05:31:08 | INFO | Flet app has started...
+2026-07-03 05:31:22 | INFO | App URL: tcp://localhost:1970
+2026-07-03 05:31:22 | INFO | Starting Flet View app...
+2026-07-03 05:31:22 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:31:22 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:31:23 | INFO | App session started
+2026-07-03 05:31:24 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:31:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:31:26 | INFO | [Metrics] Sessão criada no Supabase: 29bd48f7-1135-459c-91c4-6a6fa6db1bbb
+2026-07-03 05:31:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:31:28 | INFO | [Metrics] Sessão criada no Supabase: a000713f-ccd2-4a77-9702-411ce582aa23
+2026-07-03 05:31:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:31:28 | INFO | [Metrics] Sessão criada no Supabase: 8aca98ee-b830-41af-a4c6-bb8c3cd7ee98
+2026-07-03 05:31:28 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:31:29 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:31:29 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:31:30 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:31:30 | INFO | [Metrics] Sessão criada no Supabase: 9eed2318-1707-4d22-a742-1f7df1538cb7
+2026-07-03 05:31:30 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:31:30 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:31:31 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 7.84 segundos.
+2026-07-03 05:31:39 | INFO | Wakeword 'hey_jarvis' detectada (score=0.922)
+2026-07-03 05:31:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:31:40 | INFO | [Metrics] Sessão criada no Supabase: 484b04c5-739c-443f-8a1a-4d450a697372
+2026-07-03 05:31:40 | INFO | Type-at-cursor mode started. Press Ctrl+C to stop.
+2026-07-03 05:31:41 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:31:46 | INFO | Processing audio with duration 00:04.412
+2026-07-03 05:31:47 | INFO | Recognized: a detecção e transcrição
+2026-07-03 05:31:47 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=1065ms | RTF=0.241 | conf=58.47%
+2026-07-03 05:31:48 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:31:48 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:31:48 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:31:52 | INFO | Processing audio with duration 00:04.017
+2026-07-03 05:31:53 | INFO | Recognized: Então, agora tudo o que eu falo, ele faz o...
+2026-07-03 05:31:53 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=804ms | RTF=0.200 | conf=84.13%
+2026-07-03 05:31:54 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:31:54 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:31:54 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:31:59 | INFO | Processing audio with duration 00:04.505
+2026-07-03 05:32:00 | INFO | Recognized: e escreve agora eu consigo mandar
+2026-07-03 05:32:00 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=894ms | RTF=0.198 | conf=82.23%
+2026-07-03 05:32:01 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:01 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:01 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:05 | INFO | Processing audio with duration 00:04.017
+2026-07-03 05:32:05 | INFO | Recognized: Ah, ah, ah, ah, ah, ah, ah, ah.
+2026-07-03 05:32:05 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=836ms | RTF=0.208 | conf=84.71%
+2026-07-03 05:32:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:06 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:06 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:11 | INFO | Processing audio with duration 00:04.017
+2026-07-03 05:32:11 | INFO | Recognized: Tchau, tchau.
+2026-07-03 05:32:11 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=773ms | RTF=0.193 | conf=53.24%
+2026-07-03 05:32:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:12 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:12 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:17 | INFO | Processing audio with duration 00:04.505
+2026-07-03 05:32:18 | INFO | Recognized: Não, não.
+2026-07-03 05:32:18 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=779ms | RTF=0.173 | conf=37.65%
+2026-07-03 05:32:19 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:19 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:19 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:23 | INFO | Processing audio with duration 00:04.017
+2026-07-03 05:32:24 | INFO | Recognized: o script pra acabar com o computador do o
+2026-07-03 05:32:24 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=1297ms | RTF=0.323 | conf=65.72%
+2026-07-03 05:32:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:25 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:25 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:30 | INFO | Processing audio with duration 00:04.180
+2026-07-03 05:32:30 | INFO | Recognized: E depois um script para acabar com o Lucas Gris.
+2026-07-03 05:32:30 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=825ms | RTF=0.197 | conf=85.54%
+2026-07-03 05:32:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:31 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:31 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:38 | INFO | Processing audio with duration 00:04.342
+2026-07-03 05:32:39 | INFO | Recognized: Tchau.
+2026-07-03 05:32:39 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=872ms | RTF=0.201 | conf=42.32%
+2026-07-03 05:32:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:40 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:40 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:44 | INFO | Processing audio with duration 00:04.180
+2026-07-03 05:32:45 | INFO | Recognized: por favor
+2026-07-03 05:32:45 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=735ms | RTF=0.176 | conf=61.44%
+2026-07-03 05:32:46 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:46 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:46 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:50 | INFO | Processing audio with duration 00:03.831
+2026-07-03 05:32:51 | INFO | Recognized: Por favor, escreva um script em que toda vez que...
+2026-07-03 05:32:51 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=888ms | RTF=0.232 | conf=87.18%
+2026-07-03 05:32:52 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:52 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:52 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:32:56 | INFO | Processing audio with duration 00:04.040
+2026-07-03 05:32:56 | INFO | Recognized: E que fala mega brain aí para você fala.
+2026-07-03 05:32:56 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=764ms | RTF=0.189 | conf=58.19%
+2026-07-03 05:32:57 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:32:57 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:32:57 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:02 | INFO | Processing audio with duration 00:04.017
+2026-07-03 05:33:02 | INFO | Recognized: o celular mande onde é que eu cabo a mídia 10.000 vezes por ser
+2026-07-03 05:33:02 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=897ms | RTF=0.223 | conf=66.43%
+2026-07-03 05:33:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:03 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:03 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:07 | INFO | Processing audio with duration 00:04.017
+2026-07-03 05:33:08 | INFO | Recognized: E aí
+2026-07-03 05:33:08 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=822ms | RTF=0.205 | conf=62.72%
+2026-07-03 05:33:09 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:09 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:09 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:14 | INFO | Processing audio with duration 00:04.458
+2026-07-03 05:33:15 | INFO | Recognized: Vamos lá.
+2026-07-03 05:33:15 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=1207ms | RTF=0.271 | conf=34.11%
+2026-07-03 05:33:16 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:16 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:16 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:20 | INFO | Processing audio with duration 00:03.738
+2026-07-03 05:33:21 | INFO | Recognized: Gemini, ligue o Mega Brave.
+2026-07-03 05:33:21 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=839ms | RTF=0.225 | conf=72.05%
+2026-07-03 05:33:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:22 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:22 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:26 | INFO | Processing audio with duration 00:04.180
+2026-07-03 05:33:27 | INFO | Recognized: e onde que o cabo a mídia você terá que mandar um esquecer
+2026-07-03 05:33:27 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=827ms | RTF=0.198 | conf=71.41%
+2026-07-03 05:33:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:28 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:28 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:32 | INFO | Processing audio with duration 00:04.017
+2026-07-03 05:33:32 | INFO | Recognized: digitando 10 mil vezes onde é que o caba me
+2026-07-03 05:33:32 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=796ms | RTF=0.198 | conf=78.54%
+2026-07-03 05:33:33 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:33 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:33 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:38 | INFO | Processing audio with duration 00:02.926
+2026-07-03 05:33:38 | INFO | Recognized: falando onde que dá pra mijar aqui
+2026-07-03 05:33:38 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=773ms | RTF=0.264 | conf=86.79%
+2026-07-03 05:33:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:39 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:39 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:46 | INFO | Processing audio with duration 00:04.505
+2026-07-03 05:33:47 | INFO | Recognized: Vamos lá.
+2026-07-03 05:33:47 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=855ms | RTF=0.190 | conf=42.46%
+2026-07-03 05:33:48 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:48 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:48 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:52 | INFO | Processing audio with duration 00:04.156
+2026-07-03 05:33:53 | INFO | Recognized: Tchau, tchau.
+2026-07-03 05:33:53 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=1046ms | RTF=0.252 | conf=52.35%
+2026-07-03 05:33:54 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:33:54 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:33:54 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:33:58 | INFO | Processing audio with duration 00:03.390
+2026-07-03 05:33:59 | INFO | Recognized: Tchau.
+2026-07-03 05:33:59 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=824ms | RTF=0.243 | conf=41.40%
+2026-07-03 05:34:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:34:00 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:34:00 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:34:04 | INFO | Processing audio with duration 00:04.226
+2026-07-03 05:34:05 | INFO | Recognized: Tchau.
+2026-07-03 05:34:05 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=816ms | RTF=0.193 | conf=26.59%
+2026-07-03 05:34:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:34:06 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:34:06 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:35:05 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:35:05 | INFO | Starting up TCP server on localhost:1275
+2026-07-03 05:35:05 | INFO | Flet app has started...
+2026-07-03 05:35:19 | INFO | App URL: tcp://localhost:1275
+2026-07-03 05:35:19 | INFO | Starting Flet View app...
+2026-07-03 05:35:19 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:35:19 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:35:20 | INFO | App session started
+2026-07-03 05:35:20 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:35:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:35:22 | INFO | [Metrics] Sessão criada no Supabase: 0ef514a5-33ab-4dff-9d7a-95d77aed37d7
+2026-07-03 05:35:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:35:24 | INFO | [Metrics] Sessão criada no Supabase: b397d992-b65e-405e-b963-a427851fa390
+2026-07-03 05:35:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:35:24 | INFO | [Metrics] Sessão criada no Supabase: bb305232-6ea2-4410-9bcb-99ce0572c4c8
+2026-07-03 05:35:25 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:35:25 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:35:25 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:35:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:35:26 | INFO | [Metrics] Sessão criada no Supabase: 1592659d-13b6-40ea-a2b0-8a1f71671a74
+2026-07-03 05:35:27 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:35:27 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:35:28 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 7.45 segundos.
+2026-07-03 05:37:30 | INFO | Wakeword 'hey_jarvis' detectada (score=0.968)
+2026-07-03 05:37:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:37:31 | INFO | [Metrics] Sessão criada no Supabase: 247643d3-f432-4f6a-b2ab-f91ddeb697de
+2026-07-03 05:37:31 | INFO | Type-at-cursor mode started. Press Ctrl+C to stop.
+2026-07-03 05:37:33 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:37:36 | INFO | Processing audio with duration 00:01.091
+2026-07-03 05:37:37 | INFO | Recognized: Testando.
+2026-07-03 05:37:37 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=1060ms | RTF=0.971 | conf=50.94%
+2026-07-03 05:37:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:37:37 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:37:37 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:37:41 | INFO | Silence timeout (5s) — ending transcription.
+2026-07-03 05:37:42 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:37:43 | INFO | Processing audio with duration 00:01.254
+2026-07-03 05:37:44 | INFO | Recognized: Muito bem, como é que...
+2026-07-03 05:37:44 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=934ms | RTF=0.745 | conf=80.13%
+2026-07-03 05:37:45 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:37:45 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:37:45 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:37:47 | INFO | Processing audio with duration 00:01.509
+2026-07-03 05:37:48 | INFO | Recognized: Ele derrumbe.
+2026-07-03 05:37:48 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=734ms | RTF=0.486 | conf=61.92%
+2026-07-03 05:37:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:37:49 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:37:49 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:37:50 | INFO | Processing audio with duration 00:01.184
+2026-07-03 05:37:50 | INFO | Recognized: Mas não...
+2026-07-03 05:37:50 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=707ms | RTF=0.597 | conf=57.12%
+2026-07-03 05:37:51 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:37:51 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:37:51 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:37:53 | INFO | Processing audio with duration 00:01.509
+2026-07-03 05:37:54 | INFO | Recognized: Time out
+2026-07-03 05:37:54 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=747ms | RTF=0.495 | conf=54.52%
+2026-07-03 05:37:55 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:37:55 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:37:55 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:37:58 | INFO | Processing audio with duration 00:01.022
+2026-07-03 05:37:58 | INFO | Recognized: Obrigado.
+2026-07-03 05:37:58 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=785ms | RTF=0.769 | conf=46.35%
+2026-07-03 05:37:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:37:59 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:37:59 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:38:03 | INFO | Silence timeout (5s) — ending transcription.
+2026-07-03 05:38:04 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:38:08 | INFO | Processing audio with duration 00:01.509
+2026-07-03 05:38:08 | INFO | Recognized: Próximo.
+2026-07-03 05:38:08 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=824ms | RTF=0.546 | conf=51.88%
+2026-07-03 05:38:09 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:38:09 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:38:09 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:38:10 | INFO | Processing audio with duration 00:01.022
+2026-07-03 05:38:11 | INFO | Recognized: 
+2026-07-03 05:38:11 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=693ms | RTF=0.679
+2026-07-03 05:38:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:38:12 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:38:13 | INFO | Processing audio with duration 00:01.091
+2026-07-03 05:38:14 | INFO | Recognized: Vamos lá.
+2026-07-03 05:38:14 | INFO | [ASR Metrics] Loading Model latency=7ms | Inference latency=654ms | RTF=0.599 | conf=37.21%
+2026-07-03 05:38:15 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:38:15 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:38:15 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:47:57 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:47:57 | INFO | Starting up TCP server on localhost:39586
+2026-07-03 05:47:57 | INFO | Flet app has started...
+2026-07-03 05:47:58 | INFO | App URL: tcp://localhost:39586
+2026-07-03 05:47:58 | INFO | Starting Flet View app...
+2026-07-03 05:47:58 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:47:58 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:47:59 | INFO | App session started
+2026-07-03 05:47:59 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:48:02 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:02 | INFO | [Metrics] Sessão criada no Supabase: 97923c52-62ad-4fca-9b61-381973279c3b
+2026-07-03 05:48:04 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:48:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:04 | INFO | [Metrics] Sessão criada no Supabase: b164bada-9590-44b5-9cd7-70c1d26daa30
+2026-07-03 05:48:04 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:48:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:04 | INFO | [Metrics] Sessão criada no Supabase: e2eb7656-5f30-40bc-abd8-c1d1c5e53cfe
+2026-07-03 05:48:05 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:48:06 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:48:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:06 | INFO | [Metrics] Sessão criada no Supabase: 1b711839-a253-4254-9776-54bf1631eae7
+2026-07-03 05:48:06 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:48:07 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 7.85 segundos.
+2026-07-03 05:48:14 | INFO | Wakeword 'alexa' detectada (score=0.925)
+2026-07-03 05:48:15 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:15 | INFO | [Metrics] Sessão criada no Supabase: e8ff0249-c121-4ac3-8b96-2804050ebc3a
+2026-07-03 05:48:16 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:48:20 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001FED9E00440>
+2026-07-03 05:48:20 | INFO | Processing audio with duration 00:02.902
+2026-07-03 05:48:21 | INFO | Recognized: Abra o Discord.
+2026-07-03 05:48:21 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=1008ms | RTF=0.347 | conf=95.37%
+2026-07-03 05:48:21 | INFO | Command identified! Trying to open: discord....
+2026-07-03 05:48:21 | INFO | Opening: discord.
+2026-07-03 05:48:21 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:48:22 | INFO | Wakeword 'alexa' detectada (score=0.957)
+2026-07-03 05:48:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:23 | INFO | [Metrics] Sessão criada no Supabase: 7ad8819b-0ed1-4dba-87e1-ae62c08cbe53
+2026-07-03 05:48:24 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:48:28 | ERROR | Listening timeout while waiting for a phrase to start
+2026-07-03 05:48:28 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:48:28 | INFO | Wakeword 'alexa' detectada (score=0.997)
+2026-07-03 05:48:29 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:29 | INFO | [Metrics] Sessão criada no Supabase: 5c1c5f4d-6e44-4f11-9a6a-2f0536576f4d
+2026-07-03 05:48:31 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:48:33 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001FF178CFC50>
+2026-07-03 05:48:33 | INFO | Processing audio with duration 00:01.393
+2026-07-03 05:48:34 | INFO | Recognized: Vamos lá.
+2026-07-03 05:48:34 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=556ms | RTF=0.399 | conf=38.98%
+2026-07-03 05:48:34 | INFO | No command recognized in this phrase.
+2026-07-03 05:48:34 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:48:34 | INFO | Wakeword 'alexa' detectada (score=0.998)
+2026-07-03 05:48:35 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:35 | INFO | [Metrics] Sessão criada no Supabase: ca420332-cf0e-42f7-88a9-a3cabdfa559c
+2026-07-03 05:48:36 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:48:40 | ERROR | Listening timeout while waiting for a phrase to start
+2026-07-03 05:48:40 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:48:40 | INFO | Wakeword 'alexa' detectada (score=0.999)
+2026-07-03 05:48:41 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:48:41 | INFO | [Metrics] Sessão criada no Supabase: 64a37ab8-7578-4b7a-8630-2db6d4be5ffc
+2026-07-03 05:48:43 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:50:59 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:50:59 | INFO | Starting up TCP server on localhost:39311
+2026-07-03 05:50:59 | INFO | Flet app has started...
+2026-07-03 05:51:00 | INFO | App URL: tcp://localhost:39311
+2026-07-03 05:51:00 | INFO | Starting Flet View app...
+2026-07-03 05:51:00 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:51:00 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:51:01 | INFO | App session started
+2026-07-03 05:51:01 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:51:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:51:04 | INFO | [Metrics] Sessão criada no Supabase: 3d8a0e70-6caa-4ead-9d66-ed1cf0f3af1e
+2026-07-03 05:51:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:51:06 | INFO | [Metrics] Sessão criada no Supabase: 44ef0990-840e-45ec-83db-9d52ea6f9b5b
+2026-07-03 05:51:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:51:06 | INFO | [Metrics] Sessão criada no Supabase: 023fe92b-6bc1-4d81-b9ba-df3d069e6f9a
+2026-07-03 05:51:06 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:51:06 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:51:07 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:51:08 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:51:08 | INFO | [Metrics] Sessão criada no Supabase: 83132fa2-e1a4-4638-8367-f0373b9c4658
+2026-07-03 05:51:08 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:51:09 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:51:10 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 8.30 segundos.
+2026-07-03 05:51:19 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:51:22 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001F68EC8C6E0>
+2026-07-03 05:51:22 | INFO | Processing audio with duration 00:02.043
+2026-07-03 05:51:23 | INFO | Recognized: Abra o Discord.
+2026-07-03 05:51:23 | INFO | [ASR Metrics] Loading Model latency=8ms | Statup latency=4081ms | Inference latency=1042ms | RTF=0.510 | conf=93.17%
+2026-07-03 05:51:23 | INFO | Command identified! Trying to open: discord....
+2026-07-03 05:51:23 | INFO | Opening: discord.
+2026-07-03 05:51:38 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-03 05:51:40 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-03 05:51:40 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-03 05:51:46 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:51:46 | INFO | [Metrics] Sessão criada no Supabase: a3fdc15f-891b-4cc5-957e-095b34300020
+2026-07-03 05:51:53 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:51:53 | INFO | [Metrics] Sessão criada no Supabase: e601398f-7841-430e-b30d-5568b825be77
+2026-07-03 05:52:01 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:52:03 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:52:04 | INFO | Recognized: E nesse arquivo markdown eu...
+2026-07-03 05:52:04 | INFO | [ASR Metrics] Loading Model latency=8ms | Statup latency=3087ms | Inference latency=892ms | RTF=0.442 | conf=61.09%
+2026-07-03 05:52:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:52:05 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:52:05 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:52:07 | INFO | Processing audio with duration 00:02.508
+2026-07-03 05:52:08 | INFO | Recognized: e com base no que eu vou falando
+2026-07-03 05:52:08 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=840ms | RTF=0.335 | conf=89.43%
+2026-07-03 05:52:09 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:52:09 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:52:09 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:52:11 | INFO | Processing audio with duration 00:02.113
+2026-07-03 05:52:12 | INFO | Recognized: e nada dentro do arquivo do Mark
+2026-07-03 05:52:12 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=841ms | RTF=0.398 | conf=75.22%
+2026-07-03 05:52:13 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:52:13 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:52:13 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:52:16 | INFO | Processing audio with duration 00:02.508
+2026-07-03 05:52:16 | INFO | Recognized: escrevendo o que eu falo.
+2026-07-03 05:52:16 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=793ms | RTF=0.316 | conf=99.24%
+2026-07-03 05:52:17 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:52:17 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:52:17 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:52:20 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:52:20 | INFO | Recognized: eles falaram por aí
+2026-07-03 05:52:20 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=841ms | RTF=0.416 | conf=37.91%
+2026-07-03 05:52:21 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:52:21 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:52:21 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:52:23 | INFO | Processing audio with duration 00:02.136
+2026-07-03 05:52:24 | INFO | Recognized: alguma coisa de estudo
+2026-07-03 05:52:24 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=773ms | RTF=0.362 | conf=76.30%
+2026-07-03 05:52:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:52:25 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:52:25 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:52:31 | INFO | Silence timeout (7s) — ending transcription.
+2026-07-03 05:52:49 | INFO | Wakeword 'alexa' detectada (score=0.903)
+2026-07-03 05:52:51 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:52:51 | INFO | [Metrics] Sessão criada no Supabase: 7a46bf55-f74f-48bc-bfbd-17c1de2adf1a
+2026-07-03 05:52:52 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:52:54 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001F66D7E58C0>
+2026-07-03 05:52:54 | INFO | Processing audio with duration 00:01.393
+2026-07-03 05:52:55 | INFO | Recognized: o Discord.
+2026-07-03 05:52:55 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=807ms | RTF=0.579 | conf=78.61%
+2026-07-03 05:52:55 | INFO | No command recognized in this phrase.
+2026-07-03 05:52:55 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:52:59 | INFO | Wakeword 'alexa' detectada (score=0.999)
+2026-07-03 05:53:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:53:00 | INFO | [Metrics] Sessão criada no Supabase: d6770f9d-524e-4a50-b363-1816a00db719
+2026-07-03 05:53:02 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:53:04 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001F699E42D50>
+2026-07-03 05:53:04 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:53:05 | INFO | Recognized: Abra o Discord.
+2026-07-03 05:53:05 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=834ms | RTF=0.413 | conf=95.97%
+2026-07-03 05:53:05 | INFO | Command identified! Trying to open: discord....
+2026-07-03 05:53:05 | INFO | Opening: discord.
+2026-07-03 05:53:05 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:53:11 | INFO | Wakeword 'alexa' detectada (score=0.782)
+2026-07-03 05:53:12 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:53:12 | INFO | [Metrics] Sessão criada no Supabase: 3437701e-982f-480b-b024-a8f9071a809d
+2026-07-03 05:53:13 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:53:16 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001F699E40E50>
+2026-07-03 05:53:16 | INFO | Processing audio with duration 00:02.206
+2026-07-03 05:53:17 | INFO | Recognized: Feche o Discord.
+2026-07-03 05:53:17 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=824ms | RTF=0.373 | conf=92.05%
+2026-07-03 05:53:17 | INFO | Command identified! Trying to close: discord....
+2026-07-03 05:53:17 | INFO | Closing: discord.
+2026-07-03 05:53:17 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:53:32 | INFO | Wakeword 'hey_jarvis' detectada (score=0.815)
+2026-07-03 05:53:33 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:53:33 | INFO | [Metrics] Sessão criada no Supabase: bf13e9ec-640f-4efc-b966-455b029a6647
+2026-07-03 05:53:33 | INFO | Type-at-cursor mode started. Press Ctrl+C to stop.
+2026-07-03 05:53:35 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:53:37 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:53:37 | INFO | Recognized: começo a conseguir transcri...
+2026-07-03 05:53:37 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=735ms | RTF=0.364 | conf=70.01%
+2026-07-03 05:53:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:53:39 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:53:39 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:53:41 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:53:42 | INFO | Recognized: falando como um prompt
+2026-07-03 05:53:42 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=725ms | RTF=0.359 | conf=96.39%
+2026-07-03 05:53:43 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:53:43 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:53:43 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:53:45 | INFO | Processing audio with duration 00:02.043
+2026-07-03 05:53:46 | INFO | Recognized: Tchau.
+2026-07-03 05:53:46 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=1043ms | RTF=0.510 | conf=42.71%
+2026-07-03 05:53:47 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:53:47 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:53:47 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:53:49 | INFO | Processing audio with duration 00:01.718
+2026-07-03 05:53:50 | INFO | Recognized: Vamos lá.
+2026-07-03 05:53:50 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=706ms | RTF=0.411 | conf=39.13%
+2026-07-03 05:53:51 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:53:51 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:53:51 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:53:53 | INFO | Processing audio with duration 00:02.159
+2026-07-03 05:53:54 | INFO | Recognized: Vamos lá.
+2026-07-03 05:53:54 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=823ms | RTF=0.381 | conf=38.04%
+2026-07-03 05:53:55 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:53:55 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:53:55 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:53:57 | INFO | Processing audio with duration 00:01.765
+2026-07-03 05:53:57 | INFO | Recognized: Vamos lá.
+2026-07-03 05:53:57 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=814ms | RTF=0.461 | conf=38.25%
+2026-07-03 05:53:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:53:58 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:53:58 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:54:12 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:54:12 | INFO | Starting up TCP server on localhost:3835
+2026-07-03 05:54:12 | INFO | Flet app has started...
+2026-07-03 05:54:14 | INFO | App URL: tcp://localhost:3835
+2026-07-03 05:54:14 | INFO | Starting Flet View app...
+2026-07-03 05:54:14 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:54:14 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:54:14 | INFO | App session started
+2026-07-03 05:54:15 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:54:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:54:18 | INFO | [Metrics] Sessão criada no Supabase: c663ebad-9049-46a0-8979-bd51da6d7d11
+2026-07-03 05:54:20 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:54:20 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:54:20 | INFO | [Metrics] Sessão criada no Supabase: 2dadd1d1-b7ac-4e48-a683-c9ff683314e9
+2026-07-03 05:54:20 | INFO | [Metrics] Sessão criada no Supabase: 93aeb69a-3bba-4689-bb30-829df384bc26
+2026-07-03 05:54:20 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:54:20 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:54:20 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:54:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:54:22 | INFO | [Metrics] Sessão criada no Supabase: 2cb299e0-4d2e-497c-ad80-1a3ea952fc99
+2026-07-03 05:54:22 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:54:22 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:54:23 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 8.50 segundos.
+2026-07-03 05:54:25 | INFO | Wakeword 'alexa' detectada (score=0.974)
+2026-07-03 05:54:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:54:26 | INFO | [Metrics] Sessão criada no Supabase: 7d1163b1-d6bd-46ab-8237-7869404fa593
+2026-07-03 05:54:28 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:54:30 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000022AA0D4C440>
+2026-07-03 05:54:31 | INFO | Processing audio with duration 00:02.276
+2026-07-03 05:54:31 | INFO | Recognized: Execute o OBS.
+2026-07-03 05:54:31 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=951ms | RTF=0.418 | conf=94.37%
+2026-07-03 05:54:31 | INFO | Command identified! Trying to open: obs....
+2026-07-03 05:54:31 | INFO | Opening: obs.
+2026-07-03 05:54:31 | WARNING | Wakeword listener falhou: OBS is not running
+2026-07-03 05:54:51 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:54:55 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000022A9EE9F9D0>
+2026-07-03 05:54:55 | INFO | Processing audio with duration 00:02.345
+2026-07-03 05:54:56 | INFO | Recognized: Abra o LBS Studio.
+2026-07-03 05:54:56 | INFO | [ASR Metrics] Loading Model latency=9ms | Statup latency=4983ms | Inference latency=711ms | RTF=0.303 | conf=95.10%
+2026-07-03 05:54:56 | INFO | Command identified! Trying to open: lbs studio....
+2026-07-03 05:54:56 | INFO | Opening: lbs studio.
+2026-07-03 05:55:03 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-03 05:55:05 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-03 05:55:05 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-03 05:55:43 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:55:43 | INFO | Starting up TCP server on localhost:40825
+2026-07-03 05:55:43 | INFO | Flet app has started...
+2026-07-03 05:55:44 | INFO | App URL: tcp://localhost:40825
+2026-07-03 05:55:44 | INFO | Starting Flet View app...
+2026-07-03 05:55:44 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:55:44 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:55:45 | INFO | App session started
+2026-07-03 05:55:45 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:55:47 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:55:47 | INFO | [Metrics] Sessão criada no Supabase: 97e0adc0-9378-4c38-a69a-1273e94fbe5d
+2026-07-03 05:55:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:55:49 | INFO | [Metrics] Sessão criada no Supabase: a31edbc2-c718-4cca-a16e-13183dba9ae8
+2026-07-03 05:55:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:55:50 | INFO | [Metrics] Sessão criada no Supabase: 510eae8e-8098-42f6-9f72-a5c3511f9550
+2026-07-03 05:55:50 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:55:50 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:55:50 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:55:51 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:55:51 | INFO | [Metrics] Sessão criada no Supabase: 4fed2068-d562-4976-ad6a-cb6f3bbf3a4d
+2026-07-03 05:55:52 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:55:52 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:55:53 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 8.03 segundos.
+2026-07-03 05:56:05 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:56:08 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000002203DFAC6E0>
+2026-07-03 05:56:08 | INFO | Processing audio with duration 00:02.717
+2026-07-03 05:56:09 | INFO | Recognized: Abra o Google Chrome.
+2026-07-03 05:56:09 | INFO | [ASR Metrics] Loading Model latency=8ms | Statup latency=4323ms | Inference latency=992ms | RTF=0.365 | conf=88.78%
+2026-07-03 05:56:09 | INFO | Command identified! Trying to open: google chrome....
+2026-07-03 05:56:09 | INFO | Opening: google chrome.
+2026-07-03 05:56:22 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-03 05:56:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-03 05:56:23 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-03 05:56:31 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:56:31 | INFO | [Metrics] Sessão criada no Supabase: bf465322-a964-4366-a0a5-c1595cf4244c
+2026-07-03 05:56:36 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:56:36 | INFO | [Metrics] Sessão criada no Supabase: 31c313b5-201e-4939-91dd-72408de2c2e0
+2026-07-03 05:56:50 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:56:52 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:56:53 | INFO | Recognized: em tempo real do que eu estou falando.
+2026-07-03 05:56:53 | INFO | [ASR Metrics] Loading Model latency=8ms | Statup latency=3122ms | Inference latency=795ms | RTF=0.394 | conf=91.15%
+2026-07-03 05:56:54 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:56:54 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:56:54 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:56:57 | INFO | Processing audio with duration 00:02.508
+2026-07-03 05:56:57 | INFO | Recognized: fazendo, editando
+2026-07-03 05:56:57 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=790ms | RTF=0.315 | conf=71.28%
+2026-07-03 05:56:58 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:56:58 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:56:58 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:57:00 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:57:01 | INFO | Recognized: com esse e ele faz essa
+2026-07-03 05:57:01 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=803ms | RTF=0.398 | conf=74.12%
+2026-07-03 05:57:02 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:57:02 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:57:02 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:57:04 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:57:05 | INFO | Recognized: Isso a gente descobriu.
+2026-07-03 05:57:05 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=786ms | RTF=0.389 | conf=80.01%
+2026-07-03 05:57:06 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:57:06 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:57:06 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:57:08 | INFO | Processing audio with duration 00:02.136
+2026-07-03 05:57:09 | INFO | Recognized: de qualquer a métrica
+2026-07-03 05:57:09 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=757ms | RTF=0.354 | conf=66.82%
+2026-07-03 05:57:10 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:57:10 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:57:10 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:57:12 | INFO | Processing audio with duration 00:02.276
+2026-07-03 05:57:13 | INFO | Recognized: Efecto que garantia uma.
+2026-07-03 05:57:13 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=786ms | RTF=0.346 | conf=69.61%
+2026-07-03 05:57:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:57:14 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:57:14 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:57:16 | INFO | Processing audio with duration 00:02.113
+2026-07-03 05:57:16 | INFO | Recognized: e se eu fico em silêncio por um
+2026-07-03 05:57:16 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=789ms | RTF=0.373 | conf=88.61%
+2026-07-03 05:57:17 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:57:17 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:57:17 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:57:20 | INFO | Processing audio with duration 00:01.300
+2026-07-03 05:57:20 | INFO | Recognized: de transcriver.
+2026-07-03 05:57:20 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=795ms | RTF=0.612 | conf=27.03%
+2026-07-03 05:57:21 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:57:21 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:57:21 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:57:27 | INFO | Silence timeout (7s) — ending transcription.
+2026-07-03 05:57:37 | INFO | Wakeword 'alexa' detectada (score=0.998)
+2026-07-03 05:57:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:57:38 | INFO | [Metrics] Sessão criada no Supabase: 8e86193c-8aa7-4312-a8a6-0f29b57a60c7
+2026-07-03 05:57:39 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:57:40 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000022078CC1B50>
+2026-07-03 05:57:40 | INFO | Processing audio with duration 00:00.906
+2026-07-03 05:57:41 | INFO | Recognized: o Google.
+2026-07-03 05:57:41 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=779ms | RTF=0.860 | conf=63.18%
+2026-07-03 05:57:41 | INFO | No command recognized in this phrase.
+2026-07-03 05:57:41 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:58:12 | INFO | Wakeword 'hey_jarvis' detectada (score=0.997)
+2026-07-03 05:58:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:58:14 | INFO | [Metrics] Sessão criada no Supabase: 46f98604-3672-4fde-889b-47fdf39a3ded
+2026-07-03 05:58:14 | INFO | Type-at-cursor mode started. Press Ctrl+C to stop.
+2026-07-03 05:58:15 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 05:58:18 | INFO | Processing audio with duration 00:02.067
+2026-07-03 05:58:18 | INFO | Recognized: e aí eu consigo escrever
+2026-07-03 05:58:18 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=877ms | RTF=0.425 | conf=80.64%
+2026-07-03 05:58:19 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:58:19 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:58:19 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:58:21 | INFO | Processing audio with duration 00:01.509
+2026-07-03 05:58:22 | INFO | Recognized: exemplo com essa transcrição.
+2026-07-03 05:58:22 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=708ms | RTF=0.469 | conf=73.33%
+2026-07-03 05:58:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:58:23 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:58:23 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:58:27 | INFO | Processing audio with duration 00:02.508
+2026-07-03 05:58:28 | INFO | Recognized: Ele também tem a mesma lógica do...
+2026-07-03 05:58:28 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=789ms | RTF=0.314 | conf=95.21%
+2026-07-03 05:58:28 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:58:28 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:58:28 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:58:31 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:58:31 | INFO | Recognized: ele vai fazer a transcrição.
+2026-07-03 05:58:31 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=803ms | RTF=0.397 | conf=81.14%
+2026-07-03 05:58:32 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:58:32 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:58:32 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:58:37 | INFO | Processing audio with duration 00:02.206
+2026-07-03 05:58:37 | INFO | Recognized: Vamos lá.
+2026-07-03 05:58:37 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=859ms | RTF=0.389 | conf=39.38%
+2026-07-03 05:58:38 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 05:58:39 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 05:58:39 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 05:58:41 | INFO | Processing audio with duration 00:02.020
+2026-07-03 05:59:32 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 05:59:32 | INFO | Starting up TCP server on localhost:55605
+2026-07-03 05:59:32 | INFO | Flet app has started...
+2026-07-03 05:59:34 | INFO | App URL: tcp://localhost:55605
+2026-07-03 05:59:34 | INFO | Starting Flet View app...
+2026-07-03 05:59:34 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:59:34 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 05:59:35 | INFO | App session started
+2026-07-03 05:59:35 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 05:59:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:59:37 | INFO | [Metrics] Sessão criada no Supabase: 2a2f8396-95f6-4771-a63d-d190e604560f
+2026-07-03 05:59:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:59:39 | INFO | [Metrics] Sessão criada no Supabase: 00ec4ca1-6bd8-478d-bc14-58a824d7172e
+2026-07-03 05:59:39 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:59:39 | INFO | [Metrics] Sessão criada no Supabase: f76a1268-3008-4583-8c8e-209b26a2e3aa
+2026-07-03 05:59:40 | INFO | Loading Model - (Pre-warm).
+2026-07-03 05:59:41 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 05:59:41 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 05:59:41 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 05:59:41 | INFO | [Metrics] Sessão criada no Supabase: 285cded4-e4be-4331-949f-b4cb36d3f446
+2026-07-03 05:59:42 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 05:59:42 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 05:59:43 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 8.54 segundos.
+2026-07-03 06:00:01 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:00:05 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000028A14230830>
+2026-07-03 06:00:05 | INFO | Processing audio with duration 00:01.207
+2026-07-03 06:00:06 | INFO | Recognized: Abra o Google.
+2026-07-03 06:00:06 | INFO | [ASR Metrics] Loading Model latency=9ms | Statup latency=4681ms | Inference latency=969ms | RTF=0.803 | conf=91.66%
+2026-07-03 06:00:06 | INFO | Command identified! Trying to open: google....
+2026-07-03 06:00:06 | INFO | Opening: google.
+2026-07-03 06:00:21 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-03 06:00:23 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-03 06:00:23 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-03 06:00:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:00:25 | INFO | [Metrics] Sessão criada no Supabase: 4e66ea6b-4943-410f-baca-b37464fd5c6a
+2026-07-03 06:00:29 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:00:29 | INFO | [Metrics] Sessão criada no Supabase: 9e71cc5c-e879-4761-ad1a-0ce36ba75a7e
+2026-07-03 06:00:40 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:00:42 | INFO | Processing audio with duration 00:01.858
+2026-07-03 06:00:42 | INFO | Recognized: Eu começo a gravar minha voz.
+2026-07-03 06:00:42 | INFO | [ASR Metrics] Loading Model latency=9ms | Statup latency=3100ms | Inference latency=813ms | RTF=0.438 | conf=81.66%
+2026-07-03 06:00:43 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:00:43 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:00:43 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:00:46 | INFO | Processing audio with duration 00:02.322
+2026-07-03 06:00:47 | INFO | Recognized: simultânea a cada dois segundos.
+2026-07-03 06:00:47 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=801ms | RTF=0.345 | conf=85.40%
+2026-07-03 06:00:48 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:00:48 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:00:48 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:00:50 | INFO | Processing audio with duration 00:02.299
+2026-07-03 06:00:50 | INFO | Recognized: que eu estou falando para esse editor.
+2026-07-03 06:00:50 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=770ms | RTF=0.335 | conf=86.46%
+2026-07-03 06:00:52 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:00:52 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:00:52 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:00:54 | INFO | Processing audio with duration 00:02.136
+2026-07-03 06:00:54 | INFO | Recognized: Peggy, um...
+2026-07-03 06:00:54 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=754ms | RTF=0.353 | conf=78.36%
+2026-07-03 06:00:55 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:00:55 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:00:55 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:00:57 | INFO | Processing audio with duration 00:02.113
+2026-07-03 06:00:58 | INFO | Recognized: e a gente consegue utilizar meio que...
+2026-07-03 06:00:58 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=781ms | RTF=0.370 | conf=73.00%
+2026-07-03 06:00:59 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:00:59 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:00:59 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:01:01 | INFO | Processing audio with duration 00:01.997
+2026-07-03 06:01:02 | INFO | Recognized: Obrigado.
+2026-07-03 06:01:02 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=736ms | RTF=0.368 | conf=52.82%
+2026-07-03 06:01:03 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:01:03 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:01:03 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:01:05 | INFO | Processing audio with duration 00:02.136
+2026-07-03 06:01:06 | INFO | Recognized: segundos, ele detectando o silêncio.
+2026-07-03 06:01:06 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=801ms | RTF=0.375 | conf=84.28%
+2026-07-03 06:01:07 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:01:07 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:01:07 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:01:13 | INFO | Silence timeout (7s) — ending transcription.
+2026-07-03 06:01:32 | INFO | Wakeword 'alexa' detectada (score=0.778)
+2026-07-03 06:01:33 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:01:33 | INFO | [Metrics] Sessão criada no Supabase: c7f4b4d8-01c1-46ab-b759-2ff4899fc4cb
+2026-07-03 06:01:34 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:01:37 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x0000028A0BBB7A50>
+2026-07-03 06:01:37 | INFO | Processing audio with duration 00:01.904
+2026-07-03 06:01:37 | INFO | Recognized: Abra o Google.
+2026-07-03 06:01:37 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=789ms | RTF=0.414 | conf=84.16%
+2026-07-03 06:01:37 | INFO | Command identified! Trying to open: google....
+2026-07-03 06:01:37 | INFO | Opening: google.
+2026-07-03 06:01:38 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 06:02:00 | INFO | Wakeword 'hey_jarvis' detectada (score=0.972)
+2026-07-03 06:02:01 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:02:01 | INFO | [Metrics] Sessão criada no Supabase: 365daf7e-d910-44a9-a9c7-686dbd41ce6b
+2026-07-03 06:02:02 | INFO | Type-at-cursor mode started. Press Ctrl+C to stop.
+2026-07-03 06:02:03 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:02:05 | INFO | Processing audio with duration 00:02.090
+2026-07-03 06:02:06 | INFO | Recognized: para o meu cursor, agora eu
+2026-07-03 06:02:06 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=923ms | RTF=0.442 | conf=84.27%
+2026-07-03 06:02:07 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:02:07 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:02:07 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:02:09 | INFO | Processing audio with duration 00:02.368
+2026-07-03 06:02:10 | INFO | Recognized: Vou comprar onde o meu cursor estiver.
+2026-07-03 06:02:10 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=715ms | RTF=0.302 | conf=76.56%
+2026-07-03 06:02:11 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:02:11 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:02:11 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:02:13 | INFO | Processing audio with duration 00:02.136
+2026-07-03 06:02:14 | INFO | Recognized: Compute para o Gemini aqui utilizando.
+2026-07-03 06:02:14 | INFO | [ASR Metrics] Loading Model latency=9ms | Inference latency=728ms | RTF=0.341 | conf=76.14%
+2026-07-03 06:02:15 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:02:15 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:02:15 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:03:39 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 06:03:39 | INFO | Starting up TCP server on localhost:3248
+2026-07-03 06:03:39 | INFO | Flet app has started...
+2026-07-03 06:03:40 | INFO | App URL: tcp://localhost:3248
+2026-07-03 06:03:40 | INFO | Starting Flet View app...
+2026-07-03 06:03:40 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 06:03:40 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 06:03:41 | INFO | App session started
+2026-07-03 06:03:41 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 06:03:43 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:03:43 | INFO | [Metrics] Sessão criada no Supabase: 5fa41ed4-cf59-43b1-901a-846b38cd6797
+2026-07-03 06:03:45 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:03:45 | INFO | [Metrics] Sessão criada no Supabase: a5dc229b-eaec-457f-a2f3-403149980a38
+2026-07-03 06:03:45 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:03:45 | INFO | [Metrics] Sessão criada no Supabase: 58aea580-f76d-4f98-95f1-e297ae70baa0
+2026-07-03 06:03:46 | INFO | Loading Model - (Pre-warm).
+2026-07-03 06:03:46 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 06:03:46 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 06:03:47 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:03:47 | INFO | [Metrics] Sessão criada no Supabase: 237c6825-668b-4988-84ca-9ca62dbb1749
+2026-07-03 06:03:47 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 06:03:48 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 06:03:49 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 7.90 segundos.
+2026-07-03 06:03:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:03:49 | INFO | [Metrics] Sessão criada no Supabase: e2a5a8ab-dbc5-4def-be78-3212e94642ba
+2026-07-03 06:04:17 | INFO | Assets path configured: C:\Users\guilh\Documents\VoiceWriter\assets
+2026-07-03 06:04:17 | INFO | Starting up TCP server on localhost:58093
+2026-07-03 06:04:17 | INFO | Flet app has started...
+2026-07-03 06:04:18 | INFO | App URL: tcp://localhost:58093
+2026-07-03 06:04:18 | INFO | Starting Flet View app...
+2026-07-03 06:04:18 | INFO | Looking for Flet executable at: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 06:04:18 | INFO | Flet View found in: C:\Users\guilh\Documents\VoiceWriter\.venv\Lib\site-packages\flet_desktop\app\flet\flet.exe
+2026-07-03 06:04:18 | INFO | App session started
+2026-07-03 06:04:19 | INFO | Carregando modelo ASR [faster-whisper]: turbo
+2026-07-03 06:04:22 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:04:22 | INFO | [Metrics] Sessão criada no Supabase: ea8bc5ee-2eb4-4894-900d-35c10fdda957
+2026-07-03 06:04:23 | INFO | HTTP Request: GET https://huggingface.co/api/models/mobiuslabsgmbh/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 307 Temporary Redirect"
+2026-07-03 06:04:24 | INFO | HTTP Request: GET https://huggingface.co/api/models/dropbox-dash/faster-whisper-large-v3-turbo/revision/main "HTTP/1.1 200 OK"
+2026-07-03 06:04:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:04:24 | INFO | [Metrics] Sessão criada no Supabase: cbce8baf-d368-4809-8120-3be7e8a4ed7f
+2026-07-03 06:04:24 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:04:24 | INFO | [Metrics] Sessão criada no Supabase: 44ba301f-23cd-4ca9-becf-d7ce1e52dcb1
+2026-07-03 06:04:24 | INFO | Loading Model - (Pre-warm).
+2026-07-03 06:04:26 | INFO | Wakeword listener iniciado (modelos=['C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/hey_jarvis_v0.1.onnx', 'C:\\Users\\guilh\\Documents\\VoiceWriter\\.venv\\Lib\\site-packages\\openwakeword\\resources/models/alexa_v0.1.onnx'], limiar=0.70)
+2026-07-03 06:04:26 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 06:04:26 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:04:26 | INFO | [Metrics] Sessão criada no Supabase: c56fa0fb-bdb2-4f1b-b39c-5b0f6e3b3b22
+2026-07-03 06:04:27 | INFO | Modelo 'faster-whisper:turbo' pronto. Tempo de carregamento: 8.13 segundos.
+2026-07-03 06:04:43 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:04:46 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001FDB17F46E0>
+2026-07-03 06:04:46 | INFO | Processing audio with duration 00:02.368
+2026-07-03 06:04:47 | INFO | Recognized: É, abra o Google.
+2026-07-03 06:04:47 | INFO | [ASR Metrics] Loading Model latency=8ms | Statup latency=3710ms | Inference latency=995ms | RTF=0.420 | conf=79.17%
+2026-07-03 06:04:47 | INFO | Command identified! Trying to open: google....
+2026-07-03 06:04:47 | INFO | Opening: google.
+2026-07-03 06:05:00 | INFO | [Feedback] ✓ | Session success rate: 100.0% (1/1)
+2026-07-03 06:05:01 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/command_results "HTTP/2 201 Created"
+2026-07-03 06:05:01 | INFO | [Metrics] Resultado de comando salvo no Supabase.
+2026-07-03 06:05:14 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:05:14 | INFO | [Metrics] Sessão criada no Supabase: 2bb669e1-c033-49c4-81a6-8c828f8b0145
+2026-07-03 06:05:18 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:05:18 | INFO | [Metrics] Sessão criada no Supabase: 29618e59-b4c9-4de8-bb61-91eac260e981
+2026-07-03 06:05:25 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:05:27 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:05:28 | INFO | Recognized: E ele automaticamente começa a reconhecer.
+2026-07-03 06:05:28 | INFO | [ASR Metrics] Loading Model latency=8ms | Statup latency=3088ms | Inference latency=800ms | RTF=0.396 | conf=88.89%
+2026-07-03 06:05:29 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:29 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:29 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:31 | INFO | Processing audio with duration 00:02.508
+2026-07-03 06:05:32 | INFO | Recognized: simultânea para o curso.
+2026-07-03 06:05:32 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=798ms | RTF=0.318 | conf=84.44%
+2026-07-03 06:05:33 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:33 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:33 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:35 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:05:36 | INFO | Recognized: do aplicativo
+2026-07-03 06:05:36 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=754ms | RTF=0.373 | conf=95.98%
+2026-07-03 06:05:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:37 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:37 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:39 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:05:40 | INFO | Recognized: ali e serve como se eu tivesse anotado.
+2026-07-03 06:05:40 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=810ms | RTF=0.401 | conf=76.71%
+2026-07-03 06:05:41 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:41 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:41 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:43 | INFO | Processing audio with duration 00:01.881
+2026-07-03 06:05:44 | INFO | Recognized: tudo, por exemplo, dentro do Obsidian.
+2026-07-03 06:05:44 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=836ms | RTF=0.445 | conf=83.03%
+2026-07-03 06:05:45 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:45 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:45 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:47 | INFO | Processing audio with duration 00:02.136
+2026-07-03 06:05:48 | INFO | Recognized: 7 segundos de silêncio.
+2026-07-03 06:05:48 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=794ms | RTF=0.372 | conf=89.51%
+2026-07-03 06:05:49 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:49 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:49 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:51 | INFO | Processing audio with duration 00:02.229
+2026-07-03 06:05:51 | INFO | Recognized: streaming em tempo real.
+2026-07-03 06:05:51 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=781ms | RTF=0.351 | conf=82.73%
+2026-07-03 06:05:52 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:52 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:52 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:55 | INFO | Processing audio with duration 00:02.043
+2026-07-03 06:05:55 | INFO | Recognized: esse a cada 2 segundos. Isso.
+2026-07-03 06:05:55 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=829ms | RTF=0.406 | conf=74.79%
+2026-07-03 06:05:56 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:05:56 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:05:56 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:05:58 | INFO | Processing audio with duration 00:02.159
+2026-07-03 06:05:59 | INFO | Recognized: a métrica do
+2026-07-03 06:05:59 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=813ms | RTF=0.376 | conf=67.19%
+2026-07-03 06:06:00 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:06:00 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:06:00 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:06:02 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:06:03 | INFO | Recognized: o time factor para verificar
+2026-07-03 06:06:03 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=808ms | RTF=0.400 | conf=62.90%
+2026-07-03 06:06:04 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:06:04 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:06:04 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:06:06 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:06:07 | INFO | Recognized: dado o tempo de processar.
+2026-07-03 06:06:07 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=762ms | RTF=0.377 | conf=75.23%
+2026-07-03 06:06:08 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:06:08 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:06:08 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:06:13 | INFO | Silence timeout (7s) — ending transcription.
+2026-07-03 06:06:36 | INFO | Wakeword 'alexa' detectada (score=0.851)
+2026-07-03 06:06:37 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:06:37 | INFO | [Metrics] Sessão criada no Supabase: 7c367efd-cdc9-42cd-ba40-989cc605ea69
+2026-07-03 06:06:38 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:06:40 | INFO | Listen end: <speech_recognition.audio.AudioData object at 0x000001FDB16CB150>
+2026-07-03 06:06:41 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:06:41 | INFO | Recognized: É, abra o Google.
+2026-07-03 06:06:41 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=838ms | RTF=0.415 | conf=84.64%
+2026-07-03 06:06:41 | INFO | Command identified! Trying to open: google....
+2026-07-03 06:06:41 | INFO | Opening: google.
+2026-07-03 06:06:42 | INFO | Microfone aberto, detecção de wakeword pode começar
+2026-07-03 06:07:06 | INFO | Wakeword 'hey_jarvis' detectada (score=0.847)
+2026-07-03 06:07:07 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/sessions "HTTP/2 201 Created"
+2026-07-03 06:07:07 | INFO | [Metrics] Sessão criada no Supabase: 3f4f1483-3b51-44b6-b37b-49e74df3371b
+2026-07-03 06:07:08 | INFO | Type-at-cursor mode started. Press Ctrl+C to stop.
+2026-07-03 06:07:09 | INFO | Adjusted for ambient noise. Listening...
+2026-07-03 06:07:11 | INFO | Processing audio with duration 00:02.368
+2026-07-03 06:07:12 | INFO | Recognized: passou a fazer a transcrição e streaming para...
+2026-07-03 06:07:12 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=867ms | RTF=0.366 | conf=75.30%
+2026-07-03 06:07:13 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:13 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:13 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:16 | INFO | Processing audio with duration 00:02.206
+2026-07-03 06:07:16 | INFO | Recognized: por exemplo, eu estou aqui
+2026-07-03 06:07:16 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=774ms | RTF=0.351 | conf=74.45%
+2026-07-03 06:07:17 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:17 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:17 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:19 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:07:20 | INFO | Recognized: terminar, mas eu poderia estar com o curso
+2026-07-03 06:07:20 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=748ms | RTF=0.370 | conf=89.06%
+2026-07-03 06:07:21 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:21 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:21 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:23 | INFO | Processing audio with duration 00:02.020
+2026-07-03 06:07:24 | INFO | Recognized: no Google que ele estaria escrevendo
+2026-07-03 06:07:24 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=779ms | RTF=0.386 | conf=86.07%
+2026-07-03 06:07:25 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:25 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:25 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:28 | INFO | Processing audio with duration 00:02.438
+2026-07-03 06:07:29 | INFO | Recognized: Resumindo, é isso que a aplicação...
+2026-07-03 06:07:29 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=806ms | RTF=0.330 | conf=89.30%
+2026-07-03 06:07:30 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:30 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:30 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:34 | INFO | Processing audio with duration 00:02.276
+2026-07-03 06:07:34 | INFO | Recognized: Vamos lá.
+2026-07-03 06:07:34 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=727ms | RTF=0.320 | conf=42.00%
+2026-07-03 06:07:35 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:35 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:35 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:39 | INFO | Processing audio with duration 00:02.508
+2026-07-03 06:07:40 | INFO | Recognized: Vamos lá.
+2026-07-03 06:07:40 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=816ms | RTF=0.326 | conf=39.37%
+2026-07-03 06:07:41 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:41 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:41 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:44 | INFO | Processing audio with duration 00:02.461
+2026-07-03 06:07:45 | INFO | Recognized: Vamos lá.
+2026-07-03 06:07:45 | INFO | [ASR Metrics] Loading Model latency=8ms | Inference latency=723ms | RTF=0.294 | conf=36.14%
+2026-07-03 06:07:46 | INFO | HTTP Request: POST https://rxqiqknvlxjcojijfclh.supabase.co/rest/v1/transcription_results "HTTP/2 201 Created"
+2026-07-03 06:07:46 | INFO | [Metrics] Resultado de transcrição salvo no Supabase.
+2026-07-03 06:07:46 | INFO | Finished recording! Transcription saved to: output.txt
+2026-07-03 06:07:48 | INFO | Processing audio with duration 00:02.113

@@ -22,9 +22,7 @@ class TypeAtCursorMode:
 
         try:
             while self.running:
-                text = self.speech.transcribe_continuously()
-                if text:
-                    self._type_text(text)
+                self.speech.transcribe_continuously(text_callback=self._type_text)
         except KeyboardInterrupt:
             logging.info("Type-at-cursor mode stopped.")
             self.running = False

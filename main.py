@@ -32,7 +32,7 @@ def _run_wakeword_listener():
         from voice.run_wakeword import wakeword_loop
         wakeword_loop()
     except Exception as e:
-        logging.warning(f"Pre-warm falhou: {e}")
+        logging.warning(f"Wakeword listener falhou: {e}")
 
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", 

@@ -99,3 +99,8 @@ timestamp,session_id,model,transcribed_text,reference_text,loading_model_time,st
 2026-07-03T02:44:24.497770+00:00,7d3f9d91-1872-47af-916d-8835758a8227,Voxtral-Mini-4B-Realtime-2602,abrir obsidian,Abrir Obsidian,19.43,,67706.16,23.4277,,0.0,0.0,0.0,0.0,0.0,0.0,0.3162,True,False,,True
 2026-07-03T02:45:59.197833+00:00,7d3f9d91-1872-47af-916d-8835758a8227,Voxtral-Mini-4B-Realtime-2602,Pode abrir o File Explorer.,Pode abrir o File Explorer,19.43,,75485.04,17.046,,0.0,0.0455,0.0,0.0,0.0,0.0,1.0,True,False,,True
 2026-07-03T02:47:14.337860+00:00,7d3f9d91-1872-47af-916d-8835758a8227,Voxtral-Mini-4B-Realtime-2602,Pario Blender.,Pare o Blender,19.43,,68175.57,30.4772,,0.6667,0.1667,0.6667,0.3333,0.3333,0.0,0.0907,False,False,,True
+2026-07-03T08:51:38.982838+00:00,83132fa2-e1a4-4638-8367-f0373b9c4658,turbo,Abra o Discord.,,8.3,4080.81,1041.62,0.5098,0.9317,,,,,,,,True,False,,False
+2026-07-03T08:55:03.841146+00:00,2cb299e0-4d2e-497c-ad80-1a3ea952fc99,turbo,Abra o LBS Studio.,,8.5,4982.63,710.67,0.303,0.951,,,,,,,,True,False,,False
+2026-07-03T08:56:22.839907+00:00,4fed2068-d562-4976-ad6a-cb6f3bbf3a4d,turbo,Abra o Google Chrome.,,8.03,4322.93,991.94,0.3651,0.8878,,,,,,,,True,False,,False
+2026-07-03T09:00:21.971284+00:00,285cded4-e4be-4331-949f-b4cb36d3f446,turbo,Abra o Google.,,8.54,4680.65,969.18,0.8027,0.9166,,,,,,,,True,False,,False
+2026-07-03T09:05:00.948876+00:00,c56fa0fb-bdb2-4f1b-b39c-5b0f6e3b3b22,turbo,"É, abra o Google.",,8.13,3709.75,994.72,0.42,0.7917,,,,,,,,True,False,,False

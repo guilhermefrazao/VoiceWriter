@@ -71,6 +71,10 @@ def _wait_for_detection(model, threshold: float) -> str:
             for name, score in predictions.items():
                 if score >= threshold:
                     logger.info("Wakeword '%s' detectada (score=%.3f)", name, score)
+                    # Limpa os buffers de predição/áudio: sem isso, o áudio
+                    # residual desta mesma detecção re-dispara a wakeword na
+                    # próxima chamada, causando o loop de re-execução.
+                    model.reset()
                     return name
     finally:
         stream.stop_stream()
