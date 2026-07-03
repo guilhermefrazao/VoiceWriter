@@ -26,10 +26,17 @@ dependencies = [
     "ipykernel>=6.0",
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Disable ROS2 pytest plugins that leak in via PYTHONPATH and are
+# incompatible with modern pytest hook validation.
+addopts = "-p no:launch_ros -p no:launch_testing -p no:launch_pytest"
+
 [tool.uv]
 package = false
 dev-dependencies = [
     "pip",
+    "pytest>=8.0",
 ]
 override-dependencies = [
     "pywin32 ; sys_platform == 'win32'",
