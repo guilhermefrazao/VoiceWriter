@@ -8,7 +8,8 @@ from pathlib import Path
 
 _DATA_DIR     = Path(__file__).parent.parent / "data"
 _OFFLINE_QUEUE = _DATA_DIR / "offline_queue.json"
-_CSV_PATH      = _DATA_DIR / "metrics.csv"
+_CSV_PATH_COMMANDS      = _DATA_DIR / "metrics_commands.csv"
+_CSV_PATH_STREAM      = _DATA_DIR / "metrics_streams.csv"
 
 _CSV_COLUMNS = [
     "timestamp", "session_id", "model",
@@ -60,30 +61,59 @@ def _get_client():
         return None
 
 
-def _migrate_csv_columns() -> None:
+def _migrate_csv_columns_transcription() -> None:
     """Reescreve metrics.csv com o header atual quando _CSV_COLUMNS muda.
 
     Sem isso, um CSV existente mantém o header antigo (write_header só roda
     para arquivo novo), então colunas novas/reordenadas ficam desalinhadas
     ou o DictReader nunca encontra a chave nova.
     """
-    with _CSV_PATH.open(encoding="utf-8") as f:
+    with _CSV_PATH_STREAM.open(encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    with _CSV_PATH.open("w", newline="", encoding="utf-8") as f:
+    with _CSV_PATH_STREAM.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=_CSV_COLUMNS, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
 
-def _save_to_csv(entry: dict) -> None:
+def _save_to_csv_transcription(entry: dict) -> None:
     _DATA_DIR.mkdir(exist_ok=True)
-    if _CSV_PATH.exists():
-        with _CSV_PATH.open(encoding="utf-8") as f:
+    if _CSV_PATH_STREAM.exists():
+        with _CSV_PATH_STREAM.open(encoding="utf-8") as f:
             current_header = next(csv.reader(f), [])
         if current_header != _CSV_COLUMNS:
-            _migrate_csv_columns()
-    write_header = not _CSV_PATH.exists()
-    with _CSV_PATH.open("a", newline="", encoding="utf-8") as f:
+            _migrate_csv_columns_transcription()
+    write_header = not _CSV_PATH_STREAM.exists()
+    with _CSV_PATH_STREAM.open("a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=_CSV_COLUMNS, extrasaction="ignore")
+        if write_header:
+            writer.writeheader()
+        writer.writerow(entry)
+
+def _migrate_csv_columns_commands() -> None:
+    """Reescreve metrics.csv com o header atual quando _CSV_COLUMNS muda.
+
+    Sem isso, um CSV existente mantém o header antigo (write_header só roda
+    para arquivo novo), então colunas novas/reordenadas ficam desalinhadas
+    ou o DictReader nunca encontra a chave nova.
+    """
+    with _CSV_PATH_STREAM.open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    with _CSV_PATH_STREAM.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=_CSV_COLUMNS, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def _save_to_csv_commands(entry: dict) -> None:
+    _DATA_DIR.mkdir(exist_ok=True)
+    if _CSV_PATH_COMMANDS.exists():
+        with _CSV_PATH_COMMANDS.open(encoding="utf-8") as f:
+            current_header = next(csv.reader(f), [])
+        if current_header != _CSV_COLUMNS:
+            _migrate_csv_columns_commands()
+    write_header = not _CSV_PATH_COMMANDS.exists()
+    with _CSV_PATH_COMMANDS.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=_CSV_COLUMNS, extrasaction="ignore")
         if write_header:
             writer.writeheader()
@@ -161,7 +191,7 @@ def save_transcription_result(session_id: str, data: dict) -> None:
     """
     
     entry = {"session_id": session_id, **data}
-    _save_to_csv(entry)
+    _save_to_csv_transcription(entry)
     #_log_metrics(entry)
     client = _get_client()
     if client:
@@ -183,7 +213,7 @@ def save_command_result(session_id: str, data: dict) -> None:
     """
     entry = {"session_id": session_id, **data}
     client = _get_client()
-    _save_to_csv(entry)
+    _save_to_csv_commands(entry)
     #_log_metrics(entry)
     if client:
         try:

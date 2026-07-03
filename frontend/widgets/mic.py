@@ -125,11 +125,13 @@ class MicMenu():
 
 
     def build_ui(self):
+        from voice.speech import display_model_name
+
         self.page.padding = 0
         self.page.title = "Mic Menu"
 
         self.mic_button = self.container.generic_container_with_mic_button(on_click=self.handle_mic_click)
-        self.status_text = ft.Text(f"Waiting for {ASR_MODEL_KEY} to load...", size=18, color="#555555", italic=True)
+        self.status_text = ft.Text(f"Waiting for {display_model_name(ASR_MODEL_KEY)} to load...", size=18, color="#555555", italic=True)
 
 
         self.mic_button.disabled = True

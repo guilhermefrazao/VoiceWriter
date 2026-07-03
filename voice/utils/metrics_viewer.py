@@ -12,13 +12,15 @@ import csv
 from collections import defaultdict
 from pathlib import Path
 
-_CSV_PATH = Path(__file__).parent.parent / "data" / "metrics.csv"
+
+_CSV_PATH_COMMANDS = Path(__file__).parent.parent / "data" /  "metrics_commands.csv"
+_CSV_PATH_STREAM = Path(__file__).parent.parent / "data" / "metrics_streams.csv"
 
 
 def _load() -> list[dict]:
-    if not _CSV_PATH.exists():
+    if not _CSV_PATH_STREAM.exists():
         return []
-    with _CSV_PATH.open(encoding="utf-8") as f:
+    with _CSV_PATH_STREAM.open(encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 
@@ -29,10 +31,15 @@ def _to_float(value) -> float | None:
         return None
 
 
-def _avg(entries: list[dict], field: str) -> str:
+def _avg_value(entries: list[dict], field: str) -> float | None:
     vals = [_to_float(e.get(field)) for e in entries]
     vals = [v for v in vals if v is not None]
-    return f"{sum(vals) / len(vals):.3f}" if vals else "—"
+    return sum(vals) / len(vals) if vals else None
+
+
+def _avg(entries: list[dict], field: str) -> str:
+    val = _avg_value(entries, field)
+    return f"{val:.3f}" if val is not None else "—"
 
 
 def _success_rate(entries: list[dict]) -> str:
@@ -79,7 +86,10 @@ def summary_by_model(rows: list[dict]) -> None:
             _avg(entries, "wer"),
             _success_rate(entries),
         ]
-        for model, entries in sorted(groups.items())
+        for model, entries in sorted(
+            groups.items(),
+            key=lambda kv: _avg_value(kv[1], "wer") if _avg_value(kv[1], "wer") is not None else float("inf"),
+        )
     ]
 
     print(f"\nResumo por modelo  —  {len(rows)} registros totais\n")
@@ -167,7 +177,7 @@ def main() -> None:
 
     rows = _load()
     if not rows:
-        print(f"Nenhum dado encontrado em {_CSV_PATH}")
+        print(f"Nenhum dado encontrado em {_CSV_PATH_STREAM}")
         return
 
     if args.raw or args.tail:
