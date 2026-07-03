@@ -17,6 +17,7 @@ from voice.wakeword.training import (  # noqa: E402
     build_training_config,
     copy_trained_model,
     ensure_piper_sample_generator_stub,
+    ensure_piper_train_stub,
     generate_voice_clips,
     write_training_config,
 )
@@ -30,6 +31,7 @@ MODEL_NAME = "transcricao"
 TARGET_PHRASES = ["transcrição", "transcrição por favor"]
 OUTPUT_DIR = os.path.join(WORKSPACE, "output")
 CONFIG_PATH = os.path.join(WORKSPACE, "transcricao_training_config.yaml")
+PIPER_TRAIN_STUB_DIR = os.path.join(WORKSPACE, "piper_train_stub")
 FINAL_MODEL_DEST = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "voice", "wakeword", "models", "transcricao.onnx",
@@ -141,15 +143,27 @@ def download_negative_datasets() -> tuple[list[str], list[str], dict[str, str], 
 def generate_positive_clips(voice_paths: list[str]) -> None:
     positive_train = os.path.join(OUTPUT_DIR, MODEL_NAME, "positive_train")
     positive_test = os.path.join(OUTPUT_DIR, MODEL_NAME, "positive_test")
-    generate_voice_clips(TARGET_PHRASES, voice_paths, positive_train, samples_per_phrase=250)
-    generate_voice_clips(TARGET_PHRASES, voice_paths, positive_test, samples_per_phrase=50)
+    generate_voice_clips(
+        TARGET_PHRASES, voice_paths, positive_train, samples_per_phrase=250,
+        piper_train_stub_dir=PIPER_TRAIN_STUB_DIR,
+    )
+    generate_voice_clips(
+        TARGET_PHRASES, voice_paths, positive_test, samples_per_phrase=50,
+        piper_train_stub_dir=PIPER_TRAIN_STUB_DIR,
+    )
 
 
 def generate_negative_clips(voice_paths: list[str]) -> None:
     negative_train = os.path.join(OUTPUT_DIR, MODEL_NAME, "negative_train")
     negative_test = os.path.join(OUTPUT_DIR, MODEL_NAME, "negative_test")
-    generate_voice_clips(NEGATIVE_PHRASES, voice_paths, negative_train, samples_per_phrase=50)
-    generate_voice_clips(NEGATIVE_PHRASES, voice_paths, negative_test, samples_per_phrase=10)
+    generate_voice_clips(
+        NEGATIVE_PHRASES, voice_paths, negative_train, samples_per_phrase=50,
+        piper_train_stub_dir=PIPER_TRAIN_STUB_DIR,
+    )
+    generate_voice_clips(
+        NEGATIVE_PHRASES, voice_paths, negative_test, samples_per_phrase=10,
+        piper_train_stub_dir=PIPER_TRAIN_STUB_DIR,
+    )
 
 
 def run_train_phase(flags: list[str]) -> None:
@@ -178,6 +192,9 @@ def main() -> None:
     voice_paths = download_voices() if (args.download_voices or args.all) else [
         os.path.join(VOICES_DIR, f"pt_BR-{name}.onnx") for name in PT_BR_VOICES
     ]
+
+    if args.generate_positive or args.generate_negative or args.all:
+        ensure_piper_train_stub(PIPER_TRAIN_STUB_DIR)
 
     if args.generate_positive or args.all:
         generate_positive_clips(voice_paths)

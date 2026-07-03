@@ -91,20 +91,64 @@ def ensure_piper_sample_generator_stub(stub_dir: str) -> None:
             )
 
 
+def ensure_piper_train_stub(stub_dir: str) -> None:
+    """`piper_sample_generator`'s __main__.py importa `piper_train.vits.commons`
+    incondicionalmente, mesmo só usando vozes .onnx (generate_samples_onnx) —
+    caminho que nunca chama essas funções (elas só existem para o gerador
+    .pt/VITS legado, generate_samples). Sem o pacote piper_train real
+    instalado (pesado: VITS + monotonic_align, exige toolchain de compilação),
+    o import falha antes até do parse de argumentos. Este stub só existe para
+    satisfazer o import — nunca é chamado de fato no caminho .onnx que usamos.
+    """
+    vits_dir = os.path.join(stub_dir, "piper_train", "vits")
+    os.makedirs(vits_dir, exist_ok=True)
+
+    init_path = os.path.join(stub_dir, "piper_train", "__init__.py")
+    if not os.path.exists(init_path):
+        open(init_path, "w").close()
+
+    vits_init_path = os.path.join(vits_dir, "__init__.py")
+    if not os.path.exists(vits_init_path):
+        open(vits_init_path, "w").close()
+
+    commons_path = os.path.join(vits_dir, "commons.py")
+    if not os.path.exists(commons_path):
+        with open(commons_path, "w", encoding="utf-8") as f:
+            f.write(
+                "def _unused(*args, **kwargs):\n"
+                "    raise NotImplementedError(\n"
+                '        "piper_train stub - caminho .pt/VITS nao usado; este "\n'
+                '        "projeto so gera clipes via vozes .onnx (generate_samples_onnx)."\n'
+                "    )\n\n"
+                "sequence_mask = _unused\n"
+                "generate_path = _unused\n"
+            )
+
+
 def generate_voice_clips(
     phrases: list[str],
     voice_model_paths: list[str],
     output_dir: str,
     samples_per_phrase: int,
     runner: Callable = subprocess.run,
+    piper_train_stub_dir: str | None = None,
 ) -> None:
     """Gera clipes WAV para cada frase, usando todas as vozes pt-BR fornecidas
     em cada chamada (via múltiplas flags --model), via
     `python -m piper_sample_generator`. Cada frase é gerada num subdiretório
     temporário (o CLI sempre nomeia os arquivos 0.wav, 1.wav, ...) e depois
     movida para `output_dir` com um prefixo único para evitar colisão de nomes.
+    `piper_train_stub_dir`, se informado, é prependado ao PYTHONPATH do
+    subprocesso (ver ensure_piper_train_stub).
     """
     os.makedirs(output_dir, exist_ok=True)
+
+    run_kwargs = {}
+    if piper_train_stub_dir is not None:
+        env = os.environ.copy()
+        env["PYTHONPATH"] = piper_train_stub_dir + os.pathsep + env.get("PYTHONPATH", "")
+        run_kwargs["env"] = env
+
     for phrase_idx, phrase in enumerate(phrases):
         phrase_dir = os.path.join(output_dir, f"_phrase_{phrase_idx}")
         cmd = [
@@ -114,7 +158,7 @@ def generate_voice_clips(
         ]
         for voice_path in voice_model_paths:
             cmd.extend(["--model", voice_path])
-        runner(cmd, check=True)
+        runner(cmd, check=True, **run_kwargs)
 
         if os.path.isdir(phrase_dir):
             for wav_name in os.listdir(phrase_dir):

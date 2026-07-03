@@ -12,8 +12,8 @@ load_dotenv()
 from frontend.utils.recent_manager import RecentManager
 from frontend.widgets.mic import MicMenu
 
-#ASR_MODEL_KEY = "faster-whisper:small"
-ASR_MODEL_KEY = "canary-v2:small"
+ASR_MODEL_KEY = "faster-whisper:turbo"
+#ASR_MODEL_KEY = "canary-v2:small"
 #ASR_MODEL_KEY = "parakeet-v3:small"
 #ASR_MODEL_KEY = "voxtral-mini:small"
 

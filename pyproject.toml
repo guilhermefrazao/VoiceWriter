@@ -19,6 +19,7 @@ dependencies = [
     "supabase>=2.0.0",
     "nltk>=3.8",
     "python-dotenv>=1.0.0",
+    "torchcodec>=0.14.0",
 ]
 
 [tool.uv]

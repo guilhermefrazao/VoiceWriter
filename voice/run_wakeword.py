@@ -62,6 +62,7 @@ def _wait_for_detection(model, threshold: float) -> str:
         input=True,
         frames_per_buffer=CHUNK_SAMPLES,
     )
+    logger.info("Microfone aberto, detecção de wakeword pode começar")
     try:
         while True:
             data = stream.read(CHUNK_SAMPLES, exception_on_overflow=False)
