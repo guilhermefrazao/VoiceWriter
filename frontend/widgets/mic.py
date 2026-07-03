@@ -4,6 +4,7 @@ import time
 import logging
 
 from frontend.widgets.containers_generic import Containers
+from constant import ASR_MODEL_KEY
 
 
 class MicMenu():
@@ -70,7 +71,7 @@ class MicMenu():
             text = await asyncio.to_thread(self.speech.listen_for_command)
 
             if text:
-                sr = await self._ask_command_feedback(text)
+                sr = await self.ask_feedback("Comando executado com sucesso?", f'"{text}"')
                 self.speech.record_feedback(sr)
 
         except Exception as e:
@@ -78,7 +79,7 @@ class MicMenu():
         finally:
             self.is_listening = False
 
-    async def _ask_command_feedback(self, command_text: str) -> bool:
+    async def ask_feedback(self, title: str, content: str) -> bool:
         answered = asyncio.Event()
         result: dict[str, bool] = {}
 
@@ -94,8 +95,8 @@ class MicMenu():
 
         dialog = ft.AlertDialog(
             modal=True,
-            title=ft.Text("Comando executado com sucesso?"),
-            content=ft.Text(f'"{command_text}"', italic=True),
+            title=ft.Text(title),
+            content=ft.Text(content, italic=True),
             actions=[
                 ft.Button("Sim", bgcolor="#055b5f", on_click=on_sim),
                 ft.Button("Não", bgcolor="#FF2C2C", on_click=on_nao),
@@ -107,18 +108,40 @@ class MicMenu():
         await answered.wait()
         return result.get("ok", False)
 
+    async def wait_for_model_load(self):
+        speech_instance = self.speech 
+        model_key = speech_instance._current_model_key
+        
+        event = speech_instance._model_events.get(model_key)
+        
+        if event and not event.is_set():
+            await asyncio.to_thread(event.wait)
+        
+        self.mic_button.disabled = False
+        self.mic_button.opacity = 1.0 
+        self.status_text.value = "Detect Voice"
+        self.status_text.color = "#858585"
+        self.page.update()
+
 
     def build_ui(self):
+        from voice.speech import display_model_name
+
         self.page.padding = 0
         self.page.title = "Mic Menu"
 
-        mic_button = self.container.generic_container_with_mic_button(on_click=self.handle_mic_click)
+        self.mic_button = self.container.generic_container_with_mic_button(on_click=self.handle_mic_click)
+        self.status_text = ft.Text(f"Waiting for {display_model_name(ASR_MODEL_KEY)} to load...", size=18, color="#555555", italic=True)
+
+
+        self.mic_button.disabled = True
+        self.mic_button.opacity = 0.3
 
         mic_card = ft.Container(
             content=ft.Column(
                 controls=[
-                    mic_button,
-                    ft.Text("Detect Voice", size=18, color="#858585")
+                    self.mic_button,
+                    self.status_text
                 ],
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 alignment=ft.MainAxisAlignment.CENTER,
@@ -130,6 +153,8 @@ class MicMenu():
             border_radius=20,
             border=ft.border.all(1, "#028268") 
         )
+
+        self.page.run_task(self.wait_for_model_load)
 
         return mic_card
     

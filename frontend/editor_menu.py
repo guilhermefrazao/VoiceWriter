@@ -3,6 +3,7 @@ import os
 import asyncio
 import logging
 import time
+import random
 
 from frontend.widgets.context_menu import ContextMenu
 from frontend.widgets.tiles_generic import Tiles
@@ -30,6 +31,9 @@ class EditorMenu():
             expand=False,
             disabled=True,
             autofocus=True,
+            text_align=ft.TextAlign.CENTER,       # centralizado no estado vazio
+            hint_text="",  
+            hint_style=ft.TextStyle(color="#444444", size=13),                 
             on_change=lambda e: self.handler.save_changed_text(e)
         )
         self.current_file_path = str
@@ -41,6 +45,7 @@ class EditorMenu():
         self.speech = SpeechToText()
         self.can_listen = False
         self.open_file_path = str
+        self.is_recording = False
 
 
 
@@ -88,8 +93,18 @@ class EditorMenu():
         self.file_tree_column.update()
 
 
-    def load_file_to_editor(self, item_name : str, full_path: str):
+    def load_file_to_editor(self, item_name: str, full_path: str):
         self.open_file_path = full_path
+        self.main_area_title.value = item_name
+        self.main_area_title.update()
+
+        self.editor_region.alignment = ft.Alignment.TOP_LEFT
+        self.editor_content_column.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
+        self.new_message.text_align = ft.TextAlign.LEFT
+        self.new_message.hint_text = "Comece a Digitar..."
+        self.editor_region.update()
+        self.editor_content_column.update()
+
         self.handler.display_markdown_information(
             item=item_name,
             path=full_path,
@@ -98,9 +113,7 @@ class EditorMenu():
             main_topbar=self.main_area_topbar,
             main_area=self.main_area,
             refresh_sidebar=self.refresh_sidebar,
-            mic=self.mic_button
         )
-
         self.can_listen = True
 
 
@@ -128,15 +141,22 @@ class EditorMenu():
 
     def handle_mic_click(self, mic_button, e=None):
         self.speech._startup_start_time = time.time()
-        if self._mic_menu and self._mic_menu.is_listening:
-            self._mic_menu.is_listening = False
+
+        # Desligar
+        if self.is_recording:
+            self.is_recording = False
+            if self._mic_menu:
+                self._mic_menu.is_listening = False
             self.speech.stop_listen()
             return
+
+        # Ligar
+        self.is_recording = True
         if self._mic_menu:
             self._mic_menu.is_listening = True
+
         self.page.run_task(self.run_speech_recognition)
-        if self._mic_menu:
-            self.page.run_task(self._mic_menu.pulse_animation, mic_button)
+        self.page.run_task(self.animate_waveform)
 
 
     def open_new_editor(self, e):
@@ -210,6 +230,7 @@ class EditorMenu():
         except Exception as e:
             print(f"Erro no reconhecimento: {e}")
         finally:
+            self.is_recording = False    
             if self._mic_menu:
                 self._mic_menu.is_listening = False
 
@@ -222,6 +243,87 @@ class EditorMenu():
         self.new_message.update()
 
 
+    def build_editor_bottom_bar(self):
+        self.waveform_bars = [
+            ft.Container(
+                width=3, height=4,
+                bgcolor="#028268",
+                border_radius=2,
+                animate=ft.Animation(200, ft.AnimationCurve.EASE_IN_OUT),
+            )
+            for _ in range(14)
+        ]
+
+        self.waveform_row = ft.Row(
+            controls=self.waveform_bars,
+            spacing=3,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+            visible=False,
+        )
+
+        # Indicador "● Gravando"
+        self.recording_status = ft.Row(
+            controls=[
+                ft.Container(width=8, height=8, border_radius=4, bgcolor="#028268"),
+                ft.Text("Gravando", size=12, color="#028268", weight="bold"),
+            ],
+            spacing=8,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+            visible=False,
+        )
+
+        self.idle_hint = ft.Text(
+            "Pressione o microfone para ditar...",
+            size=13, color="#555555",
+        )
+
+        # Botão de mic compacto (versão da barra, não mais o de 80px flutuante)
+        self.mic_button = self.container.generic_container_with_mic_button(
+            width=44, height=44, mic_size=20,
+            on_click=lambda mic_button, e: self.handle_mic_click(mic_button, e),
+        )
+
+        self.editor_bottom_bar = ft.Container(
+            bgcolor="#1c1c1c",
+            height=64,                                          # altura fixa → não encolhe mais
+            padding=ft.padding.only(left=40, right=16),        # left=40 alinha com o texto do editor
+            border=ft.border.only(top=ft.border.BorderSide(width=1, color="#055b5f")),
+            content=ft.Row(
+                controls=[
+                    ft.Row(
+                        controls=[self.idle_hint, self.recording_status, self.waveform_row],
+                        expand=True,
+                        vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                    ),
+                    self.mic_button,
+                ],
+                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                vertical_alignment=ft.CrossAxisAlignment.CENTER,
+            ),
+        )
+
+        return self.editor_bottom_bar
+    
+    async def animate_waveform(self):
+        self.idle_hint.visible = False
+        self.recording_status.visible = True
+        self.waveform_row.visible = True
+        self.editor_bottom_bar.bgcolor = "#0d1a17"  
+        self.editor_bottom_bar.update()
+
+        while self.is_recording:
+            for bar in self.waveform_bars:
+                bar.height = random.randint(4, 22)
+            self.waveform_row.update()
+            await asyncio.sleep(0.18)
+
+        for bar in self.waveform_bars:
+            bar.height = 4
+        self.recording_status.visible = False
+        self.waveform_row.visible = False
+        self.idle_hint.visible = True
+        self.editor_bottom_bar.bgcolor = "#1c1c1c"
+        self.editor_bottom_bar.update()
 
 
     def build_ui(self, path: str = "C:/Users/guilh/Documents/VoiceWriter/testes_folder"):
@@ -232,11 +334,6 @@ class EditorMenu():
         self.open_file_path = path
 
         intial_tree_controls = self.get_directory_tree(path)
-
-        self.mic_button = self.container.generic_container_with_mic_button(
-            width=80, height=80, mic_size=36,
-            on_click=lambda e: self.handle_mic_click(self.mic_button, e)
-        )
 
         sidebar_icons = TopToolbar(left_items=[
             ft.IconButton(icon=ft.Icons.FILE_OPEN, icon_color="#858585", highlight_color="#D4D4D4", on_click=self.create_and_open_new_markdown),
@@ -293,38 +390,56 @@ class EditorMenu():
 
         self.dir_name = ft.Column(
             spacing=20,
-            controls=[ft.Text("Create new file (ctrl + p)", size=14, weight="bold", color="#055b5f", selectable=True, on_tap=self.create_and_open_new_markdown), 
-                    ft.Text("Open recent file (ctrl + n)", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"))])
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[ft.Text("Create new file (ctrl + p)", size=14, weight="bold", color="#055b5f", selectable=True, on_tap=self.create_and_open_new_markdown, text_align=ft.TextAlign.CENTER),
+                    ft.Text("Open recent file (ctrl + n)", size=14, weight="bold", color="#055b5f",selectable=True, on_tap=lambda e: print("Open Recent"), text_align=ft.TextAlign.CENTER)])
         
 
-        self.main_area_topbar = TopToolbar(left_items=[ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585"),
-                                                  ft.IconButton(icon=ft.Icons.ARROW_FORWARD, icon_color="#858585"),],
-                                      central_items=[ft.Text(self.open_file_path, color="#42A5F5", size=14, weight=ft.FontWeight.W_500)], 
-                                      bgcolor="#191919")
+        self.main_area_title = ft.Text(
+            os.path.basename(self.open_file_path),
+            color="#42A5F5", size=14, weight=ft.FontWeight.W_500,
+            overflow=ft.TextOverflow.ELLIPSIS,
+        )
 
+        self.main_area_topbar = TopToolbar(
+            left_items=[
+                ft.IconButton(icon=ft.Icons.ARROW_BACK, icon_color="#858585"),
+                ft.IconButton(icon=ft.Icons.ARROW_FORWARD, icon_color="#858585"),
+            ],
+            central_items=[self.main_area_title],
+            right_items=[ 
+                ft.IconButton(icon=ft.Icons.SAVE, icon_color="#858585", tooltip="Salvar", on_click=lambda e: self._save_now()),
+                ft.IconButton(icon=ft.Icons.MORE_HORIZ, icon_color="#858585", tooltip="Mais"),
+            ],
+            bgcolor="#191919",
+        )
+
+        self.editor_content_column = ft.Column(
+            controls=[self.dir_name, self.new_message],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=20,
+            tight=True,                          # não expande → deixa o Container centralizar
+        )
+
+        self.editor_region = ft.Container(
+            expand=True,
+            padding=ft.padding.only(left=40, right=40, top=28),
+            alignment=ft.Alignment.CENTER,       # centraliza o bloco no estado vazio
+            content=self.editor_content_column,
+        )
 
         self.main_area = ft.Container(
-                expand=6,
-                bgcolor="#191919",
-                content=ft.Column(
-                    alignment=ft.MainAxisAlignment.START,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                    spacing=0,
-                    controls=[
-                        self.main_area_topbar,
-                        ft.Container(
-                        content=ft.Column(
-                            controls=[
-                                self.dir_name,
-                                self.new_message,
-                            ],
-                            alignment=ft.MainAxisAlignment.CENTER, 
-                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                        ),
-                        expand=True, 
-                    )
-                    ]
-                )
+            expand=6,
+            bgcolor="#191919",
+            content=ft.Column(
+                spacing=0,
+                controls=[
+                    self.main_area_topbar,
+                    ft.Divider(height=1, color="#055b5f"),
+                    self.editor_region,
+                    self.build_editor_bottom_bar(),
+                ],
+            ),
         )
 
         side_layout = ft.Row(

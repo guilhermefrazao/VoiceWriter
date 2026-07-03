@@ -3,7 +3,6 @@
 *.log
 .env
 recent_folders.json
-voice/data/*.csv
 voice/data/offline_queue.json
 /testes_folder
 /dist
@@ -15,3 +14,4 @@ main.exe
 .worktrees/
 .wakeword_training/
 .venv_training/
+.venv

@@ -309,50 +309,51 @@
 17:58:27 - Entï¿½o, vamos lï¿½.
 17:58:33 - Tchau.
 {22:56:04} + - + E assim funciona, o problema de ruï¿½do ï¿½ que nï¿½o funciona.
-{15:53:34} + - + Não está funcionando a transcrição, não está funcionando, ele está meio zoado.
+{15:53:34} + - + Nï¿½o estï¿½ funcionando a transcriï¿½ï¿½o, nï¿½o estï¿½ funcionando, ele estï¿½ meio zoado.
 {15:53:39} + - + Por isso que...
-{15:53:49} + - + E aí E aí
-{15:54:12} + - + Tá, se eu mostrasse que ele tá transcrevendo...
-{15:54:17} + - + para escrever em tempo real, ele está fazendo meio...
-{15:57:32} + - + Enquanto a pessoa esteja falando, a ideia dela para estudar é...
-{15:57:37} + - + A transcrição com ICR iria em chunks?
+{15:53:49} + - + E aï¿½ E aï¿½
+{15:54:12} + - + Tï¿½, se eu mostrasse que ele tï¿½ transcrevendo...
+{15:54:17} + - + para escrever em tempo real, ele estï¿½ fazendo meio...
+{15:57:32} + - + Enquanto a pessoa esteja falando, a ideia dela para estudar ï¿½...
+{15:57:37} + - + A transcriï¿½ï¿½o com ICR iria em chunks?
 {15:57:42} + - + de uma pessoa e publicar dentro desse texto aqui.
-{18:17:15} + - + Testar no reconhecimento de voz, terá funcionado?
+{18:17:15} + - + Testar no reconhecimento de voz, terï¿½ funcionado?
 {18:20:22} + - + O microfone detecta a voz simultaneamente e consegue fazer o estudo.
-{18:20:28} + - + que atualmente ela não está sendo feita em tempo real, ela está sendo feita em tempo real.
+{18:20:28} + - + que atualmente ela nï¿½o estï¿½ sendo feita em tempo real, ela estï¿½ sendo feita em tempo real.
 {18:20:33} + - + eu vou falando e a cada intervalo de 5 segundos...
 {18:20:38} + - + depois, e envia para ele ter esse markdown aqui.
 {18:20:43} + - + escrever. Isso seria pra realmente.
-{21:07:48} + - + É, agora eu estou aprontando e ele está reconhecendo minha voz.
-{21:07:53} + - + Está atualizando o contêinerzinho.
-{21:07:59} + - + E aí, se eu posso fechar esse negócio pra ele parar de rir?
+{21:07:48} + - + ï¿½, agora eu estou aprontando e ele estï¿½ reconhecendo minha voz.
+{21:07:53} + - + Estï¿½ atualizando o contï¿½inerzinho.
+{21:07:59} + - + E aï¿½, se eu posso fechar esse negï¿½cio pra ele parar de rir?
 {21:08:04} + - + Se eu ficar calado, ele some.
-{21:08:14} + - + Também vai.
+{21:08:14} + - + Tambï¿½m vai.
 {21:08:30} + - + Era pra assumir.
-{21:08:35} + - + Hum, tem que rever a implementação então, não tá subindo.
+{21:08:35} + - + Hum, tem que rever a implementaï¿½ï¿½o entï¿½o, nï¿½o tï¿½ subindo.
 {12:57:18} + - + falando aqui e ele vai transcrever no 3D Markdown.
-{12:57:23} + - + Aí a gente teria que utilizar o WordErrorRate dentro de...
-{12:57:29} + - + porque o word error rate eu não acho que seja tão útil no dos comandos
-{12:57:34} + - + implementarmos features para melhorar a aplicação no geral.
-{12:57:41} + - + Então, eu acho que vai incluir os dois, e todo mundo vai...
-{12:57:46} + - + as coisas e de áudio nesse caso para não ficar tipo mandar voar
-{17:30:05} + - + Ele transcreve em tempo real o que eu tô falando a cada sentido.
+{12:57:23} + - + Aï¿½ a gente teria que utilizar o WordErrorRate dentro de...
+{12:57:29} + - + porque o word error rate eu nï¿½o acho que seja tï¿½o ï¿½til no dos comandos
+{12:57:34} + - + implementarmos features para melhorar a aplicaï¿½ï¿½o no geral.
+{12:57:41} + - + Entï¿½o, eu acho que vai incluir os dois, e todo mundo vai...
+{12:57:46} + - + as coisas e de ï¿½udio nesse caso para nï¿½o ficar tipo mandar voar
+{17:30:05} + - + Ele transcreve em tempo real o que eu tï¿½ falando a cada sentido.
 {17:30:10} + - + cortando minha fala e adiciona ali dentro do Markdown
-{17:30:15} + - + para fazer anotações dentro do Obsidian, por exemplo, só que...
-{17:43:56} + - + E aí
-{17:44:01} + - + E aí
+{17:30:15} + - + para fazer anotaï¿½ï¿½es dentro do Obsidian, por exemplo, sï¿½ que...
+{17:43:56} + - + E aï¿½
+{17:44:01} + - + E aï¿½
 {17:44:26} + - + Hum... Que horas?
-{17:44:35} + - + ...que ele não consegue parar a gravação depois de detectar...
-{17:44:40} + - + Quem tá calado aqui, ele não vai parar.
+{17:44:35} + - + ...que ele nï¿½o consegue parar a gravaï¿½ï¿½o depois de detectar...
+{17:44:40} + - + Quem tï¿½ calado aqui, ele nï¿½o vai parar.
 05:20:24 - 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
-05:20:32 - Vamos lá.
-05:20:37 - Vamos lá.
-05:20:43 - Vamos lá.
-05:20:49 - Vamos lá.
+05:20:32 - Vamos lï¿½.
+05:20:37 - Vamos lï¿½.
+05:20:43 - Vamos lï¿½.
+05:20:49 - Vamos lï¿½.
 05:20:54 - Tchau.
-05:21:00 - Tá funcionando o typing no cursor? Acho que não.
-05:21:06 - E aí
+05:21:00 - Tï¿½ funcionando o typing no cursor? Acho que nï¿½o.
+05:21:06 - E aï¿½
 05:22:18 - E eu posso falar da Taipat Goose.
-05:22:24 - Então, na teorias, o que eu falava...
+05:22:24 - Entï¿½o, na teorias, o que eu falava...
 05:22:30 - Mais... Snow...
 05:22:36 - E...
+20:42:44 - EstÃ¡ me ouvindo? EstÃ¡ gravando? Ele estÃ¡ escrevendo ali como Ã© que estÃ¡ funcionando.
